@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from yuna_lia.config import load_config
+from yuna_lia.lore import LoreStore
 from yuna_lia.mood import MoodState, mood_label, update_mood_from_message
 from yuna_lia.premium import load_premium_triggers
 from yuna_lia.scenarios import ScenarioLibrary
@@ -30,3 +32,17 @@ def test_premium_parser() -> None:
     triggers = load_premium_triggers(Path("src/yuna_lia/scenarios/premium/premium_triggers.txt"))
     assert len(triggers) == 1
     assert triggers[0].scenario_id == 3012
+
+
+def test_lore_loading() -> None:
+    store = LoreStore(Path("src/yuna_lia/scenarios/meta"))
+    store.load()
+    yuna = store.persona("Yuna")
+    assert yuna.age == 21
+    assert "April prank disaster" in yuna.inside_jokes
+
+
+def test_config_has_dual_token_fields() -> None:
+    cfg = load_config()
+    assert cfg.yuna.name == "Yuna"
+    assert cfg.lia.name == "Lia"

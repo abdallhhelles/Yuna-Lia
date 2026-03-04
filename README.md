@@ -1,55 +1,98 @@
-# Yuna & Lia – Dual Discord Bot Framework
+# Yuna & Lia – Dual Discord Bots (Two Tokens, One Project)
 
-This repository contains a maintainable starter implementation for two autonomous Discord personas (Yuna and Lia) with:
+Yuna and Lia are implemented as **two different Discord bots** with separate logins/tokens, shared lore, and shared scenario infrastructure.
 
-- Trigger-based response selection
-- Mood state updates and escalation labels
-- Short-term and long-term memory primitives
-- Scenario library with free/premium support
-- Ollama-backed LLM generation (`llama3.2:3b` by default)
-- Human-like typing simulation
-- SQLite logging for analytics and leaderboard-style reporting
+## Where to put each token
 
-## Layout
+Set these environment variables before running:
 
-- `src/yuna_lia/bot.py` – Discord runtime and orchestration
-- `src/yuna_lia/mood.py` – dynamic mood variables
-- `src/yuna_lia/memory.py` – short + long-term memory models
-- `src/yuna_lia/scenarios.py` – scenario loading and weighted selection
-- `src/yuna_lia/typing_sim.py` – WPM-based typing delay
-- `src/yuna_lia/logging_store.py` – SQLite logging
-- `src/yuna_lia/premium.py` – premium trigger file parser
-- `src/yuna_lia/scenarios/free/scenarios.json` – free + optional premium scenarios
-- `src/yuna_lia/scenarios/premium/premium_triggers.txt` – premium unlock trigger mapping
-- `src/yuna_lia/scenarios/meta/personalities.json` – metadata for contributors
+```bash
+export DISCORD_TOKEN_YUNA="your_yuna_bot_token"
+export DISCORD_TOKEN_LIA="your_lia_bot_token"
+```
+
+That is where each token goes (one token per bot).
+
+## Main file to run
+
+Run the project from:
+
+```bash
+python main.py
+```
+
+`main.py` starts both bots concurrently.
+
+## Project hierarchy
+
+```text
+main.py
+src/yuna_lia/
+  config.py                # env config, including two separate Discord tokens
+  runtime.py               # dual-runtime orchestration for Yuna + Lia bots
+  bot.py                   # compatibility wrapper (calls runtime)
+  llm.py                   # Ollama API client
+  mood.py                  # dynamic mood variable updates
+  memory.py                # short/long-term memory primitives
+  scenarios.py             # scenario loading and weighted selection
+  premium.py               # premium trigger parser
+  typing_sim.py            # human-like typing delay model
+  logging_store.py         # SQLite logs for messages/server events
+  lore.py                  # lore/profile loader
+  scenarios/
+    free/scenarios.json
+    premium/premium_triggers.txt
+    meta/
+      yuna_profile.json
+      lia_profile.json
+      shared_history.json
+      personalities.json
+tests/
+  test_core.py
+```
+
+## Persona lore depth
+
+The lore is now expanded into separate profile files with:
+- biography timeline
+- communication style
+- values and pet peeves
+- inside jokes
+- shared friendship history and recurring conflict dynamics
 
 ## Setup
 
-1. Install dependencies:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate
-   pip install -e .
-   ```
-2. Start Ollama and pull model:
-   ```bash
-   ollama pull llama3.2:3b
-   export OLLAMA_KEEP_ALIVE="-1"
-   ```
-3. Set required env vars:
-   ```bash
-   export DISCORD_BOT_TOKEN="..."
-   export OLLAMA_URL="http://localhost:11434"
-   export OLLAMA_MODEL="llama3.2:3b"
-   ```
+1. Create virtual env + install:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+
+2. Start Ollama and keep model warm:
+
+```bash
+ollama pull llama3.2:3b
+export OLLAMA_KEEP_ALIVE="-1"
+export OLLAMA_URL="http://localhost:11434"
+export OLLAMA_MODEL="llama3.2:3b"
+```
+
+3. Set both Discord tokens:
+
+```bash
+export DISCORD_TOKEN_YUNA="..."
+export DISCORD_TOKEN_LIA="..."
+```
+
 4. Run:
-   ```bash
-   python -m yuna_lia.bot
-   ```
+
+```bash
+python main.py
+```
 
 ## Notes
 
-- Premium behavior is enabled when `premium_triggers.txt` exists and contains valid entries.
-- The prompt builder enforces a baseline safety rule to avoid hateful slurs.
-- Scenario content is versioned via JSON metadata (`"version": "1.0"`).
-
+- Premium triggers are activated when `src/yuna_lia/scenarios/premium/premium_triggers.txt` exists and is valid.
+- Prompt composition keeps output in-character while preventing hateful slurs.

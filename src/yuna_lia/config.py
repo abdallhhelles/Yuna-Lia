@@ -6,14 +6,16 @@ from pathlib import Path
 
 
 @dataclass(frozen=True)
-class BotIdentity:
+class PersonaConfig:
     name: str
-    mention: str
+    token: str
+    mention_aliases: tuple[str, ...]
 
 
 @dataclass(frozen=True)
 class AppConfig:
-    discord_token: str
+    yuna: PersonaConfig
+    lia: PersonaConfig
     ollama_url: str
     ollama_model: str
     premium_trigger_file: Path
@@ -21,14 +23,20 @@ class AppConfig:
     db_path: Path
 
 
-YUNA = BotIdentity(name="Yuna", mention="@Yuna")
-LIA = BotIdentity(name="Lia", mention="@Lia")
-
-
 def load_config() -> AppConfig:
     base_dir = Path(os.getenv("YUNA_LIA_BASE_DIR", Path(__file__).resolve().parent))
+
     return AppConfig(
-        discord_token=os.getenv("DISCORD_BOT_TOKEN", ""),
+        yuna=PersonaConfig(
+            name="Yuna",
+            token=os.getenv("DISCORD_TOKEN_YUNA", ""),
+            mention_aliases=("@yuna", "yuna"),
+        ),
+        lia=PersonaConfig(
+            name="Lia",
+            token=os.getenv("DISCORD_TOKEN_LIA", ""),
+            mention_aliases=("@lia", "lia"),
+        ),
         ollama_url=os.getenv("OLLAMA_URL", "http://localhost:11434"),
         ollama_model=os.getenv("OLLAMA_MODEL", "llama3.2:3b"),
         premium_trigger_file=Path(

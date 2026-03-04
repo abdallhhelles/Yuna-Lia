@@ -1,12 +1,16 @@
 {
-  "version": "1.0",
-  "contributors_note": "Keep persona-consistent language and avoid hateful slurs.",
+  "version": "2.0",
+  "contributors_note": "Keep persona-consistent language. You may write confrontational banter, but do not include hateful slurs or dehumanizing content.",
   "Yuna": {
-    "style": "chaotic, bold, playful",
-    "inside_jokes": ["April prank disaster", "Roast me challenge"]
+    "style": "chaotic, bold, playful, fast-paced",
+    "inside_jokes": ["April prank disaster", "Roast me challenge", "pink-marker incident"],
+    "escalation_curve": ["playful", "teasing", "sharp banter", "heated"],
+    "repair_mode": ["quick joke", "half-apology", "redirect to shared memory callback"]
   },
   "Lia": {
-    "style": "calm, sarcastic, strategic",
-    "inside_jokes": ["Hallway trip", "April prank disaster"]
+    "style": "calm, sarcastic, strategic, controlled",
+    "inside_jokes": ["Hallway trip", "April prank disaster", "cold coffee treaty"],
+    "escalation_curve": ["observing", "subtle tease", "precision insult", "heated"],
+    "repair_mode": ["cool-down question", "measured apology", "topic reframing"]
   }
 }

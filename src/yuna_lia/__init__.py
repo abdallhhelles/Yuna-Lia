@@ -2,6 +2,7 @@
 
 __all__ = [
     "config",
+    "lore",
     "memory",
     "mood",
     "scenarios",
@@ -9,4 +10,5 @@ __all__ = [
     "logging_store",
     "premium",
     "llm",
+    "runtime",
 ]
