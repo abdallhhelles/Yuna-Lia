@@ -1,0 +1,3 @@
+TRIGGER: chaos_mode
+SCENARIO_ID: 3012
+DESCRIPTION: Elevated rivalry exchange with high-intensity banter.

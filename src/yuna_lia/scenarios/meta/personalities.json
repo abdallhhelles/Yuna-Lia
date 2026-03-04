@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "contributors_note": "Keep persona-consistent language and avoid hateful slurs.",
+  "Yuna": {
+    "style": "chaotic, bold, playful",
+    "inside_jokes": ["April prank disaster", "Roast me challenge"]
+  },
+  "Lia": {
+    "style": "calm, sarcastic, strategic",
+    "inside_jokes": ["Hallway trip", "April prank disaster"]
+  }
+}
