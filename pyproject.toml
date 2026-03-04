@@ -1,0 +1,17 @@
+[project]
+name = "yuna-lia-bots"
+version = "0.1.0"
+description = "Dual Discord bot framework with mood, memory, scenarios, premium triggers, and typing simulation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "discord.py>=2.4.0",
+  "aiohttp>=3.10.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
