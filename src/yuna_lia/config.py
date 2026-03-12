@@ -19,6 +19,23 @@ def _load_dotenv(path: Path) -> None:
             os.environ[key] = value
 
 
+def _read_bool(name: str, default: bool) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _read_int(name: str, default: int, minimum: int) -> int:
+    raw = os.getenv(name)
+    if raw is None:
+        return max(minimum, default)
+    try:
+        return max(minimum, int(raw.strip()))
+    except ValueError:
+        return max(minimum, default)
+
+
 @dataclass(frozen=True)
 class PersonaConfig:
     name: str
@@ -44,6 +61,9 @@ def load_config() -> AppConfig:
     _load_dotenv(repo_root / ".env")
     content_dir = Path(os.getenv("PERSONA_CONTENT_DIR", repo_root / "content" / "personas"))
     data_dir = Path(os.getenv("PERSONA_DATA_DIR", repo_root / "data"))
+    ambient_min_seconds = _read_int("AMBIENT_MIN_SECONDS", default=120, minimum=30)
+    ambient_max_seconds = _read_int("AMBIENT_MAX_SECONDS", default=300, minimum=60)
+    ambient_max_seconds = max(ambient_min_seconds, ambient_max_seconds)
 
     return AppConfig(
         yuna=PersonaConfig(
@@ -56,11 +76,11 @@ def load_config() -> AppConfig:
             token=os.getenv("DISCORD_TOKEN_LIA", ""),
             mention_aliases=("@lia", "lia"),
         ),
-        enable_message_content=os.getenv("ENABLE_MESSAGE_CONTENT", "1").strip().lower() in {"1", "true", "yes", "on"},
-        debug_persona=os.getenv("DEBUG_PERSONA", "1").strip().lower() in {"1", "true", "yes", "on"},
-        persona_test_mode=os.getenv("PERSONA_TEST_MODE", "0").strip().lower() in {"1", "true", "yes", "on"},
+        enable_message_content=_read_bool("ENABLE_MESSAGE_CONTENT", default=True),
+        debug_persona=_read_bool("DEBUG_PERSONA", default=True),
+        persona_test_mode=_read_bool("PERSONA_TEST_MODE", default=False),
         content_dir=content_dir,
         data_dir=data_dir,
-        ambient_min_seconds=max(30, int(os.getenv("AMBIENT_MIN_SECONDS", "120"))),
-        ambient_max_seconds=max(60, int(os.getenv("AMBIENT_MAX_SECONDS", "300"))),
+        ambient_min_seconds=ambient_min_seconds,
+        ambient_max_seconds=ambient_max_seconds,
     )
