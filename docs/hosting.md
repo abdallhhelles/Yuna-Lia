@@ -65,3 +65,20 @@ In Discord, run:
 - `/status`
 
 If both commands work and both bots show online, deployment is healthy.
+
+## 8) Troubleshooting Pterodactyl startup errors
+
+If you get:
+
+- `python3: can't open file '/home/container/main.py': [Errno 2] No such file or directory`
+
+then the panel cannot find your startup file path.
+
+Checklist:
+
+1. Make sure your repository/files are actually present in `/home/container`.
+2. If your host cloned into a subfolder, set startup file to that path (example: `Yuna-Lia/main.py`).
+3. Confirm the Git repo address + branch are correct in panel settings.
+4. Restart after saving startup settings.
+
+If you get module import errors, keep startup file as `main.py` from this repo root and install dependencies with `-r requirements.txt`.
