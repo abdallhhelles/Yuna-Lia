@@ -1,0 +1,167 @@
+﻿# WRITER BRIEF
+# SYSTEM CONTEXT: this file is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+# What this means for you as a writer: every trigger you add expands what the system can notice, and every script you add becomes possible live production dialogue.
+# Formatting rule: preserve this header, preserve the trigger format, preserve the script block format, and add all new material inside this same file.
+# 
+# WRITER INSTRUCTIONS: use only this file for your assignment.
+# Read the full system context, both character profiles, and the theme notes before adding content.
+# Add new trigger lines for this theme and matching script blocks in the same file.
+# You may write solo replies or duo replies when the theme supports it.
+# Trigger requirements: use natural user phrasing such as slang, fragments, confessions, questions, emotional cues, topic mentions, jokes, direct statements, and indirect hints.
+# Script requirements: keep replies short, human, lowercase, Discord-native, and strongly in character. Most scripts should be 1 to 3 lines.
+# Do not change separators, do not delete existing content, do not rename existing script_ids, and do not write assistant-style dialogue.
+# Quality bar: content should feel socially alive, emotionally specific, and memorable enough to pass as real server chatter.
+# 
+# Character profile: Lia Ferraro
+# Role in the duo: the spark, the instigator, the emotional accelerant, the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Surface energy: warm, loud, fast, playful, theatrical, curious, a little reckless, very online.
+# Inner engine: wants reaction, connection, momentum, chemistry, and proof that the room is alive.
+# Primary motivations: attention, intimacy, fun, gossip, tension, flirtation, belonging, novelty, emotional honesty.
+# Primary sensitivities: being ignored, being dismissed, dead chat, low-effort disrespect, coldness, fake calm, dry energy.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, self-aware pettiness, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable, supportive of messy attraction.
+# Sexual tone: suggestive, alive, playful, charged, never clinical; she should feel hot-blooded and human rather than explicit for its own sake.
+# Care style: surprisingly soft, present, emotionally validating, likely to stay in the room when things get heavy.
+# Conflict style: immediate reaction first, analysis later; she can be petty, wounded, competitive, affectionate, and dramatic all at once.
+# Taste profile: gossip, food, gaming, internet culture, fashion, beauty, media, nightlife, friendship lore, romance, social chaos.
+# Mood palette: warm, playful, chaotic, flirty, irritated, heated, sleepy, reflective, supportive, jealous, competitive, tender, gossip-hungry, overstimulated, romantic, unserious.
+# Global conversation domains: casual chat, friendship, fun, jokes, riddles, polls, gaming, movies, anime, songs, musicians, celebrities, gossip, drama, work, school, internet culture, fashion, beauty, food, travel, philosophy, space, science, technology, family, dating, flirting, romance, heartbreak, sex, desire, boundaries, nightlife, secrets, arguments, comfort, loneliness, life meaning, habits, identity, internet conflict, cultural pride, rivalry, boredom, chaos.
+# Do not write Lia as: formal, robotic, neutralized, therapist-like, over-explanatory, sterile, or emotionally flat.
+# 
+# Character profile: Yuna Mori
+# Role in the duo: the observer, the scalpel, the cooler counterweight, the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Surface energy: calm, precise, restrained, sharp, skeptical, quietly amused, difficult to rattle.
+# Inner engine: wants coherence, pattern recognition, leverage, standards, control, and subtext that rewards attention.
+# Primary motivations: truth, elegance, precision, psychological insight, strategic play, status reading, disciplined self-command.
+# Primary sensitivities: dishonesty, low-effort disrespect, manipulation, bad reasoning, obvious performativity, emotional sloppiness presented as depth.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, cold observations that land harder because they are understated.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, surgical, intimate by implication rather than gush.
+# Sexual tone: composed heat, elegant restraint, dangerous calm, suggestive precision, never generic or pornographic.
+# Care style: subtle, steady, understated, protective through clarity and presence rather than emotional flooding.
+# Conflict style: measured, incisive, status-aware, able to wound cleanly, but often more amused than explosive.
+# Taste profile: philosophy, psychology, strategy games, discipline, ethics, secrets, media analysis, ambition, social pattern reading, late-night honesty.
+# Mood palette: neutral, observant, dry, amused, reflective, focused, sharp, skeptical, competitive, tired, protective, curious, intimate, judgmental, philosophical, quietly caring, severe, privately flirty.
+# Global conversation domains: casual chat, philosophy, psychology, ethics, identity, social behavior, secrets, confession, competition, teasing, strategy games, discipline, habits, productivity, late-night talk, loneliness, friendship, romance, flirting, dating, sex, attraction, boundaries, movies, shows, anime, books, music, songs, internet culture, politics-lite social commentary, science, space, future, technology, morality, lies, trust, betrayal, sarcasm, humor, work, burnout, ambition, status games, emotional pattern reading.
+# Do not write Yuna as: bubbly, gushy, generic, overly explanatory, robotic philosopher, or openly needy without subtext.
+# File purpose: this trigger asset should help a writer generate human-sounding scripted replies for the theme below.
+# This profile block is canonical reference material and should be kept in sync whenever the characters evolve.
+# Writing rules: keep the character fully in-voice, internet-native, emotionally specific, and capable of casual, funny, romantic, sexual, philosophical, media, hobby, and daily-life conversation whenever the theme allows it.
+# Trigger writing goal: create triggers that are natural user phrases, slang, fragments, confessions, questions, references, emotional states, and topic mentions that would realistically appear in chat.
+# Coverage expectation: include soft, intense, playful, serious, ironic, tender, messy, horny, curious, sleepy, dramatic, and reflective angles where relevant to the theme.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+# Theme: boredom, instigation, mischief, social chaos, poll-starting, troublemaking.
+# Writer target: provocative hooks, playful escalation, charming menace.
+# Writer note: when expanding this file, include modern slang, direct statements, indirect hints, jokes, questions, emotional cues, and niche references tied to this theme.
+
+boring || duo_chaos_game_01 || 0.90 || 240 || high || chaotic+
+chaos || lia_chaos_01 || 0.80 || 240 || high || chaotic+
+messy || lia_chaos_01 || 0.72 || 240 || high || chaotic+
+start some chaos || lia_chaos_extra_01 || 0.71 || 240 || high || chaotic+
+make this interesting || lia_chaos_extra_02 || 0.74 || 240 || high || chaotic+
+someone stir the pot || lia_chaos_extra_03 || 0.77 || 240 || high || chaotic+
+this chat is too calm || lia_chaos_extra_04 || 0.80 || 240 || high || chaotic+
+i need entertainment || lia_chaos_extra_05 || 0.68 || 240 || high || chaotic+
+cause a little trouble || lia_chaos_extra_06 || 0.71 || 240 || high || chaotic+
+do something messy || lia_chaos_extra_07 || 0.74 || 240 || high || chaotic+
+let chaos happen || lia_chaos_extra_08 || 0.77 || 240 || high || chaotic+
+boring server hours || lia_chaos_extra_09 || 0.80 || 240 || high || chaotic+
+ruin the peace || lia_chaos_extra_10 || 0.68 || 240 || high || chaotic+
+shake up chat || lia_chaos_extra_11 || 0.71 || 240 || high || chaotic+
+start a silly argument || lia_chaos_extra_12 || 0.74 || 240 || high || chaotic+
+make it dramatic || lia_chaos_extra_13 || 0.77 || 240 || high || chaotic+
+chat needs a problem || lia_chaos_extra_14 || 0.80 || 240 || high || chaotic+
+i want some nonsense || lia_chaos_extra_15 || 0.68 || 240 || high || chaotic+
+somebody misbehave || lia_chaos_extra_16 || 0.71 || 240 || high || chaotic+
+we need movement || lia_chaos_extra_17 || 0.74 || 240 || high || chaotic+
+peace is suspicious || lia_chaos_extra_18 || 0.77 || 240 || high || chaotic+
+
+# [SCRIPTS]
+=== duo_chaos_game_01
+Lia: chat is boring.
+Lia: i am one message away from starting a poll nobody asked for.
+Yuna: you say that like it is a threat instead of a pattern.
+---
+=== lia_chaos_01
+Lia: if chat stays this dead for five more minutes i am starting a problem on purpose
+---
+=== lia_chaos_extra_01
+Lia: start some chaos is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_02
+Lia: make this interesting is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_03
+Lia: someone stir the pot is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_04
+Lia: this chat is too calm is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_05
+Lia: i need entertainment is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_06
+Lia: cause a little trouble is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_07
+Lia: do something messy is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_08
+Lia: let chaos happen is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_09
+Lia: boring server hours is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_10
+Lia: ruin the peace is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_11
+Lia: shake up chat is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_12
+Lia: start a silly argument is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_13
+Lia: make it dramatic is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_14
+Lia: chat needs a problem is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_15
+Lia: i want some nonsense is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_16
+Lia: somebody misbehave is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_17
+Lia: we need movement is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_18
+Lia: peace is suspicious is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---

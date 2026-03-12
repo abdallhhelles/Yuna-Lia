@@ -5,6 +5,20 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
+def _load_dotenv(path: Path) -> None:
+    if not path.exists():
+        return
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
 @dataclass(frozen=True)
 class PersonaConfig:
     name: str
@@ -16,15 +30,20 @@ class PersonaConfig:
 class AppConfig:
     yuna: PersonaConfig
     lia: PersonaConfig
-    ollama_url: str
-    ollama_model: str
-    premium_trigger_file: Path
-    base_dir: Path
-    db_path: Path
+    enable_message_content: bool
+    debug_persona: bool
+    persona_test_mode: bool
+    content_dir: Path
+    data_dir: Path
+    ambient_min_seconds: int
+    ambient_max_seconds: int
 
 
 def load_config() -> AppConfig:
-    base_dir = Path(os.getenv("YUNA_LIA_BASE_DIR", Path(__file__).resolve().parent))
+    repo_root = Path(__file__).resolve().parents[2]
+    _load_dotenv(repo_root / ".env")
+    content_dir = Path(os.getenv("PERSONA_CONTENT_DIR", repo_root / "content" / "personas"))
+    data_dir = Path(os.getenv("PERSONA_DATA_DIR", repo_root / "data"))
 
     return AppConfig(
         yuna=PersonaConfig(
@@ -37,14 +56,11 @@ def load_config() -> AppConfig:
             token=os.getenv("DISCORD_TOKEN_LIA", ""),
             mention_aliases=("@lia", "lia"),
         ),
-        ollama_url=os.getenv("OLLAMA_URL", "http://localhost:11434"),
-        ollama_model=os.getenv("OLLAMA_MODEL", "llama3.2:3b"),
-        premium_trigger_file=Path(
-            os.getenv(
-                "PREMIUM_TRIGGER_FILE",
-                str(base_dir / "scenarios" / "premium" / "premium_triggers.txt"),
-            )
-        ),
-        base_dir=base_dir,
-        db_path=Path(os.getenv("BOT_DB_PATH", str(Path("data") / "bot_data.sqlite3"))),
+        enable_message_content=os.getenv("ENABLE_MESSAGE_CONTENT", "1").strip().lower() in {"1", "true", "yes", "on"},
+        debug_persona=os.getenv("DEBUG_PERSONA", "1").strip().lower() in {"1", "true", "yes", "on"},
+        persona_test_mode=os.getenv("PERSONA_TEST_MODE", "0").strip().lower() in {"1", "true", "yes", "on"},
+        content_dir=content_dir,
+        data_dir=data_dir,
+        ambient_min_seconds=max(30, int(os.getenv("AMBIENT_MIN_SECONDS", "120"))),
+        ambient_max_seconds=max(60, int(os.getenv("AMBIENT_MAX_SECONDS", "300"))),
     )

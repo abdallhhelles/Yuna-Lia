@@ -1,14 +1,9 @@
-"""Yuna & Lia dual-bot package."""
+"""Dual Discord persona simulator package."""
 
 __all__ = [
+    "commands",
+    "systems",
+    "personas",
     "config",
-    "lore",
-    "memory",
-    "mood",
-    "scenarios",
-    "typing_sim",
-    "logging_store",
-    "premium",
-    "llm",
     "runtime",
 ]

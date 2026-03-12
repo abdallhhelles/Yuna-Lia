@@ -1,7 +1,7 @@
 [project]
 name = "yuna-lia-bots"
 version = "0.1.0"
-description = "Dual Discord bot framework with mood, memory, scenarios, premium triggers, and typing simulation"
+description = "Dual Discord persona simulator with scripted triggers, memory, and human-like behavior"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -11,6 +11,7 @@ dependencies = [
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+addopts = "-p no:cacheprovider"
 
 [build-system]
 requires = ["setuptools>=68"]
