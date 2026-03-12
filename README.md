@@ -129,6 +129,16 @@ Optional:
 - `AMBIENT_MIN_SECONDS`
 - `AMBIENT_MAX_SECONDS`
 
+## Hosting (Pterodactyl / Python Panels)
+
+- Use Python **3.11+** (3.12 recommended).
+- Startup file: `main.py`.
+- Install packages from `requirements.txt` (for package fields, use `-r requirements.txt`).
+- Set required environment variables: `DISCORD_TOKEN_YUNA`, `DISCORD_TOKEN_LIA`.
+- Persist the `data/` folder so memory and stats survive restarts.
+
+See `docs/hosting.md` for full deployment steps.
+
 ## Runtime Data
 
 - `data/persona_state.json`
