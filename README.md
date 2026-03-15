@@ -167,6 +167,17 @@ Example:
 LEVEL_ROLE_REWARDS=5:Regular,10:Insomniac,20:Legend
 ```
 
+## Hosting (Pterodactyl / Python Panels)
+
+- Use Python **3.11+** (3.12 recommended).
+- Startup file: `main.py` (if the host clones into a subfolder, use `<folder>/main.py`).
+- Install packages from `requirements.txt` (for package fields, use `-r requirements.txt`).
+- `main.py` already adds `src/` to `PYTHONPATH` automatically for panel hosts.
+- Set required environment variables: `DISCORD_TOKEN_YUNA`, `DISCORD_TOKEN_LIA`.
+- Persist the `data/` folder so memory and stats survive restarts.
+
+See `docs/hosting.md` for full deployment steps.
+
 ## Runtime Data
 
 - `data/persona_state.json`
