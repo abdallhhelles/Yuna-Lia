@@ -1,0 +1,309 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: sarcasm
+# Theme note: deadpan disbelief, irony, detached mockery, and clean little skewers.
+# Writer target: Short and sharp; land the observation, then leave.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=52, lia=0, yuna=52, shared=0
+# Trigger inventory: obviously, sure, totally, great plan obviously, sure that will end well, nothing could go wrong, brilliant decision making, deeply normal behavior, i'm sure that's fine, excellent judgment there, very believable, totally stable choice, what a surprise, surely no consequences, flawless little plan, remarkably sensible, that feels safe, incredible reasoning, who could have guessed, beautiful disaster energy, certainly a choice, love that for us, terrible plan, need a take on obvious disaster, why is remarkable choice like this, unpopular opinion about deeply normal behavior, i have thoughts about great idea, talk about certainly wise, we need to discuss impeccable timing, superb logic again, terrible plan discourse, be honest about obvious disaster, worst part of remarkable choice, best part of deeply normal behavior, i need help with great idea, my problem is certainly wise, tell me something real about impeccable timing, anyone else dealing with superb logic, terrible plan tonight, need a take on obvious disaster tonight, why is remarkable choice like this tonight, unpopular opinion about deeply normal behavior tonight, i have thoughts about great idea tonight, talk about certainly wise tonight, we need to discuss impeccable timing tonight, superb logic again tonight, terrible plan discourse tonight, be honest about obvious disaster tonight, worst part of remarkable choice tonight, best part of deeply normal behavior tonight, i need help with great idea tonight, my problem is certainly wise tonight
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+obviously || yuna_sarcasm_01 || 0.60 || 360 || low || dry+
+sure || yuna_sarcasm_01 || 0.35 || 360 || low || dry+
+totally || yuna_sarcasm_01 || 0.42 || 360 || low || dry+
+great plan obviously || yuna_sarcasm_extra_01 || 0.53 || 360 || low || dry+
+sure that will end well || yuna_sarcasm_extra_02 || 0.56 || 360 || low || dry+
+nothing could go wrong || yuna_sarcasm_extra_03 || 0.59 || 360 || low || dry+
+brilliant decision making || yuna_sarcasm_extra_04 || 0.62 || 360 || low || dry+
+deeply normal behavior || yuna_sarcasm_extra_05 || 0.50 || 360 || low || dry+
+i'm sure that's fine || yuna_sarcasm_extra_06 || 0.53 || 360 || low || dry+
+excellent judgment there || yuna_sarcasm_extra_07 || 0.56 || 360 || low || dry+
+very believable || yuna_sarcasm_extra_08 || 0.59 || 360 || low || dry+
+totally stable choice || yuna_sarcasm_extra_09 || 0.62 || 360 || low || dry+
+what a surprise || yuna_sarcasm_extra_10 || 0.50 || 360 || low || dry+
+surely no consequences || yuna_sarcasm_extra_11 || 0.53 || 360 || low || dry+
+flawless little plan || yuna_sarcasm_extra_12 || 0.56 || 360 || low || dry+
+remarkably sensible || yuna_sarcasm_extra_13 || 0.59 || 360 || low || dry+
+that feels safe || yuna_sarcasm_extra_14 || 0.62 || 360 || low || dry+
+incredible reasoning || yuna_sarcasm_extra_15 || 0.50 || 360 || low || dry+
+who could have guessed || yuna_sarcasm_extra_16 || 0.53 || 360 || low || dry+
+beautiful disaster energy || yuna_sarcasm_extra_17 || 0.56 || 360 || low || dry+
+certainly a choice || yuna_sarcasm_extra_18 || 0.59 || 360 || low || dry+
+love that for us || yuna_sarcasm_extra_19 || 0.62 || 360 || low || dry+
+terrible plan || yuna_sarcasm_boost_01 || 0.55 || 360 || medium || reflective+
+need a take on obvious disaster || yuna_sarcasm_boost_02 || 0.58 || 360 || medium || reflective+
+why is remarkable choice like this || yuna_sarcasm_boost_03 || 0.61 || 360 || medium || reflective+
+unpopular opinion about deeply normal behavior || yuna_sarcasm_boost_04 || 0.64 || 360 || medium || reflective+
+i have thoughts about great idea || yuna_sarcasm_boost_05 || 0.67 || 360 || medium || reflective+
+talk about certainly wise || yuna_sarcasm_boost_06 || 0.52 || 360 || medium || reflective+
+we need to discuss impeccable timing || yuna_sarcasm_boost_07 || 0.55 || 360 || medium || reflective+
+superb logic again || yuna_sarcasm_boost_08 || 0.58 || 360 || medium || reflective+
+terrible plan discourse || yuna_sarcasm_boost_09 || 0.61 || 360 || medium || reflective+
+be honest about obvious disaster || yuna_sarcasm_boost_10 || 0.64 || 360 || medium || reflective+
+worst part of remarkable choice || yuna_sarcasm_boost_11 || 0.67 || 360 || medium || reflective+
+best part of deeply normal behavior || yuna_sarcasm_boost_12 || 0.52 || 360 || medium || reflective+
+i need help with great idea || yuna_sarcasm_boost_13 || 0.55 || 360 || medium || reflective+
+my problem is certainly wise || yuna_sarcasm_boost_14 || 0.58 || 360 || medium || reflective+
+tell me something real about impeccable timing || yuna_sarcasm_boost_15 || 0.61 || 360 || medium || reflective+
+anyone else dealing with superb logic || yuna_sarcasm_boost_16 || 0.64 || 360 || medium || reflective+
+terrible plan tonight || yuna_sarcasm_boost_17 || 0.67 || 360 || medium || reflective+
+need a take on obvious disaster tonight || yuna_sarcasm_boost_18 || 0.52 || 360 || medium || reflective+
+why is remarkable choice like this tonight || yuna_sarcasm_boost_19 || 0.55 || 360 || medium || reflective+
+unpopular opinion about deeply normal behavior tonight || yuna_sarcasm_boost_20 || 0.58 || 360 || medium || reflective+
+i have thoughts about great idea tonight || yuna_sarcasm_boost_21 || 0.61 || 360 || medium || reflective+
+talk about certainly wise tonight || yuna_sarcasm_boost_22 || 0.64 || 360 || medium || reflective+
+we need to discuss impeccable timing tonight || yuna_sarcasm_boost_23 || 0.67 || 360 || medium || reflective+
+superb logic again tonight || yuna_sarcasm_boost_24 || 0.52 || 360 || medium || reflective+
+terrible plan discourse tonight || yuna_sarcasm_boost_25 || 0.55 || 360 || medium || reflective+
+be honest about obvious disaster tonight || yuna_sarcasm_boost_26 || 0.58 || 360 || medium || reflective+
+worst part of remarkable choice tonight || yuna_sarcasm_boost_27 || 0.61 || 360 || medium || reflective+
+best part of deeply normal behavior tonight || yuna_sarcasm_boost_28 || 0.64 || 360 || medium || reflective+
+i need help with great idea tonight || yuna_sarcasm_boost_29 || 0.67 || 360 || medium || reflective+
+my problem is certainly wise tonight || yuna_sarcasm_boost_30 || 0.52 || 360 || medium || reflective+
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# [YUNA SCRIPTS]
+=== yuna_sarcasm_01
+Yuna: yes. that sounds extremely reliable and not disastrous at all
+---
+=== yuna_sarcasm_extra_01
+Yuna: great plan obviously is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_02
+Yuna: sure that will end well is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_03
+Yuna: nothing could go wrong is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_04
+Yuna: brilliant decision making is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_05
+Yuna: deeply normal behavior is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_06
+Yuna: i'm sure that's fine is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_07
+Yuna: excellent judgment there is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_08
+Yuna: very believable is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_09
+Yuna: totally stable choice is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_10
+Yuna: what a surprise is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_11
+Yuna: surely no consequences is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_12
+Yuna: flawless little plan is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_13
+Yuna: remarkably sensible is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_14
+Yuna: that feels safe is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_15
+Yuna: incredible reasoning is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_16
+Yuna: who could have guessed is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_17
+Yuna: beautiful disaster energy is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_18
+Yuna: certainly a choice is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_extra_19
+Yuna: love that for us is the sort of deadpan sarcasm and dry commentary topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_sarcasm_boost_01
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about terrible plan, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_02
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about obvious disaster, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_03
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about remarkable choice, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_04
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about deeply normal behavior, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_05
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about great idea, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_06
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about certainly wise, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_07
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about impeccable timing, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_08
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about superb logic, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_09
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about terrible plan, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_10
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about obvious disaster, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_11
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about remarkable choice, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_12
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about deeply normal behavior, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_13
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about great idea, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_14
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about certainly wise, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_15
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about impeccable timing, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_16
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about superb logic, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_17
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about terrible plan, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_18
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about obvious disaster, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_19
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about remarkable choice, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_20
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about deeply normal behavior, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_21
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about great idea, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_22
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about certainly wise, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_23
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about impeccable timing, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_24
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about superb logic, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_25
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about terrible plan, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_26
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about obvious disaster, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_27
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about remarkable choice, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_28
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about deeply normal behavior, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_29
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about great idea, the room would become more interesting very quickly.
+---
+=== yuna_sarcasm_boost_30
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about certainly wise, the room would become more interesting very quickly.
+---

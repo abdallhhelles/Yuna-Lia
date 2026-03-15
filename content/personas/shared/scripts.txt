@@ -1,2 +1,0 @@
-# Shared scripts were migrated into the individual shared theme files.
-# Each shared theme file now includes its trigger lines and exact duo script blocks.

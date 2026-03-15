@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import asyncio
 
-from .runtime import run_bots
+from .app_runtime import run_bots
 
 
 def run() -> None:

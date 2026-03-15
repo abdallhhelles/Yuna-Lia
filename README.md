@@ -16,14 +16,15 @@ Each theme file is now self-contained for writing workflows:
 
 - writer brief comments
 - detailed character profile reference
-- trigger lines
+- trigger counts and trigger inventory
+- Lia, Yuna, and shared trigger sections
 - exact script blocks
 
 ## Core System
 
 - No LLM calls
 - External trigger files
-- Separate script files
+- Scripts embedded in the same theme files as their triggers
 - Lightweight per-user memory
 - Persona mood and attention state
 - Hot reload of content files
@@ -34,44 +35,65 @@ Each theme file is now self-contained for writing workflows:
 
 - `/about`
 - `/status`
+- `/stats`
+- `/roompulse`
+- `/level`
+- `/leaderboard`
 - `/memory`
+- `/birthday`
+- `/answer`
+- `/relationship`
+- `/achievements`
+- `/social_event`
 - `/reload_personas`
 
 ## Content Layout
 
 ```text
 content/personas/
-  lia/
-    casual.txt
-    gossip.txt
-    flirting.txt
-    drama.txt
-    gaming.txt
-    food.txt
-    existential.txt
-    sleepy.txt
+  themes/
     annoyed.txt
-    chaos.txt
-    yuna_conflict.txt
-    shared_topics.txt
-  yuna/
-    casual.txt
-    philosophy.txt
-    sarcasm.txt
-    gaming.txt
-    discipline.txt
-    teasing.txt
-    late_night.txt
-    judgment.txt
-    secrets.txt
-    competition.txt
-    lia_conflict.txt
-    shared_topics.txt
-  shared/
     argument_starters.txt
-    conversation_starters.txt
+    birthdays.txt
+    casual.txt
+    chaos.txt
+    common_chat.txt
+    competition.txt
+    daily_questions.txt
+    deep_longform.txt
+    discipline.txt
+    disrespect.txt
+    drama.txt
     duo_events.txt
+    existential.txt
+    fitness_health.txt
+    flirting.txt
+    food.txt
+    fun.txt
+    gaming.txt
+    gossip.txt
+    hobbies.txt
+    judgment.txt
+    late_night.txt
+    lia_conflict.txt
+    life_topics.txt
+    mature.txt
+    movies.txt
+    music.txt
+    philosophy.txt
+    questions_and_jokes.txt
     rare_events.txt
+    relationships.txt
+    conversation_starters.txt
+    sarcasm.txt
+    secrets.txt
+    shared_topics.txt
+    sleepy.txt
+    social_events.txt
+    teasing.txt
+    welcomes.txt
+    work_school.txt
+    yuna_conflict.txt
 ```
 
 Theme file format:
@@ -86,18 +108,28 @@ Yuna: message
 ---
 ```
 
-`scripts.txt` files are retained only as migration notes. Runtime scripts now live inside the theme files that reference them.
+All runtime scripts now live inside the theme files that reference them.
 
-To refresh the canonical profile blocks in every theme file after character changes:
+To refresh the theme library metadata and rewrite the per-file counts and trigger inventories:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts\sync_writer_profiles.ps1
+.\.venv\Scripts\python.exe scripts\reorganize_content_library.py
 ```
+
+Writer guide:
+
+- [docs/content_navigation.md](/H:/Coding/Yuna-Lia/docs/content_navigation.md)
 
 ## Run
 
 ```cmd
 run_bot.cmd
+```
+
+For Linux hosting panels or containers, run:
+
+```bash
+python main.py
 ```
 
 Default `run_bot.cmd` behavior:
@@ -126,13 +158,34 @@ Optional:
 - `PERSONA_TEST_MODE=1`
 - `PERSONA_CONTENT_DIR`
 - `PERSONA_DATA_DIR`
-- `AMBIENT_MIN_SECONDS`
-- `AMBIENT_MAX_SECONDS`
+- `LOG_LEVEL`
+- `LEVEL_ROLE_REWARDS`
+
+Example:
+
+```text
+LEVEL_ROLE_REWARDS=5:Regular,10:Insomniac,20:Legend
+```
 
 ## Runtime Data
 
 - `data/persona_state.json`
 - `data/script_fire_log.jsonl`
+
+## Extra Systems
+
+- Slow-burn server XP and levels from chatting
+- Optional role rewards on specific levels
+- 100+ scripted member welcomes across soft, dry, teasing, chaotic, and flirty tones
+- Automatic daily question posting with anonymous `/answer` submissions that bots echo back to the server
+
+## Docs
+
+- [Architecture Overview](/H:/Coding/Yuna-Lia/docs/architecture_overview.md)
+- [Deployment Guide](/H:/Coding/Yuna-Lia/docs/deployment_guide.md)
+- [Hosting Guide](/H:/Coding/Yuna-Lia/docs/hosting.md)
+- [Module Guide](/H:/Coding/Yuna-Lia/docs/module_guide.md)
+- [Roadmap](/H:/Coding/Yuna-Lia/docs/roadmap.md)
 
 ## Persona Direction
 

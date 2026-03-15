@@ -45,6 +45,31 @@ class UserMemory:
     inside_jokes: list[str] = field(default_factory=list)
     conflicts: list[str] = field(default_factory=list)
     favorite_topics: list[str] = field(default_factory=list)
+    lia_trust: int = 0
+    lia_rivalry: int = 0
+    lia_flirt_tension: int = 0
+    yuna_trust: int = 0
+    yuna_rivalry: int = 0
+    yuna_flirt_tension: int = 0
+    messages_sent: int = 0
+    late_night_messages: int = 0
+    dramatic_messages: int = 0
+    food_messages: int = 0
+    direct_lia_mentions: int = 0
+    direct_yuna_mentions: int = 0
+
+
+@dataclass
+class GuildMemberProgress:
+    user_id: str
+    guild_id: int
+    name: str
+    xp: int = 0
+    level: int = 0
+    eligible_messages: int = 0
+    total_messages: int = 0
+    last_xp_at: str = ""
+    last_level_up_at: str = ""
 
 
 @dataclass
@@ -64,6 +89,10 @@ class ChannelPresence:
     channel_id: int
     guild_id: int
     last_user_message_at: str = field(default_factory=utc_now_iso)
+    last_bot_message_at: str = ""
+    user_message_count: int = 0
+    bot_message_count: int = 0
+    last_script_id: str = ""
     recent_topics: list[str] = field(default_factory=list)
 
 

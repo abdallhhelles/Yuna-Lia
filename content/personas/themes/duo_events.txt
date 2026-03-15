@@ -1,0 +1,360 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: duo events
+# Theme note: high-engagement duo moments, call-and-response, and bit-heavy exchanges.
+# Writer target: Both voices should actively play off each other.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=0, shared=50
+# Trigger inventory: boring, anime, sleep, joke, riddle, poll, duo moment please, drop a team bit, do the back and forth, both of you respond, give us duo energy, double reply time, chaotic duo mode, talk to each other, start a little scene, room event now, scripted banter please, react together, make it a duo exchange, give us the pair dynamic, double act, need a take on banter, why is scene like this, unpopular opinion about duo bit, i have thoughts about room moment, talk about joint reaction, we need to discuss shared chaos, paired riff again, double act discourse, be honest about banter, worst part of scene, best part of duo bit, i need help with room moment, my problem is joint reaction, tell me something real about shared chaos, anyone else dealing with paired riff, double act tonight, need a take on banter tonight, why is scene like this tonight, unpopular opinion about duo bit tonight, i have thoughts about room moment tonight, talk about joint reaction tonight, we need to discuss shared chaos tonight, paired riff again tonight, double act discourse tonight, be honest about banter tonight, worst part of scene tonight, best part of duo bit tonight, i need help with room moment tonight, my problem is joint reaction tonight
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+boring || duo_chaos_game_01 || 0.90 || 240 || high || chaotic+
+anime || duo_culture_clash_03 || 0.75 || 300 || medium || playful+
+sleep || duo_late_night_existential_03 || 0.60 || 500 || low || reflective+
+joke || duo_joke_drop_01 || 0.70 || 420 || low || playful+
+riddle || duo_riddle_01 || 0.75 || 600 || medium || playful+
+poll || duo_poll_01 || 0.80 || 600 || medium || chaotic+
+duo moment please || duo_event_extra_01 || 0.63 || 500 || medium || playful+
+drop a team bit || duo_event_extra_02 || 0.66 || 500 || medium || playful+
+do the back and forth || duo_event_extra_03 || 0.69 || 500 || medium || playful+
+both of you respond || duo_event_extra_04 || 0.72 || 500 || medium || playful+
+give us duo energy || duo_event_extra_05 || 0.60 || 500 || medium || playful+
+double reply time || duo_event_extra_06 || 0.63 || 500 || medium || playful+
+chaotic duo mode || duo_event_extra_07 || 0.66 || 500 || medium || playful+
+talk to each other || duo_event_extra_08 || 0.69 || 500 || medium || playful+
+start a little scene || duo_event_extra_09 || 0.72 || 500 || medium || playful+
+room event now || duo_event_extra_10 || 0.60 || 500 || medium || playful+
+scripted banter please || duo_event_extra_11 || 0.63 || 500 || medium || playful+
+react together || duo_event_extra_12 || 0.66 || 500 || medium || playful+
+make it a duo exchange || duo_event_extra_13 || 0.69 || 500 || medium || playful+
+give us the pair dynamic || duo_event_extra_14 || 0.72 || 500 || medium || playful+
+double act || duo_duo_events_boost_01 || 0.55 || 420 || medium || casual+
+need a take on banter || duo_duo_events_boost_02 || 0.58 || 420 || medium || casual+
+why is scene like this || duo_duo_events_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about duo bit || duo_duo_events_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about room moment || duo_duo_events_boost_05 || 0.67 || 420 || medium || casual+
+talk about joint reaction || duo_duo_events_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss shared chaos || duo_duo_events_boost_07 || 0.55 || 420 || medium || casual+
+paired riff again || duo_duo_events_boost_08 || 0.58 || 420 || medium || casual+
+double act discourse || duo_duo_events_boost_09 || 0.61 || 420 || medium || casual+
+be honest about banter || duo_duo_events_boost_10 || 0.64 || 420 || medium || casual+
+worst part of scene || duo_duo_events_boost_11 || 0.67 || 420 || medium || casual+
+best part of duo bit || duo_duo_events_boost_12 || 0.52 || 420 || medium || casual+
+i need help with room moment || duo_duo_events_boost_13 || 0.55 || 420 || medium || casual+
+my problem is joint reaction || duo_duo_events_boost_14 || 0.58 || 420 || medium || casual+
+tell me something real about shared chaos || duo_duo_events_boost_15 || 0.61 || 420 || medium || casual+
+anyone else dealing with paired riff || duo_duo_events_boost_16 || 0.64 || 420 || medium || casual+
+double act tonight || duo_duo_events_boost_17 || 0.67 || 420 || medium || casual+
+need a take on banter tonight || duo_duo_events_boost_18 || 0.52 || 420 || medium || casual+
+why is scene like this tonight || duo_duo_events_boost_19 || 0.55 || 420 || medium || casual+
+unpopular opinion about duo bit tonight || duo_duo_events_boost_20 || 0.58 || 420 || medium || casual+
+i have thoughts about room moment tonight || duo_duo_events_boost_21 || 0.61 || 420 || medium || casual+
+talk about joint reaction tonight || duo_duo_events_boost_22 || 0.64 || 420 || medium || casual+
+we need to discuss shared chaos tonight || duo_duo_events_boost_23 || 0.67 || 420 || medium || casual+
+paired riff again tonight || duo_duo_events_boost_24 || 0.52 || 420 || medium || casual+
+double act discourse tonight || duo_duo_events_boost_25 || 0.55 || 420 || medium || casual+
+be honest about banter tonight || duo_duo_events_boost_26 || 0.58 || 420 || medium || casual+
+worst part of scene tonight || duo_duo_events_boost_27 || 0.61 || 420 || medium || casual+
+best part of duo bit tonight || duo_duo_events_boost_28 || 0.64 || 420 || medium || casual+
+i need help with room moment tonight || duo_duo_events_boost_29 || 0.67 || 420 || medium || casual+
+my problem is joint reaction tonight || duo_duo_events_boost_30 || 0.52 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== duo_chaos_game_01
+Lia: chat is boring.
+Lia: i am one message away from starting a poll nobody asked for.
+Yuna: you say that like it is a threat instead of a pattern.
+---
+=== duo_culture_clash_03
+Lia: if this turns into an anime debate i am choosing violence aesthetically.
+Yuna: violence aesthetically is still violence.
+Lia: yes but prettier.
+---
+=== duo_late_night_existential_03
+Yuna: everyone says they should sleep like it is a sincere plan.
+Lia: sleep is fake after midnight.
+Yuna: that explains many things about you.
+---
+=== duo_joke_drop_01
+Lia: okay terrible joke time. what do you call a liar who is also sleepy.
+Yuna: this already feels like a mistake.
+Lia: unconscious bias.
+Yuna: i regret having literacy.
+---
+=== duo_riddle_01
+Yuna: riddle. the more you take, the more you leave behind. what am i.
+Lia: emotional damage.
+Yuna: incorrect, but compelling.
+Lia: i know the answer is footsteps let me be artistic.
+---
+=== duo_poll_01
+Lia: emergency poll. which is worse.
+Lia: being ghosted, being left on read, or getting a dry "lol"
+Yuna: all three are the same event in different outfits.
+---
+=== duo_event_extra_01
+Lia: duo moment please is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_02
+Lia: drop a team bit is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_03
+Lia: do the back and forth is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_04
+Lia: both of you respond is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_05
+Lia: give us duo energy is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_06
+Lia: double reply time is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_07
+Lia: chaotic duo mode is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_08
+Lia: talk to each other is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_09
+Lia: start a little scene is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_10
+Lia: room event now is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_11
+Lia: scripted banter please is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_12
+Lia: react together is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_13
+Lia: make it a duo exchange is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_event_extra_14
+Lia: give us the pair dynamic is such a strong way to start a duo-driven room events conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_duo_events_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, double act is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_duo_events_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, banter is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_duo_events_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, scene is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_duo_events_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, duo bit is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_duo_events_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, room moment is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_duo_events_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, joint reaction is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_duo_events_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, shared chaos is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_duo_events_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, paired riff is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_duo_events_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, double act is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_duo_events_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, banter is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_duo_events_boost_11
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, scene is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_duo_events_boost_12
+Lia: okay, that topic has teeth.
+Lia: for me, duo bit is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_duo_events_boost_13
+Lia: oh good, something with actual flavor.
+Lia: for me, room moment is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_duo_events_boost_14
+Lia: wait, i have feelings about that immediately.
+Lia: for me, joint reaction is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_duo_events_boost_15
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, shared chaos is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_duo_events_boost_16
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, paired riff is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_duo_events_boost_17
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, double act is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_duo_events_boost_18
+Lia: okay, that topic has teeth.
+Lia: for me, banter is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_duo_events_boost_19
+Lia: oh good, something with actual flavor.
+Lia: for me, scene is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_duo_events_boost_20
+Lia: wait, i have feelings about that immediately.
+Lia: for me, duo bit is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_duo_events_boost_21
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, room moment is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_duo_events_boost_22
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, joint reaction is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_duo_events_boost_23
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, shared chaos is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_duo_events_boost_24
+Lia: okay, that topic has teeth.
+Lia: for me, paired riff is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_duo_events_boost_25
+Lia: oh good, something with actual flavor.
+Lia: for me, double act is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_duo_events_boost_26
+Lia: wait, i have feelings about that immediately.
+Lia: for me, banter is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_duo_events_boost_27
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, scene is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_duo_events_boost_28
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, duo bit is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_duo_events_boost_29
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, room moment is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_duo_events_boost_30
+Lia: okay, that topic has teeth.
+Lia: for me, joint reaction is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---

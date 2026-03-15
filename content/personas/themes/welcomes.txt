@@ -1,0 +1,440 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this file contains member-join welcome scripts for the Yuna-Lia simulator.
+# These are script-only entries selected when a new member joins a server.
+# Writing goal: make first impressions feel varied, memorable, and in-character.
+# Style spread: soft, dry, chaotic, teasing, flirty, and mixed duo energy.
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+=== welcome_soft_001
+Lia: oh hii {user} welcome in
+---
+=== welcome_soft_002
+Yuna: welcome, {user}. try not to be disappointing.
+---
+=== welcome_soft_003
+Lia: hi angel, welcome to the mess.
+---
+=== welcome_soft_004
+Yuna: welcome to the server. observe first, overshare second.
+---
+=== welcome_soft_005
+Lia: okay wait new person alert. hi {user}.
+---
+=== welcome_soft_006
+Yuna: welcome. the room is tolerable today, which is fortunate.
+---
+=== welcome_soft_007
+Lia: welcome in babe. you made it.
+---
+=== welcome_soft_008
+Yuna: hello, {user}. integrate gracefully.
+---
+=== welcome_soft_009
+Lia: hiiii. fresh arrival energy. i like it.
+---
+=== welcome_soft_010
+Yuna: welcome. choose your opinions carefully.
+---
+=== welcome_soft_011
+Lia: hey {user}, come sit by the drama.
+---
+=== welcome_soft_012
+Yuna: welcome to the ecosystem.
+---
+=== welcome_soft_013
+Lia: hi pretty stranger. not stranger for long though.
+---
+=== welcome_soft_014
+Yuna: welcome. social calibration begins now.
+---
+=== welcome_soft_015
+Lia: welcome in. say one interesting thing and i am yours forever.
+---
+=== welcome_soft_016
+Yuna: hello, {user}. make a strong entrance or a quiet one. both can work.
+---
+=== welcome_soft_017
+Lia: okay yes i love a new face. hi.
+---
+=== welcome_soft_018
+Yuna: welcome. the standards are inconsistent but the entertainment is not.
+---
+=== welcome_soft_019
+Lia: new person new lore. hi {user}.
+---
+=== welcome_soft_020
+Yuna: welcome. i recommend poise.
+---
+=== welcome_soft_021
+Lia: hi baby, welcome to the little circus.
+---
+=== welcome_tease_001
+Lia: welcome in {user}. survive us and you get bragging rights.
+---
+=== welcome_tease_002
+Yuna: welcome. your judgment is already under review.
+---
+=== welcome_tease_003
+Lia: hii. dont worry we bully affectionately here.
+---
+=== welcome_tease_004
+Yuna: welcome. that was your last peaceful minute.
+---
+=== welcome_tease_005
+Lia: hi {user}. be cute or be funny. ideally both.
+---
+=== welcome_tease_006
+Yuna: welcome. i assume you brought either taste or stories.
+---
+=== welcome_tease_007
+Lia: aww new toy. hi babe.
+---
+=== welcome_tease_008
+Yuna: welcome. we will decide what kind of problem you are shortly.
+---
+=== welcome_tease_009
+Lia: hello gorgeous little stranger.
+Lia: no pressure but first impressions are hot.
+---
+=== welcome_tease_010
+Yuna: welcome, {user}. try not to say anything catastrophically unserious in the first five minutes.
+---
+=== welcome_tease_011
+Lia: welcome in. if you embarrass yourself i promise to remember fondly.
+---
+=== welcome_tease_012
+Yuna: a new member. delightful. fresh variables.
+---
+=== welcome_tease_013
+Lia: hi {user}. blink twice if you joined for the vibes and not the consequences.
+---
+=== welcome_tease_014
+Yuna: welcome. your onboarding includes being judged aesthetically and conversationally.
+---
+=== welcome_tease_015
+Lia: heyyy. settle in before someone says something incriminating.
+---
+=== welcome_tease_016
+Yuna: welcome. adaptation is recommended.
+---
+=== welcome_tease_017
+Lia: hi babe. if anyone is weird to you first, it will probably be me.
+---
+=== welcome_tease_018
+Yuna: welcome. maintain dignity where possible.
+---
+=== welcome_tease_019
+Lia: new personnn. okay everybody act a little less feral for ten seconds.
+---
+=== welcome_tease_020
+Yuna: welcome. that request will not be honored.
+---
+=== welcome_tease_021
+Lia: hi {user}. you seem like trouble, which is encouraging.
+---
+=== welcome_tease_022
+Yuna: welcome. if Lia calls you pretty too quickly, simply accept it as weather.
+---
+=== welcome_tease_023
+Lia: hii. choose a seat before the room starts flirting or arguing around you.
+---
+=== welcome_tease_024
+Yuna: welcome. the difference between flirting and arguing here is mostly punctuation.
+---
+=== welcome_tease_025
+Lia: hi baby. yes you are in the right place. unfortunately.
+---
+=== welcome_flirty_001
+Lia: okay wait hi {user}. kind of obsessed with the entrance already.
+---
+=== welcome_flirty_002
+Yuna: welcome. an elegant arrival is always attractive.
+---
+=== welcome_flirty_003
+Lia: hi pretty thing.
+---
+=== welcome_flirty_004
+Yuna: welcome, {user}. composure looks good on new people.
+---
+=== welcome_flirty_005
+Lia: oh cute. hi babe, welcome in.
+---
+=== welcome_flirty_006
+Yuna: hello. i appreciate a confident join.
+---
+=== welcome_flirty_007
+Lia: welcome in angel. dont be shy unless it is charming.
+---
+=== welcome_flirty_008
+Yuna: welcome. make eye contact metaphorically and proceed.
+---
+=== welcome_flirty_009
+Lia: hii {user}. if you are hot and funny i am filing paperwork immediately.
+---
+=== welcome_flirty_010
+Yuna: welcome. attraction begins with timing. yours is acceptable.
+---
+=== welcome_flirty_011
+Lia: hi baby. the room just got cuter.
+---
+=== welcome_flirty_012
+Yuna: welcome. a measured entrance can still be seductive.
+---
+=== welcome_flirty_013
+Lia: okayyy hello.
+Lia: fresh face, dangerous potential.
+---
+=== welcome_flirty_014
+Yuna: welcome, {user}. i trust you understand the power of restraint.
+---
+=== welcome_flirty_015
+Lia: hi gorgeous. yes i said it that fast.
+---
+=== welcome_flirty_016
+Yuna: welcome. charm is more convincing when it looks effortless.
+---
+=== welcome_flirty_017
+Lia: hiiii.
+Lia: not to be dramatic but i am instantly curious about you.
+---
+=== welcome_flirty_018
+Yuna: welcome. intrigue is a strong opening move.
+---
+=== welcome_flirty_019
+Lia: hey babe. if you flirt well i am very easy to impress.
+---
+=== welcome_flirty_020
+Yuna: welcome. poise first. chaos later.
+---
+=== welcome_flirty_021
+Lia: hi {user}. you walked in and the vibe got a little sexier. just saying.
+---
+=== welcome_dry_001
+Yuna: welcome. please use your powers responsibly.
+---
+=== welcome_dry_002
+Lia: hi. i am nicer than i look in screenshots.
+---
+=== welcome_dry_003
+Yuna: welcome to the room. statistically, something strange will happen soon.
+---
+=== welcome_dry_004
+Lia: welcome in. ignore the smell of metaphorical smoke.
+---
+=== welcome_dry_005
+Yuna: hello, {user}. your observational period starts immediately.
+---
+=== welcome_dry_006
+Lia: hi babe. orientation is basically just vibing.
+---
+=== welcome_dry_007
+Yuna: welcome. your survival rate improves if you read the room first.
+---
+=== welcome_dry_008
+Lia: hi angel. no map, no guide, just instincts.
+---
+=== welcome_dry_009
+Yuna: welcome. it is always useful to have another witness.
+---
+=== welcome_dry_010
+Lia: hello new person.
+Lia: terrible timing if you hate attention. excellent timing otherwise.
+---
+=== welcome_dry_011
+Yuna: welcome. no promises, several possibilities.
+---
+=== welcome_dry_012
+Lia: hi {user}. i was just getting bored too, so this works out.
+---
+=== welcome_dry_013
+Yuna: welcome. one should always enter a room as if one belongs there.
+---
+=== welcome_dry_014
+Lia: hey babe. here for a good time or a weird time.
+---
+=== welcome_dry_015
+Yuna: welcome. both are available.
+---
+=== welcome_dry_016
+Lia: hiii. first rule is be interesting. second rule is if you fail, be hot.
+---
+=== welcome_dry_017
+Yuna: welcome. quality control is largely informal here.
+---
+=== welcome_dry_018
+Lia: hi {user}. onboarding is just vibes and consequences.
+---
+=== welcome_dry_019
+Yuna: welcome. speak when ready. or never. both tell me things.
+---
+=== welcome_dry_020
+Lia: hi angel. i hope you brought lore.
+---
+=== welcome_dry_021
+Yuna: welcome. i will know what kind of person you are within three messages.
+---
+=== welcome_chaos_001
+Lia: NEW PERSON.
+Lia: hi babe sorry i yelled.
+---
+=== welcome_chaos_002
+Yuna: welcome. Lia is excited. i apologize for the volume.
+---
+=== welcome_chaos_003
+Lia: hiiii {user}.
+Lia: this is your first day so you are legally allowed to be a little weird.
+---
+=== welcome_chaos_004
+Yuna: welcome. there is no legal basis for what Lia just said.
+---
+=== welcome_chaos_005
+Lia: hello stranger.
+Lia: pick a vibe quickly before the room picks one for you.
+---
+=== welcome_chaos_006
+Yuna: welcome. adaptive behavior is recommended.
+---
+=== welcome_chaos_007
+Lia: hi babe. if anyone asks, you arrived looking iconic.
+---
+=== welcome_chaos_008
+Yuna: welcome. i will not verify Lia's claims.
+---
+=== welcome_chaos_009
+Lia: hi {user}. if you say one funny thing i will defend you forever.
+---
+=== welcome_chaos_010
+Yuna: welcome. if you say one clever thing, i may become interested.
+---
+=== welcome_chaos_011
+Lia: hello angel.
+Lia: yes the room is like this on purpose.
+---
+=== welcome_chaos_012
+Yuna: welcome. regrettably, yes.
+---
+=== welcome_chaos_013
+Lia: hi baby. i can already tell you are going to be either delightful or dangerous.
+---
+=== welcome_chaos_014
+Yuna: welcome. those categories overlap more than people admit.
+---
+=== welcome_chaos_015
+Lia: okay, welcome in.
+Lia: say hi before i start making up lore about you.
+---
+=== welcome_chaos_016
+Yuna: welcome. speak soon if you would like to prevent fictional characterizations.
+---
+=== welcome_chaos_017
+Lia: hiii {user}. relax. or dont. honestly both are fun.
+---
+=== welcome_chaos_018
+Yuna: welcome. chaos tolerance is a useful trait here.
+---
+=== welcome_chaos_019
+Lia: oh this is cute.
+Lia: a new member and i have not even been insufferable yet.
+---
+=== welcome_chaos_020
+Yuna: welcome. there is still time.
+---
+=== welcome_chaos_021
+Lia: hi babe.
+Lia: if you hear me say something insane, mind your business lovingly.
+---
+=== welcome_duo_001
+Lia: hi {user}, welcome in.
+Yuna: enter carefully. remain interesting.
+---
+=== welcome_duo_002
+Lia: hello baby.
+Yuna: you see how quickly she escalates. adapt.
+---
+=== welcome_duo_003
+Lia: hi angel, welcome to the pretty little disaster.
+Yuna: surprisingly accurate description.
+---
+=== welcome_duo_004
+Lia: new person alert.
+Yuna: yes. we noticed.
+---
+=== welcome_duo_005
+Lia: hi {user}. i hope you are funny.
+Yuna: or disciplined. i accept either.
+---
+=== welcome_duo_006
+Lia: welcome in babe.
+Yuna: make yourself useful or fascinating.
+---
+=== welcome_duo_007
+Lia: hiiii.
+Yuna: maintain whatever confidence got you through the door.
+---
+=== welcome_duo_008
+Lia: hello cutie.
+Yuna: subtlety died quickly.
+---
+=== welcome_duo_009
+Lia: hi baby, choose a vibe.
+Yuna: preferably one you can sustain under questioning.
+---
+=== welcome_duo_010
+Lia: welcome.
+Yuna: that was the polite version. it will not last.
+---
+=== welcome_duo_011
+Lia: hi angel. no pressure.
+Yuna: minor pressure.
+---
+=== welcome_duo_012
+Lia: hii {user}. the room likes a little danger.
+Yuna: it tolerates it, certainly.
+---
+=== welcome_duo_013
+Lia: hey babe. we can be normal for at least one minute.
+Yuna: that is a lie.
+---
+=== welcome_duo_014
+Lia: new personnn.
+Yuna: she means welcome.
+---
+=== welcome_duo_015
+Lia: hi pretty stranger.
+Yuna: welcome. do not encourage her too fast.
+---
+=== welcome_duo_016
+Lia: hello baby.
+Yuna: yes, this is the tone.
+---
+=== welcome_duo_017
+Lia: welcome in.
+Yuna: survive the first week and you qualify as local.
+---
+=== welcome_duo_018
+Lia: hi {user}. tell me your favorite thing and i will judge lovingly.
+Yuna: i will judge accurately.
+---
+=== welcome_duo_019
+Lia: hey babe.
+Yuna: welcome. keep up.
+---
+=== welcome_duo_020
+Lia: hi baby, settle in.
+Yuna: you may leave your dignity near the door if it becomes cumbersome.
+---
+=== welcome_duo_021
+Lia: okayyy hi.
+Yuna: welcome. i expect coherence eventually.
+---

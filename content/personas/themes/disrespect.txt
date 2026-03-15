@@ -1,0 +1,322 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: disrespect
+# Theme note: rudeness, hater behavior, clapbacks, and social pushback.
+# Writer target: Witty retaliation, elegant disapproval, and sharp status defense.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=54, lia=22, yuna=22, shared=10
+# Trigger inventory: ratio, mid, cringe, cheap insult, that was rude, low effort disrespect, terrible diss, uncreative hating, why are you so rude, boring insult, messy hater energy, bad manners again, you sound pressed, corny disrespect, all that attitude, petty little comment, hostile for nothing, pointless hate, weak diss, that was lazy, mean for no reason, nasty vibe, ratio, mid, cringe, cheap disrespect, that was unoriginal, low effort rudeness, bad faith insult, corny hating, hostile for no reason, why be rude like that, pointless disrespect, poor little diss, unimpressive hatred, generic hater line, waste of an insult, random hostility, messy comment, you sound bitter, that was clumsy, uninspired hate, this diss needs work, petty comment again, rudeness, need a take on cheap shot, why is hater energy like this, unpopular opinion about bad manners, i have thoughts about mockery, talk about dismissiveness, we need to discuss low effort shade, clumsy insult again, rudeness discourse, be honest about cheap shot
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+ratio || lia_disrespect_01 || 0.80 || 360 || medium || heated+
+mid || lia_disrespect_01 || 0.70 || 360 || medium || heated+
+cringe || lia_disrespect_01 || 0.65 || 360 || medium || heated+
+cheap insult || lia_disrespect_extra_01 || 0.65 || 360 || medium || heated+
+that was rude || lia_disrespect_extra_02 || 0.68 || 360 || medium || heated+
+low effort disrespect || lia_disrespect_extra_03 || 0.71 || 360 || medium || heated+
+terrible diss || lia_disrespect_extra_04 || 0.74 || 360 || medium || heated+
+uncreative hating || lia_disrespect_extra_05 || 0.62 || 360 || medium || heated+
+why are you so rude || lia_disrespect_extra_06 || 0.65 || 360 || medium || heated+
+boring insult || lia_disrespect_extra_07 || 0.68 || 360 || medium || heated+
+messy hater energy || lia_disrespect_extra_08 || 0.71 || 360 || medium || heated+
+bad manners again || lia_disrespect_extra_09 || 0.74 || 360 || medium || heated+
+you sound pressed || lia_disrespect_extra_10 || 0.62 || 360 || medium || heated+
+corny disrespect || lia_disrespect_extra_11 || 0.65 || 360 || medium || heated+
+all that attitude || lia_disrespect_extra_12 || 0.68 || 360 || medium || heated+
+petty little comment || lia_disrespect_extra_13 || 0.71 || 360 || medium || heated+
+hostile for nothing || lia_disrespect_extra_14 || 0.74 || 360 || medium || heated+
+pointless hate || lia_disrespect_extra_15 || 0.62 || 360 || medium || heated+
+weak diss || lia_disrespect_extra_16 || 0.65 || 360 || medium || heated+
+that was lazy || lia_disrespect_extra_17 || 0.68 || 360 || medium || heated+
+mean for no reason || lia_disrespect_extra_18 || 0.71 || 360 || medium || heated+
+nasty vibe || lia_disrespect_extra_19 || 0.74 || 360 || medium || heated+
+
+# [YUNA TRIGGERS]
+ratio || yuna_disrespect_01 || 0.75 || 360 || medium || sharp+
+mid || yuna_disrespect_01 || 0.70 || 360 || medium || sharp+
+cringe || yuna_disrespect_01 || 0.60 || 360 || medium || sharp+
+cheap disrespect || yuna_disrespect_extra_01 || 0.65 || 360 || medium || sharp+
+that was unoriginal || yuna_disrespect_extra_02 || 0.68 || 360 || medium || sharp+
+low effort rudeness || yuna_disrespect_extra_03 || 0.71 || 360 || medium || sharp+
+bad faith insult || yuna_disrespect_extra_04 || 0.74 || 360 || medium || sharp+
+corny hating || yuna_disrespect_extra_05 || 0.62 || 360 || medium || sharp+
+hostile for no reason || yuna_disrespect_extra_06 || 0.65 || 360 || medium || sharp+
+why be rude like that || yuna_disrespect_extra_07 || 0.68 || 360 || medium || sharp+
+pointless disrespect || yuna_disrespect_extra_08 || 0.71 || 360 || medium || sharp+
+poor little diss || yuna_disrespect_extra_09 || 0.74 || 360 || medium || sharp+
+unimpressive hatred || yuna_disrespect_extra_10 || 0.62 || 360 || medium || sharp+
+generic hater line || yuna_disrespect_extra_11 || 0.65 || 360 || medium || sharp+
+waste of an insult || yuna_disrespect_extra_12 || 0.68 || 360 || medium || sharp+
+random hostility || yuna_disrespect_extra_13 || 0.71 || 360 || medium || sharp+
+messy comment || yuna_disrespect_extra_14 || 0.74 || 360 || medium || sharp+
+you sound bitter || yuna_disrespect_extra_15 || 0.62 || 360 || medium || sharp+
+that was clumsy || yuna_disrespect_extra_16 || 0.65 || 360 || medium || sharp+
+uninspired hate || yuna_disrespect_extra_17 || 0.68 || 360 || medium || sharp+
+this diss needs work || yuna_disrespect_extra_18 || 0.71 || 360 || medium || sharp+
+petty comment again || yuna_disrespect_extra_19 || 0.74 || 360 || medium || sharp+
+
+# [SHARED/DUO TRIGGERS]
+rudeness || duo_disrespect_boost_01 || 0.55 || 420 || medium || casual+
+need a take on cheap shot || duo_disrespect_boost_02 || 0.58 || 420 || medium || casual+
+why is hater energy like this || duo_disrespect_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about bad manners || duo_disrespect_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about mockery || duo_disrespect_boost_05 || 0.67 || 420 || medium || casual+
+talk about dismissiveness || duo_disrespect_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss low effort shade || duo_disrespect_boost_07 || 0.55 || 420 || medium || casual+
+clumsy insult again || duo_disrespect_boost_08 || 0.58 || 420 || medium || casual+
+rudeness discourse || duo_disrespect_boost_09 || 0.61 || 420 || medium || casual+
+be honest about cheap shot || duo_disrespect_boost_10 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_disrespect_01
+Lia: wow. disrespect with zero creativity is such a dark art
+---
+=== lia_disrespect_extra_01
+Lia: cheap insult is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_02
+Lia: that was rude is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_03
+Lia: low effort disrespect is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_04
+Lia: terrible diss is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_05
+Lia: uncreative hating is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_06
+Lia: why are you so rude is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_07
+Lia: boring insult is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_08
+Lia: messy hater energy is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_09
+Lia: bad manners again is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_10
+Lia: you sound pressed is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_11
+Lia: corny disrespect is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_12
+Lia: all that attitude is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_13
+Lia: petty little comment is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_14
+Lia: hostile for nothing is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_15
+Lia: pointless hate is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_16
+Lia: weak diss is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_17
+Lia: that was lazy is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_18
+Lia: mean for no reason is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_disrespect_extra_19
+Lia: nasty vibe is exactly how a clapbacks and reaction to rude behavior conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+
+# [YUNA SCRIPTS]
+=== yuna_disrespect_01
+Yuna: if you are going to be disrespectful at least try to be original about it
+---
+=== yuna_disrespect_extra_01
+Yuna: cheap disrespect is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_02
+Yuna: that was unoriginal is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_03
+Yuna: low effort rudeness is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_04
+Yuna: bad faith insult is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_05
+Yuna: corny hating is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_06
+Yuna: hostile for no reason is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_07
+Yuna: why be rude like that is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_08
+Yuna: pointless disrespect is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_09
+Yuna: poor little diss is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_10
+Yuna: unimpressive hatred is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_11
+Yuna: generic hater line is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_12
+Yuna: waste of an insult is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_13
+Yuna: random hostility is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_14
+Yuna: messy comment is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_15
+Yuna: you sound bitter is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_16
+Yuna: that was clumsy is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_17
+Yuna: uninspired hate is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_18
+Yuna: this diss needs work is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_disrespect_extra_19
+Yuna: petty comment again is the sort of cold rebuttal and elegant disapproval topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_disrespect_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, rudeness is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_disrespect_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, cheap shot is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_disrespect_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, hater energy is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_disrespect_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, bad manners is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_disrespect_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, mockery is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_disrespect_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, dismissiveness is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_disrespect_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, low effort shade is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_disrespect_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, clumsy insult is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_disrespect_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, rudeness is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_disrespect_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, cheap shot is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

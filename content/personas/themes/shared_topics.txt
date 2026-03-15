@@ -1,0 +1,362 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: shared topics
+# Theme note: broad daily-life, media, science, culture, and general-interest topics.
+# Writer target: Flexible hooks spanning normal life and internet life.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=52, lia=18, yuna=18, shared=16
+# Trigger inventory: movie night, favorite song right now, hobby check, travel dream, science fact, space is terrifying, fashion take, book recommendation, weekend plans, creative hobby, favorite musician, what are we watching, life update, work is exhausting, beauty routine, internet culture again, random nostalgia, technology is weird, movie recommendation, book worth reading, favorite song lately, technology is exhausting, science is beautiful, space terrifies me, work update, ambition check, music taste question, anime worth starting, show me a hobby, creative project talk, future plans, internet behavior analysis, media opinion, weekend routine, daily life discussion, interesting article energy, coffee, anime, movie, coffee, anime, book, music, need a take on movies, why is science like this, unpopular opinion about beauty, i have thoughts about internet culture, talk about travel, we need to discuss technology, nostalgia again, music discourse, be honest about movies
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+movie night || lia_shared_extra_01 || 0.53 || 240 || low || casual+
+favorite song right now || lia_shared_extra_02 || 0.56 || 240 || low || casual+
+hobby check || lia_shared_extra_03 || 0.59 || 240 || low || casual+
+travel dream || lia_shared_extra_04 || 0.62 || 240 || low || casual+
+science fact || lia_shared_extra_05 || 0.50 || 240 || low || casual+
+space is terrifying || lia_shared_extra_06 || 0.53 || 240 || low || casual+
+fashion take || lia_shared_extra_07 || 0.56 || 240 || low || casual+
+book recommendation || lia_shared_extra_08 || 0.59 || 240 || low || casual+
+weekend plans || lia_shared_extra_09 || 0.62 || 240 || low || casual+
+creative hobby || lia_shared_extra_10 || 0.50 || 240 || low || casual+
+favorite musician || lia_shared_extra_11 || 0.53 || 240 || low || casual+
+what are we watching || lia_shared_extra_12 || 0.56 || 240 || low || casual+
+life update || lia_shared_extra_13 || 0.59 || 240 || low || casual+
+work is exhausting || lia_shared_extra_14 || 0.62 || 240 || low || casual+
+beauty routine || lia_shared_extra_15 || 0.50 || 240 || low || casual+
+internet culture again || lia_shared_extra_16 || 0.53 || 240 || low || casual+
+random nostalgia || lia_shared_extra_17 || 0.56 || 240 || low || casual+
+technology is weird || lia_shared_extra_18 || 0.59 || 240 || low || casual+
+
+# [YUNA TRIGGERS]
+movie recommendation || yuna_shared_extra_01 || 0.53 || 240 || low || casual+
+book worth reading || yuna_shared_extra_02 || 0.56 || 240 || low || casual+
+favorite song lately || yuna_shared_extra_03 || 0.59 || 240 || low || casual+
+technology is exhausting || yuna_shared_extra_04 || 0.62 || 240 || low || casual+
+science is beautiful || yuna_shared_extra_05 || 0.50 || 240 || low || casual+
+space terrifies me || yuna_shared_extra_06 || 0.53 || 240 || low || casual+
+work update || yuna_shared_extra_07 || 0.56 || 240 || low || casual+
+ambition check || yuna_shared_extra_08 || 0.59 || 240 || low || casual+
+music taste question || yuna_shared_extra_09 || 0.62 || 240 || low || casual+
+anime worth starting || yuna_shared_extra_10 || 0.50 || 240 || low || casual+
+show me a hobby || yuna_shared_extra_11 || 0.53 || 240 || low || casual+
+creative project talk || yuna_shared_extra_12 || 0.56 || 240 || low || casual+
+future plans || yuna_shared_extra_13 || 0.59 || 240 || low || casual+
+internet behavior analysis || yuna_shared_extra_14 || 0.62 || 240 || low || casual+
+media opinion || yuna_shared_extra_15 || 0.50 || 240 || low || casual+
+weekend routine || yuna_shared_extra_16 || 0.53 || 240 || low || casual+
+daily life discussion || yuna_shared_extra_17 || 0.56 || 240 || low || casual+
+interesting article energy || yuna_shared_extra_18 || 0.59 || 240 || low || casual+
+
+# [SHARED/DUO TRIGGERS]
+coffee || duo_work_life_rant_01 || 0.70 || 200 || low || casual+
+anime || duo_culture_clash_03 || 0.75 || 300 || medium || playful+
+movie || duo_culture_clash_03 || 0.58 || 300 || medium || playful+
+coffee || duo_work_life_rant_01 || 0.70 || 200 || low || casual+
+anime || duo_culture_clash_03 || 0.75 || 300 || medium || playful+
+book || duo_culture_clash_03 || 0.52 || 300 || medium || playful+
+music || duo_shared_topics_boost_01 || 0.55 || 420 || medium || casual+
+need a take on movies || duo_shared_topics_boost_02 || 0.58 || 420 || medium || casual+
+why is science like this || duo_shared_topics_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about beauty || duo_shared_topics_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about internet culture || duo_shared_topics_boost_05 || 0.67 || 420 || medium || casual+
+talk about travel || duo_shared_topics_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss technology || duo_shared_topics_boost_07 || 0.55 || 420 || medium || casual+
+nostalgia again || duo_shared_topics_boost_08 || 0.58 || 420 || medium || casual+
+music discourse || duo_shared_topics_boost_09 || 0.61 || 420 || medium || casual+
+be honest about movies || duo_shared_topics_boost_10 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_shared_extra_01
+Lia: movie night is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_02
+Lia: favorite song right now is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_03
+Lia: hobby check is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_04
+Lia: travel dream is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_05
+Lia: science fact is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_06
+Lia: space is terrifying is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_07
+Lia: fashion take is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_08
+Lia: book recommendation is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_09
+Lia: weekend plans is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_10
+Lia: creative hobby is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_11
+Lia: favorite musician is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_12
+Lia: what are we watching is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_13
+Lia: life update is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_14
+Lia: work is exhausting is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_15
+Lia: beauty routine is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_16
+Lia: internet culture again is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_17
+Lia: random nostalgia is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_shared_extra_18
+Lia: technology is weird is such a strong way to start a broad daily life, media, hobbies, and culture conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+
+# [YUNA SCRIPTS]
+=== yuna_shared_extra_01
+Lia: movie recommendation is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_02
+Lia: book worth reading is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_03
+Lia: favorite song lately is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_04
+Lia: technology is exhausting is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_05
+Lia: science is beautiful is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_06
+Lia: space terrifies me is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_07
+Lia: work update is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_08
+Lia: ambition check is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_09
+Lia: music taste question is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_10
+Lia: anime worth starting is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_11
+Lia: show me a hobby is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_12
+Lia: creative project talk is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_13
+Lia: future plans is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_14
+Lia: internet behavior analysis is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_15
+Lia: media opinion is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_16
+Lia: weekend routine is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_17
+Lia: daily life discussion is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_shared_extra_18
+Lia: interesting article energy is such a strong way to start a broad life, media, and culture topics conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_work_life_rant_01
+Lia: coffee is the only reason i still answer people before noon.
+Yuna: tea achieves the same thing without sounding like a cry for help.
+Lia: unbelievable propaganda.
+---
+=== duo_culture_clash_03
+Lia: if this turns into an anime debate i am choosing violence aesthetically.
+Yuna: violence aesthetically is still violence.
+Lia: yes but prettier.
+---
+=== duo_work_life_rant_01
+Lia: coffee is the only reason i still answer people before noon.
+Yuna: tea achieves the same thing without sounding like a cry for help.
+Lia: unbelievable propaganda.
+---
+=== duo_culture_clash_03
+Lia: if this turns into an anime debate i am choosing violence aesthetically.
+Yuna: violence aesthetically is still violence.
+Lia: yes but prettier.
+---
+=== duo_shared_topics_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, music is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_shared_topics_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, movies is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_shared_topics_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, science is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_shared_topics_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, beauty is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_shared_topics_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, internet culture is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_shared_topics_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, travel is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_shared_topics_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, technology is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_shared_topics_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, nostalgia is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_shared_topics_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, music is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_shared_topics_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, movies is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

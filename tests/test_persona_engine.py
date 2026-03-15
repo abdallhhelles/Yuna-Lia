@@ -93,3 +93,56 @@ def test_selected_script_updates_actor_mood_from_trigger(tmp_path: Path) -> None
 
     lia_state = engine.memory.get_persona_state("Lia")
     assert lia_state.mood == "flirty"
+
+
+def test_trigger_cooldown_is_per_user_and_5_minutes(tmp_path: Path) -> None:
+    engine = _engine(tmp_path)
+
+    with patch("yuna_lia.personas.engine.random.choice", side_effect=lambda seq: seq[0]), patch(
+        "yuna_lia.personas.engine.random.uniform", return_value=0.0
+    ), patch("yuna_lia.personas.engine.random.random", return_value=0.0):
+        first = engine.handle_message(
+            user_id="10",
+            display_name="A",
+            guild_id=100,
+            channel_id=200,
+            content="drama",
+        )
+        second = engine.handle_message(
+            user_id="10",
+            display_name="A",
+            guild_id=100,
+            channel_id=200,
+            content="drama",
+        )
+        third = engine.handle_message(
+            user_id="11",
+            display_name="B",
+            guild_id=100,
+            channel_id=200,
+            content="drama",
+        )
+
+    assert first
+    assert second == []
+    assert third
+
+
+def test_engine_tracks_channel_activity_details(tmp_path: Path) -> None:
+    engine = _engine(tmp_path)
+
+    with patch("yuna_lia.personas.engine.random.choice", side_effect=lambda seq: seq[0]), patch(
+        "yuna_lia.personas.engine.random.uniform", return_value=0.0
+    ), patch("yuna_lia.personas.engine.random.random", return_value=0.0):
+        engine.handle_message(
+            user_id="12",
+            display_name="Kai",
+            guild_id=500,
+            channel_id=900,
+            content="pizza and drama",
+        )
+
+    channel = engine.memory.get_channel(900, 500)
+    assert channel.user_message_count == 1
+    assert channel.bot_message_count == 1
+    assert channel.last_script_id

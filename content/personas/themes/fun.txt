@@ -1,0 +1,362 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: fun
+# Theme note: jokes, riddles, games, playful prompts, and silly room energy.
+# Writer target: Lively interactive prompts and entertainment hooks.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=17, shared=33
+# Trigger inventory: say something clever, give us a fun fact, do a dry joke, riddle time again, make chat entertaining, something witty please, playful question, tiny brain teaser, fun interruption, do a smart little bit, make the room less boring, drop a trivia line, give us a challenge, witty banter please, do something amusing, surprise us with a fact, intelligent fun only, joke, riddle, poll, tell me something fun, party trick time, drop a fun question, make chat lively, do a silly bit, i need a laugh break, something playful please, give us a game, tiny challenge, chat needs fun, do something clever, keep us entertained, interactive moment, something goofy, fun little debate, ask us a weird question, lighten the room, joke, riddle, fun fact, game, need a take on bit, why is challenge like this, unpopular opinion about joke, i have thoughts about tiny poll, talk about weird prompt, we need to discuss chaos, clever distraction again, game discourse, be honest about bit
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+say something clever || yuna_fun_extra_01 || 0.59 || 600 || medium || amused+
+give us a fun fact || yuna_fun_extra_02 || 0.62 || 600 || medium || amused+
+do a dry joke || yuna_fun_extra_03 || 0.65 || 600 || medium || amused+
+riddle time again || yuna_fun_extra_04 || 0.68 || 600 || medium || amused+
+make chat entertaining || yuna_fun_extra_05 || 0.56 || 600 || medium || amused+
+something witty please || yuna_fun_extra_06 || 0.59 || 600 || medium || amused+
+playful question || yuna_fun_extra_07 || 0.62 || 600 || medium || amused+
+tiny brain teaser || yuna_fun_extra_08 || 0.65 || 600 || medium || amused+
+fun interruption || yuna_fun_extra_09 || 0.68 || 600 || medium || amused+
+do a smart little bit || yuna_fun_extra_10 || 0.56 || 600 || medium || amused+
+make the room less boring || yuna_fun_extra_11 || 0.59 || 600 || medium || amused+
+drop a trivia line || yuna_fun_extra_12 || 0.62 || 600 || medium || amused+
+give us a challenge || yuna_fun_extra_13 || 0.65 || 600 || medium || amused+
+witty banter please || yuna_fun_extra_14 || 0.68 || 600 || medium || amused+
+do something amusing || yuna_fun_extra_15 || 0.56 || 600 || medium || amused+
+surprise us with a fact || yuna_fun_extra_16 || 0.59 || 600 || medium || amused+
+intelligent fun only || yuna_fun_extra_17 || 0.62 || 600 || medium || amused+
+
+# [SHARED/DUO TRIGGERS]
+joke || duo_joke_drop_01 || 0.65 || 420 || low || playful+
+riddle || duo_riddle_01 || 0.70 || 600 || medium || playful+
+poll || duo_poll_01 || 0.75 || 500 || medium || chaotic+
+tell me something fun || duo_fun_extra_01 || 0.59 || 500 || medium || playful+
+party trick time || duo_fun_extra_02 || 0.62 || 500 || medium || playful+
+drop a fun question || duo_fun_extra_03 || 0.65 || 500 || medium || playful+
+make chat lively || duo_fun_extra_04 || 0.68 || 500 || medium || playful+
+do a silly bit || duo_fun_extra_05 || 0.56 || 500 || medium || playful+
+i need a laugh break || duo_fun_extra_06 || 0.59 || 500 || medium || playful+
+something playful please || duo_fun_extra_07 || 0.62 || 500 || medium || playful+
+give us a game || duo_fun_extra_08 || 0.65 || 500 || medium || playful+
+tiny challenge || duo_fun_extra_09 || 0.68 || 500 || medium || playful+
+chat needs fun || duo_fun_extra_10 || 0.56 || 500 || medium || playful+
+do something clever || duo_fun_extra_11 || 0.59 || 500 || medium || playful+
+keep us entertained || duo_fun_extra_12 || 0.62 || 500 || medium || playful+
+interactive moment || duo_fun_extra_13 || 0.65 || 500 || medium || playful+
+something goofy || duo_fun_extra_14 || 0.68 || 500 || medium || playful+
+fun little debate || duo_fun_extra_15 || 0.56 || 500 || medium || playful+
+ask us a weird question || duo_fun_extra_16 || 0.59 || 500 || medium || playful+
+lighten the room || duo_fun_extra_17 || 0.62 || 500 || medium || playful+
+joke || duo_joke_drop_01 || 0.55 || 420 || low || amused+
+riddle || duo_riddle_01 || 0.75 || 600 || medium || focused+
+fun fact || duo_fun_fact_01 || 0.70 || 700 || medium || reflective+
+game || duo_fun_boost_01 || 0.55 || 420 || medium || casual+
+need a take on bit || duo_fun_boost_02 || 0.58 || 420 || medium || casual+
+why is challenge like this || duo_fun_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about joke || duo_fun_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about tiny poll || duo_fun_boost_05 || 0.67 || 420 || medium || casual+
+talk about weird prompt || duo_fun_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss chaos || duo_fun_boost_07 || 0.55 || 420 || medium || casual+
+clever distraction again || duo_fun_boost_08 || 0.58 || 420 || medium || casual+
+game discourse || duo_fun_boost_09 || 0.61 || 420 || medium || casual+
+be honest about bit || duo_fun_boost_10 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [YUNA SCRIPTS]
+=== yuna_fun_extra_01
+Lia: say something clever is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_02
+Lia: give us a fun fact is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_03
+Lia: do a dry joke is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_04
+Lia: riddle time again is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_05
+Lia: make chat entertaining is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_06
+Lia: something witty please is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_07
+Lia: playful question is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_08
+Lia: tiny brain teaser is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_09
+Lia: fun interruption is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_10
+Lia: do a smart little bit is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_11
+Lia: make the room less boring is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_12
+Lia: drop a trivia line is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_13
+Lia: give us a challenge is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_14
+Lia: witty banter please is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_15
+Lia: do something amusing is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_16
+Lia: surprise us with a fact is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_fun_extra_17
+Lia: intelligent fun only is such a strong way to start a dry fun, facts, and clever room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_joke_drop_01
+Lia: okay terrible joke time. what do you call a liar who is also sleepy.
+Yuna: this already feels like a mistake.
+Lia: unconscious bias.
+Yuna: i regret having literacy.
+---
+=== duo_riddle_01
+Yuna: riddle. the more you take, the more you leave behind. what am i.
+Lia: emotional damage.
+Yuna: incorrect, but compelling.
+Lia: i know the answer is footsteps let me be artistic.
+---
+=== duo_poll_01
+Lia: emergency poll. which is worse.
+Lia: being ghosted, being left on read, or getting a dry "lol"
+Yuna: all three are the same event in different outfits.
+---
+=== duo_fun_extra_01
+Lia: tell me something fun is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_02
+Lia: party trick time is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_03
+Lia: drop a fun question is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_04
+Lia: make chat lively is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_05
+Lia: do a silly bit is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_06
+Lia: i need a laugh break is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_07
+Lia: something playful please is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_08
+Lia: give us a game is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_09
+Lia: tiny challenge is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_10
+Lia: chat needs fun is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_11
+Lia: do something clever is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_12
+Lia: keep us entertained is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_13
+Lia: interactive moment is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_14
+Lia: something goofy is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_15
+Lia: fun little debate is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_16
+Lia: ask us a weird question is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_fun_extra_17
+Lia: lighten the room is such a strong way to start a interactive fun and room energy conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== duo_joke_drop_01
+Lia: okay terrible joke time. what do you call a liar who is also sleepy.
+Yuna: this already feels like a mistake.
+Lia: unconscious bias.
+Yuna: i regret having literacy.
+---
+=== duo_riddle_01
+Yuna: riddle. the more you take, the more you leave behind. what am i.
+Lia: emotional damage.
+Yuna: incorrect, but compelling.
+Lia: i know the answer is footsteps let me be artistic.
+---
+=== duo_fun_fact_01
+Yuna: fun fact. octopuses have three hearts and still handle relationships better than most servers.
+Lia: that fact became judgment suspiciously fast.
+---
+=== duo_fun_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, game is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_fun_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, bit is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_fun_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, challenge is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_fun_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, joke is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_fun_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, tiny poll is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_fun_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, weird prompt is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_fun_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, chaos is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_fun_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, clever distraction is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_fun_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, game is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_fun_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, bit is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

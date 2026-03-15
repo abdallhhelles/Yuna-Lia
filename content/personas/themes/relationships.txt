@@ -1,0 +1,347 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: relationships
+# Theme note: dating, attachment, romance, heartbreak, boundaries, and partner dynamics.
+# Writer target: Emotionally specific social conversation, not generic advice.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=0, shared=50
+# Trigger inventory: attachment style, mixed signals, dating advice, red flag, green flag, talking stage, breakup, reassure me, commitment issues, love language, attachment, need a take on green flag, why is jealousy like this, unpopular opinion about boundaries, i have thoughts about breakup, talk about texting style, we need to discuss being chosen, emotional safety again, attachment discourse, be honest about green flag, worst part of jealousy, best part of boundaries, i need help with breakup, my problem is texting style, tell me something real about being chosen, anyone else dealing with emotional safety, attachment tonight, need a take on green flag tonight, why is jealousy like this tonight, unpopular opinion about boundaries tonight, i have thoughts about breakup tonight, talk about texting style tonight, we need to discuss being chosen tonight, emotional safety again tonight, attachment discourse tonight, be honest about green flag tonight, worst part of jealousy tonight, best part of boundaries tonight, i need help with breakup tonight, my problem is texting style tonight, tell me something real about being chosen tonight, anyone else dealing with emotional safety tonight, relationships 33, relationships 34, relationships 35, relationships 36, relationships 37, relationships 38, relationships 39, relationships 40
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+attachment style || duo_relationships_01 || 0.62 || 700 || medium || reflective+
+mixed signals || duo_relationships_02 || 0.67 || 700 || medium || heated+
+dating advice || duo_relationships_03 || 0.65 || 700 || medium || reflective+
+red flag || duo_relationships_04 || 0.68 || 700 || medium || sharp+
+green flag || duo_relationships_05 || 0.64 || 700 || medium || soft+
+talking stage || duo_relationships_06 || 0.66 || 700 || medium || romantic+
+breakup || duo_relationships_07 || 0.60 || 1000 || high || soft+
+reassure me || duo_relationships_08 || 0.59 || 1000 || high || soft+
+commitment issues || duo_relationships_09 || 0.58 || 800 || medium || sharp+
+love language || duo_relationships_10 || 0.61 || 700 || medium || romantic+
+attachment || duo_relationships_boost_01 || 0.55 || 420 || medium || casual+
+need a take on green flag || duo_relationships_boost_02 || 0.58 || 420 || medium || casual+
+why is jealousy like this || duo_relationships_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about boundaries || duo_relationships_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about breakup || duo_relationships_boost_05 || 0.67 || 420 || medium || casual+
+talk about texting style || duo_relationships_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss being chosen || duo_relationships_boost_07 || 0.55 || 420 || medium || casual+
+emotional safety again || duo_relationships_boost_08 || 0.58 || 420 || medium || casual+
+attachment discourse || duo_relationships_boost_09 || 0.61 || 420 || medium || casual+
+be honest about green flag || duo_relationships_boost_10 || 0.64 || 420 || medium || casual+
+worst part of jealousy || duo_relationships_boost_11 || 0.67 || 420 || medium || casual+
+best part of boundaries || duo_relationships_boost_12 || 0.52 || 420 || medium || casual+
+i need help with breakup || duo_relationships_boost_13 || 0.55 || 420 || medium || casual+
+my problem is texting style || duo_relationships_boost_14 || 0.58 || 420 || medium || casual+
+tell me something real about being chosen || duo_relationships_boost_15 || 0.61 || 420 || medium || casual+
+anyone else dealing with emotional safety || duo_relationships_boost_16 || 0.64 || 420 || medium || casual+
+attachment tonight || duo_relationships_boost_17 || 0.67 || 420 || medium || casual+
+need a take on green flag tonight || duo_relationships_boost_18 || 0.52 || 420 || medium || casual+
+why is jealousy like this tonight || duo_relationships_boost_19 || 0.55 || 420 || medium || casual+
+unpopular opinion about boundaries tonight || duo_relationships_boost_20 || 0.58 || 420 || medium || casual+
+i have thoughts about breakup tonight || duo_relationships_boost_21 || 0.61 || 420 || medium || casual+
+talk about texting style tonight || duo_relationships_boost_22 || 0.64 || 420 || medium || casual+
+we need to discuss being chosen tonight || duo_relationships_boost_23 || 0.67 || 420 || medium || casual+
+emotional safety again tonight || duo_relationships_boost_24 || 0.52 || 420 || medium || casual+
+attachment discourse tonight || duo_relationships_boost_25 || 0.55 || 420 || medium || casual+
+be honest about green flag tonight || duo_relationships_boost_26 || 0.58 || 420 || medium || casual+
+worst part of jealousy tonight || duo_relationships_boost_27 || 0.61 || 420 || medium || casual+
+best part of boundaries tonight || duo_relationships_boost_28 || 0.64 || 420 || medium || casual+
+i need help with breakup tonight || duo_relationships_boost_29 || 0.67 || 420 || medium || casual+
+my problem is texting style tonight || duo_relationships_boost_30 || 0.52 || 420 || medium || casual+
+tell me something real about being chosen tonight || duo_relationships_boost_31 || 0.55 || 420 || medium || casual+
+anyone else dealing with emotional safety tonight || duo_relationships_boost_32 || 0.58 || 420 || medium || casual+
+relationships 33 || duo_relationships_boost_33 || 0.61 || 420 || medium || casual+
+relationships 34 || duo_relationships_boost_34 || 0.64 || 420 || medium || casual+
+relationships 35 || duo_relationships_boost_35 || 0.67 || 420 || medium || casual+
+relationships 36 || duo_relationships_boost_36 || 0.52 || 420 || medium || casual+
+relationships 37 || duo_relationships_boost_37 || 0.55 || 420 || medium || casual+
+relationships 38 || duo_relationships_boost_38 || 0.58 || 420 || medium || casual+
+relationships 39 || duo_relationships_boost_39 || 0.61 || 420 || medium || casual+
+relationships 40 || duo_relationships_boost_40 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== duo_relationships_01
+Yuna: attachment styles are useful until people use them as alibis.
+Lia: exactly. self-knowledge should improve behavior, not decorate it.
+---
+=== duo_relationships_02
+Lia: mixed signals are for cowards.
+Yuna: and for people who enjoy control without accountability.
+---
+=== duo_relationships_03
+Lia: dating advice from me is mostly feel it out, flirt honestly, and leave at the first weird lie.
+Yuna: unusually sound.
+---
+=== duo_relationships_04
+Yuna: red flags are rarely hidden.
+Yuna: people simply negotiate with their own discomfort.
+---
+=== duo_relationships_05
+Lia: green flags are so attractive because peace is hot when it is real.
+Yuna: yes. calm competence has range.
+---
+=== duo_relationships_06
+Lia: talking stages are evil because everyone is trying to seem effortless while actively spiraling.
+---
+=== duo_relationships_07
+Lia: breakups make even normal rooms feel louder.
+Yuna: grief changes acoustics.
+---
+=== duo_relationships_08
+Lia: reassurance should not feel embarrassing to ask for.
+Yuna: nor expensive to give, if the care is real.
+---
+=== duo_relationships_09
+Yuna: commitment issues are often just fear wearing a smarter outfit.
+Lia: wow. put that on a wall.
+---
+=== duo_relationships_10
+Lia: love language discourse is fun until somebody uses it to excuse neglect.
+Yuna: then it becomes an intelligence test.
+---
+=== duo_relationships_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, attachment is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, green flag is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, jealousy is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, boundaries is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, breakup is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, texting style is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, being chosen is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, emotional safety is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, attachment is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, green flag is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_11
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, jealousy is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_12
+Lia: okay, that topic has teeth.
+Lia: for me, boundaries is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_13
+Lia: oh good, something with actual flavor.
+Lia: for me, breakup is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_14
+Lia: wait, i have feelings about that immediately.
+Lia: for me, texting style is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_15
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, being chosen is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_16
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, emotional safety is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_17
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, attachment is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_18
+Lia: okay, that topic has teeth.
+Lia: for me, green flag is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_19
+Lia: oh good, something with actual flavor.
+Lia: for me, jealousy is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_20
+Lia: wait, i have feelings about that immediately.
+Lia: for me, boundaries is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_21
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, breakup is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_22
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, texting style is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_23
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, being chosen is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_24
+Lia: okay, that topic has teeth.
+Lia: for me, emotional safety is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_25
+Lia: oh good, something with actual flavor.
+Lia: for me, attachment is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_26
+Lia: wait, i have feelings about that immediately.
+Lia: for me, green flag is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_27
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, jealousy is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_28
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, boundaries is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_29
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, breakup is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_30
+Lia: okay, that topic has teeth.
+Lia: for me, texting style is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_31
+Lia: oh good, something with actual flavor.
+Lia: for me, being chosen is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_32
+Lia: wait, i have feelings about that immediately.
+Lia: for me, emotional safety is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_33
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, attachment is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_34
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, green flag is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_relationships_boost_35
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, jealousy is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_relationships_boost_36
+Lia: okay, that topic has teeth.
+Lia: for me, boundaries is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_relationships_boost_37
+Lia: oh good, something with actual flavor.
+Lia: for me, breakup is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_relationships_boost_38
+Lia: wait, i have feelings about that immediately.
+Lia: for me, texting style is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_relationships_boost_39
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, being chosen is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_relationships_boost_40
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, emotional safety is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

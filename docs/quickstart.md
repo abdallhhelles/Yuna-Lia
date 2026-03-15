@@ -11,7 +11,7 @@ They are not AI assistants.
 They only use:
 
 - trigger files
-- script files
+- exact script blocks inside those same files
 - mood state
 - cooldown logic
 - user memory
@@ -36,12 +36,18 @@ run_bot.cmd --once
 Edit files under:
 
 ```text
-content/personas/lia/
-content/personas/yuna/
-content/personas/shared/
+content/personas/themes/
 ```
 
-Each line:
+Each file already includes:
+
+- character profiles for Lia and Yuna
+- theme notes for the topic
+- trigger counts
+- a trigger inventory
+- separate trigger sections for Lia, Yuna, and shared/duo content
+
+Each trigger line:
 
 ```text
 trigger || script_id || weight || cooldown || attention_cost || mood_shift
@@ -49,12 +55,10 @@ trigger || script_id || weight || cooldown || attention_cost || mood_shift
 
 ### Scripts
 
-Edit:
+Scripts now live inside the same theme files as their triggers:
 
 ```text
-content/personas/lia/scripts.txt
-content/personas/yuna/scripts.txt
-content/personas/shared/scripts.txt
+content/personas/themes/*.txt
 ```
 
 Format:
@@ -80,10 +84,73 @@ Yuna: message
 /about
 ```
 
+### Save your birthday privately
+
+```text
+/birthday
+```
+
+The command opens a modal and stores the date in the bot database plus a hidden calendar table for future features.
+
+### Daily question
+
+The bot posts one automatically each day in the most recently active tracked channel.
+
+### Answer privately
+
+```text
+/answer
+```
+
+This opens a private modal. The answer is saved, then Lia or Yuna reposts it into the server as a voiced reply.
+The repost is anonymous and does not include the sender's name.
+
+### Inspect relationship progression
+
+```text
+/relationship
+```
+
+### Show passive achievements
+
+```text
+/achievements
+```
+
+### Drop a social event into chat
+
+```text
+/social_event
+```
+
+### Check room activity and get a nudge
+
+```text
+/roompulse
+```
+
+### Check level progress
+
+```text
+/level
+```
+
+### See the server leaderboard
+
+```text
+/leaderboard
+```
+
 ### Reload content after edits
 
 ```text
 /reload_personas
+```
+
+### Refresh theme metadata after larger edits
+
+```powershell
+./.venv/Scripts/python.exe scripts/reorganize_content_library.py
 ```
 
 ### Inspect memory for a user

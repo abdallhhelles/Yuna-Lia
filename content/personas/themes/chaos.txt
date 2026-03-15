@@ -1,0 +1,310 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: chaos
+# Theme note: boredom, instigation, troublemaking, and social chaos.
+# Writer target: Provocative hooks, playful escalation, charming menace.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=51, lia=50, yuna=0, shared=1
+# Trigger inventory: chaos, messy, start some chaos, make this interesting, someone stir the pot, this chat is too calm, i need entertainment, cause a little trouble, do something messy, let chaos happen, boring server hours, ruin the peace, shake up chat, start a silly argument, make it dramatic, chat needs a problem, i want some nonsense, somebody misbehave, we need movement, peace is suspicious, mess, need a take on trouble, why is instigation like this, unpopular opinion about chaotic plan, i have thoughts about bit, talk about mild disaster, we need to discuss suspicious boredom, loud idea again, mess discourse, be honest about trouble, worst part of instigation, best part of chaotic plan, i need help with bit, my problem is mild disaster, tell me something real about suspicious boredom, anyone else dealing with loud idea, mess tonight, need a take on trouble tonight, why is instigation like this tonight, unpopular opinion about chaotic plan tonight, i have thoughts about bit tonight, talk about mild disaster tonight, we need to discuss suspicious boredom tonight, loud idea again tonight, mess discourse tonight, be honest about trouble tonight, worst part of instigation tonight, best part of chaotic plan tonight, i need help with bit tonight, my problem is mild disaster tonight, boring
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+chaos || lia_chaos_01 || 0.80 || 240 || high || chaotic+
+messy || lia_chaos_01 || 0.72 || 240 || high || chaotic+
+start some chaos || lia_chaos_extra_01 || 0.71 || 240 || high || chaotic+
+make this interesting || lia_chaos_extra_02 || 0.74 || 240 || high || chaotic+
+someone stir the pot || lia_chaos_extra_03 || 0.77 || 240 || high || chaotic+
+this chat is too calm || lia_chaos_extra_04 || 0.80 || 240 || high || chaotic+
+i need entertainment || lia_chaos_extra_05 || 0.68 || 240 || high || chaotic+
+cause a little trouble || lia_chaos_extra_06 || 0.71 || 240 || high || chaotic+
+do something messy || lia_chaos_extra_07 || 0.74 || 240 || high || chaotic+
+let chaos happen || lia_chaos_extra_08 || 0.77 || 240 || high || chaotic+
+boring server hours || lia_chaos_extra_09 || 0.80 || 240 || high || chaotic+
+ruin the peace || lia_chaos_extra_10 || 0.68 || 240 || high || chaotic+
+shake up chat || lia_chaos_extra_11 || 0.71 || 240 || high || chaotic+
+start a silly argument || lia_chaos_extra_12 || 0.74 || 240 || high || chaotic+
+make it dramatic || lia_chaos_extra_13 || 0.77 || 240 || high || chaotic+
+chat needs a problem || lia_chaos_extra_14 || 0.80 || 240 || high || chaotic+
+i want some nonsense || lia_chaos_extra_15 || 0.68 || 240 || high || chaotic+
+somebody misbehave || lia_chaos_extra_16 || 0.71 || 240 || high || chaotic+
+we need movement || lia_chaos_extra_17 || 0.74 || 240 || high || chaotic+
+peace is suspicious || lia_chaos_extra_18 || 0.77 || 240 || high || chaotic+
+mess || lia_chaos_boost_01 || 0.55 || 360 || medium || playful+
+need a take on trouble || lia_chaos_boost_02 || 0.58 || 360 || medium || playful+
+why is instigation like this || lia_chaos_boost_03 || 0.61 || 360 || medium || playful+
+unpopular opinion about chaotic plan || lia_chaos_boost_04 || 0.64 || 360 || medium || playful+
+i have thoughts about bit || lia_chaos_boost_05 || 0.67 || 360 || medium || playful+
+talk about mild disaster || lia_chaos_boost_06 || 0.52 || 360 || medium || playful+
+we need to discuss suspicious boredom || lia_chaos_boost_07 || 0.55 || 360 || medium || playful+
+loud idea again || lia_chaos_boost_08 || 0.58 || 360 || medium || playful+
+mess discourse || lia_chaos_boost_09 || 0.61 || 360 || medium || playful+
+be honest about trouble || lia_chaos_boost_10 || 0.64 || 360 || medium || playful+
+worst part of instigation || lia_chaos_boost_11 || 0.67 || 360 || medium || playful+
+best part of chaotic plan || lia_chaos_boost_12 || 0.52 || 360 || medium || playful+
+i need help with bit || lia_chaos_boost_13 || 0.55 || 360 || medium || playful+
+my problem is mild disaster || lia_chaos_boost_14 || 0.58 || 360 || medium || playful+
+tell me something real about suspicious boredom || lia_chaos_boost_15 || 0.61 || 360 || medium || playful+
+anyone else dealing with loud idea || lia_chaos_boost_16 || 0.64 || 360 || medium || playful+
+mess tonight || lia_chaos_boost_17 || 0.67 || 360 || medium || playful+
+need a take on trouble tonight || lia_chaos_boost_18 || 0.52 || 360 || medium || playful+
+why is instigation like this tonight || lia_chaos_boost_19 || 0.55 || 360 || medium || playful+
+unpopular opinion about chaotic plan tonight || lia_chaos_boost_20 || 0.58 || 360 || medium || playful+
+i have thoughts about bit tonight || lia_chaos_boost_21 || 0.61 || 360 || medium || playful+
+talk about mild disaster tonight || lia_chaos_boost_22 || 0.64 || 360 || medium || playful+
+we need to discuss suspicious boredom tonight || lia_chaos_boost_23 || 0.67 || 360 || medium || playful+
+loud idea again tonight || lia_chaos_boost_24 || 0.52 || 360 || medium || playful+
+mess discourse tonight || lia_chaos_boost_25 || 0.55 || 360 || medium || playful+
+be honest about trouble tonight || lia_chaos_boost_26 || 0.58 || 360 || medium || playful+
+worst part of instigation tonight || lia_chaos_boost_27 || 0.61 || 360 || medium || playful+
+best part of chaotic plan tonight || lia_chaos_boost_28 || 0.64 || 360 || medium || playful+
+i need help with bit tonight || lia_chaos_boost_29 || 0.67 || 360 || medium || playful+
+my problem is mild disaster tonight || lia_chaos_boost_30 || 0.52 || 360 || medium || playful+
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+boring || duo_chaos_game_01 || 0.90 || 240 || high || chaotic+
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_chaos_01
+Lia: if chat stays this dead for five more minutes i am starting a problem on purpose
+---
+=== lia_chaos_extra_01
+Lia: start some chaos is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_02
+Lia: make this interesting is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_03
+Lia: someone stir the pot is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_04
+Lia: this chat is too calm is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_05
+Lia: i need entertainment is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_06
+Lia: cause a little trouble is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_07
+Lia: do something messy is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_08
+Lia: let chaos happen is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_09
+Lia: boring server hours is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_10
+Lia: ruin the peace is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_11
+Lia: shake up chat is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_12
+Lia: start a silly argument is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_13
+Lia: make it dramatic is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_14
+Lia: chat needs a problem is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_15
+Lia: i want some nonsense is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_16
+Lia: somebody misbehave is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_17
+Lia: we need movement is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_extra_18
+Lia: peace is suspicious is exactly how a boredom, instigation, and social chaos conversation turns into my business somehow
+Lia: i have opinions and unfortunately they are ready immediately
+---
+=== lia_chaos_boost_01
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, mess is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_02
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, trouble is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_03
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, instigation is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_04
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, chaotic plan is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_05
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, bit is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_06
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, mild disaster is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_07
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, suspicious boredom is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_08
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, loud idea is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_09
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, mess is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_10
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, trouble is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_11
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, instigation is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_12
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, chaotic plan is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_13
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, bit is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_14
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, mild disaster is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_15
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, suspicious boredom is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_16
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, loud idea is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_17
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, mess is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_18
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, trouble is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_19
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, instigation is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_20
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, chaotic plan is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_21
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, bit is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_22
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, mild disaster is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_23
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, suspicious boredom is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_24
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, loud idea is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_25
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, mess is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_26
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, trouble is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_27
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, instigation is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_28
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, chaotic plan is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_29
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, bit is exactly where i stop pretending to be normal about it.
+---
+=== lia_chaos_boost_30
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, mild disaster is exactly where i stop pretending to be normal about it.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_chaos_game_01
+Lia: chat is boring.
+Lia: i am one message away from starting a poll nobody asked for.
+Yuna: you say that like it is a threat instead of a pattern.
+---

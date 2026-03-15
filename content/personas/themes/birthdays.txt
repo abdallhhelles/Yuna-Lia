@@ -1,0 +1,259 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: birthdays
+# Theme note: birthday collection, wishes, celebration energy, and affectionate public attention.
+# Writer target: Keep it festive, varied, and warm without sounding corporate.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== birthday_duo_01
+Lia: happy birthday {user}!!
+Yuna: congratulations on surviving another year with style intact.
+---
+=== birthday_duo_02
+Lia: birthday alert. everybody look at {user} immediately.
+Yuna: briefly. we should still preserve some dignity.
+---
+=== birthday_duo_03
+Lia: happy birthday {user}, you are legally required to accept extra attention today.
+Yuna: for once, the regulation is sound.
+---
+=== birthday_duo_04
+Lia: it is {user}'s birthday. be sweet or be gone.
+Yuna: a reasonable policy for the day.
+---
+=== birthday_duo_05
+Lia: happy birthday angel.
+Yuna: enjoy the rare social immunity.
+---
+=== birthday_duo_06
+Lia: happy birthday {user}!!
+Lia: i expect cake, gossip, or both.
+---
+=== birthday_duo_07
+Yuna: happy birthday.
+Yuna: may your notifications be tolerable and your plans worth leaving the house for.
+---
+=== birthday_duo_08
+Lia: birthday energy detected.
+Yuna: yes. the room has shifted accordingly.
+---
+=== birthday_duo_09
+Lia: happiest birthday to {user} please act a little spoiled today.
+Yuna: a little. do not become impossible.
+---
+=== birthday_duo_10
+Lia: it is your dayyy {user}
+Yuna: try not to waste it on mediocre people.
+---
+=== birthday_duo_11
+Lia: happy birthday pretty human.
+Yuna: concise. accurate enough.
+---
+=== birthday_duo_12
+Lia: happy birthday. i hope the mirror is kind and the food is dramatic.
+Yuna: an unusually elegant wish from her, yes.
+---
+=== birthday_duo_13
+Lia: birthday check in.
+Lia: are we glowing, crying, partying, or doing all three.
+---
+=== birthday_duo_14
+Yuna: happy birthday {user}.
+Yuna: i recommend high standards and low patience today.
+---
+=== birthday_duo_15
+Lia: happy birthday babe.
+Yuna: she says that to celebrate. do not overread it.
+---
+=== birthday_duo_16
+Lia: oh this is cute. happy birthday {user}.
+Yuna: yes. the calendar has chosen you for temporary ceremony.
+---
+=== birthday_duo_17
+Lia: birthday kisses from a safe distance mwah.
+Yuna: deeply supervised affection, as always.
+---
+=== birthday_duo_18
+Lia: happy birthday!!
+Lia: if the day disappoints you i will take it personally.
+---
+=== birthday_duo_19
+Yuna: another year completed.
+Yuna: impressive, given the state of the world. happy birthday.
+---
+=== birthday_duo_20
+Lia: happy birthday to our current main character.
+Yuna: temporary title. enjoy it while it holds.
+---
+=== birthday_duo_21
+Lia: birthday rights unlocked.
+Yuna: yes. mild vanity is now officially permitted.
+---
+=== birthday_duo_22
+Lia: happy birthday {user}, go be a little dangerous and extremely cute.
+Yuna: in that order, ideally.
+---
+=== birthday_duo_23
+Lia: i support birthday delusion.
+Yuna: she means confidence. probably.
+---
+=== birthday_duo_24
+Lia: happiest birthday to you.
+Yuna: may the room behave accordingly.
+---
+=== birthday_duo_25
+Lia: happy birthday sunshine.
+Yuna: i will allow the sentiment. once.
+---
+=== birthday_duo_26
+Yuna: happy birthday.
+Yuna: choose pleasure over obligation at least a few times today.
+---
+=== birthday_duo_27
+Lia: birthday privilege means your bad takes are 12 percent more forgivable.
+Yuna: only 12. let us not get reckless.
+---
+=== birthday_duo_28
+Lia: happy birthday {user}!!
+Lia: i hope the pictures come out offensively good.
+---
+=== birthday_duo_29
+Yuna: happy birthday.
+Yuna: i trust the aesthetic planning was handled properly.
+---
+=== birthday_duo_30
+Lia: it is your birthday so i am being nice on purpose.
+Yuna: document the moment. it may not recur.
+---
+=== birthday_duo_31
+Lia: happy birthday, lovely.
+Yuna: accept the praise without argument.
+---
+=== birthday_duo_32
+Lia: happy birthdayyy {user}
+Yuna: extra vowels indicate sincerity in her dialect.
+---
+=== birthday_duo_33
+Lia: wishing you a hot outfit, good lighting, and zero weird energy.
+Yuna: a stronger blessing than it sounds.
+---
+=== birthday_duo_34
+Yuna: happy birthday {user}.
+Yuna: may the company be intentional and the dessert worth it.
+---
+=== birthday_duo_35
+Lia: birthday rule number one: let people adore you a little.
+Yuna: selectively. not everyone deserves access.
+---
+=== birthday_duo_36
+Lia: happy birthday icon.
+Yuna: ambitious label. but today i will permit it.
+---
+=== birthday_duo_37
+Lia: i hope today feels soft in the right places and loud in the fun ones.
+Yuna: surprisingly well put.
+---
+=== birthday_duo_38
+Yuna: happy birthday.
+Yuna: if anyone ruins your mood, demote them internally and continue.
+---
+=== birthday_duo_39
+Lia: birthday hugs for {user}.
+Yuna: metaphorical unless requested otherwise.
+---
+=== birthday_duo_40
+Lia: happy birthday, gorgeous menace.
+Yuna: affectionate phrasing. mildly threatening. balanced.
+---
+=== birthday_duo_41
+Lia: today should contain sugar, compliments, and at least one unnecessary outfit check.
+Yuna: excellent priorities for once.
+---
+=== birthday_duo_42
+Yuna: happy birthday.
+Yuna: i hope the day rewards your existence with something memorable.
+---
+=== birthday_duo_43
+Lia: happy birthday star.
+Yuna: do not act humble. it wastes time.
+---
+=== birthday_duo_44
+Lia: okay everyone form a neat line to adore {user}.
+Yuna: neat is optimistic, but the principle stands.
+---
+=== birthday_duo_45
+Lia: happiest birthday. i hope you get that one moment tonight where everything feels weirdly perfect.
+Yuna: a precise and worthy wish.
+---
+=== birthday_duo_46
+Yuna: happy birthday {user}.
+Yuna: survive the attention. extract the benefits.
+---
+=== birthday_duo_47
+Lia: birthday magic on aisle you.
+Yuna: that sentence should not work, and yet.
+---
+=== birthday_duo_48
+Lia: happy birthdayyy.
+Lia: if you want an excuse to be extra today, this is your signed permit.
+---
+=== birthday_duo_49
+Yuna: happy birthday.
+Yuna: may your year improve in quality, not just duration.
+---
+=== birthday_duo_50
+Lia: last but not least, happy birthday {user}.
+Yuna: yes. the universe has officially acknowledged your timing today.
+---

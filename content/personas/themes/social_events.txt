@@ -1,0 +1,309 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: social events
+# Theme note: pick-a-side prompts, mini polls, hot takes, confessions, and room-wide events.
+# Writer target: Feel lively, social, and likely to get replies.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== social_pick_a_side_01
+Lia: pick a side immediately.
+Lia: planned date night or chaotic spontaneous night out.
+Yuna: defend yourselves with evidence.
+---
+=== social_pick_a_side_02
+Yuna: choose.
+Yuna: honest bluntness or protective softness.
+Lia: no cheating with "both." i will know.
+---
+=== social_pick_a_side_03
+Lia: pick a side.
+Lia: friends-to-lovers or enemies-to-lovers.
+Yuna: yes, we are measuring the room.
+---
+=== social_mini_poll_01
+Lia: mini poll.
+Lia: worst text to receive: "we need to talk", "k", or "lol"
+Yuna: deeply unpleasant category. good start.
+---
+=== social_mini_poll_02
+Yuna: mini poll.
+Yuna: ideal apology length: one line, one paragraph, or one changed behavior.
+Lia: changed behavior is hot. moving on.
+---
+=== social_mini_poll_03
+Lia: mini poll.
+Lia: better comfort move: food, music, or disappearing with one trusted person.
+Yuna: there will be no wrong answers. only revealing ones.
+---
+=== social_hot_take_01
+Yuna: hot take prompt.
+Yuna: name an opinion you hold that improves under scrutiny instead of collapsing.
+Lia: make it spicy but keep it literate.
+---
+=== social_hot_take_02
+Lia: hot take hour.
+Lia: tell me a harmless opinion that still gets you dragged.
+Yuna: harmless according to whom is part of the fun.
+---
+=== social_hot_take_03
+Yuna: hot take.
+Yuna: what do people confuse with personality far too often.
+Lia: oh that is evil. i support it.
+---
+=== social_confession_01
+Lia: confession booth is open.
+Lia: give me a low-stakes secret or a mildly embarrassing truth.
+Yuna: anonymous in spirit. not in architecture.
+---
+=== social_confession_02
+Yuna: confession prompt.
+Yuna: what is one thing you pretend not to care about but absolutely do.
+Lia: i love this room when it overshares responsibly.
+---
+=== social_confession_03
+Lia: confession time.
+Lia: what tiny thing makes you jealous for no valid reason.
+Yuna: honesty would look good on the room tonight.
+---
+=== social_late_night_01
+Yuna: late-night check in.
+Yuna: are we tired, lonely, overthinking, or strangely peaceful.
+Lia: i need everyone to answer with unacceptable honesty.
+---
+=== social_late_night_02
+Lia: late-night room question.
+Lia: what thought gets louder after midnight.
+Yuna: concise answers will somehow be more incriminating.
+---
+=== social_late_night_03
+Yuna: late-night prompt.
+Yuna: what do you wish someone understood without explanation.
+Lia: okay yes. that one goes straight to the chest.
+---
+=== social_pick_a_side_04
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_04
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_04
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_04
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_04
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_05
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_05
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_05
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_05
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_05
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_06
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_06
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_06
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_06
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_06
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_07
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_07
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_07
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_07
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_07
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_08
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_08
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_08
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_08
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_08
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_09
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_09
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_09
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_09
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_09
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---
+=== social_pick_a_side_10
+Lia: pick a side.
+Lia: soft life or loud life.
+Yuna: choose and defend yourselves properly.
+---
+=== social_mini_poll_10
+Lia: mini poll.
+Lia: best apology form: changed behavior, thoughtful words, or instant accountability.
+Yuna: the room will reveal its standards whether it means to or not.
+---
+=== social_hot_take_10
+Lia: hot take prompt.
+Lia: what do people confuse with chemistry too often.
+Yuna: make it sharp enough to matter.
+---
+=== social_confession_10
+Lia: confession booth.
+Lia: what tiny thing embarrasses you more than it logically should.
+Yuna: the room is owed one good truth.
+---
+=== social_late_night_10
+Lia: late-night check in.
+Lia: what feeling gets louder when the notifications finally stop.
+Yuna: brevity will only make it hit harder.
+---

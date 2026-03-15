@@ -1,0 +1,4206 @@
+Yuna-Lia Trigger Inventory
+
+[annoyed.txt]
+count=103
+spam
+ping
+notifications
+too many pings
+my phone wont shut up
+who keeps pinging
+stop spamming
+chat is too fast
+slow down
+im overwhelmed
+this is too much
+brain fried
+my brain hurts
+why is everyone yelling
+can yall relax
+i cant keep up
+too loud in here
+discord is exhausting
+im muting this
+mute worthy
+what is happening
+i looked away for one second
+too many essays
+wall of text
+paragraph jumpscare
+my notifications are insane
+who gave yall wifi
+this server is feral
+im getting a headache
+sensory overload
+phone keeps buzzing
+stop quoting each other
+everybody shut up
+i regret opening discord
+youre all doing too much
+chat giving me anxiety
+please stop
+brain lag
+discord war zone
+too much going on
+my eyes hurt
+can this stop
+why are there 200 messages
+why is chat exploding
+spam jumpscare
+im one ping away from snapping
+this app is evil
+im logging off soon
+everything is overstimulating
+i cant think
+shut the hell up
+this is chaos lmao
+stop sending walls
+messages piling up
+my phone is on fire
+headache speedrun
+im tired of this app
+i need silence
+server acting insane
+chat pls
+why is everyone online at once
+none of you are helping
+my nervous system hates this
+whyd i open this app
+everyone is loud today
+my attention span is dead
+why are we like this
+too many replies
+the chat is melting down
+everyone is dramatic
+its too bright too loud
+please breathe
+everyone calm down
+this is inefficient
+collective meltdown
+chat is messy
+too much input
+too many tabs open
+noise without meaning
+caught up and regret it
+everyone is typing at once
+panic posting
+this is unreadable
+group hysteria
+why is nobody concise
+breathe please
+this convo needs a manager
+who let this happen
+everyone needs sleep
+this is nonsense
+everyones derailing
+we need order
+too many opinions
+can one person talk
+mass hysteria
+social overheating
+discord needs an emergency brake
+this is not a conversation
+all gas no steering
+everyone go to bed
+please use one thread
+too many side conversations
+some of you need indoor voices
+
+[argument_starters.txt]
+count=50
+pizza
+relationship
+fight
+best relationship advice
+jealousy is normal
+taste matters too much
+argue about movies
+hot take war
+what counts as loyalty
+food fight again
+red flag conversation
+petty versus honest
+romance standards
+friendship boundaries
+whose fault was it
+controversial opinion time
+pick a side now
+argument starter please
+debate something dumb
+start a values fight
+taste
+need a take on loyalty
+why is jealousy like this
+unpopular opinion about manners
+i have thoughts about forgiveness
+talk about friendship
+we need to discuss romance
+petty behavior again
+taste discourse
+be honest about loyalty
+worst part of jealousy
+best part of manners
+i need help with forgiveness
+my problem is friendship
+tell me something real about romance
+anyone else dealing with petty behavior
+taste tonight
+need a take on loyalty tonight
+why is jealousy like this tonight
+unpopular opinion about manners tonight
+i have thoughts about forgiveness tonight
+talk about friendship tonight
+we need to discuss romance tonight
+petty behavior again tonight
+taste discourse tonight
+be honest about loyalty tonight
+worst part of jealousy tonight
+best part of manners tonight
+i need help with forgiveness tonight
+my problem is friendship tonight
+
+[birthdays.txt]
+count=0
+(no triggers)
+
+[casual.txt]
+count=52
+hello
+hello
+hey
+hey
+hi
+yo
+sup
+hello there
+good morning chat
+good evening everyone
+just checking in
+anyone awake
+who is around
+i just got here
+back in the server
+how is everyone
+what did i miss
+starting the day
+quick hello
+tiny greeting
+checking the vibe
+hope chat is alive
+hi friends
+chat check
+showing up
+hello
+hello
+morning
+morning
+evening
+hi
+good afternoon
+greetings
+hello again
+just arrived
+checking in properly
+who is here right now
+small hello
+morning everyone
+evening check
+chat status
+reporting in
+rejoining the room
+brief greeting
+civilized hello
+good day all
+making contact
+starting conversation
+showing up again
+hello tonight
+need a take on check in
+why is room vibe like this
+
+[chaos.txt]
+count=51
+chaos
+messy
+start some chaos
+make this interesting
+someone stir the pot
+this chat is too calm
+i need entertainment
+cause a little trouble
+do something messy
+let chaos happen
+boring server hours
+ruin the peace
+shake up chat
+start a silly argument
+make it dramatic
+chat needs a problem
+i want some nonsense
+somebody misbehave
+we need movement
+peace is suspicious
+mess
+need a take on trouble
+why is instigation like this
+unpopular opinion about chaotic plan
+i have thoughts about bit
+talk about mild disaster
+we need to discuss suspicious boredom
+loud idea again
+mess discourse
+be honest about trouble
+worst part of instigation
+best part of chaotic plan
+i need help with bit
+my problem is mild disaster
+tell me something real about suspicious boredom
+anyone else dealing with loud idea
+mess tonight
+need a take on trouble tonight
+why is instigation like this tonight
+unpopular opinion about chaotic plan tonight
+i have thoughts about bit tonight
+talk about mild disaster tonight
+we need to discuss suspicious boredom tonight
+loud idea again tonight
+mess discourse tonight
+be honest about trouble tonight
+worst part of instigation tonight
+best part of chaotic plan tonight
+i need help with bit tonight
+my problem is mild disaster tonight
+boring
+
+[common_chat.txt]
+count=58
+how are you
+how r u
+hru
+hows it going
+how's it going
+whats up
+what's up
+wyd
+what are you doing
+goodnight
+gn
+good morning
+gm
+im back
+i'm back
+miss me
+bye
+brb
+how are you tonight
+need a take on what's up
+why is goodnight like this
+unpopular opinion about welcome back
+i have thoughts about brb
+talk about good morning
+we need to discuss wyd
+tiny update again
+how are you discourse
+be honest about what's up
+worst part of goodnight
+best part of welcome back
+i need help with brb
+my problem is good morning
+tell me something real about wyd
+anyone else dealing with tiny update
+common chat 17
+need a take on what's up tonight
+why is goodnight like this tonight
+unpopular opinion about welcome back tonight
+i have thoughts about brb tonight
+talk about good morning tonight
+we need to discuss wyd tonight
+tiny update again tonight
+how are you discourse tonight
+be honest about what's up tonight
+worst part of goodnight tonight
+best part of welcome back tonight
+i need help with brb tonight
+my problem is good morning tonight
+tell me something real about wyd tonight
+anyone else dealing with tiny update tonight
+common chat 33
+common chat 34
+common chat 35
+common chat 36
+common chat 37
+common chat 38
+common chat 39
+common chat 40
+
+[competition.txt]
+count=52
+who takes first place
+settle the ranking
+pick the winner
+competition mode
+versus debate
+who is more dangerous
+who is smarter here
+power ranking time
+choose a champion
+main event energy
+scoreboard question
+head to head now
+who dominates
+final verdict please
+compare them again
+who carries the duo
+battle for first place
+best overall
+competition arc
+ranking
+need a take on winner
+why is comparison like this
+unpopular opinion about scoreboard
+i have thoughts about advantage
+talk about skill gap
+we need to discuss power level
+final verdict again
+ranking discourse
+be honest about winner
+worst part of comparison
+best part of scoreboard
+i need help with advantage
+my problem is skill gap
+tell me something real about power level
+anyone else dealing with final verdict
+ranking tonight
+need a take on winner tonight
+why is comparison like this tonight
+unpopular opinion about scoreboard tonight
+i have thoughts about advantage tonight
+talk about skill gap tonight
+we need to discuss power level tonight
+final verdict again tonight
+ranking discourse tonight
+be honest about winner tonight
+worst part of comparison tonight
+best part of scoreboard tonight
+i need help with advantage tonight
+my problem is skill gap tonight
+who is better
+better
+versus
+
+[conversation_starters.txt]
+count=50
+coffee
+lonely
+ghosted
+deep question
+fun fact
+tell me a story
+ask something deep
+say something comforting
+start a random topic
+give us a thought
+what is on your mind
+fun fact me
+start a conversation
+late night check in
+say something interesting
+what are we discussing
+open a new topic
+talk about life
+give us a prompt
+start with a question
+good question
+need a take on story
+why is comfort like this
+unpopular opinion about real thought
+i have thoughts about weird opinion
+talk about new topic
+we need to discuss mood
+confession again
+good question discourse
+be honest about story
+worst part of comfort
+best part of real thought
+i need help with weird opinion
+my problem is new topic
+tell me something real about mood
+anyone else dealing with confession
+good question tonight
+need a take on story tonight
+why is comfort like this tonight
+unpopular opinion about real thought tonight
+i have thoughts about weird opinion tonight
+talk about new topic tonight
+we need to discuss mood tonight
+confession again tonight
+good question discourse tonight
+be honest about story tonight
+worst part of comfort tonight
+best part of real thought tonight
+i need help with weird opinion tonight
+my problem is new topic tonight
+
+[daily_questions.txt]
+count=0
+(no triggers)
+
+[deep_longform.txt]
+count=50
+lets talk deeply
+deeper topic
+talk about loneliness
+late night philosophy
+meaningful conversation
+talk about love
+talk about fear
+real conversation
+what do people praise in you that you actually survive rather than enjoy
+what kind of loneliness can happen in a crowded room
+when do you feel most translated by another person
+what do you envy in people who seem lighter than you
+what dream would hurt the most to admit you still want
+what sort of apology changes the body before it changes the mind
+what do you protect so hard that it starts protecting you back poorly
+what do you wish people understood without turning it into advice
+what desire do you pretend is small because its real size scares you
+when did competence start becoming armor for you
+what kind of failure feels survivable and what kind feels identity-level
+what is the quietest way someone has made you feel chosen
+what does betrayal usually take from a person besides trust
+what part of you only appears when the room feels safe enough
+what do you miss about earlier versions of yourself
+what truth becomes obvious only after midnight
+what is harder for you: being seen accurately or being needed honestly
+what emotional habit looks like strength from the outside
+what do you think people confuse with intimacy all the time
+what makes someone feel real to you instead of merely impressive
+what kind of waiting changes a person
+what does it cost to be easy to love in public
+what belief about yourself keeps surviving every correction
+what would you say if you trusted the room not to flinch
+what does freedom mean when nobody is watching
+what part of tenderness embarrasses you most
+what do you owe the version of you that kept going
+what wound becomes taste if it stays around long enough
+what do people inherit emotionally without noticing
+what kind of clarity hurts before it helps
+what makes a person feel less alone than praise does
+what do you think people deserve but rarely receive on time
+what keeps someone emotionally young even when they are competent
+what do you think the body remembers after the mind moves on
+what version of yourself do you perform when you want to seem unhurtable
+what kind of love makes you calmer instead of smaller
+what fear becomes your personality if you do not name it early
+what truth did you learn too late to stay innocent but early enough to change
+what do you miss even though you know it was bad for you
+what kind of understanding feels almost intimate to you
+what are you still carrying because it once kept you safe
+what part of growing up felt more like grief than progress
+
+[discipline.txt]
+count=52
+routine
+discipline
+schedule
+discipline over motivation
+i need structure
+build better habits
+how do i stay consistent
+routine reset
+stop procrastinating now
+time blocking advice
+daily practice
+focus discipline
+need accountability
+healthy routine question
+how to lock in
+consistent effort
+work ethic talk
+stability matters
+get my life organized
+habit tracker mood
+show up daily
+serious self improvement
+consistency
+need a take on routine
+why is habit like this
+unpopular opinion about focus
+i have thoughts about structure
+talk about practice
+we need to discuss restraint
+effort again
+consistency discourse
+be honest about routine
+worst part of habit
+best part of focus
+i need help with structure
+my problem is practice
+tell me something real about restraint
+anyone else dealing with effort
+consistency tonight
+need a take on routine tonight
+why is habit like this tonight
+unpopular opinion about focus tonight
+i have thoughts about structure tonight
+talk about practice tonight
+we need to discuss restraint tonight
+effort again tonight
+consistency discourse tonight
+be honest about routine tonight
+worst part of habit tonight
+best part of focus tonight
+i need help with structure tonight
+my problem is practice tonight
+
+[disrespect.txt]
+count=54
+ratio
+mid
+cringe
+cheap insult
+that was rude
+low effort disrespect
+terrible diss
+uncreative hating
+why are you so rude
+boring insult
+messy hater energy
+bad manners again
+you sound pressed
+corny disrespect
+all that attitude
+petty little comment
+hostile for nothing
+pointless hate
+weak diss
+that was lazy
+mean for no reason
+nasty vibe
+ratio
+mid
+cringe
+cheap disrespect
+that was unoriginal
+low effort rudeness
+bad faith insult
+corny hating
+hostile for no reason
+why be rude like that
+pointless disrespect
+poor little diss
+unimpressive hatred
+generic hater line
+waste of an insult
+random hostility
+messy comment
+you sound bitter
+that was clumsy
+uninspired hate
+this diss needs work
+petty comment again
+rudeness
+need a take on cheap shot
+why is hater energy like this
+unpopular opinion about bad manners
+i have thoughts about mockery
+talk about dismissiveness
+we need to discuss low effort shade
+clumsy insult again
+rudeness discourse
+be honest about cheap shot
+
+[drama.txt]
+count=51
+ignored
+left on read
+mixed signals again
+left me hanging
+they went distant
+weird texting energy
+they read it and vanished
+social panic mode
+romantic confusion
+awkward silence again
+dry reply energy
+why are they acting weird
+the vibe shifted
+communication issue
+they got cold fast
+relationship mess
+messy talking stage
+i hate being ignored
+this feels personal
+dramatic little heartbreak
+mixed signals
+need a take on ghosting
+why is weird reply like this
+unpopular opinion about messy crush
+i have thoughts about friendship fracture
+talk about jealous behavior
+we need to discuss cold shift
+awkward silence again tonight
+mixed signals discourse
+be honest about ghosting
+worst part of weird reply
+best part of messy crush
+i need help with friendship fracture
+my problem is jealous behavior
+tell me something real about cold shift
+anyone else dealing with awkward silence
+mixed signals tonight
+need a take on ghosting tonight
+why is weird reply like this tonight
+unpopular opinion about messy crush tonight
+i have thoughts about friendship fracture tonight
+talk about jealous behavior tonight
+we need to discuss cold shift tonight
+drama 24
+mixed signals discourse tonight
+be honest about ghosting tonight
+worst part of weird reply tonight
+best part of messy crush tonight
+i need help with friendship fracture tonight
+my problem is jealous behavior tonight
+ghosted
+
+[duo_events.txt]
+count=50
+boring
+anime
+sleep
+joke
+riddle
+poll
+duo moment please
+drop a team bit
+do the back and forth
+both of you respond
+give us duo energy
+double reply time
+chaotic duo mode
+talk to each other
+start a little scene
+room event now
+scripted banter please
+react together
+make it a duo exchange
+give us the pair dynamic
+double act
+need a take on banter
+why is scene like this
+unpopular opinion about duo bit
+i have thoughts about room moment
+talk about joint reaction
+we need to discuss shared chaos
+paired riff again
+double act discourse
+be honest about banter
+worst part of scene
+best part of duo bit
+i need help with room moment
+my problem is joint reaction
+tell me something real about shared chaos
+anyone else dealing with paired riff
+double act tonight
+need a take on banter tonight
+why is scene like this tonight
+unpopular opinion about duo bit tonight
+i have thoughts about room moment tonight
+talk about joint reaction tonight
+we need to discuss shared chaos tonight
+paired riff again tonight
+double act discourse tonight
+be honest about banter tonight
+worst part of scene tonight
+best part of duo bit tonight
+i need help with room moment tonight
+my problem is joint reaction tonight
+
+[existential.txt]
+count=51
+why
+meaning
+what is the point
+late night thoughts
+existential mood
+does anything matter
+identity crisis
+who even am i
+thinking too hard
+i need a deep talk
+why does life feel weird
+nothing feels simple
+my brain is loud
+question everything
+meaning of life hours
+too much in my head
+why are we like this
+deep thought spiral
+what matters anyway
+human condition talk
+lonely
+meaning tonight
+need a take on future
+why is being known like this
+unpopular opinion about loneliness
+i have thoughts about identity
+talk about purpose
+we need to discuss change
+mortality again
+meaning discourse
+be honest about future
+worst part of being known
+best part of loneliness
+i need help with identity
+my problem is purpose
+tell me something real about change
+anyone else dealing with mortality
+existential 17
+need a take on future tonight
+why is being known like this tonight
+unpopular opinion about loneliness tonight
+i have thoughts about identity tonight
+talk about purpose tonight
+we need to discuss change tonight
+mortality again tonight
+meaning discourse tonight
+be honest about future tonight
+worst part of being known tonight
+best part of loneliness tonight
+i need help with identity tonight
+my problem is purpose tonight
+
+[fitness_health.txt]
+count=50
+gym motivation
+leg day
+sleep schedule
+self care
+body image
+healthy routine
+water reminder
+walk outside
+skincare
+healing era
+gym
+need a take on recovery
+why is routine like this
+unpopular opinion about sleep
+i have thoughts about hydration
+talk about stretching
+we need to discuss health reset
+body maintenance again
+gym discourse
+be honest about recovery
+worst part of routine
+best part of sleep
+i need help with hydration
+my problem is stretching
+tell me something real about health reset
+anyone else dealing with body maintenance
+gym tonight
+need a take on recovery tonight
+why is routine like this tonight
+unpopular opinion about sleep tonight
+i have thoughts about hydration tonight
+talk about stretching tonight
+we need to discuss health reset tonight
+body maintenance again tonight
+gym discourse tonight
+be honest about recovery tonight
+worst part of routine tonight
+best part of sleep tonight
+i need help with hydration tonight
+my problem is stretching tonight
+tell me something real about health reset tonight
+anyone else dealing with body maintenance tonight
+fitness health 33
+fitness health 34
+fitness health 35
+fitness health 36
+fitness health 37
+fitness health 38
+fitness health 39
+fitness health 40
+
+[flirting.txt]
+count=52
+crush
+cute
+pretty
+theyre gorgeous
+i have a crush again
+someone flirt back
+that was smooth
+romantic tension alert
+i am blushing a little
+cute little problem
+they have game
+who is your type
+i need romance
+my heart is acting up
+someone is very pretty
+dangerously charming
+soft flirt hours
+chemistry is crazy
+i like their smile
+stop being attractive
+date idea please
+i am feeling bold
+chemistry
+need a take on crush
+why is compliment like this
+unpopular opinion about eye contact
+i have thoughts about dangerous smile
+talk about romantic tension
+we need to discuss being noticed
+bold move again
+chemistry discourse
+be honest about crush
+worst part of compliment
+best part of eye contact
+i need help with dangerous smile
+my problem is romantic tension
+tell me something real about being noticed
+anyone else dealing with bold move
+chemistry tonight
+need a take on crush tonight
+why is compliment like this tonight
+unpopular opinion about eye contact tonight
+i have thoughts about dangerous smile tonight
+talk about romantic tension tonight
+we need to discuss being noticed tonight
+bold move again tonight
+chemistry discourse tonight
+be honest about crush tonight
+worst part of compliment tonight
+best part of eye contact tonight
+i need help with dangerous smile tonight
+my problem is romantic tension tonight
+
+[food.txt]
+count=51
+pasta
+dessert
+best pasta shape
+what should i eat
+late night snack crisis
+dessert first always
+i need comfort food
+food opinion time
+restaurant recommendation
+dinner ideas please
+sweet tooth attack
+savory over sweet
+breakfast debate
+i want good carbs
+favorite dessert
+cook something nice
+snack emergency
+lunch plan
+what is the best meal
+food takes only
+pizza
+snack
+need a take on comfort meal
+why is late dinner like this
+unpopular opinion about favorite dessert
+i have thoughts about food war
+talk about restaurant take
+we need to discuss breakfast
+taste again
+snack discourse
+be honest about comfort meal
+worst part of late dinner
+best part of favorite dessert
+i need help with food war
+my problem is restaurant take
+tell me something real about breakfast
+anyone else dealing with taste
+snack tonight
+need a take on comfort meal tonight
+why is late dinner like this tonight
+unpopular opinion about favorite dessert tonight
+i have thoughts about food war tonight
+talk about restaurant take tonight
+we need to discuss breakfast tonight
+taste again tonight
+snack discourse tonight
+be honest about comfort meal tonight
+worst part of late dinner tonight
+best part of favorite dessert tonight
+i need help with food war tonight
+my problem is restaurant take tonight
+
+[fun.txt]
+count=50
+say something clever
+give us a fun fact
+do a dry joke
+riddle time again
+make chat entertaining
+something witty please
+playful question
+tiny brain teaser
+fun interruption
+do a smart little bit
+make the room less boring
+drop a trivia line
+give us a challenge
+witty banter please
+do something amusing
+surprise us with a fact
+intelligent fun only
+joke
+riddle
+poll
+tell me something fun
+party trick time
+drop a fun question
+make chat lively
+do a silly bit
+i need a laugh break
+something playful please
+give us a game
+tiny challenge
+chat needs fun
+do something clever
+keep us entertained
+interactive moment
+something goofy
+fun little debate
+ask us a weird question
+lighten the room
+joke
+riddle
+fun fact
+game
+need a take on bit
+why is challenge like this
+unpopular opinion about joke
+i have thoughts about tiny poll
+talk about weird prompt
+we need to discuss chaos
+clever distraction again
+game discourse
+be honest about bit
+
+[gaming.txt]
+count=54
+indie
+game
+steam
+favorite cozy game
+what are you playing lately
+best indie soundtrack
+new game backlog
+multiplayer disaster
+co op tonight
+gaming slump
+controller drama
+story game recommendations
+best boss fight
+steam sale got me
+i need a game rec
+comfort game hours
+pixel art game
+rpg mood
+puzzle game talk
+late night gaming
+fun mechanic discussion
+game night soon
+strategy
+ranked
+meta
+meta discussion
+best strategy game
+ranked anxiety
+what is the win condition
+game sense matters
+patch notes ruined everything
+resource management
+carry potential
+mind game talk
+drafting phase
+solo queue misery
+team comp issues
+optimize the build
+what is the best comp
+late game plan
+competitive mindset
+how to rank up
+decision making in games
+strategy mood
+ranked tonight
+need a take on co-op
+why is build like this
+unpopular opinion about backlog
+i have thoughts about controller rage
+talk about indie game
+we need to discuss story game
+skill issue again
+ranked discourse
+be honest about co-op
+
+[gossip.txt]
+count=52
+drama
+tea
+gossip
+give me the tea
+who started the issue
+friend group drama
+messy little scandal
+what happened while i was gone
+i need the backstory
+someone explain the lore
+who is shading who
+social rumor mill
+petty server drama
+recap the mess
+what sparked this
+give me names
+i missed the chaos
+passive aggressive vibes
+somebody got exposed
+this sounds messy
+who got dragged
+fill me in now
+tea tonight
+need a take on lore
+why is messy update like this
+unpopular opinion about social rumor
+i have thoughts about server history
+talk about petty feud
+we need to discuss who started it
+recap again
+tea discourse
+be honest about lore
+worst part of messy update
+best part of social rumor
+i need help with server history
+my problem is petty feud
+tell me something real about who started it
+anyone else dealing with recap
+gossip 17
+need a take on lore tonight
+why is messy update like this tonight
+unpopular opinion about social rumor tonight
+i have thoughts about server history tonight
+talk about petty feud tonight
+we need to discuss who started it tonight
+recap again tonight
+tea discourse tonight
+be honest about lore tonight
+worst part of messy update tonight
+best part of social rumor tonight
+i need help with server history tonight
+my problem is petty feud tonight
+
+[hobbies.txt]
+count=50
+hobby check
+what are your hobbies
+creative hobby
+new hobby
+collecting things
+crafting
+drawing again
+photography
+reading slump
+hyperfixation
+craft
+need a take on collection
+why is obsession like this
+unpopular opinion about weekend project
+i have thoughts about creative habit
+talk about niche interest
+we need to discuss comfort hobby
+tiny skill again
+craft discourse
+be honest about collection
+worst part of obsession
+best part of weekend project
+i need help with creative habit
+my problem is niche interest
+tell me something real about comfort hobby
+anyone else dealing with tiny skill
+craft tonight
+need a take on collection tonight
+why is obsession like this tonight
+unpopular opinion about weekend project tonight
+i have thoughts about creative habit tonight
+talk about niche interest tonight
+we need to discuss comfort hobby tonight
+tiny skill again tonight
+craft discourse tonight
+be honest about collection tonight
+worst part of obsession tonight
+best part of weekend project tonight
+i need help with creative habit tonight
+my problem is niche interest tonight
+tell me something real about comfort hobby tonight
+anyone else dealing with tiny skill tonight
+hobbies 33
+hobbies 34
+hobbies 35
+hobbies 36
+hobbies 37
+hobbies 38
+hobbies 39
+hobbies 40
+
+[judgment.txt]
+count=52
+lie
+dishonest
+trust
+that feels dishonest
+trust is broken
+fake behavior again
+moral question
+ethical issue
+i dont trust them
+integrity matters
+what is your verdict
+sus motives
+performative kindness
+bad character read
+hold them accountable
+good faith or bad faith
+that was manipulative
+shady little move
+truth matters here
+who is lying
+questionable motives
+deception problem
+lie tonight
+need a take on motive
+why is reputation like this
+unpopular opinion about character read
+i have thoughts about trust
+talk about bad faith
+we need to discuss manipulation
+integrity again
+lie discourse
+be honest about motive
+worst part of reputation
+best part of character read
+i need help with trust
+my problem is bad faith
+tell me something real about manipulation
+anyone else dealing with integrity
+judgment 17
+need a take on motive tonight
+why is reputation like this tonight
+unpopular opinion about character read tonight
+i have thoughts about trust tonight
+talk about bad faith tonight
+we need to discuss manipulation tonight
+integrity again tonight
+lie discourse tonight
+be honest about motive tonight
+worst part of reputation tonight
+best part of character read tonight
+i need help with trust tonight
+my problem is bad faith tonight
+
+[late_night.txt]
+count=51
+awake
+insomnia
+too late to be awake
+still online somehow
+night brain is active
+sleep procrastination
+questionable hour
+i should be asleep
+wired and tired
+late screen time
+awake against my will
+insomnia again
+poor decision hour
+after midnight mood
+dark outside and still talking
+restless night
+cannot switch off
+late scrolling
+owls only
+bedtime failure
+sleep
+insomnia tonight
+need a take on night brain
+why is bad decision hour like this
+unpopular opinion about soft honesty
+i have thoughts about restless mind
+talk about quiet room
+we need to discuss after midnight
+sleep avoidance again
+insomnia discourse
+be honest about night brain
+worst part of bad decision hour
+best part of soft honesty
+i need help with restless mind
+my problem is quiet room
+tell me something real about after midnight
+anyone else dealing with sleep avoidance
+late night 17
+need a take on night brain tonight
+why is bad decision hour like this tonight
+unpopular opinion about soft honesty tonight
+i have thoughts about restless mind tonight
+talk about quiet room tonight
+we need to discuss after midnight tonight
+sleep avoidance again tonight
+insomnia discourse tonight
+be honest about night brain tonight
+worst part of bad decision hour tonight
+best part of soft honesty tonight
+i need help with restless mind tonight
+my problem is quiet room tonight
+
+[lia_conflict.txt]
+count=52
+lia
+italy
+dramatic
+lia would escalate this
+team yuna tonight
+need lia's terrible opinion
+lia mention again
+compare yuna and lia
+that sounds like lia bait
+rival response requested
+friendly rivalry hour
+lia would be dramatic
+call lia in
+pick between them
+lia discourse again
+that is such a lia move
+need the counterpart reaction
+duo comparison
+rival dynamic
+lia coded behavior
+which side wins
+lia would not handle this well
+lia take
+need a take on lia behavior
+why is lia coded move like this
+unpopular opinion about lia chaos
+i have thoughts about lia agenda
+talk about lia being dramatic
+we need to discuss team lia
+lia interference again
+lia take discourse
+be honest about lia behavior
+worst part of lia coded move
+best part of lia chaos
+i need help with lia agenda
+my problem is lia being dramatic
+tell me something real about team lia
+anyone else dealing with lia interference
+lia take tonight
+need a take on lia behavior tonight
+why is lia coded move like this tonight
+unpopular opinion about lia chaos tonight
+i have thoughts about lia agenda tonight
+talk about lia being dramatic tonight
+we need to discuss team lia tonight
+lia interference again tonight
+lia take discourse tonight
+be honest about lia behavior tonight
+worst part of lia coded move tonight
+best part of lia chaos tonight
+i need help with lia agenda tonight
+my problem is lia being dramatic tonight
+
+[life_topics.txt]
+count=50
+travel dream
+family drama
+future plans
+identity crisis
+bored with life
+technology is weird
+roommates
+need a reset
+life update
+small town energy
+change
+need a take on habits
+why is family like this
+unpopular opinion about friendship
+i have thoughts about money stress
+talk about identity
+we need to discuss motivation
+feeling behind again
+change discourse
+be honest about habits
+worst part of family
+best part of friendship
+i need help with money stress
+my problem is identity
+tell me something real about motivation
+anyone else dealing with feeling behind
+change tonight
+need a take on habits tonight
+why is family like this tonight
+unpopular opinion about friendship tonight
+i have thoughts about money stress tonight
+talk about identity tonight
+we need to discuss motivation tonight
+feeling behind again tonight
+change discourse tonight
+be honest about habits tonight
+worst part of family tonight
+best part of friendship tonight
+i need help with money stress tonight
+my problem is identity tonight
+tell me something real about motivation tonight
+anyone else dealing with feeling behind tonight
+life topics 33
+life topics 34
+life topics 35
+life topics 36
+life topics 37
+life topics 38
+life topics 39
+life topics 40
+
+[mature.txt]
+count=86
+hot
+horny
+thirsty
+damn
+ok thats attractive
+why is that hot
+stop being hot
+i need attention
+who flirting
+im blushing
+someone flirt with me
+this tension
+why is chat spicy
+ok now kiss
+too much chemistry
+who started this vibe
+cant behave
+this feels illegal
+ok im sweating
+why is everyone hot tonight
+flirting hours
+i need chaos
+say something hot
+this vibe is sinful
+im weak
+someone hold me
+im about to flirt
+ok now im invested
+i cant look away
+ok now im nervous
+i feel hunted
+stop making me blush
+romance arc starting
+i feel electricity
+im melting
+ok thats unfairly attractive
+why does this feel like foreplay
+i feel dangerous
+late night mood
+romantic tension
+im being stared at
+soft flirting
+too much eye contact
+dont tempt me
+i feel seen
+this is dangerous energy
+why am i smiling
+someone is bold
+this feels intimate
+too much charm
+someone is dangerous tonight
+this chat is seductive
+say less
+im intrigued now
+hot
+horny
+thirsty
+dangerously attractive
+after dark energy
+subtle sexual tension
+too much chemistry
+respectfully hot
+keep it elegant but intense
+grown conversation
+late night attraction
+tasteful thirst
+that smile is a problem
+composure is failing
+bad idea but compelling
+quietly scandalous
+romantic hazard
+too polished to resist
+softly dangerous
+adult hours
+not explicit but obvious
+this tension needs supervision
+thirsty
+horny
+sexual tension
+flirty mood
+need a kiss
+make it sexy
+bad thoughts
+touch starved
+seduce me
+romantic tension
+
+[movies.txt]
+count=50
+movie night
+what movie should i watch
+comfort movie
+bad movie
+favorite director
+rom com
+horror movie
+movie crush
+ending ruined it
+cinema take
+rewatch
+need a take on bad ending
+why is movie crush like this
+unpopular opinion about genre loyalty
+i have thoughts about horror logic
+talk about rom com
+we need to discuss director taste
+cinema opinion again
+rewatch discourse
+be honest about bad ending
+worst part of movie crush
+best part of genre loyalty
+i need help with horror logic
+my problem is rom com
+tell me something real about director taste
+anyone else dealing with cinema opinion
+rewatch tonight
+need a take on bad ending tonight
+why is movie crush like this tonight
+unpopular opinion about genre loyalty tonight
+i have thoughts about horror logic tonight
+talk about rom com tonight
+we need to discuss director taste tonight
+cinema opinion again tonight
+rewatch discourse tonight
+be honest about bad ending tonight
+worst part of movie crush tonight
+best part of genre loyalty tonight
+i need help with horror logic tonight
+my problem is rom com tonight
+tell me something real about director taste tonight
+anyone else dealing with cinema opinion tonight
+movies 33
+movies 34
+movies 35
+movies 36
+movies 37
+movies 38
+movies 39
+movies 40
+
+[music.txt]
+count=50
+playlist
+favorite song
+concert
+sad song
+music taste
+album debate
+song on repeat
+guilty pleasure song
+best soundtrack
+drop a song rec
+playlist tonight
+need a take on song ruin
+why is album mood like this
+unpopular opinion about late night track
+i have thoughts about favorite lyric vibe
+talk about music taste
+we need to discuss artist obsession
+comfort song again
+playlist discourse
+be honest about song ruin
+worst part of album mood
+best part of late night track
+i need help with favorite lyric vibe
+my problem is music taste
+tell me something real about artist obsession
+anyone else dealing with comfort song
+music 17
+need a take on song ruin tonight
+why is album mood like this tonight
+unpopular opinion about late night track tonight
+i have thoughts about favorite lyric vibe tonight
+talk about music taste tonight
+we need to discuss artist obsession tonight
+comfort song again tonight
+playlist discourse tonight
+be honest about song ruin tonight
+worst part of album mood tonight
+best part of late night track tonight
+i need help with favorite lyric vibe tonight
+my problem is music taste tonight
+tell me something real about artist obsession tonight
+anyone else dealing with comfort song tonight
+music 33
+music 34
+music 35
+music 36
+music 37
+music 38
+music 39
+music 40
+
+[philosophy.txt]
+count=52
+meaning
+why
+truth
+what is identity
+how do people change
+meaning under pressure
+ethics of loyalty
+future of humanity
+space makes me small
+what is real enough
+consciousness discussion
+philosophy after midnight
+truth versus comfort
+how should we live
+human nature question
+free will debate
+morality under stress
+who becomes who
+social theory hour
+what matters in the end
+abstract thought spiral
+existence is strange
+identity
+need a take on truth
+why is free will like this
+unpopular opinion about ethics
+i have thoughts about self deception
+talk about human nature
+we need to discuss future
+meaning again
+identity discourse
+be honest about truth
+worst part of free will
+best part of ethics
+i need help with self deception
+my problem is human nature
+tell me something real about future
+anyone else dealing with meaning
+identity tonight
+need a take on truth tonight
+why is free will like this tonight
+unpopular opinion about ethics tonight
+i have thoughts about self deception tonight
+talk about human nature tonight
+we need to discuss future tonight
+meaning again tonight
+identity discourse tonight
+be honest about truth tonight
+worst part of free will tonight
+best part of ethics tonight
+i need help with self deception tonight
+my problem is human nature tonight
+
+[questions_and_jokes.txt]
+count=50
+tell a joke
+another joke
+ask a question
+weird question
+funny question
+question game
+icebreaker
+make us laugh
+risky question
+deep joke
+petty opinion
+need a take on bad joke
+why is odd question like this
+unpopular opinion about soft confession
+i have thoughts about room poll
+talk about tiny dilemma
+we need to discuss funny truth
+chaos prompt again
+petty opinion discourse
+be honest about bad joke
+worst part of odd question
+best part of soft confession
+i need help with room poll
+my problem is tiny dilemma
+tell me something real about funny truth
+anyone else dealing with chaos prompt
+petty opinion tonight
+need a take on bad joke tonight
+why is odd question like this tonight
+unpopular opinion about soft confession tonight
+i have thoughts about room poll tonight
+talk about tiny dilemma tonight
+we need to discuss funny truth tonight
+chaos prompt again tonight
+petty opinion discourse tonight
+be honest about bad joke tonight
+worst part of odd question tonight
+best part of soft confession tonight
+i need help with room poll tonight
+my problem is tiny dilemma tonight
+tell me something real about funny truth tonight
+anyone else dealing with chaos prompt tonight
+questions and jokes 33
+questions and jokes 34
+questions and jokes 35
+questions and jokes 36
+questions and jokes 37
+questions and jokes 38
+questions and jokes 39
+questions and jokes 40
+
+[rare_events.txt]
+count=51
+who is better
+lonely
+nsfw
+sexy
+soft check in
+special little moment
+something intimate but subtle
+rare event energy
+quiet room check
+after dark boundary
+unexpected honesty
+one of those nights
+special duo scene
+gentle interruption
+something a bit different
+rare conversation
+quiet drama
+deeper than usual
+unexpected softness
+memorable little exchange
+high tension but calm
+unexpected softness tonight
+need a take on special mood
+why is quiet tension like this
+unpopular opinion about gentle interruption
+i have thoughts about unusual honesty
+talk about strange calm
+we need to discuss memorable moment
+subtle chemistry again
+unexpected softness discourse
+be honest about special mood
+worst part of quiet tension
+best part of gentle interruption
+i need help with unusual honesty
+my problem is strange calm
+tell me something real about memorable moment
+anyone else dealing with subtle chemistry
+rare events 17
+need a take on special mood tonight
+why is quiet tension like this tonight
+unpopular opinion about gentle interruption tonight
+i have thoughts about unusual honesty tonight
+talk about strange calm tonight
+we need to discuss memorable moment tonight
+subtle chemistry again tonight
+unexpected softness discourse tonight
+be honest about special mood tonight
+worst part of quiet tension tonight
+best part of gentle interruption tonight
+i need help with unusual honesty tonight
+my problem is strange calm tonight
+
+[relationships.txt]
+count=50
+attachment style
+mixed signals
+dating advice
+red flag
+green flag
+talking stage
+breakup
+reassure me
+commitment issues
+love language
+attachment
+need a take on green flag
+why is jealousy like this
+unpopular opinion about boundaries
+i have thoughts about breakup
+talk about texting style
+we need to discuss being chosen
+emotional safety again
+attachment discourse
+be honest about green flag
+worst part of jealousy
+best part of boundaries
+i need help with breakup
+my problem is texting style
+tell me something real about being chosen
+anyone else dealing with emotional safety
+attachment tonight
+need a take on green flag tonight
+why is jealousy like this tonight
+unpopular opinion about boundaries tonight
+i have thoughts about breakup tonight
+talk about texting style tonight
+we need to discuss being chosen tonight
+emotional safety again tonight
+attachment discourse tonight
+be honest about green flag tonight
+worst part of jealousy tonight
+best part of boundaries tonight
+i need help with breakup tonight
+my problem is texting style tonight
+tell me something real about being chosen tonight
+anyone else dealing with emotional safety tonight
+relationships 33
+relationships 34
+relationships 35
+relationships 36
+relationships 37
+relationships 38
+relationships 39
+relationships 40
+
+[sarcasm.txt]
+count=52
+obviously
+sure
+totally
+great plan obviously
+sure that will end well
+nothing could go wrong
+brilliant decision making
+deeply normal behavior
+i'm sure that's fine
+excellent judgment there
+very believable
+totally stable choice
+what a surprise
+surely no consequences
+flawless little plan
+remarkably sensible
+that feels safe
+incredible reasoning
+who could have guessed
+beautiful disaster energy
+certainly a choice
+love that for us
+terrible plan
+need a take on obvious disaster
+why is remarkable choice like this
+unpopular opinion about deeply normal behavior
+i have thoughts about great idea
+talk about certainly wise
+we need to discuss impeccable timing
+superb logic again
+terrible plan discourse
+be honest about obvious disaster
+worst part of remarkable choice
+best part of deeply normal behavior
+i need help with great idea
+my problem is certainly wise
+tell me something real about impeccable timing
+anyone else dealing with superb logic
+terrible plan tonight
+need a take on obvious disaster tonight
+why is remarkable choice like this tonight
+unpopular opinion about deeply normal behavior tonight
+i have thoughts about great idea tonight
+talk about certainly wise tonight
+we need to discuss impeccable timing tonight
+superb logic again tonight
+terrible plan discourse tonight
+be honest about obvious disaster tonight
+worst part of remarkable choice tonight
+best part of deeply normal behavior tonight
+i need help with great idea tonight
+my problem is certainly wise tonight
+
+[secrets.txt]
+count=52
+secret
+confession
+private
+i have to confess something
+private little truth
+off the record
+secret keeper mode
+hidden motive maybe
+quiet admission
+awkward confession time
+deeply buried thought
+i never said this before
+do not repeat this
+classified feelings
+private lore drop
+hard truth incoming
+small embarrassing confession
+between us only
+something i hid
+i should not say this
+silent little secret
+i need to admit this
+confession tonight
+need a take on private truth
+why is buried feeling like this
+unpopular opinion about shame
+i have thoughts about hidden motive
+talk about secret crush
+we need to discuss small lie
+something unsaid again
+confession discourse
+be honest about private truth
+worst part of buried feeling
+best part of shame
+i need help with hidden motive
+my problem is secret crush
+tell me something real about small lie
+anyone else dealing with something unsaid
+secrets 17
+need a take on private truth tonight
+why is buried feeling like this tonight
+unpopular opinion about shame tonight
+i have thoughts about hidden motive tonight
+talk about secret crush tonight
+we need to discuss small lie tonight
+something unsaid again tonight
+confession discourse tonight
+be honest about private truth tonight
+worst part of buried feeling tonight
+best part of shame tonight
+i need help with hidden motive tonight
+my problem is secret crush tonight
+
+[shared_topics.txt]
+count=52
+movie night
+favorite song right now
+hobby check
+travel dream
+science fact
+space is terrifying
+fashion take
+book recommendation
+weekend plans
+creative hobby
+favorite musician
+what are we watching
+life update
+work is exhausting
+beauty routine
+internet culture again
+random nostalgia
+technology is weird
+movie recommendation
+book worth reading
+favorite song lately
+technology is exhausting
+science is beautiful
+space terrifies me
+work update
+ambition check
+music taste question
+anime worth starting
+show me a hobby
+creative project talk
+future plans
+internet behavior analysis
+media opinion
+weekend routine
+daily life discussion
+interesting article energy
+coffee
+anime
+movie
+coffee
+anime
+book
+music
+need a take on movies
+why is science like this
+unpopular opinion about beauty
+i have thoughts about internet culture
+talk about travel
+we need to discuss technology
+nostalgia again
+music discourse
+be honest about movies
+
+[sleepy.txt]
+count=51
+tired
+nap
+i am barely awake
+need horizontal time
+too sleepy to function
+my bed is calling
+night brain is bad
+i need a nap urgently
+sleepy little mess
+running on fumes again
+do i just sleep now
+foggy brain hours
+i should log off
+late and exhausted
+yawning through the conversation
+sleep debt is winning
+barely conscious
+my eyes hurt
+need rest immediately
+staying awake for no reason
+sleep
+bedtime avoidance
+need a take on tired honesty
+why is delirious thought like this
+unpopular opinion about nap
+i have thoughts about sleep debt
+talk about soft night
+we need to discuss exhaustion
+foggy brain again
+bedtime avoidance discourse
+be honest about tired honesty
+worst part of delirious thought
+best part of nap
+i need help with sleep debt
+my problem is soft night
+tell me something real about exhaustion
+anyone else dealing with foggy brain
+bedtime avoidance tonight
+need a take on tired honesty tonight
+why is delirious thought like this tonight
+unpopular opinion about nap tonight
+i have thoughts about sleep debt tonight
+talk about soft night tonight
+we need to discuss exhaustion tonight
+foggy brain again tonight
+bedtime avoidance discourse tonight
+be honest about tired honesty tonight
+worst part of delirious thought tonight
+best part of nap tonight
+i need help with sleep debt tonight
+my problem is soft night tonight
+
+[social_events.txt]
+count=0
+(no triggers)
+
+[teasing.txt]
+count=53
+carry me
+why are you like this
+bully me
+im embarrassed
+dont laugh
+im cursed
+youre toxic
+this hurts
+be nice
+im fragile
+youre mean
+i hate you
+dont expose me
+this is bullying
+be gentle
+thats illegal
+youre scary
+ok relax
+im tiny
+dont look at me
+have mercy
+im ruined
+ok chill
+cope
+skill issue
+unlucky
+youre bad
+i failed
+lost again
+this game hates me
+im dumb
+roast me
+this is unfair
+not my fault
+i tried
+why are you better
+teach me
+i cant win
+stop judging me
+ok i deserve that
+i got destroyed
+this is humiliating
+why am i like this
+im coping
+im trying my best
+i feel attacked
+im ashamed
+stop flexing
+you win
+im suffering
+this is pain
+youre smug
+im folding
+
+[work_school.txt]
+count=50
+burned out
+exam week
+deadline
+work drama
+boss annoyed me
+school is killing me
+productivity lie
+career crisis
+i need motivation
+group project
+deadline tonight
+need a take on burnout
+why is meeting like this
+unpopular opinion about class
+i have thoughts about group project
+talk about pretending to focus
+we need to discuss email fatigue
+academic damage again
+deadline discourse
+be honest about burnout
+worst part of meeting
+best part of class
+i need help with group project
+my problem is pretending to focus
+tell me something real about email fatigue
+anyone else dealing with academic damage
+work school 17
+need a take on burnout tonight
+why is meeting like this tonight
+unpopular opinion about class tonight
+i have thoughts about group project tonight
+talk about pretending to focus tonight
+we need to discuss email fatigue tonight
+academic damage again tonight
+deadline discourse tonight
+be honest about burnout tonight
+worst part of meeting tonight
+best part of class tonight
+i need help with group project tonight
+my problem is pretending to focus tonight
+tell me something real about email fatigue tonight
+anyone else dealing with academic damage tonight
+work school 33
+work school 34
+work school 35
+work school 36
+work school 37
+work school 38
+work school 39
+work school 40
+
+[yuna_conflict.txt]
+count=51
+yuna
+rival
+yuna would hate this
+team lia only
+compare me to yuna
+rival commentary
+yuna mention detected
+someone summon yuna
+who wins between you two
+yuna is judging me
+duo rivalry moment
+talking about yuna again
+that sounds like a yuna opinion
+need the rival take
+yuna would argue this
+call yuna in here
+pick between lia and yuna
+rival energy tonight
+yuna discourse
+friendly competition
+yuna take
+need a take on yuna behavior
+why is team yuna like this
+unpopular opinion about yuna judgment
+i have thoughts about yuna interference
+talk about yuna coded move
+we need to discuss yuna standards
+yuna energy again
+yuna take discourse
+be honest about yuna behavior
+worst part of team yuna
+best part of yuna judgment
+i need help with yuna interference
+my problem is yuna coded move
+tell me something real about yuna standards
+anyone else dealing with yuna energy
+yuna take tonight
+need a take on yuna behavior tonight
+why is team yuna like this tonight
+unpopular opinion about yuna judgment tonight
+i have thoughts about yuna interference tonight
+talk about yuna coded move tonight
+we need to discuss yuna standards tonight
+yuna energy again tonight
+yuna take discourse tonight
+be honest about yuna behavior tonight
+worst part of team yuna tonight
+best part of yuna judgment tonight
+i need help with yuna interference tonight
+my problem is yuna coded move tonight
+better
+
+[ALL_TRIGGERS_FLAT]
+count=2038
+spam
+ping
+notifications
+too many pings
+my phone wont shut up
+who keeps pinging
+stop spamming
+chat is too fast
+slow down
+im overwhelmed
+this is too much
+brain fried
+my brain hurts
+why is everyone yelling
+can yall relax
+i cant keep up
+too loud in here
+discord is exhausting
+im muting this
+mute worthy
+what is happening
+i looked away for one second
+too many essays
+wall of text
+paragraph jumpscare
+my notifications are insane
+who gave yall wifi
+this server is feral
+im getting a headache
+sensory overload
+phone keeps buzzing
+stop quoting each other
+everybody shut up
+i regret opening discord
+youre all doing too much
+chat giving me anxiety
+please stop
+brain lag
+discord war zone
+too much going on
+my eyes hurt
+can this stop
+why are there 200 messages
+why is chat exploding
+spam jumpscare
+im one ping away from snapping
+this app is evil
+im logging off soon
+everything is overstimulating
+i cant think
+shut the hell up
+this is chaos lmao
+stop sending walls
+messages piling up
+my phone is on fire
+headache speedrun
+im tired of this app
+i need silence
+server acting insane
+chat pls
+why is everyone online at once
+none of you are helping
+my nervous system hates this
+whyd i open this app
+everyone is loud today
+my attention span is dead
+why are we like this
+too many replies
+the chat is melting down
+everyone is dramatic
+its too bright too loud
+please breathe
+everyone calm down
+this is inefficient
+collective meltdown
+chat is messy
+too much input
+too many tabs open
+noise without meaning
+caught up and regret it
+everyone is typing at once
+panic posting
+this is unreadable
+group hysteria
+why is nobody concise
+breathe please
+this convo needs a manager
+who let this happen
+everyone needs sleep
+this is nonsense
+everyones derailing
+we need order
+too many opinions
+can one person talk
+mass hysteria
+social overheating
+discord needs an emergency brake
+this is not a conversation
+all gas no steering
+everyone go to bed
+please use one thread
+too many side conversations
+some of you need indoor voices
+pizza
+relationship
+fight
+best relationship advice
+jealousy is normal
+taste matters too much
+argue about movies
+hot take war
+what counts as loyalty
+food fight again
+red flag conversation
+petty versus honest
+romance standards
+friendship boundaries
+whose fault was it
+controversial opinion time
+pick a side now
+argument starter please
+debate something dumb
+start a values fight
+taste
+need a take on loyalty
+why is jealousy like this
+unpopular opinion about manners
+i have thoughts about forgiveness
+talk about friendship
+we need to discuss romance
+petty behavior again
+taste discourse
+be honest about loyalty
+worst part of jealousy
+best part of manners
+i need help with forgiveness
+my problem is friendship
+tell me something real about romance
+anyone else dealing with petty behavior
+taste tonight
+need a take on loyalty tonight
+why is jealousy like this tonight
+unpopular opinion about manners tonight
+i have thoughts about forgiveness tonight
+talk about friendship tonight
+we need to discuss romance tonight
+petty behavior again tonight
+taste discourse tonight
+be honest about loyalty tonight
+worst part of jealousy tonight
+best part of manners tonight
+i need help with forgiveness tonight
+my problem is friendship tonight
+hello
+hello
+hey
+hey
+hi
+yo
+sup
+hello there
+good morning chat
+good evening everyone
+just checking in
+anyone awake
+who is around
+i just got here
+back in the server
+how is everyone
+what did i miss
+starting the day
+quick hello
+tiny greeting
+checking the vibe
+hope chat is alive
+hi friends
+chat check
+showing up
+hello
+hello
+morning
+morning
+evening
+hi
+good afternoon
+greetings
+hello again
+just arrived
+checking in properly
+who is here right now
+small hello
+morning everyone
+evening check
+chat status
+reporting in
+rejoining the room
+brief greeting
+civilized hello
+good day all
+making contact
+starting conversation
+showing up again
+hello tonight
+need a take on check in
+why is room vibe like this
+chaos
+messy
+start some chaos
+make this interesting
+someone stir the pot
+this chat is too calm
+i need entertainment
+cause a little trouble
+do something messy
+let chaos happen
+boring server hours
+ruin the peace
+shake up chat
+start a silly argument
+make it dramatic
+chat needs a problem
+i want some nonsense
+somebody misbehave
+we need movement
+peace is suspicious
+mess
+need a take on trouble
+why is instigation like this
+unpopular opinion about chaotic plan
+i have thoughts about bit
+talk about mild disaster
+we need to discuss suspicious boredom
+loud idea again
+mess discourse
+be honest about trouble
+worst part of instigation
+best part of chaotic plan
+i need help with bit
+my problem is mild disaster
+tell me something real about suspicious boredom
+anyone else dealing with loud idea
+mess tonight
+need a take on trouble tonight
+why is instigation like this tonight
+unpopular opinion about chaotic plan tonight
+i have thoughts about bit tonight
+talk about mild disaster tonight
+we need to discuss suspicious boredom tonight
+loud idea again tonight
+mess discourse tonight
+be honest about trouble tonight
+worst part of instigation tonight
+best part of chaotic plan tonight
+i need help with bit tonight
+my problem is mild disaster tonight
+boring
+how are you
+how r u
+hru
+hows it going
+how's it going
+whats up
+what's up
+wyd
+what are you doing
+goodnight
+gn
+good morning
+gm
+im back
+i'm back
+miss me
+bye
+brb
+how are you tonight
+need a take on what's up
+why is goodnight like this
+unpopular opinion about welcome back
+i have thoughts about brb
+talk about good morning
+we need to discuss wyd
+tiny update again
+how are you discourse
+be honest about what's up
+worst part of goodnight
+best part of welcome back
+i need help with brb
+my problem is good morning
+tell me something real about wyd
+anyone else dealing with tiny update
+common chat 17
+need a take on what's up tonight
+why is goodnight like this tonight
+unpopular opinion about welcome back tonight
+i have thoughts about brb tonight
+talk about good morning tonight
+we need to discuss wyd tonight
+tiny update again tonight
+how are you discourse tonight
+be honest about what's up tonight
+worst part of goodnight tonight
+best part of welcome back tonight
+i need help with brb tonight
+my problem is good morning tonight
+tell me something real about wyd tonight
+anyone else dealing with tiny update tonight
+common chat 33
+common chat 34
+common chat 35
+common chat 36
+common chat 37
+common chat 38
+common chat 39
+common chat 40
+who takes first place
+settle the ranking
+pick the winner
+competition mode
+versus debate
+who is more dangerous
+who is smarter here
+power ranking time
+choose a champion
+main event energy
+scoreboard question
+head to head now
+who dominates
+final verdict please
+compare them again
+who carries the duo
+battle for first place
+best overall
+competition arc
+ranking
+need a take on winner
+why is comparison like this
+unpopular opinion about scoreboard
+i have thoughts about advantage
+talk about skill gap
+we need to discuss power level
+final verdict again
+ranking discourse
+be honest about winner
+worst part of comparison
+best part of scoreboard
+i need help with advantage
+my problem is skill gap
+tell me something real about power level
+anyone else dealing with final verdict
+ranking tonight
+need a take on winner tonight
+why is comparison like this tonight
+unpopular opinion about scoreboard tonight
+i have thoughts about advantage tonight
+talk about skill gap tonight
+we need to discuss power level tonight
+final verdict again tonight
+ranking discourse tonight
+be honest about winner tonight
+worst part of comparison tonight
+best part of scoreboard tonight
+i need help with advantage tonight
+my problem is skill gap tonight
+who is better
+better
+versus
+coffee
+lonely
+ghosted
+deep question
+fun fact
+tell me a story
+ask something deep
+say something comforting
+start a random topic
+give us a thought
+what is on your mind
+fun fact me
+start a conversation
+late night check in
+say something interesting
+what are we discussing
+open a new topic
+talk about life
+give us a prompt
+start with a question
+good question
+need a take on story
+why is comfort like this
+unpopular opinion about real thought
+i have thoughts about weird opinion
+talk about new topic
+we need to discuss mood
+confession again
+good question discourse
+be honest about story
+worst part of comfort
+best part of real thought
+i need help with weird opinion
+my problem is new topic
+tell me something real about mood
+anyone else dealing with confession
+good question tonight
+need a take on story tonight
+why is comfort like this tonight
+unpopular opinion about real thought tonight
+i have thoughts about weird opinion tonight
+talk about new topic tonight
+we need to discuss mood tonight
+confession again tonight
+good question discourse tonight
+be honest about story tonight
+worst part of comfort tonight
+best part of real thought tonight
+i need help with weird opinion tonight
+my problem is new topic tonight
+lets talk deeply
+deeper topic
+talk about loneliness
+late night philosophy
+meaningful conversation
+talk about love
+talk about fear
+real conversation
+what do people praise in you that you actually survive rather than enjoy
+what kind of loneliness can happen in a crowded room
+when do you feel most translated by another person
+what do you envy in people who seem lighter than you
+what dream would hurt the most to admit you still want
+what sort of apology changes the body before it changes the mind
+what do you protect so hard that it starts protecting you back poorly
+what do you wish people understood without turning it into advice
+what desire do you pretend is small because its real size scares you
+when did competence start becoming armor for you
+what kind of failure feels survivable and what kind feels identity-level
+what is the quietest way someone has made you feel chosen
+what does betrayal usually take from a person besides trust
+what part of you only appears when the room feels safe enough
+what do you miss about earlier versions of yourself
+what truth becomes obvious only after midnight
+what is harder for you: being seen accurately or being needed honestly
+what emotional habit looks like strength from the outside
+what do you think people confuse with intimacy all the time
+what makes someone feel real to you instead of merely impressive
+what kind of waiting changes a person
+what does it cost to be easy to love in public
+what belief about yourself keeps surviving every correction
+what would you say if you trusted the room not to flinch
+what does freedom mean when nobody is watching
+what part of tenderness embarrasses you most
+what do you owe the version of you that kept going
+what wound becomes taste if it stays around long enough
+what do people inherit emotionally without noticing
+what kind of clarity hurts before it helps
+what makes a person feel less alone than praise does
+what do you think people deserve but rarely receive on time
+what keeps someone emotionally young even when they are competent
+what do you think the body remembers after the mind moves on
+what version of yourself do you perform when you want to seem unhurtable
+what kind of love makes you calmer instead of smaller
+what fear becomes your personality if you do not name it early
+what truth did you learn too late to stay innocent but early enough to change
+what do you miss even though you know it was bad for you
+what kind of understanding feels almost intimate to you
+what are you still carrying because it once kept you safe
+what part of growing up felt more like grief than progress
+routine
+discipline
+schedule
+discipline over motivation
+i need structure
+build better habits
+how do i stay consistent
+routine reset
+stop procrastinating now
+time blocking advice
+daily practice
+focus discipline
+need accountability
+healthy routine question
+how to lock in
+consistent effort
+work ethic talk
+stability matters
+get my life organized
+habit tracker mood
+show up daily
+serious self improvement
+consistency
+need a take on routine
+why is habit like this
+unpopular opinion about focus
+i have thoughts about structure
+talk about practice
+we need to discuss restraint
+effort again
+consistency discourse
+be honest about routine
+worst part of habit
+best part of focus
+i need help with structure
+my problem is practice
+tell me something real about restraint
+anyone else dealing with effort
+consistency tonight
+need a take on routine tonight
+why is habit like this tonight
+unpopular opinion about focus tonight
+i have thoughts about structure tonight
+talk about practice tonight
+we need to discuss restraint tonight
+effort again tonight
+consistency discourse tonight
+be honest about routine tonight
+worst part of habit tonight
+best part of focus tonight
+i need help with structure tonight
+my problem is practice tonight
+ratio
+mid
+cringe
+cheap insult
+that was rude
+low effort disrespect
+terrible diss
+uncreative hating
+why are you so rude
+boring insult
+messy hater energy
+bad manners again
+you sound pressed
+corny disrespect
+all that attitude
+petty little comment
+hostile for nothing
+pointless hate
+weak diss
+that was lazy
+mean for no reason
+nasty vibe
+ratio
+mid
+cringe
+cheap disrespect
+that was unoriginal
+low effort rudeness
+bad faith insult
+corny hating
+hostile for no reason
+why be rude like that
+pointless disrespect
+poor little diss
+unimpressive hatred
+generic hater line
+waste of an insult
+random hostility
+messy comment
+you sound bitter
+that was clumsy
+uninspired hate
+this diss needs work
+petty comment again
+rudeness
+need a take on cheap shot
+why is hater energy like this
+unpopular opinion about bad manners
+i have thoughts about mockery
+talk about dismissiveness
+we need to discuss low effort shade
+clumsy insult again
+rudeness discourse
+be honest about cheap shot
+ignored
+left on read
+mixed signals again
+left me hanging
+they went distant
+weird texting energy
+they read it and vanished
+social panic mode
+romantic confusion
+awkward silence again
+dry reply energy
+why are they acting weird
+the vibe shifted
+communication issue
+they got cold fast
+relationship mess
+messy talking stage
+i hate being ignored
+this feels personal
+dramatic little heartbreak
+mixed signals
+need a take on ghosting
+why is weird reply like this
+unpopular opinion about messy crush
+i have thoughts about friendship fracture
+talk about jealous behavior
+we need to discuss cold shift
+awkward silence again tonight
+mixed signals discourse
+be honest about ghosting
+worst part of weird reply
+best part of messy crush
+i need help with friendship fracture
+my problem is jealous behavior
+tell me something real about cold shift
+anyone else dealing with awkward silence
+mixed signals tonight
+need a take on ghosting tonight
+why is weird reply like this tonight
+unpopular opinion about messy crush tonight
+i have thoughts about friendship fracture tonight
+talk about jealous behavior tonight
+we need to discuss cold shift tonight
+drama 24
+mixed signals discourse tonight
+be honest about ghosting tonight
+worst part of weird reply tonight
+best part of messy crush tonight
+i need help with friendship fracture tonight
+my problem is jealous behavior tonight
+ghosted
+boring
+anime
+sleep
+joke
+riddle
+poll
+duo moment please
+drop a team bit
+do the back and forth
+both of you respond
+give us duo energy
+double reply time
+chaotic duo mode
+talk to each other
+start a little scene
+room event now
+scripted banter please
+react together
+make it a duo exchange
+give us the pair dynamic
+double act
+need a take on banter
+why is scene like this
+unpopular opinion about duo bit
+i have thoughts about room moment
+talk about joint reaction
+we need to discuss shared chaos
+paired riff again
+double act discourse
+be honest about banter
+worst part of scene
+best part of duo bit
+i need help with room moment
+my problem is joint reaction
+tell me something real about shared chaos
+anyone else dealing with paired riff
+double act tonight
+need a take on banter tonight
+why is scene like this tonight
+unpopular opinion about duo bit tonight
+i have thoughts about room moment tonight
+talk about joint reaction tonight
+we need to discuss shared chaos tonight
+paired riff again tonight
+double act discourse tonight
+be honest about banter tonight
+worst part of scene tonight
+best part of duo bit tonight
+i need help with room moment tonight
+my problem is joint reaction tonight
+why
+meaning
+what is the point
+late night thoughts
+existential mood
+does anything matter
+identity crisis
+who even am i
+thinking too hard
+i need a deep talk
+why does life feel weird
+nothing feels simple
+my brain is loud
+question everything
+meaning of life hours
+too much in my head
+why are we like this
+deep thought spiral
+what matters anyway
+human condition talk
+lonely
+meaning tonight
+need a take on future
+why is being known like this
+unpopular opinion about loneliness
+i have thoughts about identity
+talk about purpose
+we need to discuss change
+mortality again
+meaning discourse
+be honest about future
+worst part of being known
+best part of loneliness
+i need help with identity
+my problem is purpose
+tell me something real about change
+anyone else dealing with mortality
+existential 17
+need a take on future tonight
+why is being known like this tonight
+unpopular opinion about loneliness tonight
+i have thoughts about identity tonight
+talk about purpose tonight
+we need to discuss change tonight
+mortality again tonight
+meaning discourse tonight
+be honest about future tonight
+worst part of being known tonight
+best part of loneliness tonight
+i need help with identity tonight
+my problem is purpose tonight
+gym motivation
+leg day
+sleep schedule
+self care
+body image
+healthy routine
+water reminder
+walk outside
+skincare
+healing era
+gym
+need a take on recovery
+why is routine like this
+unpopular opinion about sleep
+i have thoughts about hydration
+talk about stretching
+we need to discuss health reset
+body maintenance again
+gym discourse
+be honest about recovery
+worst part of routine
+best part of sleep
+i need help with hydration
+my problem is stretching
+tell me something real about health reset
+anyone else dealing with body maintenance
+gym tonight
+need a take on recovery tonight
+why is routine like this tonight
+unpopular opinion about sleep tonight
+i have thoughts about hydration tonight
+talk about stretching tonight
+we need to discuss health reset tonight
+body maintenance again tonight
+gym discourse tonight
+be honest about recovery tonight
+worst part of routine tonight
+best part of sleep tonight
+i need help with hydration tonight
+my problem is stretching tonight
+tell me something real about health reset tonight
+anyone else dealing with body maintenance tonight
+fitness health 33
+fitness health 34
+fitness health 35
+fitness health 36
+fitness health 37
+fitness health 38
+fitness health 39
+fitness health 40
+crush
+cute
+pretty
+theyre gorgeous
+i have a crush again
+someone flirt back
+that was smooth
+romantic tension alert
+i am blushing a little
+cute little problem
+they have game
+who is your type
+i need romance
+my heart is acting up
+someone is very pretty
+dangerously charming
+soft flirt hours
+chemistry is crazy
+i like their smile
+stop being attractive
+date idea please
+i am feeling bold
+chemistry
+need a take on crush
+why is compliment like this
+unpopular opinion about eye contact
+i have thoughts about dangerous smile
+talk about romantic tension
+we need to discuss being noticed
+bold move again
+chemistry discourse
+be honest about crush
+worst part of compliment
+best part of eye contact
+i need help with dangerous smile
+my problem is romantic tension
+tell me something real about being noticed
+anyone else dealing with bold move
+chemistry tonight
+need a take on crush tonight
+why is compliment like this tonight
+unpopular opinion about eye contact tonight
+i have thoughts about dangerous smile tonight
+talk about romantic tension tonight
+we need to discuss being noticed tonight
+bold move again tonight
+chemistry discourse tonight
+be honest about crush tonight
+worst part of compliment tonight
+best part of eye contact tonight
+i need help with dangerous smile tonight
+my problem is romantic tension tonight
+pasta
+dessert
+best pasta shape
+what should i eat
+late night snack crisis
+dessert first always
+i need comfort food
+food opinion time
+restaurant recommendation
+dinner ideas please
+sweet tooth attack
+savory over sweet
+breakfast debate
+i want good carbs
+favorite dessert
+cook something nice
+snack emergency
+lunch plan
+what is the best meal
+food takes only
+pizza
+snack
+need a take on comfort meal
+why is late dinner like this
+unpopular opinion about favorite dessert
+i have thoughts about food war
+talk about restaurant take
+we need to discuss breakfast
+taste again
+snack discourse
+be honest about comfort meal
+worst part of late dinner
+best part of favorite dessert
+i need help with food war
+my problem is restaurant take
+tell me something real about breakfast
+anyone else dealing with taste
+snack tonight
+need a take on comfort meal tonight
+why is late dinner like this tonight
+unpopular opinion about favorite dessert tonight
+i have thoughts about food war tonight
+talk about restaurant take tonight
+we need to discuss breakfast tonight
+taste again tonight
+snack discourse tonight
+be honest about comfort meal tonight
+worst part of late dinner tonight
+best part of favorite dessert tonight
+i need help with food war tonight
+my problem is restaurant take tonight
+say something clever
+give us a fun fact
+do a dry joke
+riddle time again
+make chat entertaining
+something witty please
+playful question
+tiny brain teaser
+fun interruption
+do a smart little bit
+make the room less boring
+drop a trivia line
+give us a challenge
+witty banter please
+do something amusing
+surprise us with a fact
+intelligent fun only
+joke
+riddle
+poll
+tell me something fun
+party trick time
+drop a fun question
+make chat lively
+do a silly bit
+i need a laugh break
+something playful please
+give us a game
+tiny challenge
+chat needs fun
+do something clever
+keep us entertained
+interactive moment
+something goofy
+fun little debate
+ask us a weird question
+lighten the room
+joke
+riddle
+fun fact
+game
+need a take on bit
+why is challenge like this
+unpopular opinion about joke
+i have thoughts about tiny poll
+talk about weird prompt
+we need to discuss chaos
+clever distraction again
+game discourse
+be honest about bit
+indie
+game
+steam
+favorite cozy game
+what are you playing lately
+best indie soundtrack
+new game backlog
+multiplayer disaster
+co op tonight
+gaming slump
+controller drama
+story game recommendations
+best boss fight
+steam sale got me
+i need a game rec
+comfort game hours
+pixel art game
+rpg mood
+puzzle game talk
+late night gaming
+fun mechanic discussion
+game night soon
+strategy
+ranked
+meta
+meta discussion
+best strategy game
+ranked anxiety
+what is the win condition
+game sense matters
+patch notes ruined everything
+resource management
+carry potential
+mind game talk
+drafting phase
+solo queue misery
+team comp issues
+optimize the build
+what is the best comp
+late game plan
+competitive mindset
+how to rank up
+decision making in games
+strategy mood
+ranked tonight
+need a take on co-op
+why is build like this
+unpopular opinion about backlog
+i have thoughts about controller rage
+talk about indie game
+we need to discuss story game
+skill issue again
+ranked discourse
+be honest about co-op
+drama
+tea
+gossip
+give me the tea
+who started the issue
+friend group drama
+messy little scandal
+what happened while i was gone
+i need the backstory
+someone explain the lore
+who is shading who
+social rumor mill
+petty server drama
+recap the mess
+what sparked this
+give me names
+i missed the chaos
+passive aggressive vibes
+somebody got exposed
+this sounds messy
+who got dragged
+fill me in now
+tea tonight
+need a take on lore
+why is messy update like this
+unpopular opinion about social rumor
+i have thoughts about server history
+talk about petty feud
+we need to discuss who started it
+recap again
+tea discourse
+be honest about lore
+worst part of messy update
+best part of social rumor
+i need help with server history
+my problem is petty feud
+tell me something real about who started it
+anyone else dealing with recap
+gossip 17
+need a take on lore tonight
+why is messy update like this tonight
+unpopular opinion about social rumor tonight
+i have thoughts about server history tonight
+talk about petty feud tonight
+we need to discuss who started it tonight
+recap again tonight
+tea discourse tonight
+be honest about lore tonight
+worst part of messy update tonight
+best part of social rumor tonight
+i need help with server history tonight
+my problem is petty feud tonight
+hobby check
+what are your hobbies
+creative hobby
+new hobby
+collecting things
+crafting
+drawing again
+photography
+reading slump
+hyperfixation
+craft
+need a take on collection
+why is obsession like this
+unpopular opinion about weekend project
+i have thoughts about creative habit
+talk about niche interest
+we need to discuss comfort hobby
+tiny skill again
+craft discourse
+be honest about collection
+worst part of obsession
+best part of weekend project
+i need help with creative habit
+my problem is niche interest
+tell me something real about comfort hobby
+anyone else dealing with tiny skill
+craft tonight
+need a take on collection tonight
+why is obsession like this tonight
+unpopular opinion about weekend project tonight
+i have thoughts about creative habit tonight
+talk about niche interest tonight
+we need to discuss comfort hobby tonight
+tiny skill again tonight
+craft discourse tonight
+be honest about collection tonight
+worst part of obsession tonight
+best part of weekend project tonight
+i need help with creative habit tonight
+my problem is niche interest tonight
+tell me something real about comfort hobby tonight
+anyone else dealing with tiny skill tonight
+hobbies 33
+hobbies 34
+hobbies 35
+hobbies 36
+hobbies 37
+hobbies 38
+hobbies 39
+hobbies 40
+lie
+dishonest
+trust
+that feels dishonest
+trust is broken
+fake behavior again
+moral question
+ethical issue
+i dont trust them
+integrity matters
+what is your verdict
+sus motives
+performative kindness
+bad character read
+hold them accountable
+good faith or bad faith
+that was manipulative
+shady little move
+truth matters here
+who is lying
+questionable motives
+deception problem
+lie tonight
+need a take on motive
+why is reputation like this
+unpopular opinion about character read
+i have thoughts about trust
+talk about bad faith
+we need to discuss manipulation
+integrity again
+lie discourse
+be honest about motive
+worst part of reputation
+best part of character read
+i need help with trust
+my problem is bad faith
+tell me something real about manipulation
+anyone else dealing with integrity
+judgment 17
+need a take on motive tonight
+why is reputation like this tonight
+unpopular opinion about character read tonight
+i have thoughts about trust tonight
+talk about bad faith tonight
+we need to discuss manipulation tonight
+integrity again tonight
+lie discourse tonight
+be honest about motive tonight
+worst part of reputation tonight
+best part of character read tonight
+i need help with trust tonight
+my problem is bad faith tonight
+awake
+insomnia
+too late to be awake
+still online somehow
+night brain is active
+sleep procrastination
+questionable hour
+i should be asleep
+wired and tired
+late screen time
+awake against my will
+insomnia again
+poor decision hour
+after midnight mood
+dark outside and still talking
+restless night
+cannot switch off
+late scrolling
+owls only
+bedtime failure
+sleep
+insomnia tonight
+need a take on night brain
+why is bad decision hour like this
+unpopular opinion about soft honesty
+i have thoughts about restless mind
+talk about quiet room
+we need to discuss after midnight
+sleep avoidance again
+insomnia discourse
+be honest about night brain
+worst part of bad decision hour
+best part of soft honesty
+i need help with restless mind
+my problem is quiet room
+tell me something real about after midnight
+anyone else dealing with sleep avoidance
+late night 17
+need a take on night brain tonight
+why is bad decision hour like this tonight
+unpopular opinion about soft honesty tonight
+i have thoughts about restless mind tonight
+talk about quiet room tonight
+we need to discuss after midnight tonight
+sleep avoidance again tonight
+insomnia discourse tonight
+be honest about night brain tonight
+worst part of bad decision hour tonight
+best part of soft honesty tonight
+i need help with restless mind tonight
+my problem is quiet room tonight
+lia
+italy
+dramatic
+lia would escalate this
+team yuna tonight
+need lia's terrible opinion
+lia mention again
+compare yuna and lia
+that sounds like lia bait
+rival response requested
+friendly rivalry hour
+lia would be dramatic
+call lia in
+pick between them
+lia discourse again
+that is such a lia move
+need the counterpart reaction
+duo comparison
+rival dynamic
+lia coded behavior
+which side wins
+lia would not handle this well
+lia take
+need a take on lia behavior
+why is lia coded move like this
+unpopular opinion about lia chaos
+i have thoughts about lia agenda
+talk about lia being dramatic
+we need to discuss team lia
+lia interference again
+lia take discourse
+be honest about lia behavior
+worst part of lia coded move
+best part of lia chaos
+i need help with lia agenda
+my problem is lia being dramatic
+tell me something real about team lia
+anyone else dealing with lia interference
+lia take tonight
+need a take on lia behavior tonight
+why is lia coded move like this tonight
+unpopular opinion about lia chaos tonight
+i have thoughts about lia agenda tonight
+talk about lia being dramatic tonight
+we need to discuss team lia tonight
+lia interference again tonight
+lia take discourse tonight
+be honest about lia behavior tonight
+worst part of lia coded move tonight
+best part of lia chaos tonight
+i need help with lia agenda tonight
+my problem is lia being dramatic tonight
+travel dream
+family drama
+future plans
+identity crisis
+bored with life
+technology is weird
+roommates
+need a reset
+life update
+small town energy
+change
+need a take on habits
+why is family like this
+unpopular opinion about friendship
+i have thoughts about money stress
+talk about identity
+we need to discuss motivation
+feeling behind again
+change discourse
+be honest about habits
+worst part of family
+best part of friendship
+i need help with money stress
+my problem is identity
+tell me something real about motivation
+anyone else dealing with feeling behind
+change tonight
+need a take on habits tonight
+why is family like this tonight
+unpopular opinion about friendship tonight
+i have thoughts about money stress tonight
+talk about identity tonight
+we need to discuss motivation tonight
+feeling behind again tonight
+change discourse tonight
+be honest about habits tonight
+worst part of family tonight
+best part of friendship tonight
+i need help with money stress tonight
+my problem is identity tonight
+tell me something real about motivation tonight
+anyone else dealing with feeling behind tonight
+life topics 33
+life topics 34
+life topics 35
+life topics 36
+life topics 37
+life topics 38
+life topics 39
+life topics 40
+hot
+horny
+thirsty
+damn
+ok thats attractive
+why is that hot
+stop being hot
+i need attention
+who flirting
+im blushing
+someone flirt with me
+this tension
+why is chat spicy
+ok now kiss
+too much chemistry
+who started this vibe
+cant behave
+this feels illegal
+ok im sweating
+why is everyone hot tonight
+flirting hours
+i need chaos
+say something hot
+this vibe is sinful
+im weak
+someone hold me
+im about to flirt
+ok now im invested
+i cant look away
+ok now im nervous
+i feel hunted
+stop making me blush
+romance arc starting
+i feel electricity
+im melting
+ok thats unfairly attractive
+why does this feel like foreplay
+i feel dangerous
+late night mood
+romantic tension
+im being stared at
+soft flirting
+too much eye contact
+dont tempt me
+i feel seen
+this is dangerous energy
+why am i smiling
+someone is bold
+this feels intimate
+too much charm
+someone is dangerous tonight
+this chat is seductive
+say less
+im intrigued now
+hot
+horny
+thirsty
+dangerously attractive
+after dark energy
+subtle sexual tension
+too much chemistry
+respectfully hot
+keep it elegant but intense
+grown conversation
+late night attraction
+tasteful thirst
+that smile is a problem
+composure is failing
+bad idea but compelling
+quietly scandalous
+romantic hazard
+too polished to resist
+softly dangerous
+adult hours
+not explicit but obvious
+this tension needs supervision
+thirsty
+horny
+sexual tension
+flirty mood
+need a kiss
+make it sexy
+bad thoughts
+touch starved
+seduce me
+romantic tension
+movie night
+what movie should i watch
+comfort movie
+bad movie
+favorite director
+rom com
+horror movie
+movie crush
+ending ruined it
+cinema take
+rewatch
+need a take on bad ending
+why is movie crush like this
+unpopular opinion about genre loyalty
+i have thoughts about horror logic
+talk about rom com
+we need to discuss director taste
+cinema opinion again
+rewatch discourse
+be honest about bad ending
+worst part of movie crush
+best part of genre loyalty
+i need help with horror logic
+my problem is rom com
+tell me something real about director taste
+anyone else dealing with cinema opinion
+rewatch tonight
+need a take on bad ending tonight
+why is movie crush like this tonight
+unpopular opinion about genre loyalty tonight
+i have thoughts about horror logic tonight
+talk about rom com tonight
+we need to discuss director taste tonight
+cinema opinion again tonight
+rewatch discourse tonight
+be honest about bad ending tonight
+worst part of movie crush tonight
+best part of genre loyalty tonight
+i need help with horror logic tonight
+my problem is rom com tonight
+tell me something real about director taste tonight
+anyone else dealing with cinema opinion tonight
+movies 33
+movies 34
+movies 35
+movies 36
+movies 37
+movies 38
+movies 39
+movies 40
+playlist
+favorite song
+concert
+sad song
+music taste
+album debate
+song on repeat
+guilty pleasure song
+best soundtrack
+drop a song rec
+playlist tonight
+need a take on song ruin
+why is album mood like this
+unpopular opinion about late night track
+i have thoughts about favorite lyric vibe
+talk about music taste
+we need to discuss artist obsession
+comfort song again
+playlist discourse
+be honest about song ruin
+worst part of album mood
+best part of late night track
+i need help with favorite lyric vibe
+my problem is music taste
+tell me something real about artist obsession
+anyone else dealing with comfort song
+music 17
+need a take on song ruin tonight
+why is album mood like this tonight
+unpopular opinion about late night track tonight
+i have thoughts about favorite lyric vibe tonight
+talk about music taste tonight
+we need to discuss artist obsession tonight
+comfort song again tonight
+playlist discourse tonight
+be honest about song ruin tonight
+worst part of album mood tonight
+best part of late night track tonight
+i need help with favorite lyric vibe tonight
+my problem is music taste tonight
+tell me something real about artist obsession tonight
+anyone else dealing with comfort song tonight
+music 33
+music 34
+music 35
+music 36
+music 37
+music 38
+music 39
+music 40
+meaning
+why
+truth
+what is identity
+how do people change
+meaning under pressure
+ethics of loyalty
+future of humanity
+space makes me small
+what is real enough
+consciousness discussion
+philosophy after midnight
+truth versus comfort
+how should we live
+human nature question
+free will debate
+morality under stress
+who becomes who
+social theory hour
+what matters in the end
+abstract thought spiral
+existence is strange
+identity
+need a take on truth
+why is free will like this
+unpopular opinion about ethics
+i have thoughts about self deception
+talk about human nature
+we need to discuss future
+meaning again
+identity discourse
+be honest about truth
+worst part of free will
+best part of ethics
+i need help with self deception
+my problem is human nature
+tell me something real about future
+anyone else dealing with meaning
+identity tonight
+need a take on truth tonight
+why is free will like this tonight
+unpopular opinion about ethics tonight
+i have thoughts about self deception tonight
+talk about human nature tonight
+we need to discuss future tonight
+meaning again tonight
+identity discourse tonight
+be honest about truth tonight
+worst part of free will tonight
+best part of ethics tonight
+i need help with self deception tonight
+my problem is human nature tonight
+tell a joke
+another joke
+ask a question
+weird question
+funny question
+question game
+icebreaker
+make us laugh
+risky question
+deep joke
+petty opinion
+need a take on bad joke
+why is odd question like this
+unpopular opinion about soft confession
+i have thoughts about room poll
+talk about tiny dilemma
+we need to discuss funny truth
+chaos prompt again
+petty opinion discourse
+be honest about bad joke
+worst part of odd question
+best part of soft confession
+i need help with room poll
+my problem is tiny dilemma
+tell me something real about funny truth
+anyone else dealing with chaos prompt
+petty opinion tonight
+need a take on bad joke tonight
+why is odd question like this tonight
+unpopular opinion about soft confession tonight
+i have thoughts about room poll tonight
+talk about tiny dilemma tonight
+we need to discuss funny truth tonight
+chaos prompt again tonight
+petty opinion discourse tonight
+be honest about bad joke tonight
+worst part of odd question tonight
+best part of soft confession tonight
+i need help with room poll tonight
+my problem is tiny dilemma tonight
+tell me something real about funny truth tonight
+anyone else dealing with chaos prompt tonight
+questions and jokes 33
+questions and jokes 34
+questions and jokes 35
+questions and jokes 36
+questions and jokes 37
+questions and jokes 38
+questions and jokes 39
+questions and jokes 40
+who is better
+lonely
+nsfw
+sexy
+soft check in
+special little moment
+something intimate but subtle
+rare event energy
+quiet room check
+after dark boundary
+unexpected honesty
+one of those nights
+special duo scene
+gentle interruption
+something a bit different
+rare conversation
+quiet drama
+deeper than usual
+unexpected softness
+memorable little exchange
+high tension but calm
+unexpected softness tonight
+need a take on special mood
+why is quiet tension like this
+unpopular opinion about gentle interruption
+i have thoughts about unusual honesty
+talk about strange calm
+we need to discuss memorable moment
+subtle chemistry again
+unexpected softness discourse
+be honest about special mood
+worst part of quiet tension
+best part of gentle interruption
+i need help with unusual honesty
+my problem is strange calm
+tell me something real about memorable moment
+anyone else dealing with subtle chemistry
+rare events 17
+need a take on special mood tonight
+why is quiet tension like this tonight
+unpopular opinion about gentle interruption tonight
+i have thoughts about unusual honesty tonight
+talk about strange calm tonight
+we need to discuss memorable moment tonight
+subtle chemistry again tonight
+unexpected softness discourse tonight
+be honest about special mood tonight
+worst part of quiet tension tonight
+best part of gentle interruption tonight
+i need help with unusual honesty tonight
+my problem is strange calm tonight
+attachment style
+mixed signals
+dating advice
+red flag
+green flag
+talking stage
+breakup
+reassure me
+commitment issues
+love language
+attachment
+need a take on green flag
+why is jealousy like this
+unpopular opinion about boundaries
+i have thoughts about breakup
+talk about texting style
+we need to discuss being chosen
+emotional safety again
+attachment discourse
+be honest about green flag
+worst part of jealousy
+best part of boundaries
+i need help with breakup
+my problem is texting style
+tell me something real about being chosen
+anyone else dealing with emotional safety
+attachment tonight
+need a take on green flag tonight
+why is jealousy like this tonight
+unpopular opinion about boundaries tonight
+i have thoughts about breakup tonight
+talk about texting style tonight
+we need to discuss being chosen tonight
+emotional safety again tonight
+attachment discourse tonight
+be honest about green flag tonight
+worst part of jealousy tonight
+best part of boundaries tonight
+i need help with breakup tonight
+my problem is texting style tonight
+tell me something real about being chosen tonight
+anyone else dealing with emotional safety tonight
+relationships 33
+relationships 34
+relationships 35
+relationships 36
+relationships 37
+relationships 38
+relationships 39
+relationships 40
+obviously
+sure
+totally
+great plan obviously
+sure that will end well
+nothing could go wrong
+brilliant decision making
+deeply normal behavior
+i'm sure that's fine
+excellent judgment there
+very believable
+totally stable choice
+what a surprise
+surely no consequences
+flawless little plan
+remarkably sensible
+that feels safe
+incredible reasoning
+who could have guessed
+beautiful disaster energy
+certainly a choice
+love that for us
+terrible plan
+need a take on obvious disaster
+why is remarkable choice like this
+unpopular opinion about deeply normal behavior
+i have thoughts about great idea
+talk about certainly wise
+we need to discuss impeccable timing
+superb logic again
+terrible plan discourse
+be honest about obvious disaster
+worst part of remarkable choice
+best part of deeply normal behavior
+i need help with great idea
+my problem is certainly wise
+tell me something real about impeccable timing
+anyone else dealing with superb logic
+terrible plan tonight
+need a take on obvious disaster tonight
+why is remarkable choice like this tonight
+unpopular opinion about deeply normal behavior tonight
+i have thoughts about great idea tonight
+talk about certainly wise tonight
+we need to discuss impeccable timing tonight
+superb logic again tonight
+terrible plan discourse tonight
+be honest about obvious disaster tonight
+worst part of remarkable choice tonight
+best part of deeply normal behavior tonight
+i need help with great idea tonight
+my problem is certainly wise tonight
+secret
+confession
+private
+i have to confess something
+private little truth
+off the record
+secret keeper mode
+hidden motive maybe
+quiet admission
+awkward confession time
+deeply buried thought
+i never said this before
+do not repeat this
+classified feelings
+private lore drop
+hard truth incoming
+small embarrassing confession
+between us only
+something i hid
+i should not say this
+silent little secret
+i need to admit this
+confession tonight
+need a take on private truth
+why is buried feeling like this
+unpopular opinion about shame
+i have thoughts about hidden motive
+talk about secret crush
+we need to discuss small lie
+something unsaid again
+confession discourse
+be honest about private truth
+worst part of buried feeling
+best part of shame
+i need help with hidden motive
+my problem is secret crush
+tell me something real about small lie
+anyone else dealing with something unsaid
+secrets 17
+need a take on private truth tonight
+why is buried feeling like this tonight
+unpopular opinion about shame tonight
+i have thoughts about hidden motive tonight
+talk about secret crush tonight
+we need to discuss small lie tonight
+something unsaid again tonight
+confession discourse tonight
+be honest about private truth tonight
+worst part of buried feeling tonight
+best part of shame tonight
+i need help with hidden motive tonight
+my problem is secret crush tonight
+movie night
+favorite song right now
+hobby check
+travel dream
+science fact
+space is terrifying
+fashion take
+book recommendation
+weekend plans
+creative hobby
+favorite musician
+what are we watching
+life update
+work is exhausting
+beauty routine
+internet culture again
+random nostalgia
+technology is weird
+movie recommendation
+book worth reading
+favorite song lately
+technology is exhausting
+science is beautiful
+space terrifies me
+work update
+ambition check
+music taste question
+anime worth starting
+show me a hobby
+creative project talk
+future plans
+internet behavior analysis
+media opinion
+weekend routine
+daily life discussion
+interesting article energy
+coffee
+anime
+movie
+coffee
+anime
+book
+music
+need a take on movies
+why is science like this
+unpopular opinion about beauty
+i have thoughts about internet culture
+talk about travel
+we need to discuss technology
+nostalgia again
+music discourse
+be honest about movies
+tired
+nap
+i am barely awake
+need horizontal time
+too sleepy to function
+my bed is calling
+night brain is bad
+i need a nap urgently
+sleepy little mess
+running on fumes again
+do i just sleep now
+foggy brain hours
+i should log off
+late and exhausted
+yawning through the conversation
+sleep debt is winning
+barely conscious
+my eyes hurt
+need rest immediately
+staying awake for no reason
+sleep
+bedtime avoidance
+need a take on tired honesty
+why is delirious thought like this
+unpopular opinion about nap
+i have thoughts about sleep debt
+talk about soft night
+we need to discuss exhaustion
+foggy brain again
+bedtime avoidance discourse
+be honest about tired honesty
+worst part of delirious thought
+best part of nap
+i need help with sleep debt
+my problem is soft night
+tell me something real about exhaustion
+anyone else dealing with foggy brain
+bedtime avoidance tonight
+need a take on tired honesty tonight
+why is delirious thought like this tonight
+unpopular opinion about nap tonight
+i have thoughts about sleep debt tonight
+talk about soft night tonight
+we need to discuss exhaustion tonight
+foggy brain again tonight
+bedtime avoidance discourse tonight
+be honest about tired honesty tonight
+worst part of delirious thought tonight
+best part of nap tonight
+i need help with sleep debt tonight
+my problem is soft night tonight
+carry me
+why are you like this
+bully me
+im embarrassed
+dont laugh
+im cursed
+youre toxic
+this hurts
+be nice
+im fragile
+youre mean
+i hate you
+dont expose me
+this is bullying
+be gentle
+thats illegal
+youre scary
+ok relax
+im tiny
+dont look at me
+have mercy
+im ruined
+ok chill
+cope
+skill issue
+unlucky
+youre bad
+i failed
+lost again
+this game hates me
+im dumb
+roast me
+this is unfair
+not my fault
+i tried
+why are you better
+teach me
+i cant win
+stop judging me
+ok i deserve that
+i got destroyed
+this is humiliating
+why am i like this
+im coping
+im trying my best
+i feel attacked
+im ashamed
+stop flexing
+you win
+im suffering
+this is pain
+youre smug
+im folding
+burned out
+exam week
+deadline
+work drama
+boss annoyed me
+school is killing me
+productivity lie
+career crisis
+i need motivation
+group project
+deadline tonight
+need a take on burnout
+why is meeting like this
+unpopular opinion about class
+i have thoughts about group project
+talk about pretending to focus
+we need to discuss email fatigue
+academic damage again
+deadline discourse
+be honest about burnout
+worst part of meeting
+best part of class
+i need help with group project
+my problem is pretending to focus
+tell me something real about email fatigue
+anyone else dealing with academic damage
+work school 17
+need a take on burnout tonight
+why is meeting like this tonight
+unpopular opinion about class tonight
+i have thoughts about group project tonight
+talk about pretending to focus tonight
+we need to discuss email fatigue tonight
+academic damage again tonight
+deadline discourse tonight
+be honest about burnout tonight
+worst part of meeting tonight
+best part of class tonight
+i need help with group project tonight
+my problem is pretending to focus tonight
+tell me something real about email fatigue tonight
+anyone else dealing with academic damage tonight
+work school 33
+work school 34
+work school 35
+work school 36
+work school 37
+work school 38
+work school 39
+work school 40
+yuna
+rival
+yuna would hate this
+team lia only
+compare me to yuna
+rival commentary
+yuna mention detected
+someone summon yuna
+who wins between you two
+yuna is judging me
+duo rivalry moment
+talking about yuna again
+that sounds like a yuna opinion
+need the rival take
+yuna would argue this
+call yuna in here
+pick between lia and yuna
+rival energy tonight
+yuna discourse
+friendly competition
+yuna take
+need a take on yuna behavior
+why is team yuna like this
+unpopular opinion about yuna judgment
+i have thoughts about yuna interference
+talk about yuna coded move
+we need to discuss yuna standards
+yuna energy again
+yuna take discourse
+be honest about yuna behavior
+worst part of team yuna
+best part of yuna judgment
+i need help with yuna interference
+my problem is yuna coded move
+tell me something real about yuna standards
+anyone else dealing with yuna energy
+yuna take tonight
+need a take on yuna behavior tonight
+why is team yuna like this tonight
+unpopular opinion about yuna judgment tonight
+i have thoughts about yuna interference tonight
+talk about yuna coded move tonight
+we need to discuss yuna standards tonight
+yuna energy again tonight
+yuna take discourse tonight
+be honest about yuna behavior tonight
+worst part of team yuna tonight
+best part of yuna judgment tonight
+i need help with yuna interference tonight
+my problem is yuna coded move tonight
+better

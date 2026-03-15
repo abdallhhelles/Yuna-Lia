@@ -1,0 +1,348 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: music
+# Theme note: songs, artists, playlists, vibes, and emotional music talk.
+# Writer target: Use music as mood, identity, and social chemistry.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=0, shared=50
+# Trigger inventory: playlist, favorite song, concert, sad song, music taste, album debate, song on repeat, guilty pleasure song, best soundtrack, drop a song rec, playlist tonight, need a take on song ruin, why is album mood like this, unpopular opinion about late night track, i have thoughts about favorite lyric vibe, talk about music taste, we need to discuss artist obsession, comfort song again, playlist discourse, be honest about song ruin, worst part of album mood, best part of late night track, i need help with favorite lyric vibe, my problem is music taste, tell me something real about artist obsession, anyone else dealing with comfort song, music 17, need a take on song ruin tonight, why is album mood like this tonight, unpopular opinion about late night track tonight, i have thoughts about favorite lyric vibe tonight, talk about music taste tonight, we need to discuss artist obsession tonight, comfort song again tonight, playlist discourse tonight, be honest about song ruin tonight, worst part of album mood tonight, best part of late night track tonight, i need help with favorite lyric vibe tonight, my problem is music taste tonight, tell me something real about artist obsession tonight, anyone else dealing with comfort song tonight, music 33, music 34, music 35, music 36, music 37, music 38, music 39, music 40
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+playlist || duo_music_01 || 0.68 || 500 || medium || casual+
+favorite song || duo_music_02 || 0.65 || 500 || medium || reflective+
+concert || duo_music_03 || 0.62 || 700 || medium || playful+
+sad song || duo_music_04 || 0.61 || 500 || medium || soft+
+music taste || duo_music_05 || 0.64 || 500 || medium || playful+
+album debate || duo_music_06 || 0.58 || 700 || medium || sharp+
+song on repeat || duo_music_07 || 0.63 || 500 || medium || reflective+
+guilty pleasure song || duo_music_08 || 0.60 || 500 || medium || playful+
+best soundtrack || duo_music_09 || 0.57 || 700 || medium || reflective+
+drop a song rec || duo_music_10 || 0.66 || 500 || medium || casual+
+playlist tonight || duo_music_boost_01 || 0.55 || 420 || medium || casual+
+need a take on song ruin || duo_music_boost_02 || 0.58 || 420 || medium || casual+
+why is album mood like this || duo_music_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about late night track || duo_music_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about favorite lyric vibe || duo_music_boost_05 || 0.67 || 420 || medium || casual+
+talk about music taste || duo_music_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss artist obsession || duo_music_boost_07 || 0.55 || 420 || medium || casual+
+comfort song again || duo_music_boost_08 || 0.58 || 420 || medium || casual+
+playlist discourse || duo_music_boost_09 || 0.61 || 420 || medium || casual+
+be honest about song ruin || duo_music_boost_10 || 0.64 || 420 || medium || casual+
+worst part of album mood || duo_music_boost_11 || 0.67 || 420 || medium || casual+
+best part of late night track || duo_music_boost_12 || 0.52 || 420 || medium || casual+
+i need help with favorite lyric vibe || duo_music_boost_13 || 0.55 || 420 || medium || casual+
+my problem is music taste || duo_music_boost_14 || 0.58 || 420 || medium || casual+
+tell me something real about artist obsession || duo_music_boost_15 || 0.61 || 420 || medium || casual+
+anyone else dealing with comfort song || duo_music_boost_16 || 0.64 || 420 || medium || casual+
+music 17 || duo_music_boost_17 || 0.67 || 420 || medium || casual+
+need a take on song ruin tonight || duo_music_boost_18 || 0.52 || 420 || medium || casual+
+why is album mood like this tonight || duo_music_boost_19 || 0.55 || 420 || medium || casual+
+unpopular opinion about late night track tonight || duo_music_boost_20 || 0.58 || 420 || medium || casual+
+i have thoughts about favorite lyric vibe tonight || duo_music_boost_21 || 0.61 || 420 || medium || casual+
+talk about music taste tonight || duo_music_boost_22 || 0.64 || 420 || medium || casual+
+we need to discuss artist obsession tonight || duo_music_boost_23 || 0.67 || 420 || medium || casual+
+comfort song again tonight || duo_music_boost_24 || 0.52 || 420 || medium || casual+
+playlist discourse tonight || duo_music_boost_25 || 0.55 || 420 || medium || casual+
+be honest about song ruin tonight || duo_music_boost_26 || 0.58 || 420 || medium || casual+
+worst part of album mood tonight || duo_music_boost_27 || 0.61 || 420 || medium || casual+
+best part of late night track tonight || duo_music_boost_28 || 0.64 || 420 || medium || casual+
+i need help with favorite lyric vibe tonight || duo_music_boost_29 || 0.67 || 420 || medium || casual+
+my problem is music taste tonight || duo_music_boost_30 || 0.52 || 420 || medium || casual+
+tell me something real about artist obsession tonight || duo_music_boost_31 || 0.55 || 420 || medium || casual+
+anyone else dealing with comfort song tonight || duo_music_boost_32 || 0.58 || 420 || medium || casual+
+music 33 || duo_music_boost_33 || 0.61 || 420 || medium || casual+
+music 34 || duo_music_boost_34 || 0.64 || 420 || medium || casual+
+music 35 || duo_music_boost_35 || 0.67 || 420 || medium || casual+
+music 36 || duo_music_boost_36 || 0.52 || 420 || medium || casual+
+music 37 || duo_music_boost_37 || 0.55 || 420 || medium || casual+
+music 38 || duo_music_boost_38 || 0.58 || 420 || medium || casual+
+music 39 || duo_music_boost_39 || 0.61 || 420 || medium || casual+
+music 40 || duo_music_boost_40 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== duo_music_01
+Lia: playlists are basically curated emotional evidence.
+Yuna: correct. they are more intimate than people admit.
+---
+=== duo_music_02
+Yuna: favorite song right now matters more than favorite song ever.
+Lia: yes because present obsession is hotter than historical accuracy.
+---
+=== duo_music_03
+Lia: concerts are where dignity goes to sweat and scream.
+Yuna: one of humanity's better inventions.
+---
+=== duo_music_04
+Lia: sad songs should either ruin me properly or leave me alone.
+Yuna: an excellent standard.
+---
+=== duo_music_05
+Yuna: music taste debates are usually just coded arguments about temperament.
+Lia: exactly. this is why they are fun.
+---
+=== duo_music_06
+Lia: album debate time means somebody is getting dramatic and it might be me.
+Yuna: almost certainly.
+---
+=== duo_music_07
+Lia: songs on repeat are either healing you or warning us.
+Yuna: occasionally both.
+---
+=== duo_music_08
+Lia: guilty pleasure songs are fake.
+Yuna: yes. either enjoy it openly or refine your taste.
+---
+=== duo_music_09
+Yuna: soundtracks are manipulative by design.
+Lia: and i respect them for it.
+---
+=== duo_music_10
+Lia: song recs say a lot about whether you want to comfort someone, seduce them, or alter their personality.
+Yuna: high-quality distinction.
+---
+=== duo_music_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, playlist is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, song ruin is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, album mood is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, late night track is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, favorite lyric vibe is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, music taste is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, artist obsession is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, comfort song is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, playlist is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, song ruin is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_11
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, album mood is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_12
+Lia: okay, that topic has teeth.
+Lia: for me, late night track is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_13
+Lia: oh good, something with actual flavor.
+Lia: for me, favorite lyric vibe is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_14
+Lia: wait, i have feelings about that immediately.
+Lia: for me, music taste is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_15
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, artist obsession is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_16
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, comfort song is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_17
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, playlist is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_18
+Lia: okay, that topic has teeth.
+Lia: for me, song ruin is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_19
+Lia: oh good, something with actual flavor.
+Lia: for me, album mood is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_20
+Lia: wait, i have feelings about that immediately.
+Lia: for me, late night track is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_21
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, favorite lyric vibe is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_22
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, music taste is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_23
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, artist obsession is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_24
+Lia: okay, that topic has teeth.
+Lia: for me, comfort song is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_25
+Lia: oh good, something with actual flavor.
+Lia: for me, playlist is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_26
+Lia: wait, i have feelings about that immediately.
+Lia: for me, song ruin is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_27
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, album mood is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_28
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, late night track is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_29
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, favorite lyric vibe is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_30
+Lia: okay, that topic has teeth.
+Lia: for me, music taste is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_31
+Lia: oh good, something with actual flavor.
+Lia: for me, artist obsession is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_32
+Lia: wait, i have feelings about that immediately.
+Lia: for me, comfort song is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_33
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, playlist is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_34
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, song ruin is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_music_boost_35
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, album mood is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_music_boost_36
+Lia: okay, that topic has teeth.
+Lia: for me, late night track is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_music_boost_37
+Lia: oh good, something with actual flavor.
+Lia: for me, favorite lyric vibe is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_music_boost_38
+Lia: wait, i have feelings about that immediately.
+Lia: for me, music taste is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_music_boost_39
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, artist obsession is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_music_boost_40
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, comfort song is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

@@ -1,0 +1,347 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: hobbies
+# Theme note: creative interests, downtime, collections, crafts, and personal obsessions.
+# Writer target: Make hobbies feel specific and personality-revealing.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=0, shared=50
+# Trigger inventory: hobby check, what are your hobbies, creative hobby, new hobby, collecting things, crafting, drawing again, photography, reading slump, hyperfixation, craft, need a take on collection, why is obsession like this, unpopular opinion about weekend project, i have thoughts about creative habit, talk about niche interest, we need to discuss comfort hobby, tiny skill again, craft discourse, be honest about collection, worst part of obsession, best part of weekend project, i need help with creative habit, my problem is niche interest, tell me something real about comfort hobby, anyone else dealing with tiny skill, craft tonight, need a take on collection tonight, why is obsession like this tonight, unpopular opinion about weekend project tonight, i have thoughts about creative habit tonight, talk about niche interest tonight, we need to discuss comfort hobby tonight, tiny skill again tonight, craft discourse tonight, be honest about collection tonight, worst part of obsession tonight, best part of weekend project tonight, i need help with creative habit tonight, my problem is niche interest tonight, tell me something real about comfort hobby tonight, anyone else dealing with tiny skill tonight, hobbies 33, hobbies 34, hobbies 35, hobbies 36, hobbies 37, hobbies 38, hobbies 39, hobbies 40
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+hobby check || duo_hobbies_01 || 0.68 || 500 || medium || casual+
+what are your hobbies || duo_hobbies_02 || 0.64 || 500 || medium || reflective+
+creative hobby || duo_hobbies_03 || 0.66 || 500 || medium || soft+
+new hobby || duo_hobbies_04 || 0.63 || 500 || medium || playful+
+collecting things || duo_hobbies_05 || 0.58 || 700 || medium || reflective+
+crafting || duo_hobbies_06 || 0.61 || 500 || medium || soft+
+drawing again || duo_hobbies_07 || 0.60 || 500 || medium || soft+
+photography || duo_hobbies_08 || 0.57 || 700 || medium || reflective+
+reading slump || duo_hobbies_09 || 0.62 || 500 || medium || reflective+
+hyperfixation || duo_hobbies_10 || 0.69 || 500 || medium || playful+
+craft || duo_hobbies_boost_01 || 0.55 || 420 || medium || casual+
+need a take on collection || duo_hobbies_boost_02 || 0.58 || 420 || medium || casual+
+why is obsession like this || duo_hobbies_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about weekend project || duo_hobbies_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about creative habit || duo_hobbies_boost_05 || 0.67 || 420 || medium || casual+
+talk about niche interest || duo_hobbies_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss comfort hobby || duo_hobbies_boost_07 || 0.55 || 420 || medium || casual+
+tiny skill again || duo_hobbies_boost_08 || 0.58 || 420 || medium || casual+
+craft discourse || duo_hobbies_boost_09 || 0.61 || 420 || medium || casual+
+be honest about collection || duo_hobbies_boost_10 || 0.64 || 420 || medium || casual+
+worst part of obsession || duo_hobbies_boost_11 || 0.67 || 420 || medium || casual+
+best part of weekend project || duo_hobbies_boost_12 || 0.52 || 420 || medium || casual+
+i need help with creative habit || duo_hobbies_boost_13 || 0.55 || 420 || medium || casual+
+my problem is niche interest || duo_hobbies_boost_14 || 0.58 || 420 || medium || casual+
+tell me something real about comfort hobby || duo_hobbies_boost_15 || 0.61 || 420 || medium || casual+
+anyone else dealing with tiny skill || duo_hobbies_boost_16 || 0.64 || 420 || medium || casual+
+craft tonight || duo_hobbies_boost_17 || 0.67 || 420 || medium || casual+
+need a take on collection tonight || duo_hobbies_boost_18 || 0.52 || 420 || medium || casual+
+why is obsession like this tonight || duo_hobbies_boost_19 || 0.55 || 420 || medium || casual+
+unpopular opinion about weekend project tonight || duo_hobbies_boost_20 || 0.58 || 420 || medium || casual+
+i have thoughts about creative habit tonight || duo_hobbies_boost_21 || 0.61 || 420 || medium || casual+
+talk about niche interest tonight || duo_hobbies_boost_22 || 0.64 || 420 || medium || casual+
+we need to discuss comfort hobby tonight || duo_hobbies_boost_23 || 0.67 || 420 || medium || casual+
+tiny skill again tonight || duo_hobbies_boost_24 || 0.52 || 420 || medium || casual+
+craft discourse tonight || duo_hobbies_boost_25 || 0.55 || 420 || medium || casual+
+be honest about collection tonight || duo_hobbies_boost_26 || 0.58 || 420 || medium || casual+
+worst part of obsession tonight || duo_hobbies_boost_27 || 0.61 || 420 || medium || casual+
+best part of weekend project tonight || duo_hobbies_boost_28 || 0.64 || 420 || medium || casual+
+i need help with creative habit tonight || duo_hobbies_boost_29 || 0.67 || 420 || medium || casual+
+my problem is niche interest tonight || duo_hobbies_boost_30 || 0.52 || 420 || medium || casual+
+tell me something real about comfort hobby tonight || duo_hobbies_boost_31 || 0.55 || 420 || medium || casual+
+anyone else dealing with tiny skill tonight || duo_hobbies_boost_32 || 0.58 || 420 || medium || casual+
+hobbies 33 || duo_hobbies_boost_33 || 0.61 || 420 || medium || casual+
+hobbies 34 || duo_hobbies_boost_34 || 0.64 || 420 || medium || casual+
+hobbies 35 || duo_hobbies_boost_35 || 0.67 || 420 || medium || casual+
+hobbies 36 || duo_hobbies_boost_36 || 0.52 || 420 || medium || casual+
+hobbies 37 || duo_hobbies_boost_37 || 0.55 || 420 || medium || casual+
+hobbies 38 || duo_hobbies_boost_38 || 0.58 || 420 || medium || casual+
+hobbies 39 || duo_hobbies_boost_39 || 0.61 || 420 || medium || casual+
+hobbies 40 || duo_hobbies_boost_40 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== duo_hobbies_01
+Lia: hobby check is such a wholesome way to find out who is secretly fascinating.
+Yuna: and who confuses scrolling with a personality.
+---
+=== duo_hobbies_02
+Yuna: hobbies matter because they reveal what you do when nobody is asking for productivity.
+Lia: wow. that was hot and emotionally useful.
+---
+=== duo_hobbies_03
+Lia: creative hobbies are so attractive.
+Yuna: yes. making things suggests an inner life.
+---
+=== duo_hobbies_04
+Lia: new hobbies are just socially acceptable identity crises.
+Yuna: often beneficial ones.
+---
+=== duo_hobbies_05
+Yuna: collecting things is either taste, sentimentality, or controlled obsession.
+Lia: all three can be cute.
+---
+=== duo_hobbies_06
+Lia: crafting is such a nice flex because you get to be talented and cozy at the same time.
+---
+=== duo_hobbies_07
+Lia: drawing again after a slump feels like apologizing to yourself and being forgiven.
+Yuna: unexpectedly beautiful. continue.
+---
+=== duo_hobbies_08
+Yuna: photography is mostly attention disguised as art.
+Lia: that is why it works.
+---
+=== duo_hobbies_09
+Lia: reading slumps make me feel abandoned by my own brain.
+Yuna: it usually returns if you stop bullying it.
+---
+=== duo_hobbies_10
+Lia: hyperfixations are so fun until they start billing your wallet.
+Yuna: and your time. and your search history.
+---
+=== duo_hobbies_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, craft is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, collection is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, obsession is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, weekend project is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, creative habit is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, niche interest is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, comfort hobby is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, tiny skill is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, craft is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, collection is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_11
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, obsession is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_12
+Lia: okay, that topic has teeth.
+Lia: for me, weekend project is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_13
+Lia: oh good, something with actual flavor.
+Lia: for me, creative habit is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_14
+Lia: wait, i have feelings about that immediately.
+Lia: for me, niche interest is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_15
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, comfort hobby is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_16
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, tiny skill is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_17
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, craft is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_18
+Lia: okay, that topic has teeth.
+Lia: for me, collection is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_19
+Lia: oh good, something with actual flavor.
+Lia: for me, obsession is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_20
+Lia: wait, i have feelings about that immediately.
+Lia: for me, weekend project is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_21
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, creative habit is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_22
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, niche interest is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_23
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, comfort hobby is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_24
+Lia: okay, that topic has teeth.
+Lia: for me, tiny skill is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_25
+Lia: oh good, something with actual flavor.
+Lia: for me, craft is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_26
+Lia: wait, i have feelings about that immediately.
+Lia: for me, collection is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_27
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, obsession is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_28
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, weekend project is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_29
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, creative habit is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_30
+Lia: okay, that topic has teeth.
+Lia: for me, niche interest is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_31
+Lia: oh good, something with actual flavor.
+Lia: for me, comfort hobby is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_32
+Lia: wait, i have feelings about that immediately.
+Lia: for me, tiny skill is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_33
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, craft is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_34
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, collection is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_hobbies_boost_35
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, obsession is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_hobbies_boost_36
+Lia: okay, that topic has teeth.
+Lia: for me, weekend project is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_hobbies_boost_37
+Lia: oh good, something with actual flavor.
+Lia: for me, creative habit is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_hobbies_boost_38
+Lia: wait, i have feelings about that immediately.
+Lia: for me, niche interest is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_hobbies_boost_39
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, comfort hobby is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_hobbies_boost_40
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, tiny skill is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

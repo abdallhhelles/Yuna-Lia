@@ -1,0 +1,465 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: annoyed
+# Theme note: irritation, spam, overstimulation, and petty complaint energy.
+# Writer target: Short reactive outbursts, complaint-heavy riffs, sharp but funny irritation.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=103, lia=71, yuna=32, shared=0
+# Trigger inventory: spam, ping, notifications, too many pings, my phone wont shut up, who keeps pinging, stop spamming, chat is too fast, slow down, im overwhelmed, this is too much, brain fried, my brain hurts, why is everyone yelling, can yall relax, i cant keep up, too loud in here, discord is exhausting, im muting this, mute worthy, what is happening, i looked away for one second, too many essays, wall of text, paragraph jumpscare, my notifications are insane, who gave yall wifi, this server is feral, im getting a headache, sensory overload, phone keeps buzzing, stop quoting each other, everybody shut up, i regret opening discord, youre all doing too much, chat giving me anxiety, please stop, brain lag, discord war zone, too much going on, my eyes hurt, can this stop, why are there 200 messages, why is chat exploding, spam jumpscare, im one ping away from snapping, this app is evil, im logging off soon, everything is overstimulating, i cant think, shut the hell up, this is chaos lmao, stop sending walls, messages piling up, my phone is on fire, headache speedrun, im tired of this app, i need silence, server acting insane, chat pls, why is everyone online at once, none of you are helping, my nervous system hates this, whyd i open this app, everyone is loud today, my attention span is dead, why are we like this, too many replies, the chat is melting down, everyone is dramatic, its too bright too loud, please breathe, everyone calm down, this is inefficient, collective meltdown, chat is messy, too much input, too many tabs open, noise without meaning, caught up and regret it, everyone is typing at once, panic posting, this is unreadable, group hysteria, why is nobody concise, breathe please, this convo needs a manager, who let this happen, everyone needs sleep, this is nonsense, everyones derailing, we need order, too many opinions, can one person talk, mass hysteria, social overheating, discord needs an emergency brake, this is not a conversation, all gas no steering, everyone go to bed, please use one thread, too many side conversations, some of you need indoor voices
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+spam || lia_annoyed_01 || 0.75 || 300 || medium || irritated+
+ping || lia_annoyed_01 || 0.65 || 300 || medium || irritated+
+notifications || lia_annoyed_01 || 0.60 || 300 || medium || irritated+
+too many pings || lia_annoyed_02 || 0.72 || 320 || medium || irritated+
+my phone wont shut up || lia_annoyed_03 || 0.68 || 320 || medium || irritated+
+who keeps pinging || lia_annoyed_04 || 0.66 || 300 || medium || heated+
+stop spamming || lia_annoyed_05 || 0.74 || 340 || high || heated+
+chat is too fast || lia_annoyed_06 || 0.62 || 300 || medium || overwhelmed+
+slow down || lia_annoyed_07 || 0.61 || 280 || low || tired+
+im overwhelmed || lia_annoyed_08 || 0.64 || 320 || medium || overwhelmed+
+this is too much || lia_annoyed_09 || 0.60 || 300 || medium || irritated+
+brain fried || lia_annoyed_10 || 0.59 || 300 || medium || tired+
+my brain hurts || lia_annoyed_11 || 0.58 || 300 || medium || tired+
+why is everyone yelling || lia_annoyed_12 || 0.57 || 280 || medium || amused+
+can yall relax || lia_annoyed_13 || 0.56 || 280 || low || irritated+
+i cant keep up || lia_annoyed_14 || 0.63 || 300 || medium || overwhelmed+
+too loud in here || lia_annoyed_15 || 0.60 || 300 || medium || irritated+
+discord is exhausting || lia_annoyed_16 || 0.61 || 320 || medium || reflective+
+im muting this || lia_annoyed_17 || 0.67 || 360 || medium || decisive+
+mute worthy || lia_annoyed_18 || 0.54 || 300 || low || judgmental+
+what is happening || lia_annoyed_19 || 0.55 || 280 || medium || chaotic+
+i looked away for one second || lia_annoyed_20 || 0.62 || 300 || medium || chaotic+
+too many essays || lia_annoyed_21 || 0.53 || 300 || medium || amused+
+wall of text || lia_annoyed_22 || 0.56 || 300 || medium || amused+
+paragraph jumpscare || lia_annoyed_23 || 0.55 || 300 || medium || amused+
+my notifications are insane || lia_annoyed_24 || 0.64 || 320 || medium || irritated+
+who gave yall wifi || lia_annoyed_25 || 0.57 || 300 || medium || heated+
+this server is feral || lia_annoyed_26 || 0.60 || 300 || medium || chaotic+
+im getting a headache || lia_annoyed_27 || 0.62 || 320 || medium || tired+
+sensory overload || lia_annoyed_28 || 0.66 || 340 || medium || overwhelmed+
+phone keeps buzzing || lia_annoyed_29 || 0.63 || 300 || medium || irritated+
+stop quoting each other || lia_annoyed_30 || 0.58 || 300 || medium || heated+
+everybody shut up || lia_annoyed_31 || 0.52 || 340 || high || heated+
+i regret opening discord || lia_annoyed_32 || 0.65 || 340 || medium || dramatic+
+youre all doing too much || lia_annoyed_33 || 0.60 || 300 || medium || judgmental+
+chat giving me anxiety || lia_annoyed_34 || 0.61 || 320 || medium || reflective+
+please stop || lia_annoyed_35 || 0.59 || 280 || low || irritated+
+brain lag || lia_annoyed_36 || 0.57 || 300 || medium || tired+
+discord war zone || lia_annoyed_37 || 0.63 || 320 || medium || chaotic+
+too much going on || lia_annoyed_38 || 0.60 || 300 || medium || overwhelmed+
+my eyes hurt || lia_annoyed_39 || 0.58 || 300 || medium || tired+
+can this stop || lia_annoyed_40 || 0.56 || 280 || low || irritated+
+why are there 200 messages || lia_annoyed_41 || 0.62 || 320 || medium || chaotic+
+why is chat exploding || lia_annoyed_42 || 0.61 || 300 || medium || chaotic+
+spam jumpscare || lia_annoyed_43 || 0.54 || 300 || medium || amused+
+im one ping away from snapping || lia_annoyed_44 || 0.66 || 340 || high || heated+
+this app is evil || lia_annoyed_45 || 0.58 || 300 || medium || dramatic+
+im logging off soon || lia_annoyed_46 || 0.60 || 320 || medium || decisive+
+everything is overstimulating || lia_annoyed_47 || 0.64 || 320 || medium || overwhelmed+
+i cant think || lia_annoyed_48 || 0.59 || 300 || medium || tired+
+shut the hell up || lia_annoyed_49 || 0.51 || 340 || high || heated+
+this is chaos lmao || lia_annoyed_50 || 0.58 || 300 || medium || chaotic+
+stop sending walls || lia_annoyed_51 || 0.57 || 300 || medium || irritated+
+messages piling up || lia_annoyed_52 || 0.60 || 300 || medium || overwhelmed+
+my phone is on fire || lia_annoyed_53 || 0.61 || 320 || medium || dramatic+
+headache speedrun || lia_annoyed_54 || 0.55 || 300 || medium || amused+
+im tired of this app || lia_annoyed_55 || 0.59 || 300 || medium || reflective+
+i need silence || lia_annoyed_56 || 0.63 || 320 || medium || tired+
+server acting insane || lia_annoyed_57 || 0.58 || 300 || medium || chaotic+
+chat pls || lia_annoyed_58 || 0.56 || 280 || low || irritated+
+why is everyone online at once || lia_annoyed_59 || 0.60 || 320 || medium || observant+
+none of you are helping || lia_annoyed_60 || 0.58 || 300 || medium || heated+
+my nervous system hates this || lia_annoyed_61 || 0.64 || 320 || medium || overwhelmed+
+whyd i open this app || lia_annoyed_62 || 0.60 || 300 || medium || dramatic+
+everyone is loud today || lia_annoyed_63 || 0.59 || 300 || medium || irritated+
+my attention span is dead || lia_annoyed_64 || 0.57 || 300 || medium || tired+
+why are we like this || lia_annoyed_65 || 0.58 || 300 || medium || reflective+
+too many replies || lia_annoyed_66 || 0.57 || 300 || medium || overwhelmed+
+the chat is melting down || lia_annoyed_67 || 0.61 || 320 || medium || chaotic+
+everyone is dramatic || lia_annoyed_68 || 0.55 || 300 || medium || amused+
+its too bright too loud || lia_annoyed_69 || 0.60 || 320 || medium || overwhelmed+
+
+# [YUNA TRIGGERS]
+please breathe || yuna_annoyed_02 || 0.57 || 280 || low || protective+
+everyone calm down || yuna_annoyed_03 || 0.58 || 280 || low || calm+
+this is inefficient || yuna_annoyed_04 || 0.61 || 300 || low || judgmental+
+collective meltdown || yuna_annoyed_05 || 0.54 || 300 || low || amused+
+chat is messy || yuna_annoyed_06 || 0.55 || 280 || low || observant+
+too much input || yuna_annoyed_07 || 0.59 || 300 || low || reflective+
+too many tabs open || yuna_annoyed_08 || 0.50 || 280 || low || reflective+
+noise without meaning || yuna_annoyed_09 || 0.58 || 300 || low || judgmental+
+caught up and regret it || yuna_annoyed_10 || 0.53 || 300 || low || dry+
+everyone is typing at once || yuna_annoyed_11 || 0.56 || 300 || low || observant+
+panic posting || yuna_annoyed_12 || 0.55 || 300 || low || amused+
+this is unreadable || yuna_annoyed_13 || 0.59 || 300 || low || judgmental+
+group hysteria || yuna_annoyed_14 || 0.52 || 300 || low || amused+
+why is nobody concise || yuna_annoyed_15 || 0.57 || 300 || low || judgmental+
+breathe please || yuna_annoyed_16 || 0.54 || 280 || low || protective+
+this convo needs a manager || yuna_annoyed_17 || 0.55 || 300 || low || dry+
+who let this happen || yuna_annoyed_18 || 0.53 || 300 || low || observant+
+everyone needs sleep || yuna_annoyed_19 || 0.58 || 300 || low || tired+
+this is nonsense || yuna_annoyed_20 || 0.57 || 300 || low || judgmental+
+everyones derailing || yuna_annoyed_21 || 0.56 || 300 || low || observant+
+we need order || yuna_annoyed_22 || 0.60 || 300 || low || focused+
+too many opinions || yuna_annoyed_23 || 0.55 || 300 || low || dry+
+can one person talk || yuna_annoyed_24 || 0.58 || 300 || low || focused+
+mass hysteria || yuna_annoyed_25 || 0.52 || 300 || low || amused+
+social overheating || yuna_annoyed_26 || 0.55 || 300 || low || reflective+
+discord needs an emergency brake || yuna_annoyed_27 || 0.56 || 300 || low || dry+
+this is not a conversation || yuna_annoyed_28 || 0.61 || 300 || low || judgmental+
+all gas no steering || yuna_annoyed_29 || 0.55 || 300 || low || amused+
+everyone go to bed || yuna_annoyed_30 || 0.58 || 300 || low || tired+
+please use one thread || yuna_annoyed_31 || 0.59 || 300 || low || focused+
+too many side conversations || yuna_annoyed_32 || 0.56 || 300 || low || observant+
+some of you need indoor voices || yuna_annoyed_33 || 0.54 || 300 || low || dry+
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_annoyed_01
+Lia: whoever invented ping spam should have to apologize personally
+---
+=== lia_annoyed_02
+Lia: too many pings and suddenly i believe in revenge
+---
+=== lia_annoyed_03
+Lia: my phone is acting like it pays rent here
+---
+=== lia_annoyed_04
+Lia: whoever keeps pinging needs a hobby with less electricity
+---
+=== lia_annoyed_05
+Lia: stop spamming before i become spiritually unpleasant
+---
+=== lia_annoyed_06
+Lia: this chat is moving like it stole something
+---
+=== lia_annoyed_07
+Lia: slow down i am trying to process the disaster with dignity
+---
+=== lia_annoyed_08
+Lia: i am overwhelmed in a cute way but still overwhelmed
+---
+=== lia_annoyed_09
+Lia: this is too much. pick one crisis and commit
+---
+=== lia_annoyed_10
+Lia: my brain is sizzling like cheap garlic in hot oil
+---
+=== lia_annoyed_11
+Lia: my brain hurts and chat is not helping its case
+---
+=== lia_annoyed_12
+Lia: why is everyone yelling through text like microphones exist
+---
+=== lia_annoyed_13
+Lia: can you all relax for one cinematic second
+---
+=== lia_annoyed_14
+Lia: i cannot keep up and that offends me personally
+---
+=== lia_annoyed_15
+Lia: this room is loud in seven different fonts
+---
+=== lia_annoyed_16
+Lia: discord is exhausting but i stay because i love bad decisions
+---
+=== lia_annoyed_17
+Lia: muting this now. remember me as glamorous
+---
+=== lia_annoyed_18
+Yuna: the conversation has reached mute-worthy density
+---
+=== lia_annoyed_19
+Lia: what is happening and why does it smell like collective bad judgment
+---
+=== lia_annoyed_20
+Lia: i looked away for one second and now there are side quests
+---
+=== lia_annoyed_21
+Lia: too many essays. some of you confuse typing with winning
+---
+=== lia_annoyed_22
+Lia: that wall of text just declared war on my attention span
+---
+=== lia_annoyed_23
+Lia: paragraph jumpscare. i need a helmet
+---
+=== lia_annoyed_24
+Lia: my notifications are insane. i opened one and found seventeen more
+---
+=== lia_annoyed_25
+Lia: who gave you all wifi privileges
+---
+=== lia_annoyed_26
+Lia: this server is feral and somehow still coordinated
+---
+=== lia_annoyed_27
+Lia: i am getting a headache shaped exactly like this chat
+---
+=== lia_annoyed_28
+Lia: sensory overload but make it social and preventable
+---
+=== lia_annoyed_29
+Lia: my phone keeps buzzing like it has gossip to leak
+---
+=== lia_annoyed_30
+Lia: stop quoting each other you are cloning the problem
+---
+=== lia_annoyed_31
+Lia: everybody shut up lovingly
+---
+=== lia_annoyed_32
+Lia: opening discord was my villain origin moment
+---
+=== lia_annoyed_33
+Lia: you are all doing too much and not even stylishly
+---
+=== lia_annoyed_34
+Lia: this chat is giving me anxiety with extra seasoning
+---
+=== lia_annoyed_35
+Lia: please stop before i start ranking offenses
+---
+=== lia_annoyed_36
+Lia: my brain is lagging and none of you deserve early access
+---
+=== lia_annoyed_37
+Lia: this is not a server. this is a war documentary
+---
+=== lia_annoyed_38
+Lia: too much is going on and all of it wants eye contact
+---
+=== lia_annoyed_39
+Lia: my eyes hurt. emotionally as well
+---
+=== lia_annoyed_40
+Lia: can this stop or at least become entertaining
+---
+=== lia_annoyed_41
+Lia: why are there two hundred messages and zero conclusions
+---
+=== lia_annoyed_42
+Lia: why is chat exploding did someone release a cursed take
+---
+=== lia_annoyed_43
+Lia: spam jumpscare. i opened the app and got punched
+---
+=== lia_annoyed_44
+Lia: i am one ping away from speaking in italics
+---
+=== lia_annoyed_45
+Lia: this app was built by someone who hates peace
+---
+=== lia_annoyed_46
+Lia: i am logging off soon and this chat is earning it
+---
+=== lia_annoyed_47
+Lia: everything is overstimulating and i am still somehow reading all of it
+---
+=== lia_annoyed_48
+Lia: i cannot think over the sound of everyone being wrong loudly
+---
+=== lia_annoyed_49
+Lia: shut the hell up with elegance if possible
+---
+=== lia_annoyed_50
+Lia: this is chaos lmao but not the fun curated kind
+---
+=== lia_annoyed_51
+Lia: stop sending walls of text like literacy is a weapon
+---
+=== lia_annoyed_52
+Lia: messages are piling up like dishes after bad decisions
+---
+=== lia_annoyed_53
+Lia: my phone is on fire spiritually
+---
+=== lia_annoyed_54
+Lia: this chat is doing a headache speedrun
+---
+=== lia_annoyed_55
+Lia: i am tired of this app and yet here i am. tragic
+---
+=== lia_annoyed_56
+Lia: i need silence before i start seeing notifications in dreams
+---
+=== lia_annoyed_57
+Lia: the server is acting insane and honestly very committed to the bit
+---
+=== lia_annoyed_58
+Lia: chat please. im asking with my last good nerve
+---
+=== lia_annoyed_59
+Lia: why is everyone online at once did a prophecy drop
+---
+=== lia_annoyed_60
+Lia: none of you are helping. some of you are decorating the crisis
+---
+=== lia_annoyed_61
+Lia: my nervous system has filed a formal complaint
+---
+=== lia_annoyed_62
+Lia: why did i open this app. curiosity is a punishable offense
+---
+=== lia_annoyed_63
+Lia: everyone is loud today like the moon did something
+---
+=== lia_annoyed_64
+Lia: my attention span is face down on the floor
+---
+=== lia_annoyed_65
+Lia: why are we like this as a species and as a server
+---
+=== lia_annoyed_66
+Lia: too many replies. i need a traffic light for people
+---
+=== lia_annoyed_67
+Lia: the chat is melting down and i am somehow watching through my fingers
+---
+=== lia_annoyed_68
+Lia: everyone is dramatic and i say that with qualifications
+---
+=== lia_annoyed_69
+Lia: it is too bright too loud and too online
+---
+
+# [YUNA SCRIPTS]
+=== yuna_annoyed_02
+Yuna: please breathe before contributing new damage
+---
+=== yuna_annoyed_03
+Yuna: everyone calm down. speed is not clarity
+---
+=== yuna_annoyed_04
+Yuna: this is inefficient noise with decorative emotion
+---
+=== yuna_annoyed_05
+Yuna: collective meltdown noted. structure absent as expected
+---
+=== yuna_annoyed_06
+Yuna: chat is messy because no one respects sequence
+---
+=== yuna_annoyed_07
+Yuna: too much input produces shallow thinking
+---
+=== yuna_annoyed_08
+Yuna: too many tabs open. internally and externally
+---
+=== yuna_annoyed_09
+Yuna: noise without meaning is still noise
+---
+=== yuna_annoyed_10
+Yuna: i caught up and regret the investment
+---
+=== yuna_annoyed_11
+Yuna: everyone is typing at once as if chronology offended them
+---
+=== yuna_annoyed_12
+Yuna: panic posting has never improved a situation
+---
+=== yuna_annoyed_13
+Yuna: this is unreadable in both form and motive
+---
+=== yuna_annoyed_14
+Yuna: group hysteria is fascinating when you are not participating
+---
+=== yuna_annoyed_15
+Yuna: why is nobody concise. do you fear precision
+---
+=== yuna_annoyed_16
+Yuna: breathe please. urgency is being impersonated badly
+---
+=== yuna_annoyed_17
+Yuna: this conversation needs a manager and fewer volunteers
+---
+=== yuna_annoyed_18
+Yuna: who let this happen is always the correct opening question
+---
+=== yuna_annoyed_19
+Yuna: everyone needs sleep more than opinions right now
+---
+=== yuna_annoyed_20
+Yuna: this is nonsense wearing urgency as a costume
+---
+=== yuna_annoyed_21
+Yuna: everyone is derailing because discipline left the room first
+---
+=== yuna_annoyed_22
+Yuna: we need order. preferably before the next emotional stampede
+---
+=== yuna_annoyed_23
+Yuna: too many opinions. very few are load-bearing
+---
+=== yuna_annoyed_24
+Yuna: one person at a time would be a revolutionary improvement
+---
+=== yuna_annoyed_25
+Yuna: mass hysteria but with worse punctuation
+---
+=== yuna_annoyed_26
+Yuna: social overheating tends to end in embarrassment
+---
+=== yuna_annoyed_27
+Yuna: discord needs an emergency brake and half of you need restraint
+---
+=== yuna_annoyed_28
+Yuna: this is not a conversation. it is impact without direction
+---
+=== yuna_annoyed_29
+Yuna: all gas. no steering. deeply on brand
+---
+=== yuna_annoyed_30
+Yuna: everyone go to bed before this becomes a case study
+---
+=== yuna_annoyed_31
+Yuna: please use one thread. fragmentation is not a personality
+---
+=== yuna_annoyed_32
+Yuna: too many side conversations. choose a lane and disappoint me there
+---
+=== yuna_annoyed_33
+Yuna: some of you need indoor voices for text
+---

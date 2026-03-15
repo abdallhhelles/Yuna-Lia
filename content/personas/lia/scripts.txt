@@ -1,3 +1,0 @@
-# Scripts were migrated into the individual Lia theme files.
-# Send writers the theme file they are working on; it now includes the writer brief,
-# trigger lines, and the exact script blocks in one place.

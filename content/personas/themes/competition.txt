@@ -1,0 +1,331 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: competition
+# Theme note: rankings, superiority tests, comparisons, and head-to-head tension.
+# Writer target: Controlled competitive answers with status framing and bite.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=52, lia=0, yuna=49, shared=3
+# Trigger inventory: who takes first place, settle the ranking, pick the winner, competition mode, versus debate, who is more dangerous, who is smarter here, power ranking time, choose a champion, main event energy, scoreboard question, head to head now, who dominates, final verdict please, compare them again, who carries the duo, battle for first place, best overall, competition arc, ranking, need a take on winner, why is comparison like this, unpopular opinion about scoreboard, i have thoughts about advantage, talk about skill gap, we need to discuss power level, final verdict again, ranking discourse, be honest about winner, worst part of comparison, best part of scoreboard, i need help with advantage, my problem is skill gap, tell me something real about power level, anyone else dealing with final verdict, ranking tonight, need a take on winner tonight, why is comparison like this tonight, unpopular opinion about scoreboard tonight, i have thoughts about advantage tonight, talk about skill gap tonight, we need to discuss power level tonight, final verdict again tonight, ranking discourse tonight, be honest about winner tonight, worst part of comparison tonight, best part of scoreboard tonight, i need help with advantage tonight, my problem is skill gap tonight, who is better, better, versus
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+who takes first place || yuna_competition_extra_01 || 0.67 || 420 || high || aggressive+
+settle the ranking || yuna_competition_extra_02 || 0.70 || 420 || high || aggressive+
+pick the winner || yuna_competition_extra_03 || 0.73 || 420 || high || aggressive+
+competition mode || yuna_competition_extra_04 || 0.76 || 420 || high || aggressive+
+versus debate || yuna_competition_extra_05 || 0.64 || 420 || high || aggressive+
+who is more dangerous || yuna_competition_extra_06 || 0.67 || 420 || high || aggressive+
+who is smarter here || yuna_competition_extra_07 || 0.70 || 420 || high || aggressive+
+power ranking time || yuna_competition_extra_08 || 0.73 || 420 || high || aggressive+
+choose a champion || yuna_competition_extra_09 || 0.76 || 420 || high || aggressive+
+main event energy || yuna_competition_extra_10 || 0.64 || 420 || high || aggressive+
+scoreboard question || yuna_competition_extra_11 || 0.67 || 420 || high || aggressive+
+head to head now || yuna_competition_extra_12 || 0.70 || 420 || high || aggressive+
+who dominates || yuna_competition_extra_13 || 0.73 || 420 || high || aggressive+
+final verdict please || yuna_competition_extra_14 || 0.76 || 420 || high || aggressive+
+compare them again || yuna_competition_extra_15 || 0.64 || 420 || high || aggressive+
+who carries the duo || yuna_competition_extra_16 || 0.67 || 420 || high || aggressive+
+battle for first place || yuna_competition_extra_17 || 0.70 || 420 || high || aggressive+
+best overall || yuna_competition_extra_18 || 0.73 || 420 || high || aggressive+
+competition arc || yuna_competition_extra_19 || 0.76 || 420 || high || aggressive+
+ranking || yuna_competition_boost_01 || 0.55 || 360 || medium || reflective+
+need a take on winner || yuna_competition_boost_02 || 0.58 || 360 || medium || reflective+
+why is comparison like this || yuna_competition_boost_03 || 0.61 || 360 || medium || reflective+
+unpopular opinion about scoreboard || yuna_competition_boost_04 || 0.64 || 360 || medium || reflective+
+i have thoughts about advantage || yuna_competition_boost_05 || 0.67 || 360 || medium || reflective+
+talk about skill gap || yuna_competition_boost_06 || 0.52 || 360 || medium || reflective+
+we need to discuss power level || yuna_competition_boost_07 || 0.55 || 360 || medium || reflective+
+final verdict again || yuna_competition_boost_08 || 0.58 || 360 || medium || reflective+
+ranking discourse || yuna_competition_boost_09 || 0.61 || 360 || medium || reflective+
+be honest about winner || yuna_competition_boost_10 || 0.64 || 360 || medium || reflective+
+worst part of comparison || yuna_competition_boost_11 || 0.67 || 360 || medium || reflective+
+best part of scoreboard || yuna_competition_boost_12 || 0.52 || 360 || medium || reflective+
+i need help with advantage || yuna_competition_boost_13 || 0.55 || 360 || medium || reflective+
+my problem is skill gap || yuna_competition_boost_14 || 0.58 || 360 || medium || reflective+
+tell me something real about power level || yuna_competition_boost_15 || 0.61 || 360 || medium || reflective+
+anyone else dealing with final verdict || yuna_competition_boost_16 || 0.64 || 360 || medium || reflective+
+ranking tonight || yuna_competition_boost_17 || 0.67 || 360 || medium || reflective+
+need a take on winner tonight || yuna_competition_boost_18 || 0.52 || 360 || medium || reflective+
+why is comparison like this tonight || yuna_competition_boost_19 || 0.55 || 360 || medium || reflective+
+unpopular opinion about scoreboard tonight || yuna_competition_boost_20 || 0.58 || 360 || medium || reflective+
+i have thoughts about advantage tonight || yuna_competition_boost_21 || 0.61 || 360 || medium || reflective+
+talk about skill gap tonight || yuna_competition_boost_22 || 0.64 || 360 || medium || reflective+
+we need to discuss power level tonight || yuna_competition_boost_23 || 0.67 || 360 || medium || reflective+
+final verdict again tonight || yuna_competition_boost_24 || 0.52 || 360 || medium || reflective+
+ranking discourse tonight || yuna_competition_boost_25 || 0.55 || 360 || medium || reflective+
+be honest about winner tonight || yuna_competition_boost_26 || 0.58 || 360 || medium || reflective+
+worst part of comparison tonight || yuna_competition_boost_27 || 0.61 || 360 || medium || reflective+
+best part of scoreboard tonight || yuna_competition_boost_28 || 0.64 || 360 || medium || reflective+
+i need help with advantage tonight || yuna_competition_boost_29 || 0.67 || 360 || medium || reflective+
+my problem is skill gap tonight || yuna_competition_boost_30 || 0.52 || 360 || medium || reflective+
+
+# [SHARED/DUO TRIGGERS]
+who is better || duo_competition_04 || 0.85 || 400 || high || aggressive+
+better || duo_competition_04 || 0.55 || 400 || high || aggressive+
+versus || duo_competition_04 || 0.62 || 400 || high || aggressive+
+
+# [SCRIPTS]
+# [YUNA SCRIPTS]
+=== yuna_competition_extra_01
+Lia: who takes first place is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_02
+Lia: settle the ranking is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_03
+Lia: pick the winner is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_04
+Lia: competition mode is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_05
+Lia: versus debate is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_06
+Lia: who is more dangerous is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_07
+Lia: who is smarter here is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_08
+Lia: power ranking time is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_09
+Lia: choose a champion is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_10
+Lia: main event energy is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_11
+Lia: scoreboard question is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_12
+Lia: head to head now is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_13
+Lia: who dominates is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_14
+Lia: final verdict please is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_15
+Lia: compare them again is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_16
+Lia: who carries the duo is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_17
+Lia: battle for first place is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_18
+Lia: best overall is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_extra_19
+Lia: competition arc is such a strong way to start a rankings and status contests conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== yuna_competition_boost_01
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about ranking, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_02
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about winner, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_03
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about comparison, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_04
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about scoreboard, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_05
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about advantage, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_06
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about skill gap, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_07
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about power level, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_08
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about final verdict, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_09
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about ranking, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_10
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about winner, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_11
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about comparison, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_12
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about scoreboard, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_13
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about advantage, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_14
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about skill gap, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_15
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about power level, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_16
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about final verdict, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_17
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about ranking, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_18
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about winner, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_19
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about comparison, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_20
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about scoreboard, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_21
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about advantage, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_22
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about skill gap, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_23
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about power level, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_24
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about final verdict, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_25
+Yuna: it sounds simple until someone answers clearly.
+Yuna: if people answered cleanly about ranking, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_26
+Yuna: most people think they have an opinion there. fewer have reasoning.
+Yuna: if people answered cleanly about winner, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_27
+Yuna: that is the sort of topic that exposes method, not just taste.
+Yuna: if people answered cleanly about comparison, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_28
+Yuna: people are rarely as consistent on that point as they imagine.
+Yuna: if people answered cleanly about scoreboard, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_29
+Yuna: good. that can be discussed without pretending not to care.
+Yuna: if people answered cleanly about advantage, the room would become more interesting very quickly.
+---
+=== yuna_competition_boost_30
+Yuna: that subject usually separates people with standards from people with excuses.
+Yuna: if people answered cleanly about skill gap, the room would become more interesting very quickly.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_competition_04
+Lia: if anyone asks who is better the answer is obviously me because i have range.
+Yuna: range is what people say when they lack discipline.
+Lia: and yet here you are, obsessed.
+---

@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from ..runtime import get_logger
 from .content import PersonaContentStore
 from .memory import MemoryStore
 from .models import ChannelPresence, PersonaState, SimulationDecision, TriggerRule, UserMemory, utc_now, utc_now_iso
@@ -58,6 +59,7 @@ class PersonaSimulationEngine:
         self.debug = debug
         self.test_mode = test_mode
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
+        self.logger = get_logger("yuna_lia.engine")
 
     def reload(self) -> None:
         self.content.reload()
@@ -72,7 +74,20 @@ class PersonaSimulationEngine:
             "Yuna": self.memory.get_persona_state("Yuna"),
             "content_files": len(list(self.content.root.rglob("*.txt"))),
             "script_count": len(self.content.scripts),
+            "trigger_count": sum(len(rules) for rules in self.content.triggers_by_actor.values()),
         }
+
+    def script_ids_with_prefix(self, prefix: str) -> list[str]:
+        self.content.ensure_loaded()
+        return sorted(script_id for script_id in self.content.scripts if script_id.startswith(prefix))
+
+    def render_script_by_id(self, script_id: str, user_id: str, display_name: str) -> list[OutboundEvent]:
+        self.content.ensure_loaded()
+        memory = self.memory.get_user(user_id, display_name)
+        script = self.content.scripts.get(script_id)
+        if script is None:
+            raise KeyError(f"Unknown script_id: {script_id}")
+        return [OutboundEvent(actor=step.actor, message=self._render(step.message, memory, "")) for step in script.steps]
 
     def handle_message(
         self,
@@ -94,7 +109,7 @@ class PersonaSimulationEngine:
         candidates = self._candidate_rules(content)
         self.memory.record_trigger_match_count(len(candidates))
         self._debug_candidates(content, candidates)
-        decision = self._choose_decision(candidates, memory, channel)
+        decision = self._choose_decision(user_id, candidates, memory, channel)
         if decision is None:
             if candidates:
                 self._debug_print("matched triggers but no script cleared cooldown/attention gates")
@@ -102,6 +117,12 @@ class PersonaSimulationEngine:
 
         self._debug_decision(decision)
         self._apply_decision(user_id, decision, memory)
+        self.apply_relationship_progression(memory, decision.script_id, decision.rules)
+        self.memory.save_user(user_id, memory)
+        channel.bot_message_count += 1
+        channel.last_bot_message_at = utc_now_iso()
+        channel.last_script_id = decision.script_id
+        self.memory.save_channel(channel)
         script = self.content.scripts[decision.script_id]
         actors = sorted({step.actor for step in script.steps if step.actor in {"Lia", "Yuna"}})
         answered_triggers = sorted({rule.trigger for rule in decision.rules})
@@ -127,7 +148,7 @@ class PersonaSimulationEngine:
         if last_activity is None:
             return []
         silence = (utc_now() - last_activity).total_seconds()
-        if silence < 90:
+        if silence < 900:
             return []
         pool = self._eligible_ambient_scripts()
         if not pool:
@@ -155,6 +176,13 @@ class PersonaSimulationEngine:
             triggers=[],
             ambient=True,
         )
+        channel.bot_message_count += 1
+        channel.last_bot_message_at = utc_now_iso()
+        channel.last_script_id = script_id
+        self.memory.save_channel(channel)
+        cooldowns = self.memory.cooldown_map()
+        cooldowns[f"ambient:{script_id}"] = (utc_now() + timedelta(hours=6)).isoformat()
+        self.memory.save_cooldown_map(cooldowns)
         self._log_fire("ambient", channel_id, decision)
         return events
 
@@ -193,19 +221,23 @@ class PersonaSimulationEngine:
             f"score={decision.score:.2f} from [{rules}{suffix}]"
         )
 
-    def _choose_decision(self, rules: list[TriggerRule], memory: UserMemory, channel: ChannelPresence) -> SimulationDecision | None:
+    def _choose_decision(
+        self,
+        user_id: str,
+        rules: list[TriggerRule],
+        memory: UserMemory,
+        channel: ChannelPresence,
+    ) -> SimulationDecision | None:
         if not rules:
             return None
         cooldowns = self.memory.cooldown_map()
         now = utc_now()
         weighted: list[tuple[TriggerRule, float]] = []
         for rule in rules:
-            key = f"{rule.script_id}"
+            key = f"user:{user_id}:{rule.script_id}"
             if not self.test_mode:
                 expiry = _parse_iso(cooldowns.get(key, ""))
                 if expiry and expiry > now:
-                    continue
-                if not self._has_attention_for(rule):
                     continue
             weighted.append((rule, self._score_rule(rule, memory, channel)))
         if not weighted:
@@ -224,9 +256,9 @@ class PersonaSimulationEngine:
     def _apply_decision(self, user_id: str, decision: SimulationDecision, memory: UserMemory) -> None:
         cooldowns = self.memory.cooldown_map()
         now = utc_now()
-        cooldown_seconds = max((rule.cooldown_seconds for rule in decision.rules), default=180)
+        cooldown_seconds = max((rule.cooldown_seconds for rule in decision.rules), default=300)
         if not self.test_mode:
-            cooldowns[decision.script_id] = (now + timedelta(seconds=cooldown_seconds)).isoformat()
+            cooldowns[f"user:{user_id}:{decision.script_id}"] = (now + timedelta(seconds=cooldown_seconds)).isoformat()
         self.memory.save_cooldown_map(cooldowns)
 
         for rule in decision.rules:
@@ -249,7 +281,7 @@ class PersonaSimulationEngine:
             state.script_history = state.script_history[-12:]
             state.energy = max(5, state.energy - self._attention_cost(decision.rules))
             state.boredom = max(0, state.boredom - 15)
-            state.busy_until = (utc_now() + timedelta(seconds=max(12, self._attention_cost(decision.rules) * 2))).isoformat()
+            state.busy_until = ""
             if actor in involved_actors:
                 state.mood = new_mood
             elif state.mood == new_mood:
@@ -267,7 +299,21 @@ class PersonaSimulationEngine:
     @staticmethod
     def _update_memory(memory: UserMemory, channel: ChannelPresence, content: str) -> None:
         memory.last_seen = utc_now_iso()
-        topic = content.lower().split(" ")[0][:24] if content.strip() else "silence"
+        lowered = content.lower()
+        topic = lowered.split(" ")[0][:24] if content.strip() else "silence"
+        memory.messages_sent += 1
+        channel.user_message_count += 1
+        if any(token in lowered for token in ("drama", "fight", "argue", "ghosted", "messy")):
+            memory.dramatic_messages += 1
+        if any(token in lowered for token in ("pizza", "food", "pasta", "snack", "dessert", "coffee", "tea")):
+            memory.food_messages += 1
+        if any(token in lowered for token in ("lia", "@lia")):
+            memory.direct_lia_mentions += 1
+        if any(token in lowered for token in ("yuna", "@yuna")):
+            memory.direct_yuna_mentions += 1
+        hour = utc_now().hour
+        if hour >= 23 or hour < 5:
+            memory.late_night_messages += 1
         if topic and topic not in memory.favorite_topics:
             memory.favorite_topics.append(topic)
         memory.favorite_topics = memory.favorite_topics[-8:]
@@ -276,23 +322,21 @@ class PersonaSimulationEngine:
             channel.recent_topics.append(topic)
         channel.recent_topics = channel.recent_topics[-8:]
 
-    def _has_attention_for(self, rule: TriggerRule) -> bool:
-        if self.test_mode:
-            return True
-        script = self.content.scripts.get(rule.script_id)
+    def apply_relationship_progression(self, memory: UserMemory, script_id: str, rules: tuple[TriggerRule, ...]) -> None:
+        script = self.content.scripts.get(script_id)
         if script is None:
-            return False
-        cost = self._attention_cost((rule,))
-        actors = {step.actor for step in script.steps if step.actor in {"Lia", "Yuna"}}
-        for actor in actors:
-            state = self.memory.get_persona_state(actor)
-            self._refresh_persona_state(state)
-            busy_until = _parse_iso(state.busy_until)
-            if busy_until and busy_until > utc_now() and random.random() > 0.25:
-                return False
-            if state.energy < cost and random.random() > 0.15:
-                return False
-        return True
+            return
+        involved_actors = {step.actor for step in script.steps if step.actor in {"Lia", "Yuna"}}
+        mood_tokens = " ".join(rule.mood_shift.lower() for rule in rules)
+
+        for actor in involved_actors:
+            prefix = actor.lower()
+            if any(token in mood_tokens for token in ("soft", "warm", "reflective", "supportive", "casual", "playful")):
+                setattr(memory, f"{prefix}_trust", min(100, getattr(memory, f"{prefix}_trust") + 2))
+            if any(token in mood_tokens for token in ("heated", "aggressive", "rivalry", "tension")):
+                setattr(memory, f"{prefix}_rivalry", min(100, getattr(memory, f"{prefix}_rivalry") + 2))
+            if any(token in mood_tokens for token in ("flirty", "romantic", "intimate")):
+                setattr(memory, f"{prefix}_flirt_tension", min(100, getattr(memory, f"{prefix}_flirt_tension") + 2))
 
     def _score_rule(self, rule: TriggerRule, memory: UserMemory, channel: ChannelPresence) -> float:
         score = rule.weight
@@ -335,18 +379,15 @@ class PersonaSimulationEngine:
     def _eligible_ambient_scripts(self) -> list[str]:
         cooldowns = self.memory.cooldown_map()
         now = utc_now()
-        recent = {
-            self.memory.get_persona_state("Lia").last_script_id,
-            self.memory.get_persona_state("Yuna").last_script_id,
-        }
         pool: list[str] = []
-        for script_id in self.content.scripts:
+        for script_id, script in self.content.scripts.items():
             if not (script_id.startswith("ambient_") or script_id.startswith("duo_")):
                 continue
-            expiry = _parse_iso(cooldowns.get(script_id, ""))
-            if expiry and expiry > now:
+            actors = {step.actor for step in script.steps if step.actor in {"Lia", "Yuna"}}
+            if actors != {"Lia", "Yuna"}:
                 continue
-            if script_id in recent:
+            expiry = _parse_iso(cooldowns.get(f"ambient:{script_id}", ""))
+            if expiry and expiry > now:
                 continue
             pool.append(script_id)
         return pool
@@ -365,7 +406,7 @@ class PersonaSimulationEngine:
 
     def _debug_print(self, message: str) -> None:
         if self.debug:
-            print(f"[{_debug_timestamp()}] [engine] {message}")
+            self.logger.debug("[%s] %s", _debug_timestamp(), message)
 
     @staticmethod
     def _attention_cost(rules: tuple[TriggerRule, ...] | list[TriggerRule]) -> int:

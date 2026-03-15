@@ -1,0 +1,354 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: questions and jokes
+# Theme note: quick prompts, jokes, and lighter question bait.
+# Writer target: Keep it high-variety and easy to answer in a server.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=50, lia=0, yuna=0, shared=50
+# Trigger inventory: tell a joke, another joke, ask a question, weird question, funny question, question game, icebreaker, make us laugh, risky question, deep joke, petty opinion, need a take on bad joke, why is odd question like this, unpopular opinion about soft confession, i have thoughts about room poll, talk about tiny dilemma, we need to discuss funny truth, chaos prompt again, petty opinion discourse, be honest about bad joke, worst part of odd question, best part of soft confession, i need help with room poll, my problem is tiny dilemma, tell me something real about funny truth, anyone else dealing with chaos prompt, petty opinion tonight, need a take on bad joke tonight, why is odd question like this tonight, unpopular opinion about soft confession tonight, i have thoughts about room poll tonight, talk about tiny dilemma tonight, we need to discuss funny truth tonight, chaos prompt again tonight, petty opinion discourse tonight, be honest about bad joke tonight, worst part of odd question tonight, best part of soft confession tonight, i need help with room poll tonight, my problem is tiny dilemma tonight, tell me something real about funny truth tonight, anyone else dealing with chaos prompt tonight, questions and jokes 33, questions and jokes 34, questions and jokes 35, questions and jokes 36, questions and jokes 37, questions and jokes 38, questions and jokes 39, questions and jokes 40
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+tell a joke || duo_qj_01 || 0.67 || 420 || low || playful+
+another joke || duo_qj_02 || 0.64 || 420 || low || playful+
+ask a question || duo_qj_03 || 0.66 || 420 || low || playful+
+weird question || duo_qj_04 || 0.63 || 420 || medium || playful+
+funny question || duo_qj_05 || 0.62 || 420 || low || playful+
+question game || duo_qj_06 || 0.68 || 420 || medium || playful+
+icebreaker || duo_qj_07 || 0.61 || 420 || low || warm+
+make us laugh || duo_qj_08 || 0.60 || 420 || low || playful+
+risky question || duo_qj_09 || 0.59 || 500 || medium || playful+
+deep joke || duo_qj_10 || 0.57 || 500 || medium || reflective+
+petty opinion || duo_questions_and_jokes_boost_01 || 0.55 || 420 || medium || casual+
+need a take on bad joke || duo_questions_and_jokes_boost_02 || 0.58 || 420 || medium || casual+
+why is odd question like this || duo_questions_and_jokes_boost_03 || 0.61 || 420 || medium || casual+
+unpopular opinion about soft confession || duo_questions_and_jokes_boost_04 || 0.64 || 420 || medium || casual+
+i have thoughts about room poll || duo_questions_and_jokes_boost_05 || 0.67 || 420 || medium || casual+
+talk about tiny dilemma || duo_questions_and_jokes_boost_06 || 0.52 || 420 || medium || casual+
+we need to discuss funny truth || duo_questions_and_jokes_boost_07 || 0.55 || 420 || medium || casual+
+chaos prompt again || duo_questions_and_jokes_boost_08 || 0.58 || 420 || medium || casual+
+petty opinion discourse || duo_questions_and_jokes_boost_09 || 0.61 || 420 || medium || casual+
+be honest about bad joke || duo_questions_and_jokes_boost_10 || 0.64 || 420 || medium || casual+
+worst part of odd question || duo_questions_and_jokes_boost_11 || 0.67 || 420 || medium || casual+
+best part of soft confession || duo_questions_and_jokes_boost_12 || 0.52 || 420 || medium || casual+
+i need help with room poll || duo_questions_and_jokes_boost_13 || 0.55 || 420 || medium || casual+
+my problem is tiny dilemma || duo_questions_and_jokes_boost_14 || 0.58 || 420 || medium || casual+
+tell me something real about funny truth || duo_questions_and_jokes_boost_15 || 0.61 || 420 || medium || casual+
+anyone else dealing with chaos prompt || duo_questions_and_jokes_boost_16 || 0.64 || 420 || medium || casual+
+petty opinion tonight || duo_questions_and_jokes_boost_17 || 0.67 || 420 || medium || casual+
+need a take on bad joke tonight || duo_questions_and_jokes_boost_18 || 0.52 || 420 || medium || casual+
+why is odd question like this tonight || duo_questions_and_jokes_boost_19 || 0.55 || 420 || medium || casual+
+unpopular opinion about soft confession tonight || duo_questions_and_jokes_boost_20 || 0.58 || 420 || medium || casual+
+i have thoughts about room poll tonight || duo_questions_and_jokes_boost_21 || 0.61 || 420 || medium || casual+
+talk about tiny dilemma tonight || duo_questions_and_jokes_boost_22 || 0.64 || 420 || medium || casual+
+we need to discuss funny truth tonight || duo_questions_and_jokes_boost_23 || 0.67 || 420 || medium || casual+
+chaos prompt again tonight || duo_questions_and_jokes_boost_24 || 0.52 || 420 || medium || casual+
+petty opinion discourse tonight || duo_questions_and_jokes_boost_25 || 0.55 || 420 || medium || casual+
+be honest about bad joke tonight || duo_questions_and_jokes_boost_26 || 0.58 || 420 || medium || casual+
+worst part of odd question tonight || duo_questions_and_jokes_boost_27 || 0.61 || 420 || medium || casual+
+best part of soft confession tonight || duo_questions_and_jokes_boost_28 || 0.64 || 420 || medium || casual+
+i need help with room poll tonight || duo_questions_and_jokes_boost_29 || 0.67 || 420 || medium || casual+
+my problem is tiny dilemma tonight || duo_questions_and_jokes_boost_30 || 0.52 || 420 || medium || casual+
+tell me something real about funny truth tonight || duo_questions_and_jokes_boost_31 || 0.55 || 420 || medium || casual+
+anyone else dealing with chaos prompt tonight || duo_questions_and_jokes_boost_32 || 0.58 || 420 || medium || casual+
+questions and jokes 33 || duo_questions_and_jokes_boost_33 || 0.61 || 420 || medium || casual+
+questions and jokes 34 || duo_questions_and_jokes_boost_34 || 0.64 || 420 || medium || casual+
+questions and jokes 35 || duo_questions_and_jokes_boost_35 || 0.67 || 420 || medium || casual+
+questions and jokes 36 || duo_questions_and_jokes_boost_36 || 0.52 || 420 || medium || casual+
+questions and jokes 37 || duo_questions_and_jokes_boost_37 || 0.55 || 420 || medium || casual+
+questions and jokes 38 || duo_questions_and_jokes_boost_38 || 0.58 || 420 || medium || casual+
+questions and jokes 39 || duo_questions_and_jokes_boost_39 || 0.61 || 420 || medium || casual+
+questions and jokes 40 || duo_questions_and_jokes_boost_40 || 0.64 || 420 || medium || casual+
+
+# [SCRIPTS]
+# [SHARED/DUO SCRIPTS]
+=== duo_qj_01
+Lia: okay. joke.
+Lia: i am not high-maintenance, i am high-resolution.
+Yuna: that is not a joke. it is branding.
+---
+=== duo_qj_02
+Yuna: another joke, then.
+Yuna: emotional unavailability is apparently a hobby now.
+Lia: evil. current. efficient.
+---
+=== duo_qj_03
+Lia: question for the room.
+Lia: what harmless trait makes someone instantly ten percent more attractive.
+---
+=== duo_qj_04
+Yuna: weird question.
+Yuna: what object in your room currently knows too much about you.
+Lia: excellent. creepy. continue.
+---
+=== duo_qj_05
+Lia: funny question.
+Lia: what is the dumbest hill you have defended like a constitutional right.
+---
+=== duo_qj_06
+Yuna: question game.
+Yuna: answer honestly or stylishly. both have consequences.
+---
+=== duo_qj_07
+Lia: icebreaker.
+Lia: tell me your best trait and your most annoying one in the same sentence.
+Yuna: finally, structured self-awareness.
+---
+=== duo_qj_08
+Lia: making people laugh is hard because most of you are too pretty to be this tense.
+Yuna: unreasonable thesis. plausible conclusion.
+---
+=== duo_qj_09
+Yuna: risky question.
+Yuna: what truth about yourself do people usually earn too slowly.
+Lia: wow. that one has teeth.
+---
+=== duo_qj_10
+Lia: deep joke.
+Lia: adulthood is just googling strange symptoms while standing in your kitchen.
+Yuna: and paying for the privilege.
+---
+=== duo_questions_and_jokes_boost_01
+Lia: oh good, something with actual flavor.
+Lia: for me, petty opinion is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_02
+Lia: wait, i have feelings about that immediately.
+Lia: for me, bad joke is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_03
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, odd question is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_04
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, soft confession is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_05
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, room poll is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_06
+Lia: okay, that topic has teeth.
+Lia: for me, tiny dilemma is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_07
+Lia: oh good, something with actual flavor.
+Lia: for me, funny truth is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_08
+Lia: wait, i have feelings about that immediately.
+Lia: for me, chaos prompt is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_09
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, petty opinion is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_10
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, bad joke is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_11
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, odd question is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_12
+Lia: okay, that topic has teeth.
+Lia: for me, soft confession is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_13
+Lia: oh good, something with actual flavor.
+Lia: for me, room poll is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_14
+Lia: wait, i have feelings about that immediately.
+Lia: for me, tiny dilemma is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_15
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, funny truth is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_16
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, chaos prompt is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_17
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, petty opinion is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_18
+Lia: okay, that topic has teeth.
+Lia: for me, bad joke is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_19
+Lia: oh good, something with actual flavor.
+Lia: for me, odd question is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_20
+Lia: wait, i have feelings about that immediately.
+Lia: for me, soft confession is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_21
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, room poll is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_22
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, tiny dilemma is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_23
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, funny truth is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_24
+Lia: okay, that topic has teeth.
+Lia: for me, chaos prompt is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_25
+Lia: oh good, something with actual flavor.
+Lia: for me, petty opinion is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_26
+Lia: wait, i have feelings about that immediately.
+Lia: for me, bad joke is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_27
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, odd question is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_28
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, soft confession is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_29
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, room poll is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_30
+Lia: okay, that topic has teeth.
+Lia: for me, tiny dilemma is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_31
+Lia: oh good, something with actual flavor.
+Lia: for me, funny truth is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_32
+Lia: wait, i have feelings about that immediately.
+Lia: for me, chaos prompt is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_33
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, petty opinion is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_34
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, bad joke is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---
+=== duo_questions_and_jokes_boost_35
+Lia: you just dropped bait and i am unfortunately interested.
+Lia: for me, odd question is where people start accidentally telling the truth.
+Yuna: excellent. subtle things become obvious under pressure.
+---
+=== duo_questions_and_jokes_boost_36
+Lia: okay, that topic has teeth.
+Lia: for me, soft confession is where people start accidentally telling the truth.
+Yuna: useful. we can work with that.
+---
+=== duo_questions_and_jokes_boost_37
+Lia: oh good, something with actual flavor.
+Lia: for me, room poll is where people start accidentally telling the truth.
+Yuna: predictably revealing, which is why it matters.
+---
+=== duo_questions_and_jokes_boost_38
+Lia: wait, i have feelings about that immediately.
+Lia: for me, tiny dilemma is where people start accidentally telling the truth.
+Yuna: good. the room should answer honestly for once.
+---
+=== duo_questions_and_jokes_boost_39
+Lia: finally, a topic that deserves a pulse.
+Lia: for me, funny truth is where people start accidentally telling the truth.
+Yuna: that usually exposes more than people intend.
+---
+=== duo_questions_and_jokes_boost_40
+Lia: that is exactly the kind of thing that wakes me up.
+Lia: for me, chaos prompt is where people start accidentally telling the truth.
+Yuna: it is never only about the topic, and that is the point.
+---

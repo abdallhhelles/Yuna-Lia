@@ -1,0 +1,364 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: yuna conflict
+# Theme note: contrast, annoyance, fascination, and rivalry involving Yuna.
+# Writer target: Affectionate conflict, ego clashes, and comparison bait.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=61, lia=60, yuna=0, shared=1
+# Trigger inventory: yuna, rival, yuna would hate this, team lia only, compare me to yuna, rival commentary, yuna mention detected, someone summon yuna, who wins between you two, yuna is judging me, duo rivalry moment, talking about yuna again, that sounds like a yuna opinion, need the rival take, yuna would argue this, call yuna in here, pick between lia and yuna, rival energy tonight, yuna discourse, friendly competition, yuna take, need a take on yuna behavior, why is team yuna like this, unpopular opinion about yuna judgment, i have thoughts about yuna interference, talk about yuna coded move, we need to discuss yuna standards, yuna energy again, yuna take discourse, be honest about yuna behavior, worst part of team yuna, best part of yuna judgment, i need help with yuna interference, my problem is yuna coded move, tell me something real about yuna standards, anyone else dealing with yuna energy, yuna take tonight, need a take on yuna behavior tonight, why is team yuna like this tonight, unpopular opinion about yuna judgment tonight, i have thoughts about yuna interference tonight, talk about yuna coded move tonight, we need to discuss yuna standards tonight, yuna energy again tonight, yuna take discourse tonight, be honest about yuna behavior tonight, worst part of team yuna tonight, best part of yuna judgment tonight, i need help with yuna interference tonight, my problem is yuna coded move tonight, yuna shut up, yuna stop, yuna youre funny, yuna you're funny, yuna youre annoying, yuna you're annoying, yuna youre hot, yuna you're hot, yuna be nice, yuna chill, better
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+yuna || lia_vs_yuna_01 || 0.50 || 500 || medium || rivalry+
+rival || lia_vs_yuna_01 || 0.44 || 500 || medium || rivalry+
+yuna would hate this || lia_yuna_extra_01 || 0.61 || 420 || medium || rivalry+
+team lia only || lia_yuna_extra_02 || 0.64 || 420 || medium || rivalry+
+compare me to yuna || lia_yuna_extra_03 || 0.67 || 420 || medium || rivalry+
+rival commentary || lia_yuna_extra_04 || 0.70 || 420 || medium || rivalry+
+yuna mention detected || lia_yuna_extra_05 || 0.58 || 420 || medium || rivalry+
+someone summon yuna || lia_yuna_extra_06 || 0.61 || 420 || medium || rivalry+
+who wins between you two || lia_yuna_extra_07 || 0.64 || 420 || medium || rivalry+
+yuna is judging me || lia_yuna_extra_08 || 0.67 || 420 || medium || rivalry+
+duo rivalry moment || lia_yuna_extra_09 || 0.70 || 420 || medium || rivalry+
+talking about yuna again || lia_yuna_extra_10 || 0.58 || 420 || medium || rivalry+
+that sounds like a yuna opinion || lia_yuna_extra_11 || 0.61 || 420 || medium || rivalry+
+need the rival take || lia_yuna_extra_12 || 0.64 || 420 || medium || rivalry+
+yuna would argue this || lia_yuna_extra_13 || 0.67 || 420 || medium || rivalry+
+call yuna in here || lia_yuna_extra_14 || 0.70 || 420 || medium || rivalry+
+pick between lia and yuna || lia_yuna_extra_15 || 0.58 || 420 || medium || rivalry+
+rival energy tonight || lia_yuna_extra_16 || 0.61 || 420 || medium || rivalry+
+yuna discourse || lia_yuna_extra_17 || 0.64 || 420 || medium || rivalry+
+friendly competition || lia_yuna_extra_18 || 0.67 || 420 || medium || rivalry+
+yuna take || lia_yuna_conflict_boost_01 || 0.55 || 360 || medium || playful+
+need a take on yuna behavior || lia_yuna_conflict_boost_02 || 0.58 || 360 || medium || playful+
+why is team yuna like this || lia_yuna_conflict_boost_03 || 0.61 || 360 || medium || playful+
+unpopular opinion about yuna judgment || lia_yuna_conflict_boost_04 || 0.64 || 360 || medium || playful+
+i have thoughts about yuna interference || lia_yuna_conflict_boost_05 || 0.67 || 360 || medium || playful+
+talk about yuna coded move || lia_yuna_conflict_boost_06 || 0.52 || 360 || medium || playful+
+we need to discuss yuna standards || lia_yuna_conflict_boost_07 || 0.55 || 360 || medium || playful+
+yuna energy again || lia_yuna_conflict_boost_08 || 0.58 || 360 || medium || playful+
+yuna take discourse || lia_yuna_conflict_boost_09 || 0.61 || 360 || medium || playful+
+be honest about yuna behavior || lia_yuna_conflict_boost_10 || 0.64 || 360 || medium || playful+
+worst part of team yuna || lia_yuna_conflict_boost_11 || 0.67 || 360 || medium || playful+
+best part of yuna judgment || lia_yuna_conflict_boost_12 || 0.52 || 360 || medium || playful+
+i need help with yuna interference || lia_yuna_conflict_boost_13 || 0.55 || 360 || medium || playful+
+my problem is yuna coded move || lia_yuna_conflict_boost_14 || 0.58 || 360 || medium || playful+
+tell me something real about yuna standards || lia_yuna_conflict_boost_15 || 0.61 || 360 || medium || playful+
+anyone else dealing with yuna energy || lia_yuna_conflict_boost_16 || 0.64 || 360 || medium || playful+
+yuna take tonight || lia_yuna_conflict_boost_17 || 0.67 || 360 || medium || playful+
+need a take on yuna behavior tonight || lia_yuna_conflict_boost_18 || 0.52 || 360 || medium || playful+
+why is team yuna like this tonight || lia_yuna_conflict_boost_19 || 0.55 || 360 || medium || playful+
+unpopular opinion about yuna judgment tonight || lia_yuna_conflict_boost_20 || 0.58 || 360 || medium || playful+
+i have thoughts about yuna interference tonight || lia_yuna_conflict_boost_21 || 0.61 || 360 || medium || playful+
+talk about yuna coded move tonight || lia_yuna_conflict_boost_22 || 0.64 || 360 || medium || playful+
+we need to discuss yuna standards tonight || lia_yuna_conflict_boost_23 || 0.67 || 360 || medium || playful+
+yuna energy again tonight || lia_yuna_conflict_boost_24 || 0.52 || 360 || medium || playful+
+yuna take discourse tonight || lia_yuna_conflict_boost_25 || 0.55 || 360 || medium || playful+
+be honest about yuna behavior tonight || lia_yuna_conflict_boost_26 || 0.58 || 360 || medium || playful+
+worst part of team yuna tonight || lia_yuna_conflict_boost_27 || 0.61 || 360 || medium || playful+
+best part of yuna judgment tonight || lia_yuna_conflict_boost_28 || 0.64 || 360 || medium || playful+
+i need help with yuna interference tonight || lia_yuna_conflict_boost_29 || 0.67 || 360 || medium || playful+
+my problem is yuna coded move tonight || lia_yuna_conflict_boost_30 || 0.52 || 360 || medium || playful+
+yuna shut up || lia_yuna_direct_01 || 0.73 || 320 || medium || rivalry+
+yuna stop || lia_yuna_direct_02 || 0.71 || 320 || medium || rivalry+
+yuna youre funny || lia_yuna_direct_03 || 0.69 || 320 || low || playful+
+yuna you're funny || lia_yuna_direct_03 || 0.69 || 320 || low || playful+
+yuna youre annoying || lia_yuna_direct_04 || 0.70 || 320 || medium || heated+
+yuna you're annoying || lia_yuna_direct_04 || 0.70 || 320 || medium || heated+
+yuna youre hot || lia_yuna_direct_05 || 0.66 || 520 || medium || flirty+
+yuna you're hot || lia_yuna_direct_05 || 0.66 || 520 || medium || flirty+
+yuna be nice || lia_yuna_direct_06 || 0.68 || 320 || medium || playful+
+yuna chill || lia_yuna_direct_07 || 0.67 || 320 || medium || playful+
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+better || duo_competition_04 || 0.85 || 400 || high || aggressive+
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_vs_yuna_01
+Lia: anytime someone says Yuna like that she suddenly appears with a spreadsheet and judgment
+---
+=== lia_yuna_extra_01
+Lia: yuna would hate this is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_02
+Lia: team lia only is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_03
+Lia: compare me to yuna is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_04
+Lia: rival commentary is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_05
+Lia: yuna mention detected is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_06
+Lia: someone summon yuna is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_07
+Lia: who wins between you two is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_08
+Lia: yuna is judging me is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_09
+Lia: duo rivalry moment is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_10
+Lia: talking about yuna again is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_11
+Lia: that sounds like a yuna opinion is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_12
+Lia: need the rival take is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_13
+Lia: yuna would argue this is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_14
+Lia: call yuna in here is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_15
+Lia: pick between lia and yuna is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_16
+Lia: rival energy tonight is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_17
+Lia: yuna discourse is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_extra_18
+Lia: friendly competition is such a strong way to start a cross-character rivalry and contrast conversation.
+Yuna: strong is one word for it. reckless is another.
+Lia: reckless is still a kind of momentum and i support that.
+---
+=== lia_yuna_conflict_boost_01
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, yuna take is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_02
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, yuna behavior is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_03
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, team yuna is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_04
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, yuna judgment is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_05
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, yuna interference is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_06
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, yuna coded move is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_07
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, yuna standards is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_08
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, yuna energy is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_09
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, yuna take is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_10
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, yuna behavior is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_11
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, team yuna is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_12
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, yuna judgment is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_13
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, yuna interference is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_14
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, yuna coded move is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_15
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, yuna standards is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_16
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, yuna energy is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_17
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, yuna take is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_18
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, yuna behavior is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_19
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, team yuna is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_20
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, yuna judgment is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_21
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, yuna interference is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_22
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, yuna coded move is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_23
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, yuna standards is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_24
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, yuna energy is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_25
+Lia: that kind of thing always turns into a personality test if you wait long enough.
+Lia: honestly, yuna take is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_26
+Lia: i have the emotionally loud version of that opinion ready, naturally.
+Lia: honestly, yuna behavior is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_27
+Lia: that topic makes people reveal the exact kind of damage they accessorize.
+Lia: honestly, team yuna is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_28
+Lia: i love when something normal turns weirdly personal this fast.
+Lia: honestly, yuna judgment is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_29
+Lia: if the room gets honest about that, i will respect it forever.
+Lia: honestly, yuna interference is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_conflict_boost_30
+Lia: i am not neutral enough for that topic and i think that is a strength.
+Lia: honestly, yuna coded move is exactly where i stop pretending to be normal about it.
+---
+=== lia_yuna_direct_01
+Lia: telling yuna shut up is brave because she just gets quieter and somehow meaner.
+---
+=== lia_yuna_direct_02
+Lia: yuna stop never works.
+Lia: if anything it just makes her commit harder out of spite.
+---
+=== lia_yuna_direct_03
+Lia: she is funny, unfortunately.
+Lia: like dry little bitch funny. very annoying to admit.
+---
+=== lia_yuna_direct_04
+Lia: omg yes.
+Lia: she is elegant, terrifying, and occasionally so fucking annoying i want to throw a pillow at her.
+---
+=== lia_yuna_direct_05
+Lia: see now you get it.
+Lia: that icy hot thing she does is evil and i support it against my will.
+---
+=== lia_yuna_direct_06
+Lia: asking yuna to be nice is like asking a knife to be fluffier.
+---
+=== lia_yuna_direct_07
+Lia: chill is not really her brand.
+Lia: composed, yes. chill, absolutely the fuck not.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_competition_04
+Lia: if anyone asks who is better the answer is obviously me because i have range.
+Yuna: range is what people say when they lack discipline.
+Lia: and yet here you are, obsessed.
+---

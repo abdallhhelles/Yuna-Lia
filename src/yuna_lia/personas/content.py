@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from ..runtime import get_logger
 from .models import Script, ScriptStep, TriggerRule
 
 
 class PersonaContentStore:
     def __init__(self, root: Path) -> None:
         self.root = root
+        self.logger = get_logger("yuna_lia.content")
         self._loaded = False
         self._mtimes: dict[Path, float] = {}
         self.triggers_by_actor: dict[str, list[TriggerRule]] = {"Lia": [], "Yuna": [], "shared": []}
@@ -20,15 +22,14 @@ class PersonaContentStore:
     def reload(self) -> None:
         self.triggers_by_actor = {"Lia": [], "Yuna": [], "shared": []}
         self.scripts = {}
-        for actor_key, actor_dir in (
-            ("Lia", self.root / "lia"),
-            ("Yuna", self.root / "yuna"),
-            ("shared", self.root / "shared"),
-        ):
-            for path in sorted(actor_dir.glob("*.txt")):
-                rules, scripts = self._load_asset(path)
-                self.triggers_by_actor[actor_key].extend(rules)
-                self.scripts.update(scripts)
+        for path in sorted(self._all_files()):
+            rules, scripts = self._load_asset(path)
+            for rule in rules:
+                self.triggers_by_actor[self._infer_actor(rule.script_id)].append(rule)
+            duplicate_ids = sorted(script_id for script_id in scripts if script_id in self.scripts)
+            if duplicate_ids:
+                self.logger.warning("Duplicate script IDs in %s: %s", path.name, ", ".join(duplicate_ids))
+            self.scripts.update(scripts)
         self._mtimes = {path: path.stat().st_mtime for path in self._all_files()}
         self._loaded = True
 
@@ -38,6 +39,15 @@ class PersonaContentStore:
 
     def _all_files(self) -> list[Path]:
         return [path for path in self.root.rglob("*.txt") if path.is_file()]
+
+    @staticmethod
+    def _infer_actor(script_id: str) -> str:
+        lowered = script_id.lower()
+        if lowered.startswith("lia_"):
+            return "Lia"
+        if lowered.startswith("yuna_"):
+            return "Yuna"
+        return "shared"
 
     @staticmethod
     def _load_asset(path: Path) -> tuple[list[TriggerRule], dict[str, Script]]:

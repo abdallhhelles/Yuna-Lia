@@ -8,6 +8,8 @@ from typing import Callable
 import discord
 from discord.ext import commands
 
+from ..runtime import get_logger
+
 
 @dataclass
 class QueuedTurn:
@@ -20,10 +22,13 @@ class QueuedTurn:
 class ConversationPacingSystem:
     """Queued conversational delivery with natural typing delays."""
 
+    _WORKER_IDLE_SECONDS = 300.0
+
     def __init__(self, bot_resolver: Callable[[str], commands.Bot | None]) -> None:
         self.bot_resolver = bot_resolver
         self._queues: dict[int, asyncio.Queue[QueuedTurn]] = {}
         self._workers: dict[int, asyncio.Task[None]] = {}
+        self.logger = get_logger("yuna_lia.pacing")
 
     async def send_turn(self, channel_id: int, speaker: str, message: str) -> discord.Message | None:
         queue = self._queue_for(channel_id)
@@ -43,12 +48,25 @@ class ConversationPacingSystem:
     async def _worker(self, channel_id: int) -> None:
         queue = self._queues[channel_id]
         while True:
-            turn = await queue.get()
+            try:
+                turn = await asyncio.wait_for(queue.get(), timeout=self._WORKER_IDLE_SECONDS)
+            except asyncio.TimeoutError:
+                if queue.empty():
+                    self._queues.pop(channel_id, None)
+                    self._workers.pop(channel_id, None)
+                    return
+                continue
             try:
                 sent_message = await self._send_message(channel_id, turn.speaker, turn.message)
                 if not turn.future.done():
                     turn.future.set_result(sent_message)
             except Exception as exc:  # pragma: no cover - network side effect
+                self.logger.warning(
+                    "Failed sending paced turn in channel %s for %s: %s",
+                    channel_id,
+                    turn.speaker,
+                    exc,
+                )
                 if not turn.future.done():
                     turn.future.set_exception(exc)
             finally:

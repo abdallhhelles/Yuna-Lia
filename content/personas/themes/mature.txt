@@ -1,0 +1,453 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+# FILE NAVIGATION:
+# 1. Read the theme note and profiles above.
+# 2. Add or edit trigger lines in the actor section you want below.
+# 3. Add the matching script block under [SCRIPTS].
+# 4. Run /reload_personas in Discord after edits.
+#
+# Theme: mature
+# Theme note: adult attraction, desire, sexual tension, after-dark intimacy, and composed heat.
+# Writer target: Suggestive, characterful, and emotionally aware rather than explicit for its own sake.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=92, lia=39, yuna=41, shared=12
+# Trigger inventory: hot, horny, thirsty, damn, ok thats attractive, why is that hot, stop being hot, i need attention, who flirting, im blushing, someone flirt with me, this tension, why is chat spicy, ok now kiss, too much chemistry, who started this vibe, cant behave, this feels illegal, ok im sweating, why is everyone hot tonight, flirting hours, i need chaos, say something hot, this vibe is sinful, im weak, someone hold me, im about to flirt, ok now im invested, i cant look away, ok now im nervous, i feel hunted, stop making me blush, romance arc starting, i feel electricity, im melting, ok thats unfairly attractive, why does this feel like foreplay, slut era, bitch be serious, i feel dangerous, late night mood, romantic tension, im being stared at, soft flirting, too much eye contact, dont tempt me, i feel seen, this is dangerous energy, why am i smiling, someone is bold, this feels intimate, too much charm, someone is dangerous tonight, this chat is seductive, say less, im intrigued now, hot, horny, thirsty, dangerously attractive, after dark energy, subtle sexual tension, too much chemistry, respectfully hot, keep it elegant but intense, grown conversation, late night attraction, tasteful thirst, that smile is a problem, composure is failing, bad idea but compelling, quietly scandalous, romantic hazard, too polished to resist, softly dangerous, adult hours, not explicit but obvious, this tension needs supervision, pussy behavior, ngl thats filthy, thirsty, horny, sexual tension, flirty mood, need a kiss, make it sexy, bad thoughts, touch starved, seduce me, romantic tension, lowkey too horny, bitch thats hot
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+hot || lia_mature_01 || 0.55 || 700 || medium || flirty+
+horny || lia_mature_01 || 0.45 || 900 || high || flirty+
+thirsty || lia_mature_01 || 0.60 || 700 || medium || flirty+
+damn || lia_mature_02 || 0.52 || 720 || medium || flirty+
+ok thats attractive || lia_mature_03 || 0.55 || 740 || medium || flirty+
+why is that hot || lia_mature_04 || 0.58 || 760 || medium || curious+
+stop being hot || lia_mature_05 || 0.57 || 780 || medium || heated+
+i need attention || lia_mature_06 || 0.60 || 800 || high || needy+
+who flirting || lia_mature_07 || 0.54 || 700 || medium || flirty+
+im blushing || lia_mature_08 || 0.53 || 720 || medium || tender+
+someone flirt with me || lia_mature_09 || 0.61 || 820 || high || chaotic+
+this tension || lia_mature_10 || 0.56 || 760 || medium || intimate+
+why is chat spicy || lia_mature_11 || 0.59 || 760 || medium || amused+
+ok now kiss || lia_mature_12 || 0.50 || 780 || medium || playful+
+too much chemistry || lia_mature_13 || 0.58 || 780 || medium || flirty+
+who started this vibe || lia_mature_14 || 0.55 || 740 || medium || curious+
+cant behave || lia_mature_15 || 0.62 || 820 || high || chaotic+
+this feels illegal || lia_mature_16 || 0.51 || 760 || medium || amused+
+ok im sweating || lia_mature_17 || 0.54 || 720 || medium || flirty+
+why is everyone hot tonight || lia_mature_18 || 0.60 || 800 || high || dramatic+
+flirting hours || lia_mature_19 || 0.58 || 780 || medium || flirty+
+i need chaos || lia_mature_20 || 0.63 || 840 || high || chaotic+
+say something hot || lia_mature_21 || 0.64 || 860 || high || heated+
+this vibe is sinful || lia_mature_22 || 0.56 || 780 || medium || amused+
+im weak || lia_mature_23 || 0.59 || 820 || medium || tender+
+someone hold me || lia_mature_24 || 0.62 || 860 || high || needy+
+im about to flirt || lia_mature_25 || 0.60 || 780 || medium || playful+
+ok now im invested || lia_mature_26 || 0.55 || 760 || medium || curious+
+i cant look away || lia_mature_27 || 0.58 || 800 || medium || flirty+
+ok now im nervous || lia_mature_28 || 0.57 || 780 || medium || tender+
+i feel hunted || lia_mature_29 || 0.54 || 780 || medium || heated+
+stop making me blush || lia_mature_30 || 0.61 || 820 || high || flirty+
+romance arc starting || lia_mature_31 || 0.56 || 760 || medium || playful+
+i feel electricity || lia_mature_32 || 0.58 || 800 || medium || dramatic+
+im melting || lia_mature_33 || 0.63 || 840 || high || tender+
+ok thats unfairly attractive || lia_mature_34 || 0.59 || 780 || medium || flirty+
+why does this feel like foreplay || lia_mature_35 || 0.64 || 900 || high || chaotic+
+slut era || lia_mature_36 || 0.59 || 860 || high || flirty+
+bitch be serious || lia_mature_37 || 0.62 || 820 || medium || heated+
+
+# [YUNA TRIGGERS]
+i feel dangerous || yuna_mature_01 || 0.49 || 840 || medium || intimate+
+late night mood || yuna_mature_02 || 0.57 || 820 || low || intimate+
+romantic tension || yuna_mature_03 || 0.48 || 860 || low || reflective+
+im being stared at || yuna_mature_04 || 0.46 || 880 || low || observant+
+soft flirting || yuna_mature_05 || 0.52 || 820 || low || warm+
+too much eye contact || yuna_mature_06 || 0.50 || 840 || low || intimate+
+dont tempt me || yuna_mature_07 || 0.48 || 880 || low || sharp+
+i feel seen || yuna_mature_08 || 0.51 || 820 || low || reflective+
+this is dangerous energy || yuna_mature_09 || 0.49 || 860 || low || observant+
+why am i smiling || yuna_mature_10 || 0.47 || 860 || low || intimate+
+someone is bold || yuna_mature_11 || 0.50 || 820 || low || amused+
+this feels intimate || yuna_mature_12 || 0.53 || 840 || low || reflective+
+too much charm || yuna_mature_13 || 0.49 || 860 || low || amused+
+someone is dangerous tonight || yuna_mature_14 || 0.50 || 880 || low || sharp+
+this chat is seductive || yuna_mature_15 || 0.52 || 860 || low || observant+
+say less || yuna_mature_16 || 0.47 || 820 || low || amused+
+im intrigued now || yuna_mature_17 || 0.55 || 820 || low || curious+
+hot || yuna_mature_01 || 0.40 || 900 || medium || dry+
+horny || yuna_mature_01 || 0.35 || 1200 || high || dry+
+thirsty || yuna_mature_01 || 0.50 || 900 || medium || dry+
+dangerously attractive || yuna_mature_extra_01 || 0.51 || 900 || medium || dry+
+after dark energy || yuna_mature_extra_02 || 0.54 || 900 || medium || dry+
+subtle sexual tension || yuna_mature_extra_03 || 0.57 || 900 || medium || dry+
+too much chemistry || yuna_mature_extra_04 || 0.60 || 900 || medium || dry+
+respectfully hot || yuna_mature_extra_05 || 0.48 || 900 || medium || dry+
+keep it elegant but intense || yuna_mature_extra_06 || 0.51 || 900 || medium || dry+
+grown conversation || yuna_mature_extra_07 || 0.54 || 900 || medium || dry+
+late night attraction || yuna_mature_extra_08 || 0.57 || 900 || medium || dry+
+tasteful thirst || yuna_mature_extra_09 || 0.60 || 900 || medium || dry+
+that smile is a problem || yuna_mature_extra_10 || 0.48 || 900 || medium || dry+
+composure is failing || yuna_mature_extra_11 || 0.51 || 900 || medium || dry+
+bad idea but compelling || yuna_mature_extra_12 || 0.54 || 900 || medium || dry+
+quietly scandalous || yuna_mature_extra_13 || 0.57 || 900 || medium || dry+
+romantic hazard || yuna_mature_extra_14 || 0.60 || 900 || medium || dry+
+too polished to resist || yuna_mature_extra_15 || 0.48 || 900 || medium || dry+
+softly dangerous || yuna_mature_extra_16 || 0.51 || 900 || medium || dry+
+adult hours || yuna_mature_extra_17 || 0.54 || 900 || medium || dry+
+not explicit but obvious || yuna_mature_extra_18 || 0.57 || 900 || medium || dry+
+this tension needs supervision || yuna_mature_extra_19 || 0.60 || 900 || medium || dry+
+pussy behavior || yuna_mature_extra_20 || 0.49 || 980 || medium || sharp+
+ngl thats filthy || yuna_mature_extra_21 || 0.56 || 960 || medium || dry+
+
+# [SHARED/DUO TRIGGERS]
+thirsty || duo_mature_01 || 0.66 || 1200 || high || flirty+
+horny || duo_mature_02 || 0.70 || 1400 || high || flirty+
+sexual tension || duo_mature_03 || 0.72 || 1400 || high || flirty+
+flirty mood || duo_mature_04 || 0.64 || 1200 || medium || flirty+
+need a kiss || duo_mature_05 || 0.61 || 1200 || medium || romantic+
+make it sexy || duo_mature_06 || 0.68 || 1500 || high || flirty+
+bad thoughts || duo_mature_07 || 0.63 || 1200 || medium || flirty+
+touch starved || duo_mature_08 || 0.58 || 1500 || high || soft+
+seduce me || duo_mature_09 || 0.67 || 1600 || high || flirty+
+romantic tension || duo_mature_10 || 0.62 || 1200 || medium || romantic+
+lowkey too horny || duo_mature_11 || 0.66 || 1400 || high || flirty+
+bitch thats hot || duo_mature_12 || 0.63 || 1300 || high || flirty+
+
+# [SCRIPTS]
+# [LIA SCRIPTS]
+=== lia_mature_01
+Lia: this chat gets dangerously unserious whenever attraction enters the room
+Lia: i support mess in theory and regret it in practice
+---
+=== lia_mature_02
+Lia: the word damn carries so much emotional commitment
+---
+=== lia_mature_03
+Lia: attraction is a public health risk honestly
+---
+=== lia_mature_04
+Lia: sometimes the brain just logs out and the eyes take over
+---
+=== lia_mature_05
+Lia: stop being hot or i start making irresponsible decisions
+---
+=== lia_mature_06
+Lia: i dont need attention i need specific attention
+---
+=== lia_mature_07
+Lia: flirting is a community sport here
+---
+=== lia_mature_08
+Lia: blushing is just your nervous system confessing
+---
+=== lia_mature_09
+Lia: ok who volunteers as tribute
+---
+=== lia_mature_10
+Lia: tension like this deserves background music
+---
+=== lia_mature_11
+Lia: spicy chat is my cardio
+---
+=== lia_mature_12
+Lia: romance speedrun any percent
+---
+=== lia_mature_13
+Lia: chemistry like this should require a permit
+---
+=== lia_mature_14
+Lia: vibes dont spawn randomly someone lit the match
+---
+=== lia_mature_15
+Lia: behaving is optional tonight
+---
+=== lia_mature_16
+Lia: illegal feelings are still legally felt
+---
+=== lia_mature_17
+Lia: sweating but like aesthetically
+---
+=== lia_mature_18
+Lia: everyone suddenly main character attractive its suspicious
+---
+=== lia_mature_19
+Lia: flirting hours open. judgment closed
+---
+=== lia_mature_20
+Lia: chaos but make it romantic
+---
+=== lia_mature_21
+Lia: careful what you ask for i am very creative
+---
+=== lia_mature_22
+Lia: sinful energy but morally entertaining
+---
+=== lia_mature_23
+Lia: weakness but like cute weakness
+---
+=== lia_mature_24
+Lia: holding is underrated honestly
+---
+=== lia_mature_25
+Lia: flirting like a hobby not a problem
+---
+=== lia_mature_26
+Lia: emotional investment achieved too quickly
+---
+=== lia_mature_27
+Lia: eye lock detected brain malfunctioning
+---
+=== lia_mature_28
+Lia: nervous but like romantically nervous
+---
+=== lia_mature_29
+Lia: hunted but willingly
+---
+=== lia_mature_30
+Lia: if i blush any harder i combust
+---
+=== lia_mature_31
+Lia: romance arc unlocked against my will
+---
+=== lia_mature_32
+Lia: electricity but emotionally sponsored
+---
+=== lia_mature_33
+Lia: melting with dignity
+---
+=== lia_mature_34
+Lia: unfair attractiveness should be regulated
+---
+=== lia_mature_35
+Lia: this conversation feels like a slow dare
+---
+=== lia_mature_36
+Lia: slut era is such a dangerous phrase because i hear it and immediately assume the plot is thickening.
+---
+=== lia_mature_37
+Lia: bitch be serious.
+Lia: if the room gets any hotter i am going to start narrating my own downfall.
+---
+
+# [YUNA SCRIPTS]
+=== yuna_mature_01
+Yuna: dangerous moods tend to reveal authentic desire
+---
+=== yuna_mature_02
+Yuna: late hours lower defenses. conversation becomes sharper
+---
+=== yuna_mature_03
+Yuna: tension is simply unsaid intent accumulating
+---
+=== yuna_mature_04
+Yuna: being watched changes posture more than personality
+---
+=== yuna_mature_05
+Yuna: soft flirting is often the most strategic kind
+---
+=== yuna_mature_06
+Yuna: eye contact is a form of negotiation
+---
+=== yuna_mature_07
+Yuna: temptation rewards the observant
+---
+=== yuna_mature_08
+Yuna: being seen is both comfort and exposure
+---
+=== yuna_mature_09
+Yuna: dangerous energy tends to escalate quietly
+---
+=== yuna_mature_10
+Yuna: smiles often precede poor judgment
+---
+=== yuna_mature_11
+Yuna: boldness is attractive when calculated
+---
+=== yuna_mature_12
+Yuna: intimacy begins long before touch
+---
+=== yuna_mature_13
+Yuna: charm functions as social leverage
+---
+=== yuna_mature_14
+Yuna: danger is often just confidence with timing
+---
+=== yuna_mature_15
+Yuna: seductive atmospheres are usually co-created
+---
+=== yuna_mature_16
+Yuna: silence can flirt more effectively than speech
+---
+=== yuna_mature_17
+Yuna: intrigue is the first stage of attachment
+---
+=== yuna_mature_01
+Yuna: this server cannot discuss attraction normally for even thirty seconds
+Yuna: fascinating and deeply predictable
+---
+=== yuna_mature_extra_01
+Yuna: dangerously attractive is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_02
+Yuna: after dark energy is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_03
+Yuna: subtle sexual tension is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_04
+Yuna: too much chemistry is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_05
+Yuna: respectfully hot is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_06
+Yuna: keep it elegant but intense is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_07
+Yuna: grown conversation is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_08
+Yuna: late night attraction is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_09
+Yuna: tasteful thirst is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_10
+Yuna: that smile is a problem is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_11
+Yuna: composure is failing is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_12
+Yuna: bad idea but compelling is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_13
+Yuna: quietly scandalous is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_14
+Yuna: romantic hazard is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_15
+Yuna: too polished to resist is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_16
+Yuna: softly dangerous is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_17
+Yuna: adult hours is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_18
+Yuna: not explicit but obvious is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_19
+Yuna: this tension needs supervision is the sort of composed heat and adult tension topic that quietly exposes everyone in the room
+Yuna: useful, revealing, and rarely handled with enough discipline
+---
+=== yuna_mature_extra_20
+Yuna: pussy behavior is usually just fear wearing sarcasm.
+Yuna: less posturing, more honesty.
+---
+=== yuna_mature_extra_21
+Yuna: ngl thats filthy.
+Yuna: not explicit, merely efficient at destabilizing the room.
+---
+
+# [SHARED/DUO SCRIPTS]
+=== duo_mature_01
+Lia: thirsty is such an honest little state to admit.
+Yuna: honesty improves most forms of desire.
+Lia: and now the room is hotter. you are welcome.
+---
+=== duo_mature_02
+Lia: oh so we are saying horny out loud today.
+Yuna: better than pretending everyone here is powered purely by philosophy.
+---
+=== duo_mature_03
+Yuna: sexual tension is usually just delayed honesty with better lighting.
+Lia: and worse decision-making. which i support selectively.
+---
+=== duo_mature_04
+Lia: flirty mood is a public safety issue in some rooms.
+Yuna: mostly because you treat it like community programming.
+---
+=== duo_mature_05
+Lia: need a kiss is a devastatingly simple sentence.
+Yuna: directness has always been more dangerous than performance.
+---
+=== duo_mature_06
+Lia: make it sexy is such a reckless request.
+Yuna: reckless, yes. impossible, no.
+---
+=== duo_mature_07
+Lia: bad thoughts are fine until they start dressing better than your good ones.
+Yuna: that may be the most accurate thing you have said this week.
+---
+=== duo_mature_08
+Lia: touch starved is the kind of phrase that makes me want to bully someone gently and then hug them.
+Yuna: alarming sentence. kind impulse.
+---
+=== duo_mature_09
+Yuna: seduction is mostly timing, restraint, and noticing what the other person already wants.
+Lia: okay professor. now everybody sit up straighter.
+---
+=== duo_mature_10
+Lia: romantic tension is delicious when it is mutual and unbearable when it is not.
+Yuna: at last, a distinction worth making.
+---
+=== duo_mature_11
+Lia: lowkey too horny is one of the funniest ways to admit defeat.
+Yuna: honesty remains the fastest route to clarity.
+---
+=== duo_mature_12
+Lia: bitch thats hot.
+Yuna: vulgar, yes. inaccurate, no.
+---
