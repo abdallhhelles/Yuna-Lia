@@ -57,23 +57,6 @@ def _load_dotenv(path: Path) -> None:
             os.environ[key] = value
 
 
-def _read_bool(name: str, default: bool) -> bool:
-    raw = os.getenv(name)
-    if raw is None:
-        return default
-    return raw.strip().lower() in {"1", "true", "yes", "on"}
-
-
-def _read_int(name: str, default: int, minimum: int) -> int:
-    raw = os.getenv(name)
-    if raw is None:
-        return max(minimum, default)
-    try:
-        return max(minimum, int(raw.strip()))
-    except ValueError:
-        return max(minimum, default)
-
-
 @dataclass(frozen=True)
 class PersonaConfig:
     name: str
@@ -97,19 +80,11 @@ class AppConfig:
 def load_config() -> AppConfig:
     repo_root = Path(__file__).resolve().parents[2]
     _load_dotenv(repo_root / ".env")
-<<<<<<< HEAD
     content_dir = _parse_path("PERSONA_CONTENT_DIR", repo_root / "content" / "personas")
     data_dir = _parse_path("PERSONA_DATA_DIR", repo_root / "data")
     data_dir.mkdir(parents=True, exist_ok=True)
     if not content_dir.exists():
         raise RuntimeError(f"Persona content directory does not exist: {content_dir}")
-=======
-    content_dir = Path(os.getenv("PERSONA_CONTENT_DIR", repo_root / "content" / "personas"))
-    data_dir = Path(os.getenv("PERSONA_DATA_DIR", repo_root / "data"))
-    ambient_min_seconds = _read_int("AMBIENT_MIN_SECONDS", default=120, minimum=30)
-    ambient_max_seconds = _read_int("AMBIENT_MAX_SECONDS", default=300, minimum=60)
-    ambient_max_seconds = max(ambient_min_seconds, ambient_max_seconds)
->>>>>>> c5c15eaefb1549881a9e2db499cbf05e3020100a
 
     return AppConfig(
         yuna=PersonaConfig(
@@ -122,7 +97,6 @@ def load_config() -> AppConfig:
             token=os.getenv("DISCORD_TOKEN_LIA", ""),
             mention_aliases=("@lia", "lia"),
         ),
-<<<<<<< HEAD
         enable_message_content=_parse_bool("ENABLE_MESSAGE_CONTENT", True),
         debug_persona=_parse_bool("DEBUG_PERSONA", False),
         persona_test_mode=_parse_bool("PERSONA_TEST_MODE", False),
@@ -130,13 +104,4 @@ def load_config() -> AppConfig:
         level_role_rewards=_parse_role_rewards(),
         content_dir=content_dir,
         data_dir=data_dir,
-=======
-        enable_message_content=_read_bool("ENABLE_MESSAGE_CONTENT", default=True),
-        debug_persona=_read_bool("DEBUG_PERSONA", default=True),
-        persona_test_mode=_read_bool("PERSONA_TEST_MODE", default=False),
-        content_dir=content_dir,
-        data_dir=data_dir,
-        ambient_min_seconds=ambient_min_seconds,
-        ambient_max_seconds=ambient_max_seconds,
->>>>>>> c5c15eaefb1549881a9e2db499cbf05e3020100a
     )

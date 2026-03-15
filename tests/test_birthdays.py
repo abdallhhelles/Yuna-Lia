@@ -95,28 +95,41 @@ def test_daily_answer_is_stored_privately(tmp_path: Path) -> None:
     runtime.content.reload()
     script_id = runtime._daily_question_script_id()
     assert script_id is not None
-    runtime._record_daily_question_state(script_id, 123)
+    runtime._record_daily_question_state(77, script_id, 123)
     runtime.memory.record_daily_answer(
         guild_id=77,
         user_id="1",
         user_name="Ameer",
-        answer_date=runtime._current_daily_question_date(),
+        answer_date=runtime._current_daily_question_date(77),
         script_id=script_id,
         prompt=runtime._daily_question_prompt(script_id),
         answer="pineapple is elite",
         answered_at=datetime.now(timezone.utc).isoformat(),
     )
 
-    assert runtime.memory.daily_answer_count(77, runtime._current_daily_question_date()) == 1
+    assert runtime.memory.daily_answer_count(77, runtime._current_daily_question_date(77)) == 1
 
 
-def test_current_daily_question_falls_back_to_rotation(tmp_path: Path) -> None:
+def test_current_daily_question_requires_posted_state(tmp_path: Path) -> None:
     runtime = DualPersonaRuntime(_config(tmp_path))
     runtime.content.reload()
 
-    script_id = runtime._current_daily_question_script_id()
+    assert runtime._current_daily_question_script_id(77) is None
+    assert runtime._current_daily_question_date(77) == ""
+
+
+def test_daily_question_state_is_guild_scoped(tmp_path: Path) -> None:
+    runtime = DualPersonaRuntime(_config(tmp_path))
+    runtime.content.reload()
+
+    script_id = runtime._daily_question_script_id()
     assert script_id is not None
-    assert script_id.startswith("daily_question_")
+    runtime._record_daily_question_state(77, script_id, 123)
+
+    assert runtime._current_daily_question_script_id(77) == script_id
+    assert runtime._current_daily_question_channel_id(77) == 123
+    assert runtime._current_daily_question_script_id(88) is None
+    assert runtime._current_daily_question_channel_id(88) is None
 
 
 def test_ambient_schedule_stays_within_six_hours(tmp_path: Path) -> None:

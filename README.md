@@ -188,7 +188,7 @@ See `docs/hosting.md` for full deployment steps.
 - Slow-burn server XP and levels from chatting
 - Optional role rewards on specific levels
 - 100+ scripted member welcomes across soft, dry, teasing, chaotic, and flirty tones
-- Automatic daily question posting with anonymous `/answer` submissions that bots echo back to the server
+- Automatic daily question posting with `/answer` submissions that bots echo back to the same server without naming the sender
 
 ## Docs
 

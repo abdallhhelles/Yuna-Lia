@@ -102,7 +102,7 @@ The bot posts one automatically each day in the most recently active tracked cha
 /answer
 ```
 
-This opens a private modal. The answer is saved, then Lia or Yuna reposts it into the server as a voiced reply.
+This opens a private modal. The answer is saved, then Lia or Yuna reposts it into the same server as a voiced reply without naming the sender.
 The repost is anonymous and does not include the sender's name.
 
 ### Inspect relationship progression

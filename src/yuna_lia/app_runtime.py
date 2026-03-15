@@ -262,12 +262,19 @@ class DualPersonaRuntime:
         if interaction.guild_id is None:
             await interaction.response.send_message("`/answer` only works in a server.", ephemeral=True)
             return
-        script_id = self._current_daily_question_script_id()
+        script_id = self._current_daily_question_script_id(interaction.guild_id)
         if script_id is None:
             await interaction.response.send_message("There is no daily question active right now.", ephemeral=True)
             return
+        channel_id = self._current_daily_question_channel_id(interaction.guild_id)
+        if channel_id is None:
+            await interaction.response.send_message(
+                "There is no live daily-question post in this server yet. Wait for the automatic post, then try again.",
+                ephemeral=True,
+            )
+            return
         prompt = self._daily_question_prompt(script_id)
-        answer_date = self._current_daily_question_date()
+        answer_date = self._current_daily_question_date(interaction.guild_id)
         self.memory.record_daily_answer(
             guild_id=interaction.guild_id,
             user_id=str(interaction.user.id),
@@ -279,12 +286,18 @@ class DualPersonaRuntime:
             answered_at=_utc_now().isoformat(),
         )
         count = self.memory.daily_answer_count(interaction.guild_id, answer_date)
-        await self._announce_daily_answer(
+        announced = await self._announce_daily_answer(
             guild_id=interaction.guild_id,
             answer=answer_text.strip(),
         )
+        if not announced:
+            await interaction.response.send_message(
+                "There is no live daily-question post in this server yet. Wait for the automatic post, then try again.",
+                ephemeral=True,
+            )
+            return
         await interaction.response.send_message(
-            f"Saved your anonymous answer and sent it through the bots to the server.\nPrompt: {prompt}\nTotal answers today: {count}",
+            f"Saved your answer and sent it through the bots to this server.\nPrompt: {prompt}\nTotal answers today: {count}",
             ephemeral=True,
         )
 
@@ -459,15 +472,22 @@ class DualPersonaRuntime:
             await asyncio.sleep(wait_seconds)
 
             script_id = self._daily_question_script_id()
-            channel_id = self._select_daily_question_channel()
-            if script_id is not None and channel_id is not None:
-                try:
-                    events = self.engine.render_script_by_id(script_id, "daily-question", "chat")
-                    await self._send_scripted_events(channel_id, events)
-                    self.memory.set_runtime_value("last_daily_question_date", _local_now().date().isoformat())
-                    self._record_daily_question_state(script_id, channel_id)
-                except Exception:
-                    self.logger.warning("Daily question send failed in channel=%s", channel_id, exc_info=True)
+            if script_id is not None:
+                today = _local_now().date().isoformat()
+                for guild_id, channel_id in self._select_daily_question_channels().items():
+                    if self._daily_question_posted_today(guild_id, today):
+                        continue
+                    try:
+                        events = self.engine.render_script_by_id(script_id, "daily-question", "chat")
+                        await self._send_scripted_events(channel_id, events)
+                        self._record_daily_question_state(guild_id, script_id, channel_id, today)
+                    except Exception:
+                        self.logger.warning(
+                            "Daily question send failed in guild=%s channel=%s",
+                            guild_id,
+                            channel_id,
+                            exc_info=True,
+                        )
 
             self._schedule_next_daily_question()
 
@@ -493,10 +513,10 @@ class DualPersonaRuntime:
             self._debug_print(f'sent actor={event.actor} channel={channel_id} text="{preview}"')
             previous_actor = event.actor
 
-    async def _announce_daily_answer(self, *, guild_id: int, answer: str) -> None:
-        channel_id = self.memory.get_runtime_value("current_daily_question_channel_id", None)
+    async def _announce_daily_answer(self, *, guild_id: int, answer: str) -> bool:
+        channel_id = self.memory.get_runtime_value(self._daily_question_key(guild_id, "channel_id"), None)
         if channel_id is None:
-            return
+            return False
         actor = random.choice((LIA_SPEAKER, YUNA_SPEAKER))
         if actor == LIA_SPEAKER:
             message = (
@@ -509,6 +529,7 @@ class DualPersonaRuntime:
                 "noted. better than the average room contribution."
             )
         await self._send_scripted_events(channel_id, [OutboundEvent(actor=actor, message=message)])
+        return True
 
     async def _maybe_award_chat_xp(self, message: discord.Message) -> None:
         guild = message.guild
@@ -603,24 +624,32 @@ class DualPersonaRuntime:
         day_index = date.today().toordinal() % len(script_ids)
         return script_ids[day_index]
 
-    def _current_daily_question_script_id(self) -> str | None:
-        stored_date = self.memory.get_runtime_value("current_daily_question_date", "")
-        today = _local_now().date().isoformat()
-        if stored_date == today:
-            stored_script = self.memory.get_runtime_value("current_daily_question_script_id", "")
-            if stored_script:
-                return stored_script
-        return self._daily_question_script_id()
+    @staticmethod
+    def _daily_question_key(guild_id: int, suffix: str) -> str:
+        return f"daily_question:{guild_id}:{suffix}"
 
-    def _current_daily_question_date(self) -> str:
-        stored_date = self.memory.get_runtime_value("current_daily_question_date", "")
-        return stored_date or _local_now().date().isoformat()
+    def _daily_question_posted_today(self, guild_id: int, today: str | None = None) -> bool:
+        return self._current_daily_question_date(guild_id) == (today or _local_now().date().isoformat())
 
-    def _record_daily_question_state(self, script_id: str, channel_id: int) -> None:
+    def _current_daily_question_script_id(self, guild_id: int) -> str | None:
+        stored_date = self.memory.get_runtime_value(self._daily_question_key(guild_id, "date"), "")
         today = _local_now().date().isoformat()
-        self.memory.set_runtime_value("current_daily_question_date", today)
-        self.memory.set_runtime_value("current_daily_question_script_id", script_id)
-        self.memory.set_runtime_value("current_daily_question_channel_id", channel_id)
+        if stored_date != today:
+            return None
+        stored_script = self.memory.get_runtime_value(self._daily_question_key(guild_id, "script_id"), "")
+        return stored_script or None
+
+    def _current_daily_question_date(self, guild_id: int) -> str:
+        return self.memory.get_runtime_value(self._daily_question_key(guild_id, "date"), "")
+
+    def _current_daily_question_channel_id(self, guild_id: int) -> int | None:
+        return self.memory.get_runtime_value(self._daily_question_key(guild_id, "channel_id"), None)
+
+    def _record_daily_question_state(self, guild_id: int, script_id: str, channel_id: int, today: str | None = None) -> None:
+        active_date = today or _local_now().date().isoformat()
+        self.memory.set_runtime_value(self._daily_question_key(guild_id, "date"), active_date)
+        self.memory.set_runtime_value(self._daily_question_key(guild_id, "script_id"), script_id)
+        self.memory.set_runtime_value(self._daily_question_key(guild_id, "channel_id"), channel_id)
 
     def _daily_question_prompt(self, script_id: str) -> str:
         script = self.content.scripts.get(script_id)
@@ -700,7 +729,6 @@ class DualPersonaRuntime:
 
     def _schedule_next_daily_question(self, now: datetime | None = None) -> datetime:
         now = now or _local_now()
-        last_date = self.memory.get_runtime_value("last_daily_question_date", "")
         timezone_info = now.tzinfo
 
         def random_slot(day: date) -> datetime:
@@ -714,19 +742,21 @@ class DualPersonaRuntime:
             return effective_start + timedelta(seconds=random.randint(0, delta_seconds))
 
         target_day = now.date()
-        if last_date == target_day.isoformat():
-            target_day = target_day + timedelta(days=1)
         next_at = random_slot(target_day)
         self.memory.set_runtime_value("next_daily_question_at", next_at.isoformat())
         self._debug_print(f"scheduled next daily question for {next_at.isoformat()}")
         return next_at
 
-    def _select_daily_question_channel(self) -> int | None:
+    def _select_daily_question_channels(self) -> dict[int, int]:
         channels = self.memory.all_channels()
         if not channels:
-            return None
-        ranked = sorted(channels, key=lambda channel: channel.last_user_message_at, reverse=True)
-        return ranked[0].channel_id if ranked else None
+            return {}
+        per_guild = {}
+        for channel in channels:
+            existing = per_guild.get(channel.guild_id)
+            if existing is None or channel.last_user_message_at > existing.last_user_message_at:
+                per_guild[channel.guild_id] = channel
+        return {guild_id: channel.channel_id for guild_id, channel in per_guild.items()}
 
     @staticmethod
     def _engagement_suggestion(quiet_minutes: int | None) -> str:
