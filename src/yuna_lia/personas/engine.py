@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import random
 import re
+from functools import lru_cache
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -27,20 +28,46 @@ def _debug_timestamp() -> str:
 
 
 def _normalize_text(value: str) -> str:
-    lowered = value.lower()
+    lowered = (
+        value.lower()
+        .replace("\u2019", "'")
+        .replace("\u2018", "'")
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+    )
     lowered = re.sub(r"\s+", " ", lowered)
     return lowered.strip()
 
 
+@lru_cache(maxsize=2048)
+def _trigger_pattern(trigger: str) -> re.Pattern[str]:
+    return re.compile(rf"(?<!\w){re.escape(trigger)}(?!\w)")
+
+
 def _contains_trigger(content: str, trigger: str) -> bool:
-    pattern = rf"(?<!\w){re.escape(trigger)}(?!\w)"
-    return re.search(pattern, content) is not None
+    return _trigger_pattern(trigger).search(content) is not None
 
 
 @dataclass(frozen=True)
 class OutboundEvent:
     actor: str
     message: str
+
+
+@dataclass(frozen=True)
+class MessageContext:
+    original: str
+    normalized: str
+    tokens: tuple[str, ...]
+    mentions_lia: bool
+    mentions_yuna: bool
+    asks_question: bool
+    is_dramatic: bool
+    mentions_food: bool
+    sounds_vulnerable: bool
+    sounds_affectionate: bool
+    uses_modern_slang: bool
+    late_night: bool
 
 
 class PersonaSimulationEngine:
@@ -101,28 +128,30 @@ class PersonaSimulationEngine:
         self.content.ensure_loaded()
         memory = self.memory.get_user(user_id, display_name)
         channel = self.memory.get_channel(channel_id, guild_id)
-        self.memory.increment_stat("messages_seen")
-        self._update_memory(memory, channel, content)
-        self.memory.save_user(user_id, memory)
-        self.memory.save_channel(channel)
+        context = self._build_message_context(content)
+        self.memory.increment_stat("messages_seen", flush=False)
+        self._update_memory(memory, channel, context)
+        self.memory.save_user(user_id, memory, flush=False)
+        self.memory.save_channel(channel, flush=False)
 
-        candidates = self._candidate_rules(content)
-        self.memory.record_trigger_match_count(len(candidates))
+        candidates = self._candidate_rules(context)
+        self.memory.record_trigger_match_count(len(candidates), flush=False)
+        self.memory.flush()
+
         self._debug_candidates(content, candidates)
-        decision = self._choose_decision(user_id, candidates, memory, channel)
+        persona_states = {actor: self.memory.get_persona_state(actor) for actor in ("Lia", "Yuna")}
+        decision = self._choose_decision(user_id, candidates, memory, channel, context, persona_states)
         if decision is None:
             if candidates:
                 self._debug_print("matched triggers but no script cleared cooldown/attention gates")
             return []
 
         self._debug_decision(decision)
-        self._apply_decision(user_id, decision, memory)
+        self._apply_decision(user_id, decision, memory, persona_states)
         self.apply_relationship_progression(memory, decision.script_id, decision.rules)
-        self.memory.save_user(user_id, memory)
         channel.bot_message_count += 1
         channel.last_bot_message_at = utc_now_iso()
         channel.last_script_id = decision.script_id
-        self.memory.save_channel(channel)
         script = self.content.scripts[decision.script_id]
         actors = sorted({step.actor for step in script.steps if step.actor in {"Lia", "Yuna"}})
         answered_triggers = sorted({rule.trigger for rule in decision.rules})
@@ -133,7 +162,11 @@ class PersonaSimulationEngine:
             actor_names=actors,
             triggers=answered_triggers,
             ambient=False,
+            flush=False,
         )
+        self.memory.save_user(user_id, memory, flush=False)
+        self.memory.save_channel(channel, flush=False)
+        self.memory.flush()
         events = [
             OutboundEvent(actor=step.actor, message=self._render(step.message, memory, content))
             for step in script.steps
@@ -153,7 +186,8 @@ class PersonaSimulationEngine:
         pool = self._eligible_ambient_scripts()
         if not pool:
             return []
-        chance = min(0.45, 0.08 + (silence / 1800.0) + (self._average_boredom() / 400.0))
+        persona_states = {actor: self.memory.get_persona_state(actor) for actor in ("Lia", "Yuna")}
+        chance = min(0.45, 0.08 + (silence / 1800.0) + (self._average_boredom(persona_states) / 400.0))
         if random.random() > chance:
             return []
         weighted = [(script_id, self._ambient_score(script_id, silence)) for script_id in pool]
@@ -175,25 +209,27 @@ class PersonaSimulationEngine:
             actor_names=actors,
             triggers=[],
             ambient=True,
+            flush=False,
         )
         channel.bot_message_count += 1
         channel.last_bot_message_at = utc_now_iso()
         channel.last_script_id = script_id
-        self.memory.save_channel(channel)
+        self.memory.save_channel(channel, flush=False)
         cooldowns = self.memory.cooldown_map()
         cooldowns[f"ambient:{script_id}"] = (utc_now() + timedelta(hours=6)).isoformat()
-        self.memory.save_cooldown_map(cooldowns)
+        self.memory.save_cooldown_map(cooldowns, flush=False)
+        self.memory.flush()
         self._log_fire("ambient", channel_id, decision)
         return events
 
-    def _candidate_rules(self, content: str) -> list[TriggerRule]:
-        lowered = _normalize_text(content)
-        rules = (
-            self.content.triggers_by_actor["shared"]
-            + self.content.triggers_by_actor["Lia"]
-            + self.content.triggers_by_actor["Yuna"]
-        )
-        return [rule for rule in rules if _contains_trigger(lowered, rule.trigger)]
+    def _candidate_rules(self, context: MessageContext) -> list[TriggerRule]:
+        candidates: set[TriggerRule] = set(self.content.tokenless_rules)
+        for token in context.tokens:
+            candidates.update(self.content.trigger_index.get(token, ()))
+        if not candidates:
+            candidates = set(self.content.all_rules)
+        ordered_candidates = sorted(candidates, key=lambda rule: (rule.script_id, rule.trigger))
+        return [rule for rule in ordered_candidates if _contains_trigger(context.normalized, rule.trigger)]
 
     def _debug_candidates(self, content: str, rules: list[TriggerRule]) -> None:
         if not self.debug:
@@ -227,6 +263,8 @@ class PersonaSimulationEngine:
         rules: list[TriggerRule],
         memory: UserMemory,
         channel: ChannelPresence,
+        context: MessageContext,
+        persona_states: dict[str, PersonaState],
     ) -> SimulationDecision | None:
         if not rules:
             return None
@@ -239,7 +277,10 @@ class PersonaSimulationEngine:
                 expiry = _parse_iso(cooldowns.get(key, ""))
                 if expiry and expiry > now:
                     continue
-            weighted.append((rule, self._score_rule(rule, memory, channel)))
+            score = self._score_rule(rule, memory, channel, context, persona_states)
+            if score <= 0:
+                continue
+            weighted.append((rule, score))
         if not weighted:
             return None
         weighted.sort(key=lambda item: item[1], reverse=True)
@@ -253,13 +294,19 @@ class PersonaSimulationEngine:
             rules=tuple(rule for rule, _ in weighted if rule.script_id == chosen_rule.script_id),
         )
 
-    def _apply_decision(self, user_id: str, decision: SimulationDecision, memory: UserMemory) -> None:
+    def _apply_decision(
+        self,
+        user_id: str,
+        decision: SimulationDecision,
+        memory: UserMemory,
+        persona_states: dict[str, PersonaState],
+    ) -> None:
         cooldowns = self.memory.cooldown_map()
         now = utc_now()
         cooldown_seconds = max((rule.cooldown_seconds for rule in decision.rules), default=300)
         if not self.test_mode:
             cooldowns[f"user:{user_id}:{decision.script_id}"] = (now + timedelta(seconds=cooldown_seconds)).isoformat()
-        self.memory.save_cooldown_map(cooldowns)
+        self.memory.save_cooldown_map(cooldowns, flush=False)
 
         for rule in decision.rules:
             topic = rule.trigger
@@ -267,13 +314,12 @@ class PersonaSimulationEngine:
                 memory.favorite_topics.append(topic)
         memory.favorite_topics = memory.favorite_topics[-8:]
         memory.last_seen = utc_now_iso()
-        self.memory.save_user(user_id, memory)
 
         new_mood = self._dominant_mood(decision.rules)
         script = self.content.scripts.get(decision.script_id)
         involved_actors = {step.actor for step in script.steps} if script is not None else {"Lia", "Yuna"}
         for actor in ("Lia", "Yuna"):
-            state = self.memory.get_persona_state(actor)
+            state = persona_states[actor]
             self._refresh_persona_state(state)
             state.last_script_id = decision.script_id
             state.last_message_at = utc_now_iso()
@@ -286,7 +332,7 @@ class PersonaSimulationEngine:
                 state.mood = new_mood
             elif state.mood == new_mood:
                 state.mood = "observant" if actor == "Yuna" else "chaotic"
-            self.memory.save_persona_state(state)
+            self.memory.save_persona_state(state, flush=False)
 
     @staticmethod
     def _render(template: str, memory: UserMemory, original_message: str) -> str:
@@ -297,22 +343,28 @@ class PersonaSimulationEngine:
         )
 
     @staticmethod
-    def _update_memory(memory: UserMemory, channel: ChannelPresence, content: str) -> None:
+    def _update_memory(memory: UserMemory, channel: ChannelPresence, context: MessageContext) -> None:
         memory.last_seen = utc_now_iso()
-        lowered = content.lower()
-        topic = lowered.split(" ")[0][:24] if content.strip() else "silence"
+        topic = context.tokens[0][:24] if context.tokens else "silence"
         memory.messages_sent += 1
         channel.user_message_count += 1
-        if any(token in lowered for token in ("drama", "fight", "argue", "ghosted", "messy")):
+        if context.is_dramatic:
             memory.dramatic_messages += 1
-        if any(token in lowered for token in ("pizza", "food", "pasta", "snack", "dessert", "coffee", "tea")):
+        if context.mentions_food:
             memory.food_messages += 1
-        if any(token in lowered for token in ("lia", "@lia")):
+        if context.mentions_lia:
             memory.direct_lia_mentions += 1
-        if any(token in lowered for token in ("yuna", "@yuna")):
+        if context.mentions_yuna:
             memory.direct_yuna_mentions += 1
-        hour = utc_now().hour
-        if hour >= 23 or hour < 5:
+        if context.asks_question:
+            memory.question_messages += 1
+        if context.uses_modern_slang:
+            memory.slang_messages += 1
+        if context.sounds_vulnerable:
+            memory.vulnerability_messages += 1
+        if context.sounds_affectionate:
+            memory.affection_messages += 1
+        if context.late_night:
             memory.late_night_messages += 1
         if topic and topic not in memory.favorite_topics:
             memory.favorite_topics.append(topic)
@@ -338,22 +390,53 @@ class PersonaSimulationEngine:
             if any(token in mood_tokens for token in ("flirty", "romantic", "intimate")):
                 setattr(memory, f"{prefix}_flirt_tension", min(100, getattr(memory, f"{prefix}_flirt_tension") + 2))
 
-    def _score_rule(self, rule: TriggerRule, memory: UserMemory, channel: ChannelPresence) -> float:
+    def _score_rule(
+        self,
+        rule: TriggerRule,
+        memory: UserMemory,
+        channel: ChannelPresence,
+        context: MessageContext,
+        persona_states: dict[str, PersonaState],
+    ) -> float:
         score = rule.weight
         if rule.trigger in memory.favorite_topics:
             score += 0.10
         if rule.trigger in channel.recent_topics:
             score += 0.06
 
-        boredom = self._average_boredom()
+        actor = self.content._infer_actor(rule.script_id)
+        boredom = self._average_boredom(persona_states)
         if any(token in rule.mood_shift for token in ("chaotic", "playful")):
             score += boredom / 250.0
         if "reflective" in rule.mood_shift and boredom < 30:
             score += 0.04
+        if actor == "Lia" and context.mentions_lia:
+            score += 0.14
+        if actor == "Yuna" and context.mentions_yuna:
+            score += 0.14
+        if actor == "shared" and (context.mentions_lia or context.mentions_yuna):
+            score += 0.05
+        if context.asks_question and any(token in rule.mood_shift.lower() for token in ("reflective", "curious", "warm")):
+            score += 0.07
+        if context.sounds_vulnerable and any(token in rule.mood_shift.lower() for token in ("soft", "warm", "supportive", "reflective")):
+            score += 0.12
+        if context.sounds_affectionate and any(token in rule.mood_shift.lower() for token in ("playful", "flirty", "warm", "casual")):
+            score += 0.08
+        if context.uses_modern_slang and any(token in rule.mood_shift.lower() for token in ("chaotic", "playful", "flirty", "casual")):
+            score += 0.06
+        if context.late_night and any(token in rule.script_id for token in ("late_night", "sleep", "night", "soft")):
+            score += 0.08
+
+        average_energy = sum(state.energy for state in persona_states.values()) / len(persona_states)
+        attention_cost = self._attention_cost((rule,))
+        if attention_cost >= 40 and average_energy < 28:
+            score -= 0.35
+        elif attention_cost >= 24 and average_energy < 20:
+            score -= 0.18
 
         recent_scripts = set()
-        for actor in ("Lia", "Yuna"):
-            state = self.memory.get_persona_state(actor)
+        for actor_name in ("Lia", "Yuna"):
+            state = persona_states[actor_name]
             recent_scripts.update(state.script_history[-3:])
             if state.last_script_id == rule.script_id:
                 score -= 0.22
@@ -400,8 +483,8 @@ class PersonaSimulationEngine:
         score += random.uniform(0.0, 0.08)
         return score
 
-    def _average_boredom(self) -> float:
-        states = [self.memory.get_persona_state("Lia"), self.memory.get_persona_state("Yuna")]
+    def _average_boredom(self, persona_states: dict[str, PersonaState]) -> float:
+        states = [persona_states["Lia"], persona_states["Yuna"]]
         return sum(state.boredom for state in states) / len(states)
 
     def _debug_print(self, message: str) -> None:
@@ -433,3 +516,53 @@ class PersonaSimulationEngine:
         }
         with self.log_path.open("a", encoding="utf-8") as handle:
             handle.write(json.dumps(entry) + "\n")
+
+    @staticmethod
+    def _build_message_context(content: str) -> MessageContext:
+        normalized = _normalize_text(content)
+        tokens = tuple(dict.fromkeys(re.findall(r"[a-z0-9']+", normalized)))
+        lowered = normalized
+        slang_tokens = {
+            "fr",
+            "lowkey",
+            "highkey",
+            "ngl",
+            "tbh",
+            "idk",
+            "imo",
+            "irl",
+            "delulu",
+            "aura",
+            "crashout",
+            "cooked",
+            "lore",
+            "mid",
+            "iconic",
+        }
+        affection_tokens = ("ily", "love yall", "love you", "miss yall", "miss you", "<3")
+        vulnerability_tokens = (
+            "tired",
+            "exhausted",
+            "spiraling",
+            "overwhelmed",
+            "burned out",
+            "anxious",
+            "crying",
+            "sad",
+            "rough day",
+            "not okay",
+        )
+        return MessageContext(
+            original=content,
+            normalized=normalized,
+            tokens=tokens,
+            mentions_lia=("lia" in tokens or "@lia" in lowered),
+            mentions_yuna=("yuna" in tokens or "@yuna" in lowered),
+            asks_question="?" in content,
+            is_dramatic=any(token in lowered for token in ("drama", "fight", "argue", "ghosted", "messy", "crashout")),
+            mentions_food=any(token in lowered for token in ("pizza", "food", "pasta", "snack", "dessert", "coffee", "tea")),
+            sounds_vulnerable=any(token in lowered for token in vulnerability_tokens),
+            sounds_affectionate=any(token in lowered for token in affection_tokens),
+            uses_modern_slang=any(token in tokens for token in slang_tokens),
+            late_night=(utc_now().hour >= 23 or utc_now().hour < 5),
+        )

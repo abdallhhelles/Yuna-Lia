@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,306 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: late night
 # Theme note: insomnia, bad decisions after dark, reflective fatigue, and night brain.
 # Writer target: Restrained vulnerability, deadpan exhaustion, midnight clarity.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=51, lia=0, yuna=20, shared=31
-# Trigger inventory: awake, insomnia, too late to be awake, still online somehow, night brain is active, sleep procrastination, questionable hour, i should be asleep, wired and tired, late screen time, awake against my will, insomnia again, poor decision hour, after midnight mood, dark outside and still talking, restless night, cannot switch off, late scrolling, owls only, bedtime failure, sleep, insomnia tonight, need a take on night brain, why is bad decision hour like this, unpopular opinion about soft honesty, i have thoughts about restless mind, talk about quiet room, we need to discuss after midnight, sleep avoidance again, insomnia discourse, be honest about night brain, worst part of bad decision hour, best part of soft honesty, i need help with restless mind, my problem is quiet room, tell me something real about after midnight, anyone else dealing with sleep avoidance, late night 17, need a take on night brain tonight, why is bad decision hour like this tonight, unpopular opinion about soft honesty tonight, i have thoughts about restless mind tonight, talk about quiet room tonight, we need to discuss after midnight tonight, sleep avoidance again tonight, insomnia discourse tonight, be honest about night brain tonight, worst part of bad decision hour tonight, best part of soft honesty tonight, i need help with restless mind tonight, my problem is quiet room tonight
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
 # none yet for Lia
 
 # [YUNA TRIGGERS]
-awake || yuna_late_night_01 || 0.50 || 420 || low || tired+
-insomnia || yuna_late_night_01 || 0.57 || 420 || low || tired+
-too late to be awake || yuna_latenight_extra_01 || 0.53 || 500 || low || tired+
-still online somehow || yuna_latenight_extra_02 || 0.56 || 500 || low || tired+
-night brain is active || yuna_latenight_extra_03 || 0.59 || 500 || low || tired+
-sleep procrastination || yuna_latenight_extra_04 || 0.62 || 500 || low || tired+
-questionable hour || yuna_latenight_extra_05 || 0.50 || 500 || low || tired+
-i should be asleep || yuna_latenight_extra_06 || 0.53 || 500 || low || tired+
-wired and tired || yuna_latenight_extra_07 || 0.56 || 500 || low || tired+
-late screen time || yuna_latenight_extra_08 || 0.59 || 500 || low || tired+
-awake against my will || yuna_latenight_extra_09 || 0.62 || 500 || low || tired+
-insomnia again || yuna_latenight_extra_10 || 0.50 || 500 || low || tired+
-poor decision hour || yuna_latenight_extra_11 || 0.53 || 500 || low || tired+
-after midnight mood || yuna_latenight_extra_12 || 0.56 || 500 || low || tired+
-dark outside and still talking || yuna_latenight_extra_13 || 0.59 || 500 || low || tired+
-restless night || yuna_latenight_extra_14 || 0.62 || 500 || low || tired+
-cannot switch off || yuna_latenight_extra_15 || 0.50 || 500 || low || tired+
-late scrolling || yuna_latenight_extra_16 || 0.53 || 500 || low || tired+
-owls only || yuna_latenight_extra_17 || 0.56 || 500 || low || tired+
-bedtime failure || yuna_latenight_extra_18 || 0.59 || 500 || low || tired+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-sleep || duo_late_night_existential_03 || 0.60 || 500 || low || reflective+
-insomnia tonight || duo_late_night_boost_01 || 0.55 || 420 || medium || casual+
-need a take on night brain || duo_late_night_boost_02 || 0.58 || 420 || medium || casual+
-why is bad decision hour like this || duo_late_night_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about soft honesty || duo_late_night_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about restless mind || duo_late_night_boost_05 || 0.67 || 420 || medium || casual+
-talk about quiet room || duo_late_night_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss after midnight || duo_late_night_boost_07 || 0.55 || 420 || medium || casual+
-sleep avoidance again || duo_late_night_boost_08 || 0.58 || 420 || medium || casual+
-insomnia discourse || duo_late_night_boost_09 || 0.61 || 420 || medium || casual+
-be honest about night brain || duo_late_night_boost_10 || 0.64 || 420 || medium || casual+
-worst part of bad decision hour || duo_late_night_boost_11 || 0.67 || 420 || medium || casual+
-best part of soft honesty || duo_late_night_boost_12 || 0.52 || 420 || medium || casual+
-i need help with restless mind || duo_late_night_boost_13 || 0.55 || 420 || medium || casual+
-my problem is quiet room || duo_late_night_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about after midnight || duo_late_night_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with sleep avoidance || duo_late_night_boost_16 || 0.64 || 420 || medium || casual+
-late night 17 || duo_late_night_boost_17 || 0.67 || 420 || medium || casual+
-need a take on night brain tonight || duo_late_night_boost_18 || 0.52 || 420 || medium || casual+
-why is bad decision hour like this tonight || duo_late_night_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about soft honesty tonight || duo_late_night_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about restless mind tonight || duo_late_night_boost_21 || 0.61 || 420 || medium || casual+
-talk about quiet room tonight || duo_late_night_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss after midnight tonight || duo_late_night_boost_23 || 0.67 || 420 || medium || casual+
-sleep avoidance again tonight || duo_late_night_boost_24 || 0.52 || 420 || medium || casual+
-insomnia discourse tonight || duo_late_night_boost_25 || 0.55 || 420 || medium || casual+
-be honest about night brain tonight || duo_late_night_boost_26 || 0.58 || 420 || medium || casual+
-worst part of bad decision hour tonight || duo_late_night_boost_27 || 0.61 || 420 || medium || casual+
-best part of soft honesty tonight || duo_late_night_boost_28 || 0.64 || 420 || medium || casual+
-i need help with restless mind tonight || duo_late_night_boost_29 || 0.67 || 420 || medium || casual+
-my problem is quiet room tonight || duo_late_night_boost_30 || 0.52 || 420 || medium || casual+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [YUNA SCRIPTS]
-=== yuna_late_night_01
-Yuna: being awake at this hour usually means someone made a poor decision
----
-=== yuna_latenight_extra_01
-Yuna: too late to be awake is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_02
-Yuna: still online somehow is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_03
-Yuna: night brain is active is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_04
-Yuna: sleep procrastination is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_05
-Yuna: questionable hour is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_06
-Yuna: i should be asleep is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_07
-Yuna: wired and tired is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_08
-Yuna: late screen time is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_09
-Yuna: awake against my will is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_10
-Yuna: insomnia again is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_11
-Yuna: poor decision hour is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_12
-Yuna: after midnight mood is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_13
-Yuna: dark outside and still talking is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_14
-Yuna: restless night is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_15
-Yuna: cannot switch off is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_16
-Yuna: late scrolling is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_17
-Yuna: owls only is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_latenight_extra_18
-Yuna: bedtime failure is the sort of late-night exhaustion and clarity topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
 
-# [SHARED/DUO SCRIPTS]
-=== duo_late_night_existential_03
-Yuna: everyone says they should sleep like it is a sincere plan.
-Lia: sleep is fake after midnight.
-Yuna: that explains many things about you.
----
-=== duo_late_night_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, insomnia is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_late_night_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, night brain is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_late_night_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, bad decision hour is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_late_night_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, soft honesty is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_late_night_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, restless mind is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_late_night_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, quiet room is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_late_night_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, after midnight is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_late_night_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, sleep avoidance is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_late_night_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, insomnia is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_late_night_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, night brain is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_late_night_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, bad decision hour is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_late_night_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, soft honesty is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_late_night_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, restless mind is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_late_night_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, quiet room is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_late_night_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, after midnight is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_late_night_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, sleep avoidance is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_late_night_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, insomnia is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_late_night_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, night brain is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_late_night_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, bad decision hour is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_late_night_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, soft honesty is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_late_night_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, restless mind is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_late_night_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, quiet room is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_late_night_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, after midnight is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_late_night_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, sleep avoidance is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_late_night_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, insomnia is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_late_night_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, night brain is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_late_night_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, bad decision hour is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_late_night_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, soft honesty is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_late_night_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, restless mind is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_late_night_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, quiet room is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
+
+

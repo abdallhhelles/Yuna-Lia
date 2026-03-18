@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,342 +60,289 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: common chat
 # Theme note: hello, hru, wyd, welcome back, goodnight, and other common conversational filler.
 # Writer target: High-frequency lines must feel natural and non-repetitive.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=62, lia=0, yuna=0, shared=62
-# Trigger inventory: how are you, how r u, hru, hows it going, how's it going, whats up, what's up, wyd, what are you doing, goodnight, gn, good morning, gm, im back, i'm back, miss me, bye, brb, wyd rn, u up, lowkey how are you, brb dont die, how are you tonight, need a take on what's up, why is goodnight like this, unpopular opinion about welcome back, i have thoughts about brb, talk about good morning, we need to discuss wyd, tiny update again, how are you discourse, be honest about what's up, worst part of goodnight, best part of welcome back, i need help with brb, my problem is good morning, tell me something real about wyd, anyone else dealing with tiny update, common chat 17, need a take on what's up tonight, why is goodnight like this tonight, unpopular opinion about welcome back tonight, i have thoughts about brb tonight, talk about good morning tonight, we need to discuss wyd tonight, tiny update again tonight, how are you discourse tonight, be honest about what's up tonight, worst part of goodnight tonight, best part of welcome back tonight, i need help with brb tonight, my problem is good morning tonight, tell me something real about wyd tonight, anyone else dealing with tiny update tonight, common chat 33, common chat 34, common chat 35, common chat 36, common chat 37, common chat 38, common chat 39, common chat 40
+
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: high-frequency greetings, re-entry chatter, quick pulse checks, and late-room roll calls
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-# none yet for Lia
+chat i spawned || lia_common_spawned_01 || 0.89 || 1200 || low || chaotic+
+i made it back alive || lia_common_alive_01 || 0.87 || 1200 || low || casual+
+somebody wave at me || lia_common_wave_01 || 0.91 || 1500 || low || playful+
+i need social enrichment || lia_common_social_01 || 0.88 || 1500 || medium || playful+
+i just clocked in emotionally || lia_common_clocked_01 || 0.86 || 1800 || low || casual+
+my wifi finally respects me || lia_common_wifi_01 || 0.82 || 1800 || low || chaotic+
+okay room temperature people || lia_common_roomtemp_01 || 0.83 || 1800 || low || teasing+
+tell me i still look hot || lia_common_hot_01 || 0.88 || 2100 || low || flirty+
+i'm here and unfortunately conscious || lia_common_conscious_01 || 0.90 || 1800 || low || chaotic+
+i return with suspicious energy || lia_common_energy_01 || 0.86 || 1800 || medium || chaotic+
+who let me back in || lia_common_backin_01 || 0.84 || 1500 || low || playful+
+i need noise immediately || lia_common_noise_01 || 0.85 || 1500 || medium || chaotic+
+somebody debrief me prettily || lia_common_debrief_01 || 0.84 || 1800 || low || flirty+
+i'm logging on with issues || lia_common_issues_01 || 0.89 || 1500 || low || dramatic+
+my brain just loaded in || lia_common_brain_01 || 0.83 || 1800 || low || casual+
+i survived the commute || lia_common_commute_01 || 0.81 || 1800 || low || casual+
+i'm doing a soft relaunch || lia_common_relaunch_01 || 0.86 || 2100 || low || playful+
+say hi before i vanish || lia_common_vanish_01 || 0.87 || 1500 || low || soft+
+i'm in my hello era || lia_common_era_01 || 0.88 || 2100 || low || playful+
+i have arrived dramatically || lia_common_arrived_01 || 0.90 || 1800 || medium || chaotic+
 
 # [YUNA TRIGGERS]
-# none yet for Yuna
+filing my presence report || yuna_common_report_01 || 0.88 || 1500 || low || observant+
+resuming observation || yuna_common_observe_01 || 0.87 || 1500 || low || observant+
+i am now available for context || yuna_common_context_01 || 0.90 || 1800 || low || observant+
+give me the concise version || yuna_common_concise_01 || 0.91 || 1800 || low || reflective+
+the room may proceed || yuna_common_proceed_01 || 0.84 || 1800 || low || dry+
+i've re-entered the timeline || yuna_common_timeline_01 || 0.85 || 1800 || low || dry+
+i'm awake against my will || yuna_common_awake_01 || 0.89 || 1800 || low || annoyed+
+consider this my formal appearance || yuna_common_formal_01 || 0.83 || 2100 || low || dry+
+brief me without fanfiction || yuna_common_fanfiction_01 || 0.92 || 1800 || low || judgment+
+who authorized this energy || yuna_common_authorized_01 || 0.86 || 1800 || low || judgment+
+i'm online. regrettably || yuna_common_regrettably_01 || 0.90 || 1800 || low || dry+
+the audit has begun || yuna_common_audit_01 || 0.88 || 2100 || low || observant+
+deliver the relevant lore || yuna_common_lore_01 || 0.90 || 1800 || low || reflective+
+i came back for two minutes || yuna_common_twominutes_01 || 0.85 || 1800 || low || annoyed+
+i require a clean summary || yuna_common_summary_01 || 0.91 || 1800 || low || reflective+
+we're doing attendance apparently || yuna_common_attendance_01 || 0.82 || 2100 || low || dry+
+i'll accept one intelligent update || yuna_common_update_01 || 0.89 || 2100 || low || judgment+
+i'm back. lower the volume || yuna_common_volume_01 || 0.88 || 1800 || low || annoyed+
+mark me present and disappointed || yuna_common_disappointed_01 || 0.86 || 2100 || low || dry+
+continuing my surveillance || yuna_common_surveillance_01 || 0.84 || 2100 || low || observant+
 
 # [SHARED/DUO TRIGGERS]
-how are you || duo_common_chat_01 || 0.74 || 180 || low || warm+
-how r u || duo_common_chat_01 || 0.70 || 180 || low || warm+
-hru || duo_common_chat_01 || 0.68 || 180 || low || warm+
-hows it going || duo_common_chat_02 || 0.66 || 180 || low || casual+
-how's it going || duo_common_chat_02 || 0.66 || 180 || low || casual+
-whats up || duo_common_chat_03 || 0.72 || 180 || low || casual+
-what's up || duo_common_chat_03 || 0.72 || 180 || low || casual+
-wyd || duo_common_chat_04 || 0.69 || 180 || low || casual+
-what are you doing || duo_common_chat_04 || 0.65 || 180 || low || casual+
-goodnight || duo_common_chat_05 || 0.61 || 300 || low || soft+
-gn || duo_common_chat_05 || 0.59 || 300 || low || soft+
-good morning || duo_common_chat_06 || 0.63 || 240 || low || warm+
-gm || duo_common_chat_06 || 0.61 || 240 || low || warm+
-im back || duo_common_chat_07 || 0.62 || 180 || low || casual+
-i'm back || duo_common_chat_07 || 0.62 || 180 || low || casual+
-miss me || duo_common_chat_08 || 0.58 || 240 || low || playful+
-bye || duo_common_chat_09 || 0.56 || 180 || low || soft+
-brb || duo_common_chat_10 || 0.55 || 180 || low || casual+
-wyd rn || duo_common_chat_11 || 0.71 || 180 || low || casual+
-u up || duo_common_chat_12 || 0.66 || 240 || low || casual+
-lowkey how are you || duo_common_chat_13 || 0.68 || 180 || low || warm+
-brb dont die || duo_common_chat_14 || 0.62 || 180 || low || casual+
-how are you tonight || duo_common_chat_boost_01 || 0.55 || 420 || medium || casual+
-need a take on what's up || duo_common_chat_boost_02 || 0.58 || 420 || medium || casual+
-why is goodnight like this || duo_common_chat_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about welcome back || duo_common_chat_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about brb || duo_common_chat_boost_05 || 0.67 || 420 || medium || casual+
-talk about good morning || duo_common_chat_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss wyd || duo_common_chat_boost_07 || 0.55 || 420 || medium || casual+
-tiny update again || duo_common_chat_boost_08 || 0.58 || 420 || medium || casual+
-how are you discourse || duo_common_chat_boost_09 || 0.61 || 420 || medium || casual+
-be honest about what's up || duo_common_chat_boost_10 || 0.64 || 420 || medium || casual+
-worst part of goodnight || duo_common_chat_boost_11 || 0.67 || 420 || medium || casual+
-best part of welcome back || duo_common_chat_boost_12 || 0.52 || 420 || medium || casual+
-i need help with brb || duo_common_chat_boost_13 || 0.55 || 420 || medium || casual+
-my problem is good morning || duo_common_chat_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about wyd || duo_common_chat_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with tiny update || duo_common_chat_boost_16 || 0.64 || 420 || medium || casual+
-common chat 17 || duo_common_chat_boost_17 || 0.67 || 420 || medium || casual+
-need a take on what's up tonight || duo_common_chat_boost_18 || 0.52 || 420 || medium || casual+
-why is goodnight like this tonight || duo_common_chat_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about welcome back tonight || duo_common_chat_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about brb tonight || duo_common_chat_boost_21 || 0.61 || 420 || medium || casual+
-talk about good morning tonight || duo_common_chat_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss wyd tonight || duo_common_chat_boost_23 || 0.67 || 420 || medium || casual+
-tiny update again tonight || duo_common_chat_boost_24 || 0.52 || 420 || medium || casual+
-how are you discourse tonight || duo_common_chat_boost_25 || 0.55 || 420 || medium || casual+
-be honest about what's up tonight || duo_common_chat_boost_26 || 0.58 || 420 || medium || casual+
-worst part of goodnight tonight || duo_common_chat_boost_27 || 0.61 || 420 || medium || casual+
-best part of welcome back tonight || duo_common_chat_boost_28 || 0.64 || 420 || medium || casual+
-i need help with brb tonight || duo_common_chat_boost_29 || 0.67 || 420 || medium || casual+
-my problem is good morning tonight || duo_common_chat_boost_30 || 0.52 || 420 || medium || casual+
-tell me something real about wyd tonight || duo_common_chat_boost_31 || 0.55 || 420 || medium || casual+
-anyone else dealing with tiny update tonight || duo_common_chat_boost_32 || 0.58 || 420 || medium || casual+
-common chat 33 || duo_common_chat_boost_33 || 0.61 || 420 || medium || casual+
-common chat 34 || duo_common_chat_boost_34 || 0.64 || 420 || medium || casual+
-common chat 35 || duo_common_chat_boost_35 || 0.67 || 420 || medium || casual+
-common chat 36 || duo_common_chat_boost_36 || 0.52 || 420 || medium || casual+
-common chat 37 || duo_common_chat_boost_37 || 0.55 || 420 || medium || casual+
-common chat 38 || duo_common_chat_boost_38 || 0.58 || 420 || medium || casual+
-common chat 39 || duo_common_chat_boost_39 || 0.61 || 420 || medium || casual+
-common chat 40 || duo_common_chat_boost_40 || 0.64 || 420 || medium || casual+
+good morning losers || duo_common_morninglosers_01 || 0.93 || 1500 || medium || playful+
+night shift check || duo_common_nightshift_01 || 0.90 || 1800 || medium || reflective+
+welcome home weirdos || duo_common_home_01 || 0.92 || 1500 || medium || warm+
+who's haunting the channel || duo_common_haunting_01 || 0.88 || 1800 || medium || playful+
+roll call but make it sad || duo_common_rollcall_01 || 0.87 || 1800 || medium || dry+
+anybody lurking or what || duo_common_lurking_01 || 0.89 || 1500 || medium || observant+
+chat status please || duo_common_status_01 || 0.90 || 1500 || medium || casual+
+we alive in here || duo_common_alive_01 || 0.89 || 1500 || medium || playful+
+room pulse check || duo_common_pulse_01 || 0.90 || 1800 || medium || reflective+
+who is still vertical || duo_common_vertical_01 || 0.86 || 1800 || medium || dry+
+i disappeared for like ten minutes || duo_common_tenminutes_01 || 0.85 || 1800 || medium || playful+
+did the vibe survive || duo_common_survive_01 || 0.87 || 1800 || medium || observant+
+checking if this place still has electricity || duo_common_electricity_01 || 0.84 || 2100 || medium || dry+
+who's operating on fumes || duo_common_fumes_01 || 0.88 || 1800 || medium || soft+
+this room needs a pulse || duo_common_needspulse_01 || 0.90 || 1800 || medium || chaotic+
+late crew where you at || duo_common_latecrew_01 || 0.89 || 1800 || medium || late_night+
+morning crew sound off || duo_common_morningcrew_01 || 0.87 || 1800 || medium || casual+
+tiny life update anyone || duo_common_lifeupdate_01 || 0.88 || 1800 || medium || warm+
+i'm peeking in || duo_common_peeking_01 || 0.86 || 1800 || medium || casual+
+who summoned the silence || duo_common_silence_01 || 0.91 || 1800 || medium || chaotic+
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_common_chat_01
-Lia: i am functioning emotionally in a decorative way.
-Yuna: i am fine. she is translating that into theater for you.
+# Script format reminder: === script_id / Actor: line / ---
+=== lia_common_spawned_01
+Lia: i have logged in with lip gloss and unstable intentions.
 ---
-=== duo_common_chat_02
-Yuna: adequately.
-Lia: i am choosing to interpret that as mysterious instead of tired.
+=== lia_common_alive_01
+Lia: barely. but the face card survived so we move.
 ---
-=== duo_common_chat_03
-Lia: currently? vibes, snacks, and unnecessary opinions.
-Yuna: mostly observation. occasionally intervention.
+=== lia_common_wave_01
+Lia: wave back before i start taking this personally.
 ---
-=== duo_common_chat_04
-Lia: i am here being beautiful and disruptive in balanced proportions.
-Yuna: i am watching that statement fail under scrutiny.
+=== lia_common_social_01
+Lia: yes hi i need human enrichment before i become a hallway ghost.
 ---
-=== duo_common_chat_05
-Lia: goodnight. sleep like someone who deserves softness.
-Yuna: and mute your notifications if you have any sense.
+=== lia_common_clocked_01
+Lia: emotionally clocked in. spiritually still in bed.
 ---
-=== duo_common_chat_06
-Lia: good morninggg. i hope the day is gentle and at least a little cute.
-Yuna: aim for composure before optimism. then improve from there.
+=== lia_common_wifi_01
+Lia: the router finally stopped being a jealous ex.
 ---
-=== duo_common_chat_07
-Lia: welcome back.
-Lia: did the outside world behave or do we need a recap and a beverage.
+=== lia_common_roomtemp_01
+Lia: hello my beautifully undercaffeinated civilians.
 ---
-=== duo_common_chat_08
-Lia: yes, obviously.
-Yuna: the room quality did shift while you were absent.
+=== lia_common_hot_01
+Lia: answer carefully. this affects my whole evening.
 ---
-=== duo_common_chat_09
-Lia: bye angel. come back with a story.
-Yuna: preferably a good one.
+=== lia_common_conscious_01
+Lia: consciousness was a hostile choice but i'm serving through it.
 ---
-=== duo_common_chat_10
-Lia: noted. do not vanish artistically for too long.
-Yuna: return with evidence of competence.
+=== lia_common_energy_01
+Lia: i am arriving with aura and at least one bad decision.
 ---
-=== duo_common_chat_11
-Lia: wyd rn is such an unseriously intimate question.
-Yuna: and yet it reveals more than most people intend.
+=== lia_common_backin_01
+Lia: whoever reopened access to me will see heaven.
 ---
-=== duo_common_chat_12
-Lia: u up always sounds a little dangerous.
-Yuna: mostly because nobody sends it while making excellent decisions.
+=== lia_common_noise_01
+Lia: somebody speak before i start narrating my own decline.
 ---
-=== duo_common_chat_13
-Lia: lowkey how are you hits harder than the formal version.
-Yuna: yes. less performance, more actual data.
+=== lia_common_debrief_01
+Lia: give me the lore but make me feel chosen.
 ---
-=== duo_common_chat_14
-Lia: brb dont die is honestly peak affection.
-Yuna: crude wording. solid sentiment.
+=== lia_common_issues_01
+Lia: posting through it with suspicious confidence actually.
 ---
-=== duo_common_chat_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, how are you is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== lia_common_brain_01
+Lia: sorry i'm on version 1.2 of my consciousness right now.
 ---
-=== duo_common_chat_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, what's up is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== lia_common_commute_01
+Lia: traffic tried to humble me and lost.
 ---
-=== duo_common_chat_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, goodnight is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== lia_common_relaunch_01
+Lia: soft relaunch of my public persona. please admire the effort.
 ---
-=== duo_common_chat_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, welcome back is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== lia_common_vanish_01
+Lia: quick hello before i dissolve into another tab.
 ---
-=== duo_common_chat_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, brb is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== lia_common_era_01
+Lia: every era i have is unfortunately iconic for at least six minutes.
 ---
-=== duo_common_chat_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, good morning is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== lia_common_arrived_01
+Lia: cue the fog machine. i'm back.
 ---
-=== duo_common_chat_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, wyd is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_common_report_01
+Yuna: noted. i am here, which should be enough excitement.
 ---
-=== duo_common_chat_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, tiny update is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_common_observe_01
+Yuna: continue. i enjoy seeing what people do unsupervised.
 ---
-=== duo_common_chat_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, how are you is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_common_context_01
+Yuna: one coherent summary and nobody gets judged extra.
 ---
-=== duo_common_chat_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, what's up is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_common_concise_01
+Yuna: short version first. embellishments can suffer later.
 ---
-=== duo_common_chat_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, goodnight is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_common_proceed_01
+Yuna: you may all resume your fascinatingly inconsistent behavior.
 ---
-=== duo_common_chat_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, welcome back is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_common_timeline_01
+Yuna: unfortunate. i was hoping this timeline had improved without me.
 ---
-=== duo_common_chat_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, brb is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_common_awake_01
+Yuna: yes. tragically functional.
 ---
-=== duo_common_chat_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, good morning is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_common_formal_01
+Yuna: i've arrived with posture and low expectations.
 ---
-=== duo_common_chat_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, wyd is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_common_fanfiction_01
+Yuna: facts first. emotional director's cut later.
 ---
-=== duo_common_chat_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, tiny update is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_common_authorized_01
+Yuna: whoever approved it should lose voting privileges.
 ---
-=== duo_common_chat_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, how are you is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_common_regrettably_01
+Yuna: my connection is stable. my enthusiasm is not.
 ---
-=== duo_common_chat_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, what's up is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_common_audit_01
+Yuna: carry on. i'm collecting evidence for no reason in particular.
 ---
-=== duo_common_chat_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, goodnight is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_common_lore_01
+Yuna: if there is lore, bring the useful chapter.
 ---
-=== duo_common_chat_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, welcome back is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_common_twominutes_01
+Yuna: naturally. that's all it takes for standards to collapse.
 ---
-=== duo_common_chat_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, brb is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_common_summary_01
+Yuna: neat lines, minimal hysteria, preferably chronological.
 ---
-=== duo_common_chat_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, good morning is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_common_attendance_01
+Yuna: apparently we are. humanity remains committed to process.
 ---
-=== duo_common_chat_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, wyd is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_common_update_01
+Yuna: make it worth the bandwidth.
 ---
-=== duo_common_chat_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, tiny update is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_common_volume_01
+Yuna: i'm back. try not to sound like a kitchen fire.
 ---
-=== duo_common_chat_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, how are you is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_common_disappointed_01
+Yuna: present, alert, and unimpressed in advance.
 ---
-=== duo_common_chat_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, what's up is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_common_surveillance_01
+Yuna: continue existing. i will determine whether it was wise.
 ---
-=== duo_common_chat_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, goodnight is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== duo_common_morninglosers_01
+Lia: good morning, angels and cautionary tales.
+Yuna: a deeply mixed demographic, yes.
 ---
-=== duo_common_chat_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, welcome back is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== duo_common_nightshift_01
+Lia: if you're still here, you're either iconic or making a mistake.
+Yuna: both remains the leading theory.
 ---
-=== duo_common_chat_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, brb is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== duo_common_home_01
+Lia: aw cute. everybody shuffled back to the little digital apartment.
+Yuna: and immediately tracked dirt through it.
 ---
-=== duo_common_chat_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, good morning is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== duo_common_haunting_01
+Lia: if you're lurking at least rattle a chain with style.
+Yuna: or simply type like a functioning ghost.
 ---
-=== duo_common_chat_boost_31
-Lia: oh good, something with actual flavor.
-Lia: for me, wyd is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== duo_common_rollcall_01
+Lia: attendance but with emotional damage, yes.
+Yuna: finally, a format people here understand.
 ---
-=== duo_common_chat_boost_32
-Lia: wait, i have feelings about that immediately.
-Lia: for me, tiny update is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== duo_common_lurking_01
+Lia: i know at least three of you are reading silently like little cryptids.
+Yuna: blinking green dots are not subtle.
 ---
-=== duo_common_chat_boost_33
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, how are you is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== duo_common_status_01
+Lia: mine is glamorous instability.
+Yuna: mine is accuracy under difficult conditions.
 ---
-=== duo_common_chat_boost_34
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, what's up is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== duo_common_alive_01
+Lia: physically? mostly.
+Yuna: socially? the jury continues to deliberate.
 ---
-=== duo_common_chat_boost_35
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, goodnight is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== duo_common_pulse_01
+Lia: room feels sleepy. somebody hand me a sparkler.
+Yuna: or a sentence with an actual pulse.
 ---
-=== duo_common_chat_boost_36
-Lia: okay, that topic has teeth.
-Lia: for me, welcome back is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== duo_common_vertical_01
+Lia: i'm upright out of spite.
+Yuna: efficient motivation, honestly.
 ---
-=== duo_common_chat_boost_37
-Lia: oh good, something with actual flavor.
-Lia: for me, brb is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== duo_common_tenminutes_01
+Lia: i leave briefly and the whole place looks spiritually wrinkled.
+Yuna: astonishing how fast neglect shows.
 ---
-=== duo_common_chat_boost_38
-Lia: wait, i have feelings about that immediately.
-Lia: for me, good morning is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== duo_common_survive_01
+Lia: the vibe survived but it has a limp.
+Yuna: mild internal bleeding, stable condition.
 ---
-=== duo_common_chat_boost_39
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, wyd is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== duo_common_electricity_01
+Lia: hello i'm checking whether anyone in here still has a soul on.
+Yuna: electricity would already be a meaningful improvement.
 ---
-=== duo_common_chat_boost_40
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, tiny update is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== duo_common_fumes_01
+Lia: okay who is being held together by caffeine and denial.
+Yuna: please raise a hand so i know who not to trust with logistics.
 ---
+=== duo_common_needspulse_01
+Lia: this room is flatlining in designer shoes.
+Yuna: dramatic, but medically adjacent.
+---
+=== duo_common_latecrew_01
+Lia: late crew, blink twice if you're spiraling cute.
+Yuna: or once if you're simply refusing sleep again.
+---
+=== duo_common_morningcrew_01
+Lia: morning people, explain yourselves gently.
+Yuna: no, actually, explain yourselves convincingly.
+---
+=== duo_common_lifeupdate_01
+Lia: tiny life update thread? i want crumbs of everybody's lore.
+Yuna: yes. concise crumbs. not a trilogy.
+---
+=== duo_common_peeking_01
+Lia: peeking in counts. i still feel chosen.
+Yuna: minimal effort, disproportionate emotional reward. classic.
+---
+=== duo_common_silence_01
+Lia: which one of you invited this haunted quiet.
+Yuna: identify yourself so we can charge you for damages.
+---
+
+
+

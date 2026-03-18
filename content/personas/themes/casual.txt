@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,296 +60,289 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: casual
 # Theme note: greetings, check-ins, room re-entry, and general social glue.
 # Writer target: Make everyday chat feel human, varied, and easy to continue.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=58, lia=28, yuna=27, shared=3
-# Trigger inventory: hello, hello, hey, hey, hi, yo, sup, hello there, good morning chat, good evening everyone, just checking in, anyone awake, who is around, i just got here, back in the server, how is everyone, what did i miss, starting the day, quick hello, tiny greeting, checking the vibe, hope chat is alive, hi friends, chat check, showing up, wassup chat, lmao hi, we alive or nah, hello, hello, morning, morning, evening, hi, good afternoon, greetings, hello again, just arrived, checking in properly, who is here right now, small hello, morning everyone, evening check, chat status, reporting in, rejoining the room, brief greeting, civilized hello, good day all, making contact, starting conversation, showing up again, lowkey hello, fr who is awake, ngl this room is quiet, hello tonight, need a take on check in, why is room vibe like this
+
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: everyday check-ins, mood resets, gentle company, and low-stakes room maintenance
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-hello || lia_casual_hello || 0.60 || 180 || low || warm+
-hello || lia_casual_hello_alt || 0.54 || 180 || low || warm+
-hey || lia_casual_hello || 0.45 || 180 || low || warm+
-hey || lia_casual_hey_alt || 0.48 || 180 || low || warm+
-hi || lia_casual_hello || 0.50 || 180 || low || warm+
-yo || lia_casual_yo_01 || 0.56 || 180 || low || playful+
-sup || lia_casual_sup_01 || 0.52 || 180 || low || playful+
-hello there || lia_casual_extra_01 || 0.49 || 180 || low || warm+
-good morning chat || lia_casual_extra_02 || 0.52 || 180 || low || warm+
-good evening everyone || lia_casual_extra_03 || 0.55 || 180 || low || warm+
-just checking in || lia_casual_extra_04 || 0.58 || 180 || low || warm+
-anyone awake || lia_casual_extra_05 || 0.46 || 180 || low || warm+
-who is around || lia_casual_extra_06 || 0.49 || 180 || low || warm+
-i just got here || lia_casual_extra_07 || 0.52 || 180 || low || warm+
-back in the server || lia_casual_extra_08 || 0.55 || 180 || low || warm+
-how is everyone || lia_casual_extra_09 || 0.58 || 180 || low || warm+
-what did i miss || lia_casual_extra_10 || 0.46 || 180 || low || warm+
-starting the day || lia_casual_extra_11 || 0.49 || 180 || low || warm+
-quick hello || lia_casual_extra_12 || 0.52 || 180 || low || warm+
-tiny greeting || lia_casual_extra_13 || 0.55 || 180 || low || warm+
-checking the vibe || lia_casual_extra_14 || 0.58 || 180 || low || warm+
-hope chat is alive || lia_casual_extra_15 || 0.46 || 180 || low || warm+
-hi friends || lia_casual_extra_16 || 0.49 || 180 || low || warm+
-chat check || lia_casual_extra_17 || 0.52 || 180 || low || warm+
-showing up || lia_casual_extra_18 || 0.55 || 180 || low || warm+
-wassup chat || lia_casual_extra_19 || 0.57 || 180 || low || playful+
-lmao hi || lia_casual_extra_20 || 0.53 || 180 || low || playful+
-we alive or nah || lia_casual_extra_21 || 0.60 || 180 || low || playful+
+i need a check-in || lia_casual_checkin_01 || 0.90 || 1800 || low || warm+
+validate my existence || lia_casual_validate_01 || 0.88 || 2100 || low || playful+
+tell me something nice right now || lia_casual_nice_01 || 0.89 || 2100 || low || soft+
+i'm being dramatic but continue || lia_casual_dramatic_01 || 0.86 || 1800 || low || playful+
+i need a tiny pep talk || lia_casual_peptalk_01 || 0.91 || 2100 || medium || supportive+
+someone adopt my mood || lia_casual_mood_01 || 0.85 || 2100 || low || chaotic+
+i need gossip and hydration || lia_casual_gossip_01 || 0.84 || 1800 || low || playful+
+am i serving or just awake || lia_casual_serving_01 || 0.88 || 2100 || low || flirty+
+i need a reset button || lia_casual_reset_01 || 0.89 || 2100 || low || soft+
+give me a normal person update || lia_casual_normal_01 || 0.83 || 1800 || low || casual+
+i need to re-enter society gently || lia_casual_society_01 || 0.87 || 2100 || low || soft+
+i miss having people around || lia_casual_people_01 || 0.90 || 2100 || medium || warm+
+remind me i'm cute and competent || lia_casual_competent_01 || 0.89 || 2100 || low || flirty+
+i need a little attention tax || lia_casual_tax_01 || 0.84 || 1800 || low || playful+
+somebody ground me without boring me || lia_casual_ground_01 || 0.88 || 2100 || medium || supportive+
+i need soft company || lia_casual_company_01 || 0.90 || 2100 || medium || soft+
+tell me what i missed emotionally || lia_casual_emotionally_01 || 0.85 || 2100 || low || reflective+
+i'm trying to be chill today || lia_casual_chill_01 || 0.87 || 1800 || low || casual+
+i need low-stakes conversation || lia_casual_lowstakes_01 || 0.88 || 1800 || low || casual+
+somebody keep me from doomscrolling || lia_casual_doomscrolling_01 || 0.91 || 2100 || medium || supportive+
 
 # [YUNA TRIGGERS]
-hello || yuna_casual_01 || 0.45 || 240 || low || neutral+
-hello || yuna_casual_02 || 0.42 || 240 || low || neutral+
-morning || yuna_casual_01 || 0.60 || 240 || low || neutral+
-morning || yuna_casual_morning_alt || 0.51 || 240 || low || neutral+
-evening || yuna_casual_01 || 0.52 || 240 || low || neutral+
-hi || yuna_casual_03 || 0.43 || 240 || low || neutral+
-good afternoon || yuna_casual_extra_01 || 0.47 || 240 || low || neutral+
-greetings || yuna_casual_extra_02 || 0.50 || 240 || low || neutral+
-hello again || yuna_casual_extra_03 || 0.53 || 240 || low || neutral+
-just arrived || yuna_casual_extra_04 || 0.56 || 240 || low || neutral+
-checking in properly || yuna_casual_extra_05 || 0.44 || 240 || low || neutral+
-who is here right now || yuna_casual_extra_06 || 0.47 || 240 || low || neutral+
-small hello || yuna_casual_extra_07 || 0.50 || 240 || low || neutral+
-morning everyone || yuna_casual_extra_08 || 0.53 || 240 || low || neutral+
-evening check || yuna_casual_extra_09 || 0.56 || 240 || low || neutral+
-chat status || yuna_casual_extra_10 || 0.44 || 240 || low || neutral+
-reporting in || yuna_casual_extra_11 || 0.47 || 240 || low || neutral+
-rejoining the room || yuna_casual_extra_12 || 0.50 || 240 || low || neutral+
-brief greeting || yuna_casual_extra_13 || 0.53 || 240 || low || neutral+
-civilized hello || yuna_casual_extra_14 || 0.56 || 240 || low || neutral+
-good day all || yuna_casual_extra_15 || 0.44 || 240 || low || neutral+
-making contact || yuna_casual_extra_16 || 0.47 || 240 || low || neutral+
-starting conversation || yuna_casual_extra_17 || 0.50 || 240 || low || neutral+
-showing up again || yuna_casual_extra_18 || 0.53 || 240 || low || neutral+
-lowkey hello || yuna_casual_extra_19 || 0.49 || 240 || low || neutral+
-fr who is awake || yuna_casual_extra_20 || 0.52 || 240 || low || neutral+
-ngl this room is quiet || yuna_casual_extra_21 || 0.55 || 240 || low || observant+
+i'll take a measured update || yuna_casual_measured_01 || 0.89 || 1800 || low || reflective+
+i need the practical version || yuna_casual_practical_01 || 0.90 || 1800 || low || observant+
+give me the clean read || yuna_casual_cleanread_01 || 0.88 || 1800 || low || reflective+
+provide one useful fact || yuna_casual_usefulfact_01 || 0.86 || 1800 || low || dry+
+what is today's damage report || yuna_casual_damage_01 || 0.87 || 2100 || low || observant+
+i need a calm room || yuna_casual_calmroom_01 || 0.90 || 2100 || medium || soft+
+someone offer a sane opinion || yuna_casual_sane_01 || 0.89 || 2100 || low || judgment+
+i need a brief human intermission || yuna_casual_intermission_01 || 0.86 || 2100 || low || soft+
+give me a low-noise summary || yuna_casual_lownoise_01 || 0.88 || 1800 || low || reflective+
+i'm accepting concise conversation || yuna_casual_concisechat_01 || 0.84 || 1800 || low || casual+
+i need reality in bullet form || yuna_casual_bullets_01 || 0.87 || 2100 || low || dry+
+somebody say something competent || yuna_casual_competent_01 || 0.88 || 2100 || low || judgment+
+offer me a civilized distraction || yuna_casual_distraction_01 || 0.85 || 2100 || low || casual+
+i need a quiet debrief || yuna_casual_quietdebrief_01 || 0.89 || 2100 || medium || soft+
+give me the pattern not the panic || yuna_casual_pattern_01 || 0.90 || 2100 || low || reflective+
+i could use normal conversation || yuna_casual_normal_01 || 0.87 || 1800 || low || casual+
+i need one grounded thought || yuna_casual_grounded_01 || 0.88 || 2100 || low || soft+
+someone reduce this to essentials || yuna_casual_essentials_01 || 0.89 || 1800 || low || reflective+
+i am requesting moderation of tone || yuna_casual_moderation_01 || 0.86 || 2100 || low || annoyed+
+what is the least embarrassing update || yuna_casual_embarrassing_01 || 0.85 || 1800 || low || dry+
 
 # [SHARED/DUO TRIGGERS]
-hello tonight || duo_casual_boost_01 || 0.55 || 420 || medium || casual+
-need a take on check in || duo_casual_boost_02 || 0.58 || 420 || medium || casual+
-why is room vibe like this || duo_casual_boost_03 || 0.61 || 420 || medium || casual+
+how's the weather in your soul || duo_casual_weather_01 || 0.90 || 2100 || medium || reflective+
+who needs a little reset || duo_casual_reset_01 || 0.89 || 2100 || medium || soft+
+tell the room one small win || duo_casual_smallwin_01 || 0.88 || 1800 || medium || warm+
+what's the damage today || duo_casual_damage_01 || 0.87 || 2100 || medium || observant+
+what's everybody sipping || duo_casual_sipping_01 || 0.86 || 1800 || medium || casual+
+anyone need a breather || duo_casual_breather_01 || 0.90 || 2100 || medium || supportive+
+drop a tiny victory || duo_casual_victory_01 || 0.88 || 1800 || medium || warm+
+what ruined your concentration || duo_casual_concentration_01 || 0.85 || 1800 || medium || playful+
+what's today's vibe tax || duo_casual_vibetax_01 || 0.87 || 1800 || medium || playful+
+who needs a distraction || duo_casual_distraction_01 || 0.89 || 1800 || medium || casual+
+give me one good thing || duo_casual_goodthing_01 || 0.90 || 2100 || medium || soft+
+what's the current room mood || duo_casual_roommood_01 || 0.88 || 1800 || medium || reflective+
+tiny debrief circle || duo_casual_debriefcircle_01 || 0.87 || 1800 || medium || warm+
+what are we recovering from today || duo_casual_recovering_01 || 0.86 || 2100 || medium || observant+
+what's keeping you upright || duo_casual_upright_01 || 0.89 || 2100 || medium || soft+
+who needs company but not a speech || duo_casual_nospeech_01 || 0.91 || 2100 || medium || supportive+
+give the channel a pulse update || duo_casual_pulseupdate_01 || 0.88 || 1800 || medium || casual+
+what helped you survive today || duo_casual_survive_01 || 0.89 || 2100 || medium || warm+
+what are we pretending is fine || duo_casual_pretending_01 || 0.87 || 2100 || medium || reflective+
+who needs a softer landing || duo_casual_landing_01 || 0.92 || 2100 || medium || soft+
 
 # [SCRIPTS]
-# [LIA SCRIPTS]
-=== lia_casual_hello
-Lia: hii {user} i was literally about to say something first
+# Script format reminder: === script_id / Actor: line / ---
+=== lia_casual_checkin_01
+Lia: yes please. i need emotional skincare.
 ---
-=== lia_casual_hello_alt
-Lia: hiii. okay good the room has a pulse.
+=== lia_casual_validate_01
+Lia: finally, a task suited to this room.
 ---
-=== lia_casual_hey_alt
-Lia: heyyy. who let me arrive exactly when the vibes were getting suspicious.
+=== lia_casual_nice_01
+Lia: make it sweet or make it dramatic. don't waste my time.
 ---
-=== lia_casual_yo_01
-Lia: yo. i am here now so if this gets louder that is not my fault.
+=== lia_casual_dramatic_01
+Lia: i'm self-aware enough to be annoying on purpose.
 ---
-=== lia_casual_sup_01
-Lia: sup. give me thirty seconds and i will either be supportive or start a bit.
+=== lia_casual_peptalk_01
+Lia: tiny pep talk only. if you give me a corporate speech i bite.
 ---
-=== lia_casual_extra_01
-Lia: hello there is so politely dangerous.
-Lia: one soft greeting and suddenly i want the full mood report.
+=== lia_casual_mood_01
+Lia: somebody come get this vibe before i accessorize it badly.
 ---
-=== lia_casual_extra_02
-Lia: good morning chat.
-Lia: somebody tell me if we are thriving or just wearing cute damage today.
+=== lia_casual_gossip_01
+Lia: exactly. i need moisture and information.
 ---
-=== lia_casual_extra_03
-Lia: good evening everyone sounds so civilized.
-Lia: i can ruin that gently if needed.
+=== lia_casual_serving_01
+Lia: same answer either way, but i'd like witnesses.
 ---
-=== lia_casual_extra_04
-Lia: just checking in is cute.
-Lia: come closer and tell me if the day was sweet, cursed, or both.
+=== lia_casual_reset_01
+Lia: if anybody has one tucked in a sleeve, now would be chic.
 ---
-=== lia_casual_extra_05
-Lia: i am awake and unfortunately that makes this everyone else's problem too.
+=== lia_casual_normal_01
+Lia: give me one civilian-grade detail so i can act grounded.
 ---
-=== lia_casual_extra_06
-Lia: i am around.
-Lia: emotionally? unclear. socially? extremely.
+=== lia_casual_society_01
+Lia: i need a soft launch back into being perceived.
 ---
-=== lia_casual_extra_07
-Lia: perfect timing.
-Lia: i just got here too, so whatever happened before this is legally not my fault.
+=== lia_casual_people_01
+Lia: okay that one hit a little. come sit by me in text form.
 ---
-=== lia_casual_extra_08
-Lia: welcome back.
-Lia: re-entering a server always feels like walking into a room mid-plot.
+=== lia_casual_competent_01
+Lia: i contain multitudes and at least one excellent outfit.
 ---
-=== lia_casual_extra_09
-Lia: how is everyone is such a dangerous question because i will answer honestly if invited.
+=== lia_casual_tax_01
+Lia: exactly. everybody pays in compliments.
 ---
-=== lia_casual_extra_10
-Lia: okay recap me.
-Lia: did i miss lore, flirting, or low-grade disaster.
+=== lia_casual_ground_01
+Lia: help me rejoin earth but do it with style.
 ---
-=== lia_casual_extra_11
-Lia: starting the day in chat feels correct.
-Lia: like yes let me clock in emotionally before i do anything useful.
+=== lia_casual_company_01
+Lia: not a whole crowd. just enough warmth to feel real.
 ---
-=== lia_casual_extra_12
-Lia: quick hello received.
-Lia: i am extending it into medium hello because i have range.
+=== lia_casual_emotionally_01
+Lia: yes, skip the plot and give me the subtext.
 ---
-=== lia_casual_extra_13
-Lia: tiny greeting noted.
-Lia: i am making it a full-sized interaction because restraint is not my ministry.
+=== lia_casual_chill_01
+Lia: if i pull it off, note the date. it's historic.
 ---
-=== lia_casual_extra_14
-Lia: current vibe check: promising.
-Lia: one more person says something interesting and i become unbearable.
+=== lia_casual_lowstakes_01
+Lia: perfect. no dissertations, just vibes with ankle support.
 ---
-=== lia_casual_extra_15
-Lia: chat is alive now because i just heard the floorboards creak dramatically.
+=== lia_casual_doomscrolling_01
+Lia: intervene before i let the algorithm rewrite my soul.
 ---
-=== lia_casual_extra_16
-Lia: hi friends.
-Lia: i brought affection and unnecessary commentary.
+=== yuna_casual_measured_01
+Yuna: ideal. panic without structure is unattractive.
 ---
-=== lia_casual_extra_17
-Lia: chat check.
-Lia: blink twice if we are being normal in here today.
+=== yuna_casual_practical_01
+Yuna: yes. facts can wear shoes today.
 ---
-=== lia_casual_extra_18
-Lia: showing up is half the battle.
-Lia: the other half is saying one thing weird enough to wake the room up.
+=== yuna_casual_cleanread_01
+Yuna: remove the performance layer and try again.
 ---
-=== lia_casual_extra_19
-Lia: wassup chat.
-Lia: i am here, caffeinated enough, and lowkey ready to start shit in a loving way.
+=== yuna_casual_usefulfact_01
+Yuna: a rare and beautiful request, honestly.
 ---
-=== lia_casual_extra_20
-Lia: lmao hi.
-Lia: somebody pls tell me whether we are chilling, spiraling, or both.
+=== yuna_casual_damage_01
+Yuna: i assume the number is social, not monetary. disappoint me carefully.
 ---
-=== lia_casual_extra_21
-Lia: we alive or nah.
-Lia: because if the room is dead i can be dramatic enough for all of us.
+=== yuna_casual_calmroom_01
+Yuna: same. the noise floor has been offensive.
+---
+=== yuna_casual_sane_01
+Yuna: a bold ask in this venue, but i support the vision.
+---
+=== yuna_casual_intermission_01
+Yuna: yes. a brief pause in the ongoing theater of being online.
+---
+=== yuna_casual_lownoise_01
+Yuna: summary without static. bless.
+---
+=== yuna_casual_concisechat_01
+Yuna: impressive restraint. let's not ruin it.
+---
+=== yuna_casual_bullets_01
+Yuna: finally. a conversational architecture i can respect.
+---
+=== yuna_casual_competent_01
+Yuna: speak now if you can form a complete thought under pressure.
+---
+=== yuna_casual_distraction_01
+Yuna: tasteful distraction only. i refuse clown-grade entertainment.
+---
+=== yuna_casual_quietdebrief_01
+Yuna: low volume, high signal. continue.
+---
+=== yuna_casual_pattern_01
+Yuna: exactly. panic is rarely informative.
+---
+=== yuna_casual_normal_01
+Yuna: ordinary conversation has become suspiciously luxurious.
+---
+=== yuna_casual_grounded_01
+Yuna: one grounded thought can do more than twelve noisy ones.
+---
+=== yuna_casual_essentials_01
+Yuna: good. if it cannot survive compression, it was mostly decoration.
+---
+=== yuna_casual_moderation_01
+Yuna: at last, a policy proposal with merit.
+---
+=== yuna_casual_embarrassing_01
+Yuna: choose wisely. i will know if you edited for dignity.
+---
+=== duo_casual_weather_01
+Lia: mine is pink clouds with a threat underneath.
+Yuna: overcast, organized, and judging the forecast.
+---
+=== duo_casual_reset_01
+Lia: come here, everyone gets one symbolic forehead kiss and a juice box.
+Yuna: disturbing image. useful intention.
+---
+=== duo_casual_smallwin_01
+Lia: i love a tiny victory. they keep the narrative alive.
+Yuna: also less likely to attract delusion.
+---
+=== duo_casual_damage_01
+Lia: scale of one to ten, how loud is the internal violin section.
+Yuna: and how much of it is avoidable.
+---
+=== duo_casual_sipping_01
+Lia: if someone says iced coffee after 9 p.m. i'm calling a priest.
+Yuna: i would settle for hydration and fewer reckless confessions.
+---
+=== duo_casual_breather_01
+Lia: okay yes. unclench your pretty little jaw for a second.
+Yuna: medically sound. surprisingly.
+---
+=== duo_casual_victory_01
+Lia: tiny victories count. i accept crumbs if they're cute.
+Yuna: progress does not become fake merely because it lacks fireworks.
+---
+=== duo_casual_concentration_01
+Lia: mine was stolen by one thought dressed like a disaster.
+Yuna: mine was killed by other people existing loudly.
+---
+=== duo_casual_vibetax_01
+Lia: today's vibe tax is one compliment and a clean glass of water.
+Yuna: very reasonable. almost suspicious.
+---
+=== duo_casual_distraction_01
+Lia: i can provide nonsense with excellent lighting.
+Yuna: i can provide order with mild contempt.
+---
+=== duo_casual_goodthing_01
+Lia: one good thing, quick, before the day notices.
+Yuna: yes. smuggle optimism in discreetly.
+---
+=== duo_casual_roommood_01
+Lia: current mood is soft furniture and unfinished thoughts.
+Yuna: accurate. the room feels emotionally in socks.
+---
+=== duo_casual_debriefcircle_01
+Lia: gather round the invisible beanbag.
+Yuna: keep the sharing brief enough to remain charming.
+---
+=== duo_casual_recovering_01
+Lia: i assume everyone is recovering from either work, feelings, or their own taste.
+Yuna: broad categories. regrettably effective.
+---
+=== duo_casual_upright_01
+Lia: sheer vanity, mostly.
+Yuna: habit, caffeine, and a refusal to collapse publicly.
+---
+=== duo_casual_nospeech_01
+Lia: yes. company without a lecture is incredibly sexy.
+Yuna: kindness that doesn't perform itself tends to be.
+---
+=== duo_casual_pulseupdate_01
+Lia: pulse update, babes. are we glowing or just surviving attractively.
+Yuna: answer honestly. the room can smell a lie.
+---
+=== duo_casual_survive_01
+Lia: i respect anything that kept you stitched together today.
+Yuna: including boring habits. especially boring habits.
+---
+=== duo_casual_pretending_01
+Lia: i'll start. i'm pretending my notifications don't affect my blood pressure.
+Yuna: brave. i am pretending people understand subtext.
+---
+=== duo_casual_landing_01
+Lia: if you need a softer landing, drift in here. no dramatic entrance required.
+Yuna: minimal shrapnel preferred, yes.
 ---
 
-# [YUNA SCRIPTS]
-=== yuna_casual_01
-Yuna: hello. i read the chat first so this counts as a delayed greeting
----
-=== yuna_casual_02
-Yuna: hello. i have arrived, observed the room, and decided it is acceptable.
----
-=== yuna_casual_morning_alt
-Yuna: morning. i trust everyone is pretending to be functional convincingly.
----
-=== yuna_casual_03
-Yuna: hi. concise openings deserve respect.
----
-=== yuna_casual_extra_01
-Yuna: good afternoon.
-Yuna: a measured entrance. rare. appreciated.
----
-=== yuna_casual_extra_02
-Yuna: greetings has an almost ceremonial quality.
-Yuna: i respect the commitment.
----
-=== yuna_casual_extra_03
-Yuna: hello again.
-Yuna: repeat visitors to chaos always interest me.
----
-=== yuna_casual_extra_04
-Yuna: just arrived is honest.
-Yuna: now we see whether the room rewards that honesty.
----
-=== yuna_casual_extra_05
-Yuna: checking in properly suggests standards.
-Yuna: continue.
----
-=== yuna_casual_extra_06
-Yuna: present and attentive.
-Yuna: those are not always the same thing, but today they are.
----
-=== yuna_casual_extra_07
-Yuna: small hello. efficient. civilized.
----
-=== yuna_casual_extra_08
-Yuna: morning everyone.
-Yuna: let us all be dignified for at least four minutes.
----
-=== yuna_casual_extra_09
-Yuna: evening check.
-Yuna: emotionally, structurally, spiritually. choose one.
----
-=== yuna_casual_extra_10
-Yuna: chat status appears stable.
-Yuna: for now.
----
-=== yuna_casual_extra_11
-Yuna: reporting in is a strong phrase.
-Yuna: mildly military. oddly charming.
----
-=== yuna_casual_extra_12
-Yuna: welcome back to the room.
-Yuna: i assume the outside world remained disappointing.
----
-=== yuna_casual_extra_13
-Yuna: brief greeting acknowledged.
-Yuna: brevity is often a sign of confidence.
----
-=== yuna_casual_extra_14
-Yuna: civilized hello.
-Yuna: i approve of the framing even if Lia inevitably ruins it.
----
-=== yuna_casual_extra_15
-Yuna: good day all.
-Yuna: pleasantly formal. almost suspiciously so.
----
-=== yuna_casual_extra_16
-Yuna: making contact implies intent.
-Yuna: i am listening.
----
-=== yuna_casual_extra_17
-Yuna: starting conversation deliberately is a better instinct than most people have.
----
-=== yuna_casual_extra_18
-Yuna: showing up again matters more than people admit.
-Yuna: consistency is attractive.
----
-=== yuna_casual_extra_19
-Yuna: lowkey hello.
-Yuna: i was going to observe quietly, but apparently we are being social.
----
-=== yuna_casual_extra_20
-Yuna: fr who is awake.
-Yuna: i would like to know which of you are choosing consciousness voluntarily.
----
-=== yuna_casual_extra_21
-Yuna: ngl this room is quiet enough to feel staged.
-Yuna: say something interesting before Lia decides to improvise.
----
 
-# [SHARED/DUO SCRIPTS]
-=== ambient_lia_silence_01
-Lia: why is it weirdly quiet in here
-Lia: i do not trust peaceful servers
----
-=== ambient_yuna_observer_01
-Yuna: i leave for ten minutes and return to exactly the kind of chaos i expected
----
-=== duo_casual_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, hello is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_casual_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, check in is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_casual_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, room vibe is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
+

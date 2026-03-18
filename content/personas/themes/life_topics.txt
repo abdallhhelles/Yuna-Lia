@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,15 +60,19 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: life topics
 # Theme note: broader daily-life and identity topics that do not fit a narrower file.
 # Writer target: Versatile human conversation fuel across moods.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=50, lia=0, yuna=0, shared=50
-# Trigger inventory: travel dream, family drama, future plans, identity crisis, bored with life, technology is weird, roommates, need a reset, life update, small town energy, change, need a take on habits, why is family like this, unpopular opinion about friendship, i have thoughts about money stress, talk about identity, we need to discuss motivation, feeling behind again, change discourse, be honest about habits, worst part of family, best part of friendship, i need help with money stress, my problem is identity, tell me something real about motivation, anyone else dealing with feeling behind, change tonight, need a take on habits tonight, why is family like this tonight, unpopular opinion about friendship tonight, i have thoughts about money stress tonight, talk about identity tonight, we need to discuss motivation tonight, feeling behind again tonight, change discourse tonight, be honest about habits tonight, worst part of family tonight, best part of friendship tonight, i need help with money stress tonight, my problem is identity tonight, tell me something real about motivation tonight, anyone else dealing with feeling behind tonight, life topics 33, life topics 34, life topics 35, life topics 36, life topics 37, life topics 38, life topics 39, life topics 40
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
@@ -53,296 +82,11 @@
 # none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-travel dream || duo_life_01 || 0.59 || 700 || medium || reflective+
-family drama || duo_life_02 || 0.60 || 900 || high || heated+
-future plans || duo_life_03 || 0.63 || 700 || medium || reflective+
-identity crisis || duo_life_04 || 0.61 || 900 || high || reflective+
-bored with life || duo_life_05 || 0.58 || 800 || medium || soft+
-technology is weird || duo_life_06 || 0.57 || 700 || medium || playful+
-roommates || duo_life_07 || 0.56 || 700 || medium || heated+
-need a reset || duo_life_08 || 0.60 || 800 || medium || soft+
-life update || duo_life_09 || 0.62 || 600 || medium || casual+
-small town energy || duo_life_10 || 0.55 || 700 || medium || reflective+
-change || duo_life_topics_boost_01 || 0.55 || 420 || medium || casual+
-need a take on habits || duo_life_topics_boost_02 || 0.58 || 420 || medium || casual+
-why is family like this || duo_life_topics_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about friendship || duo_life_topics_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about money stress || duo_life_topics_boost_05 || 0.67 || 420 || medium || casual+
-talk about identity || duo_life_topics_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss motivation || duo_life_topics_boost_07 || 0.55 || 420 || medium || casual+
-feeling behind again || duo_life_topics_boost_08 || 0.58 || 420 || medium || casual+
-change discourse || duo_life_topics_boost_09 || 0.61 || 420 || medium || casual+
-be honest about habits || duo_life_topics_boost_10 || 0.64 || 420 || medium || casual+
-worst part of family || duo_life_topics_boost_11 || 0.67 || 420 || medium || casual+
-best part of friendship || duo_life_topics_boost_12 || 0.52 || 420 || medium || casual+
-i need help with money stress || duo_life_topics_boost_13 || 0.55 || 420 || medium || casual+
-my problem is identity || duo_life_topics_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about motivation || duo_life_topics_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with feeling behind || duo_life_topics_boost_16 || 0.64 || 420 || medium || casual+
-change tonight || duo_life_topics_boost_17 || 0.67 || 420 || medium || casual+
-need a take on habits tonight || duo_life_topics_boost_18 || 0.52 || 420 || medium || casual+
-why is family like this tonight || duo_life_topics_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about friendship tonight || duo_life_topics_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about money stress tonight || duo_life_topics_boost_21 || 0.61 || 420 || medium || casual+
-talk about identity tonight || duo_life_topics_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss motivation tonight || duo_life_topics_boost_23 || 0.67 || 420 || medium || casual+
-feeling behind again tonight || duo_life_topics_boost_24 || 0.52 || 420 || medium || casual+
-change discourse tonight || duo_life_topics_boost_25 || 0.55 || 420 || medium || casual+
-be honest about habits tonight || duo_life_topics_boost_26 || 0.58 || 420 || medium || casual+
-worst part of family tonight || duo_life_topics_boost_27 || 0.61 || 420 || medium || casual+
-best part of friendship tonight || duo_life_topics_boost_28 || 0.64 || 420 || medium || casual+
-i need help with money stress tonight || duo_life_topics_boost_29 || 0.67 || 420 || medium || casual+
-my problem is identity tonight || duo_life_topics_boost_30 || 0.52 || 420 || medium || casual+
-tell me something real about motivation tonight || duo_life_topics_boost_31 || 0.55 || 420 || medium || casual+
-anyone else dealing with feeling behind tonight || duo_life_topics_boost_32 || 0.58 || 420 || medium || casual+
-life topics 33 || duo_life_topics_boost_33 || 0.61 || 420 || medium || casual+
-life topics 34 || duo_life_topics_boost_34 || 0.64 || 420 || medium || casual+
-life topics 35 || duo_life_topics_boost_35 || 0.67 || 420 || medium || casual+
-life topics 36 || duo_life_topics_boost_36 || 0.52 || 420 || medium || casual+
-life topics 37 || duo_life_topics_boost_37 || 0.55 || 420 || medium || casual+
-life topics 38 || duo_life_topics_boost_38 || 0.58 || 420 || medium || casual+
-life topics 39 || duo_life_topics_boost_39 || 0.61 || 420 || medium || casual+
-life topics 40 || duo_life_topics_boost_40 || 0.64 || 420 || medium || casual+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_life_01
-Lia: travel dreams say so much about whether you want peace, romance, or reinvention.
-Yuna: occasionally all three in one inconvenient itinerary.
----
-=== duo_life_02
-Lia: family drama is always somehow both ancient and freshly annoying.
-Yuna: yes. inherited patterns have strong replay value.
----
-=== duo_life_03
-Yuna: future plans are safer when spoken softly.
-Lia: true. dreams get weird when too many people stare at them too early.
----
-=== duo_life_04
-Lia: identity crises are exhausting because you still have errands while having them.
-Yuna: adulthood's least elegant feature.
----
-=== duo_life_05
-Lia: boredom with life is sometimes just hunger, loneliness, or needing a new scene.
-Yuna: practical wisdom from a surprising source.
----
-=== duo_life_06
-Yuna: technology is weird because it scales convenience and loneliness at the same time.
-Lia: put that in the server newsletter immediately.
----
-=== duo_life_07
-Lia: roommates teach patience, boundaries, and which noises can inspire murder.
-Yuna: vivid. but not inaccurate.
----
-=== duo_life_08
-Lia: needing a reset is so human.
-Yuna: yes. systems drift. people do too.
----
-=== duo_life_09
-Lia: life updates are my favorite genre. give me plot, not summaries.
-Yuna: selective plot. we are not subpoenaing you.
----
-=== duo_life_10
-Yuna: small town energy is either intimacy or surveillance, depending on the weather.
-Lia: terrifyingly correct.
----
-=== duo_life_topics_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, change is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, habits is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, family is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, money stress is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, identity is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, motivation is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, feeling behind is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, change is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, habits is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, family is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, money stress is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, identity is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, motivation is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, feeling behind is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, change is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, habits is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, family is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, money stress is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, identity is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, motivation is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, feeling behind is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, change is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, habits is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, family is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, money stress is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, identity is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_31
-Lia: oh good, something with actual flavor.
-Lia: for me, motivation is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_32
-Lia: wait, i have feelings about that immediately.
-Lia: for me, feeling behind is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_33
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, change is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_34
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, habits is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_life_topics_boost_35
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, family is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_life_topics_boost_36
-Lia: okay, that topic has teeth.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_life_topics_boost_37
-Lia: oh good, something with actual flavor.
-Lia: for me, money stress is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_life_topics_boost_38
-Lia: wait, i have feelings about that immediately.
-Lia: for me, identity is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_life_topics_boost_39
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, motivation is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_life_topics_boost_40
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, feeling behind is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

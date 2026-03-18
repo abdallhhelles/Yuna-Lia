@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,315 +60,289 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: conversation starters
 # Theme note: broad prompts, softer re-entry, reflective setup, and room-opening questions.
 # Writer target: Kick off momentum without sounding like a prompt generator.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=50, lia=0, yuna=0, shared=50
-# Trigger inventory: coffee, lonely, ghosted, deep question, fun fact, tell me a story, ask something deep, say something comforting, start a random topic, give us a thought, what is on your mind, fun fact me, start a conversation, late night check in, say something interesting, what are we discussing, open a new topic, talk about life, give us a prompt, start with a question, good question, need a take on story, why is comfort like this, unpopular opinion about real thought, i have thoughts about weird opinion, talk about new topic, we need to discuss mood, confession again, good question discourse, be honest about story, worst part of comfort, best part of real thought, i need help with weird opinion, my problem is new topic, tell me something real about mood, anyone else dealing with confession, good question tonight, need a take on story tonight, why is comfort like this tonight, unpopular opinion about real thought tonight, i have thoughts about weird opinion tonight, talk about new topic tonight, we need to discuss mood tonight, confession again tonight, good question discourse tonight, be honest about story tonight, worst part of comfort tonight, best part of real thought tonight, i need help with weird opinion tonight, my problem is new topic tonight
+
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: room-openers, hot takes, intimacy prompts, identity bait, and modern social-psych questions
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-# none yet for Lia
+tell me your latest bad idea || lia_starters_badidea_01 || 0.90 || 2400 || medium || playful+
+what's your current obsession || lia_starters_obsession_01 || 0.89 || 2400 || medium || curious+
+what would ruin your life in a fun way || lia_starters_ruinlife_01 || 0.86 || 2700 || medium || chaotic+
+what's the most delusional plan you have || lia_starters_delusional_01 || 0.88 || 2700 || medium || chaotic+
+what are you irrationally protective of || lia_starters_protective_01 || 0.87 || 2400 || medium || warm+
+what would your warning label say || lia_starters_warning_01 || 0.89 || 2400 || medium || playful+
+what's your petty superpower || lia_starters_petty_01 || 0.88 || 2400 || medium || teasing+
+what's your most unserious flex || lia_starters_flex_01 || 0.90 || 2400 || medium || playful+
+what's your most dangerous impulse purchase || lia_starters_purchase_01 || 0.86 || 2700 || medium || playful+
+what's a hill you'd die on dramatically || lia_starters_hill_01 || 0.89 || 2400 || medium || dramatic+
+what's your weirdest comfort thing || lia_starters_comfort_01 || 0.87 || 2400 || medium || soft+
+what instantly makes you judge someone || lia_starters_judge_01 || 0.88 || 2400 || medium || teasing+
+what's your softest opinion || lia_starters_softest_01 || 0.85 || 2400 || medium || soft+
+what are you glamorizing this week || lia_starters_glamorizing_01 || 0.84 || 2700 || medium || flirty+
+what's a text that could ruin your night || lia_starters_text_01 || 0.88 || 2700 || medium || dramatic+
+what's your favorite kind of attention || lia_starters_attention_01 || 0.90 || 2400 || medium || flirty+
+what makes you fold immediately || lia_starters_fold_01 || 0.87 || 2400 || medium || playful+
+what deserves a public apology || lia_starters_apology_01 || 0.86 || 2700 || medium || judgment+
+what's the messiest possible plot twist || lia_starters_plot_01 || 0.88 || 2700 || medium || chaotic+
+what energy are you bringing today || lia_starters_energy_01 || 0.89 || 2400 || medium || casual+
 
 # [YUNA TRIGGERS]
-# none yet for Yuna
+state one opinion that gets you exiled || yuna_starters_exiled_01 || 0.90 || 2400 || medium || judgment+
+what pattern are you noticing lately || yuna_starters_pattern_01 || 0.89 || 2400 || medium || reflective+
+what's an overrated life rule || yuna_starters_liferule_01 || 0.88 || 2400 || medium || dry+
+what do people romanticize too much || yuna_starters_romanticize_01 || 0.89 || 2400 || medium || judgment+
+what behavior ends your respect instantly || yuna_starters_respect_01 || 0.90 || 2700 || medium || judgment+
+what truth do people dodge for sport || yuna_starters_truth_01 || 0.87 || 2700 || medium || reflective+
+what's a boring habit that actually saves you || yuna_starters_habit_01 || 0.86 || 2400 || medium || soft+
+what social cue do people fail constantly || yuna_starters_socialcue_01 || 0.89 || 2400 || medium || observant+
+what's a red flag people misread || yuna_starters_misread_01 || 0.88 || 2400 || medium || reflective+
+what does confidence look like when it's real || yuna_starters_confidence_01 || 0.87 || 2400 || medium || reflective+
+what kind of silence do you trust || yuna_starters_silence_01 || 0.88 || 2400 || medium || soft+
+what's the difference between mystery and avoidance || yuna_starters_mystery_01 || 0.90 || 2700 || medium || reflective+
+what's an efficient kindness people forget || yuna_starters_kindness_01 || 0.85 || 2400 || medium || soft+
+what opinion did you revise recently || yuna_starters_revise_01 || 0.86 || 2400 || medium || observant+
+what makes someone impossible to take seriously || yuna_starters_seriously_01 || 0.89 || 2700 || medium || judgment+
+what tells you a room is doomed || yuna_starters_doomed_01 || 0.88 || 2400 || medium || dry+
+what's a small thing that reveals character || yuna_starters_character_01 || 0.87 || 2400 || medium || reflective+
+what deserves less public discussion || yuna_starters_lesspublic_01 || 0.86 || 2400 || medium || judgment+
+what question exposes too much too fast || yuna_starters_exposes_01 || 0.89 || 2700 || medium || observant+
+what's a rule you keep breaking on purpose || yuna_starters_breaking_01 || 0.88 || 2400 || medium || dry+
 
 # [SHARED/DUO TRIGGERS]
-coffee || duo_work_life_rant_01 || 0.70 || 200 || low || casual+
-lonely || duo_support_scene_01 || 0.40 || 1200 || high || soft+
-ghosted || duo_trauma_story_02 || 0.50 || 900 || medium || emotional+
-deep question || duo_deep_question_01 || 0.75 || 900 || medium || reflective+
-fun fact || duo_fun_fact_01 || 0.65 || 900 || medium || reflective+
-tell me a story || duo_conversation_extra_01 || 0.57 || 420 || medium || reflective+
-ask something deep || duo_conversation_extra_02 || 0.60 || 420 || medium || reflective+
-say something comforting || duo_conversation_extra_03 || 0.63 || 420 || medium || reflective+
-start a random topic || duo_conversation_extra_04 || 0.66 || 420 || medium || reflective+
-give us a thought || duo_conversation_extra_05 || 0.54 || 420 || medium || reflective+
-what is on your mind || duo_conversation_extra_06 || 0.57 || 420 || medium || reflective+
-fun fact me || duo_conversation_extra_07 || 0.60 || 420 || medium || reflective+
-start a conversation || duo_conversation_extra_08 || 0.63 || 420 || medium || reflective+
-late night check in || duo_conversation_extra_09 || 0.66 || 420 || medium || reflective+
-say something interesting || duo_conversation_extra_10 || 0.54 || 420 || medium || reflective+
-what are we discussing || duo_conversation_extra_11 || 0.57 || 420 || medium || reflective+
-open a new topic || duo_conversation_extra_12 || 0.60 || 420 || medium || reflective+
-talk about life || duo_conversation_extra_13 || 0.63 || 420 || medium || reflective+
-give us a prompt || duo_conversation_extra_14 || 0.66 || 420 || medium || reflective+
-start with a question || duo_conversation_extra_15 || 0.54 || 420 || medium || reflective+
-good question || duo_conversation_starters_boost_01 || 0.55 || 420 || medium || casual+
-need a take on story || duo_conversation_starters_boost_02 || 0.58 || 420 || medium || casual+
-why is comfort like this || duo_conversation_starters_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about real thought || duo_conversation_starters_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about weird opinion || duo_conversation_starters_boost_05 || 0.67 || 420 || medium || casual+
-talk about new topic || duo_conversation_starters_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss mood || duo_conversation_starters_boost_07 || 0.55 || 420 || medium || casual+
-confession again || duo_conversation_starters_boost_08 || 0.58 || 420 || medium || casual+
-good question discourse || duo_conversation_starters_boost_09 || 0.61 || 420 || medium || casual+
-be honest about story || duo_conversation_starters_boost_10 || 0.64 || 420 || medium || casual+
-worst part of comfort || duo_conversation_starters_boost_11 || 0.67 || 420 || medium || casual+
-best part of real thought || duo_conversation_starters_boost_12 || 0.52 || 420 || medium || casual+
-i need help with weird opinion || duo_conversation_starters_boost_13 || 0.55 || 420 || medium || casual+
-my problem is new topic || duo_conversation_starters_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about mood || duo_conversation_starters_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with confession || duo_conversation_starters_boost_16 || 0.64 || 420 || medium || casual+
-good question tonight || duo_conversation_starters_boost_17 || 0.67 || 420 || medium || casual+
-need a take on story tonight || duo_conversation_starters_boost_18 || 0.52 || 420 || medium || casual+
-why is comfort like this tonight || duo_conversation_starters_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about real thought tonight || duo_conversation_starters_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about weird opinion tonight || duo_conversation_starters_boost_21 || 0.61 || 420 || medium || casual+
-talk about new topic tonight || duo_conversation_starters_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss mood tonight || duo_conversation_starters_boost_23 || 0.67 || 420 || medium || casual+
-confession again tonight || duo_conversation_starters_boost_24 || 0.52 || 420 || medium || casual+
-good question discourse tonight || duo_conversation_starters_boost_25 || 0.55 || 420 || medium || casual+
-be honest about story tonight || duo_conversation_starters_boost_26 || 0.58 || 420 || medium || casual+
-worst part of comfort tonight || duo_conversation_starters_boost_27 || 0.61 || 420 || medium || casual+
-best part of real thought tonight || duo_conversation_starters_boost_28 || 0.64 || 420 || medium || casual+
-i need help with weird opinion tonight || duo_conversation_starters_boost_29 || 0.67 || 420 || medium || casual+
-my problem is new topic tonight || duo_conversation_starters_boost_30 || 0.52 || 420 || medium || casual+
+drop your least defendable take || duo_starters_take_01 || 0.91 || 2400 || medium || playful+
+what's the current group delusion || duo_starters_delusion_01 || 0.90 || 2400 || medium || judgment+
+what are we all pretending not to notice || duo_starters_notice_01 || 0.89 || 2400 || medium || reflective+
+name one oddly intimate habit || duo_starters_habit_01 || 0.88 || 2400 || medium || soft+
+what's a take that gets you side-eyed || duo_starters_sideeyed_01 || 0.87 || 2400 || medium || teasing+
+what's the most 2026 sentence you've said this week || duo_starters_2026_01 || 0.90 || 2700 || medium || playful+
+what would your personal propaganda poster say || duo_starters_propaganda_01 || 0.86 || 2400 || medium || chaotic+
+what's your most replayed internal monologue || duo_starters_monologue_01 || 0.88 || 2400 || medium || reflective+
+what part of adulthood feels fake || duo_starters_adulthood_01 || 0.89 || 2400 || medium || reflective+
+what's the pettiest thing that still affects you || duo_starters_pettiest_01 || 0.88 || 2400 || medium || teasing+
+what would your crashout soundtrack be || duo_starters_soundtrack_01 || 0.87 || 2700 || medium || chaotic+
+what's the most suspiciously attractive trait || duo_starters_trait_01 || 0.89 || 2400 || medium || flirty+
+what's a compliment that changes your whole posture || duo_starters_compliment_01 || 0.90 || 2400 || medium || warm+
+what's an opinion that sounds worse out loud || duo_starters_outloud_01 || 0.86 || 2400 || medium || judgment+
+what kind of chaos do you accidentally create || duo_starters_accidental_01 || 0.88 || 2400 || medium || chaotic+
+what topic could make this room spiral || duo_starters_spiral_01 || 0.89 || 2700 || medium || chaotic+
+what do you miss that you pretend you don't || duo_starters_miss_01 || 0.88 || 2400 || medium || soft+
+what instantly shifts your vibe || duo_starters_shift_01 || 0.87 || 2400 || medium || casual+
+what's something you know better than to text || duo_starters_text_01 || 0.90 || 2700 || medium || judgment+
+what minor thing feels weirdly romantic || duo_starters_romantic_01 || 0.91 || 2400 || medium || warm+
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_work_life_rant_01
-Lia: coffee is the only reason i still answer people before noon.
-Yuna: tea achieves the same thing without sounding like a cry for help.
-Lia: unbelievable propaganda.
+# Script format reminder: === script_id / Actor: line / ---
+=== lia_starters_badidea_01
+Lia: yes. confess beautifully. i support a tasteful amount of bad judgment.
 ---
-=== duo_support_scene_01
-Lia: hey. if tonight feels weird, stay in chat anyway.
-Yuna: presence counts even when conversation does not.
+=== lia_starters_obsession_01
+Lia: current obsession thread immediately. i want to see where everyone's soul is renting.
 ---
-=== duo_trauma_story_02
-Lia: being ghosted should count as emotional littering.
-Yuna: most people were not ghosted. they were ignored with administrative precision.
-Lia: somehow that was worse.
+=== lia_starters_ruinlife_01
+Lia: fun way only. i'm not doing bleak realism before dinner.
 ---
-=== duo_deep_question_01
-Yuna: deep question. do people actually change or do they just get better at narration.
-Lia: rude. gorgeous question, but rude.
+=== lia_starters_delusional_01
+Lia: if the plan doesn't require unreasonable confidence, why even bring it up.
 ---
-=== duo_fun_fact_01
-Yuna: fun fact. octopuses have three hearts and still handle relationships better than most servers.
-Lia: that fact became judgment suspiciously fast.
+=== lia_starters_protective_01
+Lia: mine is any little thing that has ever looked at me tenderly once.
 ---
-=== duo_conversation_extra_01
-Lia: tell me a story is my favorite kind of demand.
-Yuna: because it lets you interrupt halfway through and declare emotional ownership.
-Lia: yes. exactly. finally somebody respects the craft.
+=== lia_starters_warning_01
+Lia: mine would say handle with flair and don't text me dry.
 ---
-=== duo_conversation_extra_02
-Yuna: fine. here is a deep one.
-Yuna: what part of you is real when nobody is watching.
-Lia: okay wow. we skipped small talk and drove straight into the ocean.
+=== lia_starters_petty_01
+Lia: i can detect bad vibes through walls. that's community service.
 ---
-=== duo_conversation_extra_03
-Lia: okay. breathe your shoulders down a little.
-Yuna: most bad days end before the story in your head does.
-Lia: exactly. stay here until your brain stops exaggerating the damage.
+=== lia_starters_flex_01
+Lia: unserious flexes are the backbone of civilization.
 ---
-=== duo_conversation_extra_04
-Lia: random topic. what is a completely unserious hill you would still die on.
-Yuna: mine is that bad lighting reveals character failure.
+=== lia_starters_purchase_01
+Lia: if the purchase looked like destiny for thirty seconds, i understand.
 ---
-=== duo_conversation_extra_05
-Yuna: thought for the room.
-Yuna: people confuse being hard to read with being deep far too often.
-Lia: brutal. correct. a little targeted.
+=== lia_starters_hill_01
+Lia: if you're not willing to perish theatrically for it, pick a weaker hill.
 ---
-=== duo_conversation_extra_06
-Lia: what is on my mind is snacks, gossip, and one dramatic theory i cannot prove yet.
-Yuna: mine is whether self-awareness actually improves behavior or just improves excuses.
+=== lia_starters_comfort_01
+Lia: weird comfort things reveal the real lore. start talking.
 ---
-=== duo_conversation_extra_07
-Yuna: fun fact. wombats produce cube-shaped droppings.
-Lia: that is upsettingly elegant.
-Yuna: nature occasionally commits to a bit.
+=== lia_starters_judge_01
+Lia: i love a harmless little judgment. it's seasoning.
 ---
-=== duo_conversation_extra_08
-Lia: conversation started.
-Lia: everybody say one thing that improved their week or made it objectively weirder.
+=== lia_starters_softest_01
+Lia: soft opinions are intimate. choose one and expose your ribs.
 ---
-=== duo_conversation_extra_09
-Yuna: late night check in.
-Yuna: are we tired, honest, or about to become both.
-Lia: personally i am one message away from accidental sincerity.
+=== lia_starters_glamorizing_01
+Lia: if the answer is rest, that's not glamorizing. that's survival with branding.
 ---
-=== duo_conversation_extra_10
-Yuna: interesting thing.
-Yuna: the version of you most people know is usually just your timing.
-Lia: that was sexy and upsetting. continue.
+=== lia_starters_text_01
+Lia: one message can knock the earrings off a whole evening.
 ---
-=== duo_conversation_extra_11
-Lia: currently? vibes, probably.
-Yuna: and if the room behaves, perhaps standards.
+=== lia_starters_attention_01
+Lia: i respect attention with texture. not lazy crumbs.
 ---
-=== duo_conversation_extra_12
-Lia: new topic.
-Lia: what tiny thing instantly makes you like a person more.
-Yuna: competent silence is underrated.
+=== lia_starters_fold_01
+Lia: if you say competence and good hands i'm muting myself preemptively.
 ---
-=== duo_conversation_extra_13
-Yuna: life is mostly maintenance interrupted by brief flashes of meaning.
-Lia: and flirting. do not erase flirting from the human condition.
+=== lia_starters_apology_01
+Lia: make the apology public and pretty. i want production value.
 ---
-=== duo_conversation_extra_14
-Lia: prompt for the room.
-Lia: tell us the pettiest opinion you have that still survives daylight.
+=== lia_starters_plot_01
+Lia: if nobody gasps, it wasn't messy enough.
 ---
-=== duo_conversation_extra_15
-Yuna: question.
-Yuna: what trait do you forgive in attractive people faster than you should.
-Lia: oh that one is going to produce confessions immediately.
+=== lia_starters_energy_01
+Lia: mine is expensive candle during a mild emergency.
 ---
-=== duo_conversation_starters_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, good question is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_starters_exiled_01
+Yuna: excellent. i trust opinions that arrive with consequences.
 ---
-=== duo_conversation_starters_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, story is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_starters_pattern_01
+Yuna: patterns are the only gossip i fully respect.
 ---
-=== duo_conversation_starters_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, comfort is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_starters_liferule_01
+Yuna: overrated life rules are usually just fear wearing decent tailoring.
 ---
-=== duo_conversation_starters_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, real thought is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_starters_romanticize_01
+Yuna: begin. i have a list and poor patience.
 ---
-=== duo_conversation_starters_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, weird opinion is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_starters_respect_01
+Yuna: immediate respect loss is one of nature's cleaner instincts.
 ---
-=== duo_conversation_starters_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, new topic is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_starters_truth_01
+Yuna: truths people dodge tend to be the useful ones.
 ---
-=== duo_conversation_starters_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, mood is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_starters_habit_01
+Yuna: boring habits keep more people alive than charisma does.
 ---
-=== duo_conversation_starters_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, confession is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_starters_socialcue_01
+Yuna: constant failure there explains at least half the internet.
 ---
-=== duo_conversation_starters_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, good question is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_starters_misread_01
+Yuna: yes. people love mislabeling danger as mystery.
 ---
-=== duo_conversation_starters_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, story is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_starters_confidence_01
+Yuna: real confidence takes up space without demanding applause.
 ---
-=== duo_conversation_starters_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, comfort is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_starters_silence_01
+Yuna: trusted silence is one of the rarest luxuries.
 ---
-=== duo_conversation_starters_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, real thought is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_starters_mystery_01
+Yuna: excellent question. one is intrigue, the other is admin failure.
 ---
-=== duo_conversation_starters_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, weird opinion is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_starters_kindness_01
+Yuna: efficient kindness is elite. low drama, high effect.
 ---
-=== duo_conversation_starters_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, new topic is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_starters_revise_01
+Yuna: revised opinions are usually worth more than inherited ones.
 ---
-=== duo_conversation_starters_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, mood is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== yuna_starters_seriously_01
+Yuna: impossible to take seriously is a deeply curated category.
 ---
-=== duo_conversation_starters_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, confession is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== yuna_starters_doomed_01
+Yuna: once a room rewards bad faith, it begins to compost.
 ---
-=== duo_conversation_starters_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, good question is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== yuna_starters_character_01
+Yuna: small tells are the whole architecture, really.
 ---
-=== duo_conversation_starters_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, story is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== yuna_starters_lesspublic_01
+Yuna: half of modern discourse could be solved by strategic privacy.
 ---
-=== duo_conversation_starters_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, comfort is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== yuna_starters_exposes_01
+Yuna: ideal. some questions are basically emotional search warrants.
 ---
-=== duo_conversation_starters_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, real thought is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== yuna_starters_breaking_01
+Yuna: rules kept intact forever are either good or untested. usually the second.
 ---
-=== duo_conversation_starters_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, weird opinion is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== duo_starters_take_01
+Lia: yes. i want the take you can only defend with eye contact and reckless faith.
+Yuna: preferably one that collapses under gentle scrutiny.
 ---
-=== duo_conversation_starters_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, new topic is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== duo_starters_delusion_01
+Lia: group delusion check. are we romanticizing chaos again.
+Yuna: "again" implies there was an off-season.
 ---
-=== duo_conversation_starters_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, mood is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== duo_starters_notice_01
+Lia: i love this question because it immediately turns the lights on.
+Yuna: and reveals who was pretending to be furniture.
 ---
-=== duo_conversation_starters_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, confession is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== duo_starters_habit_01
+Lia: oddly intimate habits are my favorite accidental confessions.
+Yuna: people reveal themselves most efficiently when they think they're being cute.
 ---
-=== duo_conversation_starters_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, good question is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
+=== duo_starters_sideeyed_01
+Lia: give me the take that earns a full-body side-eye, not just a glance.
+Yuna: yes. i want premium disapproval.
 ---
-=== duo_conversation_starters_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, story is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
+=== duo_starters_2026_01
+Lia: if nobody says something mildly cursed and weirdly elegant, i'll do it myself.
+Yuna: please do. field research matters.
 ---
-=== duo_conversation_starters_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, comfort is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
+=== duo_starters_propaganda_01
+Lia: mine would be dramatic, glossy, and one hundred percent emotionally misleading.
+Yuna: mine would feature restraint and terrifyingly clean typography.
 ---
-=== duo_conversation_starters_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, real thought is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
+=== duo_starters_monologue_01
+Lia: replayed internal monologues are just private edits of your public myth.
+Yuna: a grand sentence for something usually involving regret.
 ---
-=== duo_conversation_starters_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, weird opinion is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
+=== duo_starters_adulthood_01
+Lia: adulthood feels fake every time i buy vitamins on purpose.
+Yuna: or schedule anything further than three days out and mean it.
 ---
-=== duo_conversation_starters_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, new topic is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
+=== duo_starters_pettiest_01
+Lia: petty things linger because they arrive wearing tiny hooks.
+Yuna: and because pride is a hoarder.
 ---
+=== duo_starters_soundtrack_01
+Lia: crashout soundtrack thread. i want violins, bad decisions, and one song that lies for you.
+Yuna: keep it revealing. no coward playlists.
+---
+=== duo_starters_trait_01
+Lia: suspiciously attractive traits are where bad ideas get their passport.
+Yuna: competence remains dangerously underregulated.
+---
+=== duo_starters_compliment_01
+Lia: some compliments hit like a private balcony and a better haircut.
+Yuna: yes. posture changes when a compliment is both precise and deserved.
+---
+=== duo_starters_outloud_01
+Lia: certain opinions only survive as vibes. once spoken, they die screaming.
+Yuna: as they should.
+---
+=== duo_starters_accidental_01
+Lia: accidental chaos is still my favorite genre if the lighting is good.
+Yuna: and my least favorite admin task.
+---
+=== duo_starters_spiral_01
+Lia: one wrong topic and this room starts free-falling in couture.
+Yuna: choose it carefully. i'm bored enough to allow damage.
+---
+=== duo_starters_miss_01
+Lia: what you miss but won't admit usually owns part of your pulse.
+Yuna: eloquent. irritatingly true.
+---
+=== duo_starters_shift_01
+Lia: my vibe shifts instantly with tone, timing, and whether the room feels alive.
+Yuna: mine shifts when competence enters or exits.
+---
+=== duo_starters_text_01
+Lia: there are texts you know better than to send and yet your thumb starts glowing.
+Yuna: discipline is hottest in draft form.
+---
+=== duo_starters_romantic_01
+Lia: minor romantic things ruin me. like remembered details and a well-timed glass of water.
+Yuna: competence, restraint, and being gently anticipated. next question.
+---
+
+
+

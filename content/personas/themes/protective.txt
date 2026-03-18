@@ -1,0 +1,74 @@
+﻿# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_* or other shared ids used by the project.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+#
+# Theme: protective
+# Theme note: defense, backing someone up, quiet guarding, and stepping in when needed.
+# Writer target: Protective instinct without flattening either character into generic comfort bots.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+# Script format: === script_id / Actor: line / ---
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

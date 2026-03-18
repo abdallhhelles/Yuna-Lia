@@ -10,6 +10,14 @@ content/personas/themes/
 
 Every `.txt` file in that folder is a real runtime file. Writers should edit those files directly.
 
+Generated or overflow content packs can also live under:
+
+```text
+content/personas/generated/
+```
+
+Those files are still loaded at runtime, but they are best treated as support packs rather than the main hand-edited theme library.
+
 ## How Each Theme File Is Organized
 
 Each file has the same shape:
@@ -43,6 +51,7 @@ Yuna: message
 - Everyday greetings and `hello` / `hru` / `wyd`: `common_chat.txt`
 - General greetings and room-entry energy: `casual.txt`
 - Daily prompt system: `daily_questions.txt`
+- Overflow daily-question packs: `generated/daily_questions_bonus.txt`
 - Social event prompts: `social_events.txt`
 - Longer reflective conversations: `deep_longform.txt`
 - Jokes and quick prompts: `questions_and_jokes.txt`

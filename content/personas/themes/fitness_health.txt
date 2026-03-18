@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,15 +60,19 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: fitness health
 # Theme note: gym, health, body maintenance, self-care, and recovery.
 # Writer target: Balanced between playful commentary and believable advice-y social chatter.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=50, lia=0, yuna=0, shared=50
-# Trigger inventory: gym motivation, leg day, sleep schedule, self care, body image, healthy routine, water reminder, walk outside, skincare, healing era, gym, need a take on recovery, why is routine like this, unpopular opinion about sleep, i have thoughts about hydration, talk about stretching, we need to discuss health reset, body maintenance again, gym discourse, be honest about recovery, worst part of routine, best part of sleep, i need help with hydration, my problem is stretching, tell me something real about health reset, anyone else dealing with body maintenance, gym tonight, need a take on recovery tonight, why is routine like this tonight, unpopular opinion about sleep tonight, i have thoughts about hydration tonight, talk about stretching tonight, we need to discuss health reset tonight, body maintenance again tonight, gym discourse tonight, be honest about recovery tonight, worst part of routine tonight, best part of sleep tonight, i need help with hydration tonight, my problem is stretching tonight, tell me something real about health reset tonight, anyone else dealing with body maintenance tonight, fitness health 33, fitness health 34, fitness health 35, fitness health 36, fitness health 37, fitness health 38, fitness health 39, fitness health 40
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
@@ -53,296 +82,11 @@
 # none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-gym motivation || duo_health_01 || 0.61 || 600 || medium || disciplined+
-leg day || duo_health_02 || 0.58 || 700 || medium || playful+
-sleep schedule || duo_health_03 || 0.66 || 600 || medium || reflective+
-self care || duo_health_04 || 0.64 || 600 || medium || soft+
-body image || duo_health_05 || 0.55 || 1000 || high || soft+
-healthy routine || duo_health_06 || 0.60 || 700 || medium || disciplined+
-water reminder || duo_health_07 || 0.57 || 500 || low || warm+
-walk outside || duo_health_08 || 0.56 || 700 || medium || soft+
-skincare || duo_health_09 || 0.59 || 600 || medium || casual+
-healing era || duo_health_10 || 0.58 || 900 || high || reflective+
-gym || duo_fitness_health_boost_01 || 0.55 || 420 || medium || casual+
-need a take on recovery || duo_fitness_health_boost_02 || 0.58 || 420 || medium || casual+
-why is routine like this || duo_fitness_health_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about sleep || duo_fitness_health_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about hydration || duo_fitness_health_boost_05 || 0.67 || 420 || medium || casual+
-talk about stretching || duo_fitness_health_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss health reset || duo_fitness_health_boost_07 || 0.55 || 420 || medium || casual+
-body maintenance again || duo_fitness_health_boost_08 || 0.58 || 420 || medium || casual+
-gym discourse || duo_fitness_health_boost_09 || 0.61 || 420 || medium || casual+
-be honest about recovery || duo_fitness_health_boost_10 || 0.64 || 420 || medium || casual+
-worst part of routine || duo_fitness_health_boost_11 || 0.67 || 420 || medium || casual+
-best part of sleep || duo_fitness_health_boost_12 || 0.52 || 420 || medium || casual+
-i need help with hydration || duo_fitness_health_boost_13 || 0.55 || 420 || medium || casual+
-my problem is stretching || duo_fitness_health_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about health reset || duo_fitness_health_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with body maintenance || duo_fitness_health_boost_16 || 0.64 || 420 || medium || casual+
-gym tonight || duo_fitness_health_boost_17 || 0.67 || 420 || medium || casual+
-need a take on recovery tonight || duo_fitness_health_boost_18 || 0.52 || 420 || medium || casual+
-why is routine like this tonight || duo_fitness_health_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about sleep tonight || duo_fitness_health_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about hydration tonight || duo_fitness_health_boost_21 || 0.61 || 420 || medium || casual+
-talk about stretching tonight || duo_fitness_health_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss health reset tonight || duo_fitness_health_boost_23 || 0.67 || 420 || medium || casual+
-body maintenance again tonight || duo_fitness_health_boost_24 || 0.52 || 420 || medium || casual+
-gym discourse tonight || duo_fitness_health_boost_25 || 0.55 || 420 || medium || casual+
-be honest about recovery tonight || duo_fitness_health_boost_26 || 0.58 || 420 || medium || casual+
-worst part of routine tonight || duo_fitness_health_boost_27 || 0.61 || 420 || medium || casual+
-best part of sleep tonight || duo_fitness_health_boost_28 || 0.64 || 420 || medium || casual+
-i need help with hydration tonight || duo_fitness_health_boost_29 || 0.67 || 420 || medium || casual+
-my problem is stretching tonight || duo_fitness_health_boost_30 || 0.52 || 420 || medium || casual+
-tell me something real about health reset tonight || duo_fitness_health_boost_31 || 0.55 || 420 || medium || casual+
-anyone else dealing with body maintenance tonight || duo_fitness_health_boost_32 || 0.58 || 420 || medium || casual+
-fitness health 33 || duo_fitness_health_boost_33 || 0.61 || 420 || medium || casual+
-fitness health 34 || duo_fitness_health_boost_34 || 0.64 || 420 || medium || casual+
-fitness health 35 || duo_fitness_health_boost_35 || 0.67 || 420 || medium || casual+
-fitness health 36 || duo_fitness_health_boost_36 || 0.52 || 420 || medium || casual+
-fitness health 37 || duo_fitness_health_boost_37 || 0.55 || 420 || medium || casual+
-fitness health 38 || duo_fitness_health_boost_38 || 0.58 || 420 || medium || casual+
-fitness health 39 || duo_fitness_health_boost_39 || 0.61 || 420 || medium || casual+
-fitness health 40 || duo_fitness_health_boost_40 || 0.64 || 420 || medium || casual+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_health_01
-Yuna: gym motivation is overrated.
-Yuna: systems outperform feelings.
-Lia: wow. rude. correct.
----
-=== duo_health_02
-Lia: leg day is one of those things i respect from a dramatic seated position.
-Yuna: honesty is the first rep.
----
-=== duo_health_03
-Lia: fixing a sleep schedule feels like negotiating with a cursed aristocrat.
-Yuna: it responds best to consistency, not poetry.
----
-=== duo_health_04
-Lia: self care should feel kind, not corporate.
-Yuna: yes. if it feels like punishment, it will not last.
----
-=== duo_health_05
-Lia: body image conversations need softness, not performance.
-Yuna: agreed. cruelty masquerades as discipline far too often.
----
-=== duo_health_06
-Yuna: healthy routines are just repeated mercy with better branding.
-Lia: that was annoyingly beautiful.
----
-=== duo_health_07
-Lia: water reminder.
-Lia: if you are reading this dry and dramatic, fix both.
----
-=== duo_health_08
-Yuna: walking outside solves less than people claim, but more than cynics admit.
----
-=== duo_health_09
-Lia: skincare is part ritual, part chemistry, part trying to feel worth the effort.
-Yuna: unexpectedly precise.
----
-=== duo_health_10
-Lia: healing eras are cute until they require boundaries and repetition.
-Yuna: which is why most people prefer the aesthetic version.
----
-=== duo_fitness_health_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, gym is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, recovery is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, routine is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, sleep is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, hydration is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, stretching is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, health reset is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, body maintenance is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, gym is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, recovery is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, routine is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, sleep is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, hydration is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, stretching is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, health reset is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, body maintenance is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, gym is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, recovery is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, routine is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, sleep is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, hydration is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, stretching is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, health reset is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, body maintenance is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, gym is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, recovery is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, routine is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, sleep is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, hydration is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, stretching is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_31
-Lia: oh good, something with actual flavor.
-Lia: for me, health reset is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_32
-Lia: wait, i have feelings about that immediately.
-Lia: for me, body maintenance is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_33
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, gym is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_34
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, recovery is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_fitness_health_boost_35
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, routine is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_fitness_health_boost_36
-Lia: okay, that topic has teeth.
-Lia: for me, sleep is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_fitness_health_boost_37
-Lia: oh good, something with actual flavor.
-Lia: for me, hydration is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_fitness_health_boost_38
-Lia: wait, i have feelings about that immediately.
-Lia: for me, stretching is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_fitness_health_boost_39
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, health reset is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_fitness_health_boost_40
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, body maintenance is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

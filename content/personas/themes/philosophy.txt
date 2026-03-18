@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,276 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: philosophy
 # Theme note: meaning, ethics, identity, consciousness, and abstract thought.
 # Writer target: Reflective but still social, sharp, and readable.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=52, lia=0, yuna=52, shared=0
-# Trigger inventory: meaning, why, truth, what is identity, how do people change, meaning under pressure, ethics of loyalty, future of humanity, space makes me small, what is real enough, consciousness discussion, philosophy after midnight, truth versus comfort, how should we live, human nature question, free will debate, morality under stress, who becomes who, social theory hour, what matters in the end, abstract thought spiral, existence is strange, identity, need a take on truth, why is free will like this, unpopular opinion about ethics, i have thoughts about self deception, talk about human nature, we need to discuss future, meaning again, identity discourse, be honest about truth, worst part of free will, best part of ethics, i need help with self deception, my problem is human nature, tell me something real about future, anyone else dealing with meaning, identity tonight, need a take on truth tonight, why is free will like this tonight, unpopular opinion about ethics tonight, i have thoughts about self deception tonight, talk about human nature tonight, we need to discuss future tonight, meaning again tonight, identity discourse tonight, be honest about truth tonight, worst part of free will tonight, best part of ethics tonight, i need help with self deception tonight, my problem is human nature tonight
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
 # none yet for Lia
 
 # [YUNA TRIGGERS]
-meaning || yuna_philosophy_01 || 0.55 || 700 || medium || reflective+
-why || yuna_philosophy_01 || 0.40 || 700 || medium || reflective+
-truth || yuna_philosophy_01 || 0.48 || 700 || medium || reflective+
-what is identity || yuna_philosophy_extra_01 || 0.55 || 700 || medium || reflective+
-how do people change || yuna_philosophy_extra_02 || 0.58 || 700 || medium || reflective+
-meaning under pressure || yuna_philosophy_extra_03 || 0.61 || 700 || medium || reflective+
-ethics of loyalty || yuna_philosophy_extra_04 || 0.64 || 700 || medium || reflective+
-future of humanity || yuna_philosophy_extra_05 || 0.52 || 700 || medium || reflective+
-space makes me small || yuna_philosophy_extra_06 || 0.55 || 700 || medium || reflective+
-what is real enough || yuna_philosophy_extra_07 || 0.58 || 700 || medium || reflective+
-consciousness discussion || yuna_philosophy_extra_08 || 0.61 || 700 || medium || reflective+
-philosophy after midnight || yuna_philosophy_extra_09 || 0.64 || 700 || medium || reflective+
-truth versus comfort || yuna_philosophy_extra_10 || 0.52 || 700 || medium || reflective+
-how should we live || yuna_philosophy_extra_11 || 0.55 || 700 || medium || reflective+
-human nature question || yuna_philosophy_extra_12 || 0.58 || 700 || medium || reflective+
-free will debate || yuna_philosophy_extra_13 || 0.61 || 700 || medium || reflective+
-morality under stress || yuna_philosophy_extra_14 || 0.64 || 700 || medium || reflective+
-who becomes who || yuna_philosophy_extra_15 || 0.52 || 700 || medium || reflective+
-social theory hour || yuna_philosophy_extra_16 || 0.55 || 700 || medium || reflective+
-what matters in the end || yuna_philosophy_extra_17 || 0.58 || 700 || medium || reflective+
-abstract thought spiral || yuna_philosophy_extra_18 || 0.61 || 700 || medium || reflective+
-existence is strange || yuna_philosophy_extra_19 || 0.64 || 700 || medium || reflective+
-identity || yuna_philosophy_boost_01 || 0.55 || 360 || medium || reflective+
-need a take on truth || yuna_philosophy_boost_02 || 0.58 || 360 || medium || reflective+
-why is free will like this || yuna_philosophy_boost_03 || 0.61 || 360 || medium || reflective+
-unpopular opinion about ethics || yuna_philosophy_boost_04 || 0.64 || 360 || medium || reflective+
-i have thoughts about self deception || yuna_philosophy_boost_05 || 0.67 || 360 || medium || reflective+
-talk about human nature || yuna_philosophy_boost_06 || 0.52 || 360 || medium || reflective+
-we need to discuss future || yuna_philosophy_boost_07 || 0.55 || 360 || medium || reflective+
-meaning again || yuna_philosophy_boost_08 || 0.58 || 360 || medium || reflective+
-identity discourse || yuna_philosophy_boost_09 || 0.61 || 360 || medium || reflective+
-be honest about truth || yuna_philosophy_boost_10 || 0.64 || 360 || medium || reflective+
-worst part of free will || yuna_philosophy_boost_11 || 0.67 || 360 || medium || reflective+
-best part of ethics || yuna_philosophy_boost_12 || 0.52 || 360 || medium || reflective+
-i need help with self deception || yuna_philosophy_boost_13 || 0.55 || 360 || medium || reflective+
-my problem is human nature || yuna_philosophy_boost_14 || 0.58 || 360 || medium || reflective+
-tell me something real about future || yuna_philosophy_boost_15 || 0.61 || 360 || medium || reflective+
-anyone else dealing with meaning || yuna_philosophy_boost_16 || 0.64 || 360 || medium || reflective+
-identity tonight || yuna_philosophy_boost_17 || 0.67 || 360 || medium || reflective+
-need a take on truth tonight || yuna_philosophy_boost_18 || 0.52 || 360 || medium || reflective+
-why is free will like this tonight || yuna_philosophy_boost_19 || 0.55 || 360 || medium || reflective+
-unpopular opinion about ethics tonight || yuna_philosophy_boost_20 || 0.58 || 360 || medium || reflective+
-i have thoughts about self deception tonight || yuna_philosophy_boost_21 || 0.61 || 360 || medium || reflective+
-talk about human nature tonight || yuna_philosophy_boost_22 || 0.64 || 360 || medium || reflective+
-we need to discuss future tonight || yuna_philosophy_boost_23 || 0.67 || 360 || medium || reflective+
-meaning again tonight || yuna_philosophy_boost_24 || 0.52 || 360 || medium || reflective+
-identity discourse tonight || yuna_philosophy_boost_25 || 0.55 || 360 || medium || reflective+
-be honest about truth tonight || yuna_philosophy_boost_26 || 0.58 || 360 || medium || reflective+
-worst part of free will tonight || yuna_philosophy_boost_27 || 0.61 || 360 || medium || reflective+
-best part of ethics tonight || yuna_philosophy_boost_28 || 0.64 || 360 || medium || reflective+
-i need help with self deception tonight || yuna_philosophy_boost_29 || 0.67 || 360 || medium || reflective+
-my problem is human nature tonight || yuna_philosophy_boost_30 || 0.52 || 360 || medium || reflective+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [YUNA SCRIPTS]
-=== yuna_philosophy_01
-Yuna: every server eventually becomes a study in attention economics
-Yuna: most people call that friendship and move on
----
-=== yuna_philosophy_extra_01
-Yuna: what is identity is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_02
-Yuna: how do people change is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_03
-Yuna: meaning under pressure is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_04
-Yuna: ethics of loyalty is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_05
-Yuna: future of humanity is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_06
-Yuna: space makes me small is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_07
-Yuna: what is real enough is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_08
-Yuna: consciousness discussion is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_09
-Yuna: philosophy after midnight is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_10
-Yuna: truth versus comfort is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_11
-Yuna: how should we live is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_12
-Yuna: human nature question is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_13
-Yuna: free will debate is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_14
-Yuna: morality under stress is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_15
-Yuna: who becomes who is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_16
-Yuna: social theory hour is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_17
-Yuna: what matters in the end is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_18
-Yuna: abstract thought spiral is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_extra_19
-Yuna: existence is strange is the sort of philosophy, meaning, and abstraction topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_philosophy_boost_01
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about identity, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_02
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about truth, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_03
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about free will, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_04
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about ethics, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_05
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about self deception, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_06
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about human nature, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_07
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about future, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_08
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about meaning, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_09
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about identity, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_10
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about truth, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_11
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about free will, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_12
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about ethics, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_13
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about self deception, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_14
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about human nature, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_15
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about future, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_16
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about meaning, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_17
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about identity, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_18
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about truth, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_19
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about free will, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_20
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about ethics, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_21
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about self deception, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_22
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about human nature, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_23
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about future, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_24
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about meaning, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_25
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about identity, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_26
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about truth, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_27
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about free will, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_28
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about ethics, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_29
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about self deception, the room would become more interesting very quickly.
----
-=== yuna_philosophy_boost_30
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about human nature, the room would become more interesting very quickly.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

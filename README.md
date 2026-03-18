@@ -16,9 +16,16 @@ Each theme file is now self-contained for writing workflows:
 
 - writer brief comments
 - detailed character profile reference
-- trigger counts and trigger inventory
 - Lia, Yuna, and shared trigger sections
 - exact script blocks
+
+The runtime ships with a mix of populated high-frequency chat packs and scaffold files for expansion. You can run it as-is, then deepen the remaining theme packs over time.
+
+Writer references:
+
+- [docs/lia_writer_bible.md](docs/lia_writer_bible.md)
+- [docs/yuna_writer_bible.md](docs/yuna_writer_bible.md)
+- [docs/duo_writer_bible.md](docs/duo_writer_bible.md)
 
 ## Core System
 
@@ -27,74 +34,81 @@ Each theme file is now self-contained for writing workflows:
 - Scripts embedded in the same theme files as their triggers
 - Lightweight per-user memory
 - Persona mood and attention state
-- Hot reload of content files
+- Watch-mode restart workflow for content changes
 - Script fire logging
 - Dual-bot queued delivery with typing delays
 
 ## Commands
 
 - `/about`
-- `/status`
-- `/stats`
-- `/roompulse`
-- `/level`
-- `/leaderboard`
-- `/memory`
 - `/birthday`
 - `/answer`
 - `/relationship`
 - `/achievements`
-- `/social_event`
-- `/reload_personas`
+- `/level`
+- `/leaderboard`
 
 ## Content Layout
 
 ```text
-content/personas/
-  themes/
-    annoyed.txt
-    argument_starters.txt
-    birthdays.txt
-    casual.txt
-    chaos.txt
-    common_chat.txt
-    competition.txt
-    daily_questions.txt
-    deep_longform.txt
-    discipline.txt
-    disrespect.txt
-    drama.txt
-    duo_events.txt
-    existential.txt
-    fitness_health.txt
-    flirting.txt
-    food.txt
-    fun.txt
-    gaming.txt
-    gossip.txt
-    hobbies.txt
-    judgment.txt
-    late_night.txt
-    lia_conflict.txt
-    life_topics.txt
-    mature.txt
-    movies.txt
-    music.txt
-    philosophy.txt
-    questions_and_jokes.txt
-    rare_events.txt
-    relationships.txt
-    conversation_starters.txt
-    sarcasm.txt
-    secrets.txt
-    shared_topics.txt
-    sleepy.txt
-    social_events.txt
-    teasing.txt
-    welcomes.txt
-    work_school.txt
-    yuna_conflict.txt
+content/personas/themes/
+  affection.txt
+  annoyed.txt
+  argument_starters.txt
+  birthdays.txt
+  casual.txt
+  chaos.txt
+  comfort.txt
+  common_chat.txt
+  competition.txt
+  conversation_starters.txt
+  daily_questions.txt
+  daily_questions_bonus.txt
+  deep_longform.txt
+  discipline.txt
+  disrespect.txt
+  drama.txt
+  duo_events.txt
+  existential.txt
+  fitness_health.txt
+  flirting.txt
+  food.txt
+  fun.txt
+  gaming.txt
+  gossip.txt
+  hobbies.txt
+  internet_culture.txt
+  jealousy.txt
+  judgment.txt
+  late_night.txt
+  lia_conflict.txt
+  life_topics.txt
+  mature.txt
+  movies.txt
+  music.txt
+  nsfw_aftercare_and_softness.txt
+  nsfw_after_dark_reactions.txt
+  nsfw_powerplay_and_teasing.txt
+  obsession.txt
+  philosophy.txt
+  protective.txt
+  questions_and_jokes.txt
+  rare_events.txt
+  relationships.txt
+  sarcasm.txt
+  secrets.txt
+  seduction.txt
+  shared_topics.txt
+  sleepy.txt
+  social_events.txt
+  teasing.txt
+  vulnerability.txt
+  welcomes.txt
+  work_school.txt
+  yuna_conflict.txt
 ```
+
+`content/personas/themes/` is the active writer library and runtime content root.
 
 Theme file format:
 
@@ -108,13 +122,7 @@ Yuna: message
 ---
 ```
 
-All runtime scripts now live inside the theme files that reference them.
-
-To refresh the theme library metadata and rewrite the per-file counts and trigger inventories:
-
-```powershell
-.\.venv\Scripts\python.exe scripts\reorganize_content_library.py
-```
+All runtime scripts live inside the same theme files as their triggers. Empty scaffold files are valid and intentional.
 
 Writer guide:
 
@@ -154,6 +162,7 @@ Required in `.env`:
 Optional:
 
 - `ENABLE_MESSAGE_CONTENT=1`
+- `ENABLE_MEMBERS_INTENT=1`
 - `DEBUG_PERSONA=1`
 - `PERSONA_TEST_MODE=1`
 - `PERSONA_CONTENT_DIR`
@@ -174,6 +183,7 @@ LEVEL_ROLE_REWARDS=5:Regular,10:Insomniac,20:Legend
 - Install packages from `requirements.txt` (for package fields, use `-r requirements.txt`).
 - `main.py` already adds `src/` to `PYTHONPATH` automatically for panel hosts.
 - Set required environment variables: `DISCORD_TOKEN_YUNA`, `DISCORD_TOKEN_LIA`.
+- Recommended env flags: `ENABLE_MESSAGE_CONTENT=1`, `ENABLE_MEMBERS_INTENT=1`, `LOG_LEVEL=INFO`.
 - Persist the `data/` folder so memory and stats survive restarts.
 
 See `docs/hosting.md` for full deployment steps.
@@ -187,8 +197,10 @@ See `docs/hosting.md` for full deployment steps.
 
 - Slow-burn server XP and levels from chatting
 - Optional role rewards on specific levels
-- 100+ scripted member welcomes across soft, dry, teasing, chaotic, and flirty tones
-- Automatic daily question posting with `/answer` submissions that bots echo back to the same server without naming the sender
+- Birthday tracking
+- Daily answer submission flow
+- Relationship and achievement tracking
+- Content scaffolds for moods, topics, welcomes, daily questions, and NSFW-specific writing packs
 
 ## Docs
 

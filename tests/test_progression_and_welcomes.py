@@ -17,12 +17,13 @@ def test_xp_progress_reports_current_band() -> None:
     assert needed_xp > current_xp
 
 
-def test_welcome_content_has_over_100_variants() -> None:
-    store = PersonaContentStore(Path("content/personas"))
+def test_welcome_content_scaffold_exists() -> None:
+    store = PersonaContentStore(Path("content/personas/themes"))
     store.reload()
 
     welcome_scripts = [script_id for script_id in store.scripts if script_id.startswith("welcome_")]
-    assert len(welcome_scripts) >= 100
+    assert welcome_scripts == []
+    assert Path("content/personas/themes/welcomes.txt").exists()
 
 
 def test_level_award_cooldown_is_long_enough() -> None:

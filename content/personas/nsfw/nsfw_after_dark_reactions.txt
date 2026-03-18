@@ -1,0 +1,65 @@
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is a draft content file for the Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: build an after-dark reaction pack with stronger sexual tension, explicit escalation, and clear adult framing.
+# Runtime behavior target: charged, characterful, and consensual rather than vague or generic.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Keep consent, reciprocity, tone clarity, and legal-adult framing in view.
+# Use the correct section: Lia trigger lines should point to lia_* ids, Yuna trigger lines to yuna_* ids, and duo/shared scenes to duo_* ids.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Voice rules: lowercase, bold, blushy, teasing, emotionally readable.
+# CHARACTER PROFILE: Yuna Mori.
+# Voice rules: lowercase, controlled, exact, subtext-heavy, intimate by implication and precision.
+#
+# Theme: nsfw after dark reactions
+# Theme note: reactive after-dark lines, stronger sexual tension, and explicit escalation.
+# Writer target: hot, consensual, and character-driven adult reactions.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# [YUNA TRIGGERS]
+# trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# [SHARED/DUO TRIGGERS]
+# trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# [SCRIPTS]
+# === script_id
+# Lia: message
+# Yuna: message
+# ---

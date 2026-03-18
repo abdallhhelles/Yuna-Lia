@@ -69,6 +69,7 @@ class AppConfig:
     yuna: PersonaConfig
     lia: PersonaConfig
     enable_message_content: bool
+    enable_members_intent: bool
     debug_persona: bool
     persona_test_mode: bool
     log_level: str
@@ -80,7 +81,7 @@ class AppConfig:
 def load_config() -> AppConfig:
     repo_root = Path(__file__).resolve().parents[2]
     _load_dotenv(repo_root / ".env")
-    content_dir = _parse_path("PERSONA_CONTENT_DIR", repo_root / "content" / "personas")
+    content_dir = _parse_path("PERSONA_CONTENT_DIR", repo_root / "content" / "personas" / "themes")
     data_dir = _parse_path("PERSONA_DATA_DIR", repo_root / "data")
     data_dir.mkdir(parents=True, exist_ok=True)
     if not content_dir.exists():
@@ -98,6 +99,7 @@ def load_config() -> AppConfig:
             mention_aliases=("@lia", "lia"),
         ),
         enable_message_content=_parse_bool("ENABLE_MESSAGE_CONTENT", True),
+        enable_members_intent=_parse_bool("ENABLE_MEMBERS_INTENT", False),
         debug_persona=_parse_bool("DEBUG_PERSONA", False),
         persona_test_mode=_parse_bool("PERSONA_TEST_MODE", False),
         log_level=_parse_log_level(),

@@ -15,11 +15,12 @@ def _config(tmp_path: Path) -> AppConfig:
         yuna=PersonaConfig(name="Yuna", token="y", mention_aliases=("@yuna", "yuna")),
         lia=PersonaConfig(name="Lia", token="l", mention_aliases=("@lia", "lia")),
         enable_message_content=True,
+        enable_members_intent=False,
         debug_persona=False,
         persona_test_mode=True,
         log_level="DEBUG",
         level_role_rewards={},
-        content_dir=Path("content/personas"),
+        content_dir=Path("content/personas/themes"),
         data_dir=tmp_path,
     )
 
@@ -53,12 +54,13 @@ def test_runtime_accepts_iso_birthday(tmp_path: Path) -> None:
     assert runtime.parse_birthday("2000-02-29") == date(2000, 2, 29)
 
 
-def test_birthday_content_has_50_variants() -> None:
-    store = PersonaContentStore(Path("content/personas"))
+def test_birthday_content_scaffold_exists() -> None:
+    store = PersonaContentStore(Path("content/personas/themes"))
     store.reload()
 
     birthday_scripts = [script_id for script_id in store.scripts if script_id.startswith("birthday_duo_")]
-    assert len(birthday_scripts) == 50
+    assert birthday_scripts == []
+    assert Path("content/personas/themes/birthdays.txt").exists()
 
 
 def test_birthday_wish_tracking_is_once_per_day(tmp_path: Path) -> None:
@@ -75,26 +77,44 @@ def test_daily_question_content_exists(tmp_path: Path) -> None:
     runtime.content.reload()
 
     script_id = runtime._daily_question_script_id()
-    assert script_id is not None
-    assert script_id.startswith("daily_question_")
+    assert script_id is None
+    daily_scripts = [name for name in runtime.content.scripts if name.startswith("daily_question_")]
+    assert daily_scripts == []
+    assert Path("content/personas/themes/daily_questions.txt").exists()
+    assert Path("content/personas/themes/daily_questions_bonus.txt").exists()
 
 
 def test_daily_question_prompt_extraction(tmp_path: Path) -> None:
     runtime = DualPersonaRuntime(_config(tmp_path))
     runtime.content.reload()
 
-    script_id = runtime._daily_question_script_id()
-    assert script_id is not None
-    prompt = runtime._daily_question_prompt(script_id)
-    assert prompt
-    assert "daily question" not in prompt.lower()
+    prompt = runtime._daily_question_prompt("daily_question_missing")
+    assert prompt == "unknown prompt"
+
+
+def test_daily_questions_rotate_without_repeats_until_deck_resets(tmp_path: Path) -> None:
+    runtime = DualPersonaRuntime(_config(tmp_path))
+    runtime.content.reload()
+
+    script_ids = ["daily_question_01", "daily_question_02", "daily_question_03"]
+    runtime.engine.script_ids_with_prefix = lambda prefix: list(script_ids)  # type: ignore[method-assign]
+
+    seen = {
+        runtime._daily_question_script_id("2026-03-16"),
+        runtime._daily_question_script_id("2026-03-17"),
+        runtime._daily_question_script_id("2026-03-18"),
+    }
+
+    assert seen == set(script_ids)
+
+    next_script = runtime._daily_question_script_id("2026-03-19")
+    assert next_script in script_ids
 
 
 def test_daily_answer_is_stored_privately(tmp_path: Path) -> None:
     runtime = DualPersonaRuntime(_config(tmp_path))
     runtime.content.reload()
-    script_id = runtime._daily_question_script_id()
-    assert script_id is not None
+    script_id = "daily_question_test_01"
     runtime._record_daily_question_state(77, script_id, 123)
     runtime.memory.record_daily_answer(
         guild_id=77,
@@ -102,7 +122,7 @@ def test_daily_answer_is_stored_privately(tmp_path: Path) -> None:
         user_name="Ameer",
         answer_date=runtime._current_daily_question_date(77),
         script_id=script_id,
-        prompt=runtime._daily_question_prompt(script_id),
+        prompt="test prompt",
         answer="pineapple is elite",
         answered_at=datetime.now(timezone.utc).isoformat(),
     )
@@ -122,14 +142,36 @@ def test_daily_question_state_is_guild_scoped(tmp_path: Path) -> None:
     runtime = DualPersonaRuntime(_config(tmp_path))
     runtime.content.reload()
 
-    script_id = runtime._daily_question_script_id()
-    assert script_id is not None
+    script_id = "daily_question_test_02"
     runtime._record_daily_question_state(77, script_id, 123)
 
     assert runtime._current_daily_question_script_id(77) == script_id
     assert runtime._current_daily_question_channel_id(77) == 123
     assert runtime._current_daily_question_script_id(88) is None
     assert runtime._current_daily_question_channel_id(88) is None
+
+
+def test_social_event_content_exists(tmp_path: Path) -> None:
+    runtime = DualPersonaRuntime(_config(tmp_path))
+    runtime.content.reload()
+
+    script_id = runtime._random_social_event_script_id("hot_take")
+    assert script_id is None
+    assert Path("content/personas/themes/social_events.txt").exists()
+
+
+def test_social_event_state_is_guild_scoped(tmp_path: Path) -> None:
+    runtime = DualPersonaRuntime(_config(tmp_path))
+    runtime.content.reload()
+
+    script_id = "social_mini_poll_test_01"
+    runtime._record_social_event_state(77, "mini_poll", script_id, 321)
+
+    assert runtime._social_event_posted_today(77) is True
+    assert runtime._current_social_event_script_id(77) == script_id
+    assert runtime._current_social_event_channel_id(77) == 321
+    assert runtime._current_social_event_script_id(88) is None
+    assert runtime._current_social_event_channel_id(88) is None
 
 
 def test_ambient_schedule_stays_within_six_hours(tmp_path: Path) -> None:
@@ -144,6 +186,18 @@ def test_ambient_schedule_stays_within_six_hours(tmp_path: Path) -> None:
     assert 0 < (scheduled - before).total_seconds() <= 6 * 60 * 60
     assert (scheduled - after).total_seconds() <= 6 * 60 * 60
     assert window_start <= scheduled <= window_start + timedelta(hours=6)
+
+
+def test_social_event_schedule_stays_within_one_day(tmp_path: Path) -> None:
+    runtime = DualPersonaRuntime(_config(tmp_path))
+    before = datetime.now().astimezone()
+    scheduled = runtime._schedule_next_social_event()
+    after = datetime.now().astimezone()
+    stored = datetime.fromisoformat(runtime.memory.get_runtime_value("next_social_event_at"))
+
+    assert stored == scheduled
+    assert 0 < (scheduled - before).total_seconds() <= 24 * 60 * 60
+    assert (scheduled - after).total_seconds() <= 24 * 60 * 60
 
 
 def test_achievements_are_derived_from_user_memory(tmp_path: Path) -> None:

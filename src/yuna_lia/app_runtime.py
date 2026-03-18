@@ -16,7 +16,7 @@ from .personas.engine import OutboundEvent
 from .personas.models import GuildMemberProgress
 from .runtime import get_logger, setup_logging
 from .systems.conversation_pacing import ConversationPacingSystem
-from .systems.leveling import LevelResult, level_for_xp, roll_xp, should_award_xp, xp_progress
+from .systems.leveling import level_for_xp, roll_xp, should_award_xp, xp_progress
 
 YUNA_SPEAKER = "Yuna"
 LIA_SPEAKER = "Lia"
@@ -64,6 +64,7 @@ class DualPersonaRuntime:
         self.pacing: ConversationPacingSystem | None = None
         self._ambient_task: asyncio.Task[None] | None = None
         self._daily_question_task: asyncio.Task[None] | None = None
+        self._social_event_task: asyncio.Task[None] | None = None
         self._daily_question_prefix = "daily_question_"
         self._welcome_prefix = "welcome_"
         self._social_event_prefixes = {
@@ -81,6 +82,7 @@ class DualPersonaRuntime:
         self.content.ensure_loaded()
         self._ambient_task = asyncio.create_task(self._ambient_loop(), name="persona-ambient-loop")
         self._daily_question_task = asyncio.create_task(self._daily_question_loop(), name="persona-daily-question-loop")
+        self._social_event_task = asyncio.create_task(self._social_event_loop(), name="persona-social-event-loop")
 
     def _resolve_bot_for_speaker(self, speaker: str) -> commands.Bot | None:
         if speaker == LIA_SPEAKER:
@@ -96,12 +98,12 @@ class DualPersonaRuntime:
         lines = [
             "Lia and Yuna are scripted Discord personas, not AI chatbots.",
             "They react through external trigger files, human-written scripts, cooldowns, moods, attention rules, and lightweight memory.",
-            "They now also track birthdays, relationship progression, passive achievements, daily questions, and social event prompts.",
+            "This project is currently set up as a writing kit, so the active theme files are scaffolds you can fill with your own triggers and scripts.",
             "",
             f"Content root: {self.config.content_dir}",
-            "Use `/status` to inspect persona state.",
-            "Use `/social_event`, `/relationship`, `/achievements`, and `/answer` for the engagement systems.",
-            "Use `/reload_personas` after editing trigger or script files.",
+            "Available commands: `/about`, `/birthday`, `/answer`, `/relationship`, `/achievements`, `/level`, `/leaderboard`.",
+            "The runtime enforces actor ownership by script id, so Lia, Yuna, and shared triggers stay separated when content is added.",
+            "Edit the theme files, then restart the bot or let watch mode reload the process.",
         ]
         await interaction.response.send_message("\n".join(lines), ephemeral=True)
 
@@ -302,12 +304,10 @@ class DualPersonaRuntime:
         )
 
     async def command_social_event(self, interaction: discord.Interaction, category: str) -> None:
-        prefix = self._social_event_prefixes[category]
-        script_ids = self.engine.script_ids_with_prefix(prefix)
-        if not script_ids:
+        script_id = self._random_social_event_script_id(category)
+        if script_id is None:
             await interaction.response.send_message("That social event pack is empty right now.", ephemeral=True)
             return
-        script_id = random.choice(script_ids)
         events = self.engine.render_script_by_id(script_id, str(interaction.user.id), interaction.user.display_name)
         await interaction.response.defer()
         await self._send_scripted_events(interaction.channel_id, events)
@@ -491,6 +491,34 @@ class DualPersonaRuntime:
 
             self._schedule_next_daily_question()
 
+    async def _social_event_loop(self) -> None:
+        while True:
+            next_social_event_at = self._next_social_event_at()
+            wait_seconds = max(1.0, (next_social_event_at - _local_now()).total_seconds())
+            await asyncio.sleep(wait_seconds)
+
+            today = _local_now().date().isoformat()
+            for guild_id, channel_id in self._select_social_event_channels().items():
+                if self._social_event_posted_today(guild_id, today):
+                    continue
+                try:
+                    category = random.choice(tuple(self._social_event_prefixes))
+                    script_id = self._random_social_event_script_id(category)
+                    if script_id is None:
+                        continue
+                    events = self.engine.render_script_by_id(script_id, "social-event", "chat")
+                    await self._send_scripted_events(channel_id, events)
+                    self._record_social_event_state(guild_id, category, script_id, channel_id, today)
+                except Exception:
+                    self.logger.warning(
+                        "Social event send failed in guild=%s channel=%s",
+                        guild_id,
+                        channel_id,
+                        exc_info=True,
+                    )
+
+            self._schedule_next_social_event()
+
     async def _send_scripted_events(self, channel_id: int, events) -> None:
         previous_actor: str | None = None
         for index, event in enumerate(events):
@@ -555,25 +583,7 @@ class DualPersonaRuntime:
         self.memory.save_member_progress(progress)
 
         if leveled_up:
-            result = LevelResult(awarded_xp=awarded, old_level=old_level, new_level=progress.level)
-            await self._handle_level_up(message.author, guild, message.channel, progress, result)
-
-    async def _handle_level_up(
-        self,
-        member: discord.Member,
-        guild: discord.Guild,
-        channel: discord.abc.Messageable,
-        progress: GuildMemberProgress,
-        result: LevelResult,
-    ) -> None:
-        reward_text = await self._apply_level_roles(member, progress.level)
-        try:
-            await channel.send(
-                f"{member.mention} hit level {result.new_level} after a very suspicious amount of lurking and chatting."
-                + (f" {reward_text}" if reward_text else "")
-            )
-        except Exception:
-            self.logger.warning("Failed announcing level up for user=%s guild=%s", member.id, guild.id, exc_info=True)
+            await self._apply_level_roles(message.author, progress.level)
 
     async def _apply_level_roles(self, member: discord.Member, level: int) -> str:
         if not self.config.level_role_rewards:
@@ -617,12 +627,30 @@ class DualPersonaRuntime:
         if self.config.debug_persona:
             self.logger.debug("[%s] %s", _debug_timestamp(), message)
 
-    def _daily_question_script_id(self) -> str | None:
+    def _daily_question_script_id(self, today: str | None = None) -> str | None:
+        active_date = today or _local_now().date().isoformat()
+        current_date = self.memory.get_runtime_value("daily_question_rotation_date", "")
+        current_script = self.memory.get_runtime_value("daily_question_rotation_script_id", "")
         script_ids = self.engine.script_ids_with_prefix(self._daily_question_prefix)
         if not script_ids:
             return None
-        day_index = date.today().toordinal() % len(script_ids)
-        return script_ids[day_index]
+        if current_date == active_date and current_script in script_ids:
+            return current_script
+
+        available = set(script_ids)
+        remaining = self.memory.get_runtime_value("daily_question_rotation_remaining", [])
+        if not isinstance(remaining, list):
+            remaining = []
+        remaining = [script_id for script_id in remaining if script_id in available]
+        if not remaining:
+            remaining = list(script_ids)
+            random.shuffle(remaining)
+
+        next_script = remaining.pop()
+        self.memory.set_runtime_value("daily_question_rotation_remaining", remaining)
+        self.memory.set_runtime_value("daily_question_rotation_date", active_date)
+        self.memory.set_runtime_value("daily_question_rotation_script_id", next_script)
+        return next_script
 
     @staticmethod
     def _daily_question_key(guild_id: int, suffix: str) -> str:
@@ -664,6 +692,48 @@ class DualPersonaRuntime:
             if text and "daily question" not in text.lower():
                 return text
         return script_id
+
+    @staticmethod
+    def _social_event_key(guild_id: int, suffix: str) -> str:
+        return f"social_event:{guild_id}:{suffix}"
+
+    def _social_event_posted_today(self, guild_id: int, today: str | None = None) -> bool:
+        return self._current_social_event_date(guild_id) == (today or _local_now().date().isoformat())
+
+    def _current_social_event_date(self, guild_id: int) -> str:
+        return self.memory.get_runtime_value(self._social_event_key(guild_id, "date"), "")
+
+    def _current_social_event_channel_id(self, guild_id: int) -> int | None:
+        return self.memory.get_runtime_value(self._social_event_key(guild_id, "channel_id"), None)
+
+    def _current_social_event_script_id(self, guild_id: int) -> str | None:
+        stored_date = self._current_social_event_date(guild_id)
+        today = _local_now().date().isoformat()
+        if stored_date != today:
+            return None
+        stored_script = self.memory.get_runtime_value(self._social_event_key(guild_id, "script_id"), "")
+        return stored_script or None
+
+    def _record_social_event_state(
+        self,
+        guild_id: int,
+        category: str,
+        script_id: str,
+        channel_id: int,
+        today: str | None = None,
+    ) -> None:
+        active_date = today or _local_now().date().isoformat()
+        self.memory.set_runtime_value(self._social_event_key(guild_id, "date"), active_date)
+        self.memory.set_runtime_value(self._social_event_key(guild_id, "category"), category)
+        self.memory.set_runtime_value(self._social_event_key(guild_id, "script_id"), script_id)
+        self.memory.set_runtime_value(self._social_event_key(guild_id, "channel_id"), channel_id)
+
+    def _random_social_event_script_id(self, category: str) -> str | None:
+        prefix = self._social_event_prefixes[category]
+        script_ids = self.engine.script_ids_with_prefix(prefix)
+        if not script_ids:
+            return None
+        return random.choice(script_ids)
 
     def _achievements_for(self, memory) -> list[str]:
         achievements: list[str] = []
@@ -747,6 +817,34 @@ class DualPersonaRuntime:
         self._debug_print(f"scheduled next daily question for {next_at.isoformat()}")
         return next_at
 
+    def _next_social_event_at(self) -> datetime:
+        stored = self.memory.get_runtime_value("next_social_event_at", "")
+        parsed = _parse_iso_datetime(stored)
+        now = _local_now()
+        if parsed is None or parsed <= now:
+            return self._schedule_next_social_event(now)
+        return parsed
+
+    def _schedule_next_social_event(self, now: datetime | None = None) -> datetime:
+        now = now or _local_now()
+        timezone_info = now.tzinfo
+
+        def random_slot(day: date) -> datetime:
+            start = datetime(day.year, day.month, day.day, 13, 0, tzinfo=timezone_info)
+            end = datetime(day.year, day.month, day.day, 21, 0, tzinfo=timezone_info)
+            effective_start = max(start, now + timedelta(minutes=5))
+            if effective_start >= end:
+                next_day = day + timedelta(days=1)
+                return random_slot(next_day)
+            delta_seconds = int((end - effective_start).total_seconds())
+            return effective_start + timedelta(seconds=random.randint(0, delta_seconds))
+
+        target_day = now.date()
+        next_at = random_slot(target_day)
+        self.memory.set_runtime_value("next_social_event_at", next_at.isoformat())
+        self._debug_print(f"scheduled next social event for {next_at.isoformat()}")
+        return next_at
+
     def _select_daily_question_channels(self) -> dict[int, int]:
         channels = self.memory.all_channels()
         if not channels:
@@ -758,12 +856,15 @@ class DualPersonaRuntime:
                 per_guild[channel.guild_id] = channel
         return {guild_id: channel.channel_id for guild_id, channel in per_guild.items()}
 
+    def _select_social_event_channels(self) -> dict[int, int]:
+        return self._select_daily_question_channels()
+
     @staticmethod
     def _engagement_suggestion(quiet_minutes: int | None) -> str:
         if quiet_minutes is None:
             return "Talk naturally for a bit so the bots can learn the room."
         if quiet_minutes >= 90:
-            return "Use `/social_event` to restart the room with a higher-energy prompt."
+            return "Drop a hot take or a direct question to restart the room with more energy."
         if quiet_minutes >= 30:
             return "A daily question should wake the channel up automatically, or you can drop a hot take."
         if quiet_minutes >= 10:
@@ -854,7 +955,7 @@ class PersonaBot(commands.Bot):
     def __init__(self, persona: PersonaConfig, runtime: DualPersonaRuntime, is_command_host: bool) -> None:
         intents = discord.Intents.default()
         intents.message_content = runtime.config.enable_message_content
-        intents.members = True
+        intents.members = runtime.config.enable_members_intent
         super().__init__(command_prefix="!", intents=intents)
         self.persona = persona
         self.runtime = runtime
@@ -937,4 +1038,18 @@ async def run_bots() -> None:
         False,
     )
     runtime.bind_bots(yuna_bot, lia_bot)
-    await asyncio.gather(yuna_bot.start(yuna_bot.persona.token), lia_bot.start(lia_bot.persona.token))
+    try:
+        await asyncio.gather(yuna_bot.start(yuna_bot.persona.token), lia_bot.start(lia_bot.persona.token))
+    except discord.errors.PrivilegedIntentsRequired as exc:
+        enabled = []
+        if config.enable_message_content:
+            enabled.append("message content")
+        if config.enable_members_intent:
+            enabled.append("server members")
+        enabled_text = ", ".join(enabled) or "no privileged intents"
+        raise RuntimeError(
+            "Discord rejected the bot intents. "
+            f"Currently enabled privileged intents in config: {enabled_text}. "
+            "Enable the matching intents in the Discord developer portal, or disable them in `.env` "
+            "with `ENABLE_MESSAGE_CONTENT=false` and/or `ENABLE_MEMBERS_INTENT=false`."
+        ) from exc

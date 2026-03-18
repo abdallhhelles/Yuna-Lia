@@ -57,6 +57,10 @@ class UserMemory:
     food_messages: int = 0
     direct_lia_mentions: int = 0
     direct_yuna_mentions: int = 0
+    question_messages: int = 0
+    slang_messages: int = 0
+    vulnerability_messages: int = 0
+    affection_messages: int = 0
 
 
 @dataclass

@@ -1,0 +1,58 @@
+﻿# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: this file is script-only, so no message triggers are used here; the runtime pulls one daily-question script from the rotation deck.
+# What scripts do: each script block is the exact daily-question scene the bot will post.
+# Writing goal: keep the daily rotation broad, socially engaging, and strongly in character.
+# Runtime behavior target: one good question should wake the room up, invite honest replies, and sound like Lia and Yuna rather than an app prompt.
+#
+# WRITER INSTRUCTIONS: add new daily-question script blocks in this same file under [SCRIPTS].
+# Keep each entry concise, discussion-friendly, and easy for members to answer in chat.
+# This file is script-only. Do not add trigger lines here.
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Voice rules: lowercase, emotionally immediate, playful, socially hungry, never sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Voice rules: lowercase, precise, dry, observant, and quietly incisive.
+#
+# Theme: daily questions bonus
+# Theme note: overflow daily-question scripts used to expand the no-repeat rotation deck.
+# Writer target: varied prompts about feelings, habits, relationships, opinions, and everyday life.
+# Trigger format: script-only file; add new daily-question scenes as script blocks under [SCRIPTS].
+# Script format: === daily_question_xxx / Actor: line / ---
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+# none yet for Lia
+
+# [YUNA TRIGGERS]
+# none yet for Yuna
+
+# [SHARED/DUO TRIGGERS]
+# none yet for Shared/Duo
+
+# [SCRIPTS]
+# Script format reminder: === daily_question_xxx / Actor: line / ---
+# none yet
+
+
+

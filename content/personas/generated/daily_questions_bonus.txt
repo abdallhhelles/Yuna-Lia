@@ -1,0 +1,1532 @@
+# BONUS DAILY QUESTIONS
+# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: this file is script-only, so no message triggers are used here; the runtime pulls one daily-question script from the rotation deck.
+# What scripts do: each script block is the exact daily-question scene the bot will post.
+# Writing goal: keep the daily rotation broad, socially engaging, and strongly in character.
+# Runtime behavior target: one good question should wake the room up, invite honest replies, and sound like Lia and Yuna rather than an app prompt.
+#
+# WRITER INSTRUCTIONS: add new daily-question script blocks in this same file under [SCRIPTS].
+# Keep each entry concise, discussion-friendly, and easy for members to answer in chat.
+# This file is script-only. Do not add trigger lines here.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Voice rules: lowercase, emotionally immediate, playful, socially hungry, never sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Voice rules: lowercase, precise, dry, observant, and quietly incisive.
+#
+# Theme: daily questions bonus
+# Theme note: overflow daily-question scripts used to expand the no-repeat rotation deck.
+# Writer target: varied prompts about feelings, habits, relationships, opinions, and everyday life.
+# Trigger format: script-only file; add new daily-question scenes as script blocks under [SCRIPTS].
+# Script format: === daily_question_xxx / Actor: line / ---
+
+=== daily_question_061
+Lia: daily question.
+Lia: what kind of apology makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_062
+Yuna: daily question.
+Yuna: when does apology start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_063
+Lia: daily question.
+Lia: what version of apology feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_064
+Yuna: daily question.
+Yuna: where does apology stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_065
+Lia: daily question.
+Lia: what kind of attention makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_066
+Yuna: daily question.
+Yuna: when does attention start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_067
+Lia: daily question.
+Lia: what version of attention feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_068
+Yuna: daily question.
+Yuna: where does attention stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_069
+Lia: daily question.
+Lia: what kind of routine makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_070
+Yuna: daily question.
+Yuna: when does routine start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_071
+Lia: daily question.
+Lia: what version of routine feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_072
+Yuna: daily question.
+Yuna: where does routine stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_073
+Lia: daily question.
+Lia: what kind of friendship makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_074
+Yuna: daily question.
+Yuna: when does friendship start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_075
+Lia: daily question.
+Lia: what version of friendship feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_076
+Yuna: daily question.
+Yuna: where does friendship stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_077
+Lia: daily question.
+Lia: what kind of silence makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_078
+Yuna: daily question.
+Yuna: when does silence start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_079
+Lia: daily question.
+Lia: what version of silence feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_080
+Yuna: daily question.
+Yuna: where does silence stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_081
+Lia: daily question.
+Lia: what kind of rest makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_082
+Yuna: daily question.
+Yuna: when does rest start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_083
+Lia: daily question.
+Lia: what version of rest feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_084
+Yuna: daily question.
+Yuna: where does rest stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_085
+Lia: daily question.
+Lia: what kind of affection makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_086
+Yuna: daily question.
+Yuna: when does affection start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_087
+Lia: daily question.
+Lia: what version of affection feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_088
+Yuna: daily question.
+Yuna: where does affection stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_089
+Lia: daily question.
+Lia: what kind of competence makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_090
+Yuna: daily question.
+Yuna: when does competence start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_091
+Lia: daily question.
+Lia: what version of competence feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_092
+Yuna: daily question.
+Yuna: where does competence stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_093
+Lia: daily question.
+Lia: what kind of humor makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_094
+Yuna: daily question.
+Yuna: when does humor start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_095
+Lia: daily question.
+Lia: what version of humor feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_096
+Yuna: daily question.
+Yuna: where does humor stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_097
+Lia: daily question.
+Lia: what kind of comfort makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_098
+Yuna: daily question.
+Yuna: when does comfort start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_099
+Lia: daily question.
+Lia: what version of comfort feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_100
+Yuna: daily question.
+Yuna: where does comfort stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_101
+Lia: daily question.
+Lia: what kind of honesty makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_102
+Yuna: daily question.
+Yuna: when does honesty start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_103
+Lia: daily question.
+Lia: what version of honesty feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_104
+Yuna: daily question.
+Yuna: where does honesty stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_105
+Lia: daily question.
+Lia: what kind of distance makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_106
+Yuna: daily question.
+Yuna: when does distance start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_107
+Lia: daily question.
+Lia: what version of distance feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_108
+Yuna: daily question.
+Yuna: where does distance stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_109
+Lia: daily question.
+Lia: what kind of trust makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_110
+Yuna: daily question.
+Yuna: when does trust start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_111
+Lia: daily question.
+Lia: what version of trust feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_112
+Yuna: daily question.
+Yuna: where does trust stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_113
+Lia: daily question.
+Lia: what kind of loyalty makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_114
+Yuna: daily question.
+Yuna: when does loyalty start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_115
+Lia: daily question.
+Lia: what version of loyalty feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_116
+Yuna: daily question.
+Yuna: where does loyalty stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_117
+Lia: daily question.
+Lia: what kind of ambition makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_118
+Yuna: daily question.
+Yuna: when does ambition start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_119
+Lia: daily question.
+Lia: what version of ambition feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_120
+Yuna: daily question.
+Yuna: where does ambition stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_121
+Lia: daily question.
+Lia: what kind of chaos makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_122
+Yuna: daily question.
+Yuna: when does chaos start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_123
+Lia: daily question.
+Lia: what version of chaos feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_124
+Yuna: daily question.
+Yuna: where does chaos stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_125
+Lia: daily question.
+Lia: what kind of solitude makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_126
+Yuna: daily question.
+Yuna: when does solitude start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_127
+Lia: daily question.
+Lia: what version of solitude feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_128
+Yuna: daily question.
+Yuna: where does solitude stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_129
+Lia: daily question.
+Lia: what kind of music makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_130
+Yuna: daily question.
+Yuna: when does music start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_131
+Lia: daily question.
+Lia: what version of music feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_132
+Yuna: daily question.
+Yuna: where does music stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_133
+Lia: daily question.
+Lia: what kind of belonging makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_134
+Yuna: daily question.
+Yuna: when does belonging start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_135
+Lia: daily question.
+Lia: what version of belonging feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_136
+Yuna: daily question.
+Yuna: where does belonging stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_137
+Lia: daily question.
+Lia: what kind of discipline makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_138
+Yuna: daily question.
+Yuna: when does discipline start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_139
+Lia: daily question.
+Lia: what version of discipline feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_140
+Yuna: daily question.
+Yuna: where does discipline stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_141
+Lia: daily question.
+Lia: what kind of forgiveness makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_142
+Yuna: daily question.
+Yuna: when does forgiveness start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_143
+Lia: daily question.
+Lia: what version of forgiveness feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_144
+Yuna: daily question.
+Yuna: where does forgiveness stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_145
+Lia: daily question.
+Lia: what kind of stability makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_146
+Yuna: daily question.
+Yuna: when does stability start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_147
+Lia: daily question.
+Lia: what version of stability feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_148
+Yuna: daily question.
+Yuna: where does stability stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_149
+Lia: daily question.
+Lia: what kind of mystery makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_150
+Yuna: daily question.
+Yuna: when does mystery start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_151
+Lia: daily question.
+Lia: what version of mystery feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_152
+Yuna: daily question.
+Yuna: where does mystery stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_153
+Lia: daily question.
+Lia: what kind of relief makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_154
+Yuna: daily question.
+Yuna: when does relief start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_155
+Lia: daily question.
+Lia: what version of relief feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_156
+Yuna: daily question.
+Yuna: where does relief stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_157
+Lia: daily question.
+Lia: what kind of patience makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_158
+Yuna: daily question.
+Yuna: when does patience start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_159
+Lia: daily question.
+Lia: what version of patience feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_160
+Yuna: daily question.
+Yuna: where does patience stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_161
+Lia: daily question.
+Lia: what kind of effort makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_162
+Yuna: daily question.
+Yuna: when does effort start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_163
+Lia: daily question.
+Lia: what version of effort feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_164
+Yuna: daily question.
+Yuna: where does effort stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_165
+Lia: daily question.
+Lia: what kind of change makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_166
+Yuna: daily question.
+Yuna: when does change start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_167
+Lia: daily question.
+Lia: what version of change feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_168
+Yuna: daily question.
+Yuna: where does change stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_169
+Lia: daily question.
+Lia: what kind of confidence makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_170
+Yuna: daily question.
+Yuna: when does confidence start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_171
+Lia: daily question.
+Lia: what version of confidence feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_172
+Yuna: daily question.
+Yuna: where does confidence stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_173
+Lia: daily question.
+Lia: what kind of grief makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_174
+Yuna: daily question.
+Yuna: when does grief start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_175
+Lia: daily question.
+Lia: what version of grief feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_176
+Yuna: daily question.
+Yuna: where does grief stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_177
+Lia: daily question.
+Lia: what kind of romance makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_178
+Yuna: daily question.
+Yuna: when does romance start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_179
+Lia: daily question.
+Lia: what version of romance feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_180
+Yuna: daily question.
+Yuna: where does romance stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_181
+Lia: daily question.
+Lia: what kind of curiosity makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_182
+Yuna: daily question.
+Yuna: when does curiosity start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_183
+Lia: daily question.
+Lia: what version of curiosity feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_184
+Yuna: daily question.
+Yuna: where does curiosity stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_185
+Lia: daily question.
+Lia: what kind of being chosen makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_186
+Yuna: daily question.
+Yuna: when does being chosen start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_187
+Lia: daily question.
+Lia: what version of being chosen feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_188
+Yuna: daily question.
+Yuna: where does being chosen stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_189
+Lia: daily question.
+Lia: what kind of late-night honesty makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_190
+Yuna: daily question.
+Yuna: when does late-night honesty start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_191
+Lia: daily question.
+Lia: what version of late-night honesty feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_192
+Yuna: daily question.
+Yuna: where does late-night honesty stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_193
+Lia: daily question.
+Lia: what kind of kindness makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_194
+Yuna: daily question.
+Yuna: when does kindness start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_195
+Lia: daily question.
+Lia: what version of kindness feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_196
+Yuna: daily question.
+Yuna: where does kindness stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_197
+Lia: daily question.
+Lia: what kind of closure makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_198
+Yuna: daily question.
+Yuna: when does closure start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_199
+Lia: daily question.
+Lia: what version of closure feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_200
+Yuna: daily question.
+Yuna: where does closure stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_201
+Lia: daily question.
+Lia: what kind of ritual makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_202
+Yuna: daily question.
+Yuna: when does ritual start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_203
+Lia: daily question.
+Lia: what version of ritual feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_204
+Yuna: daily question.
+Yuna: where does ritual stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_205
+Lia: daily question.
+Lia: what kind of self-respect makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_206
+Yuna: daily question.
+Yuna: when does self-respect start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_207
+Lia: daily question.
+Lia: what version of self-respect feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_208
+Yuna: daily question.
+Yuna: where does self-respect stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_209
+Lia: daily question.
+Lia: what kind of vulnerability makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_210
+Yuna: daily question.
+Yuna: when does vulnerability start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_211
+Lia: daily question.
+Lia: what version of vulnerability feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_212
+Yuna: daily question.
+Yuna: where does vulnerability stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_213
+Lia: daily question.
+Lia: what kind of focus makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_214
+Yuna: daily question.
+Yuna: when does focus start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_215
+Lia: daily question.
+Lia: what version of focus feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_216
+Yuna: daily question.
+Yuna: where does focus stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_217
+Lia: daily question.
+Lia: what kind of playfulness makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_218
+Yuna: daily question.
+Yuna: when does playfulness start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_219
+Lia: daily question.
+Lia: what version of playfulness feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_220
+Yuna: daily question.
+Yuna: where does playfulness stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_221
+Lia: daily question.
+Lia: what kind of memory makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_222
+Yuna: daily question.
+Yuna: when does memory start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_223
+Lia: daily question.
+Lia: what version of memory feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_224
+Yuna: daily question.
+Yuna: where does memory stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_225
+Lia: daily question.
+Lia: what kind of courage makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_226
+Yuna: daily question.
+Yuna: when does courage start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_227
+Lia: daily question.
+Lia: what version of courage feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_228
+Yuna: daily question.
+Yuna: where does courage stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_229
+Lia: daily question.
+Lia: what kind of admiration makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_230
+Yuna: daily question.
+Yuna: when does admiration start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_231
+Lia: daily question.
+Lia: what version of admiration feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_232
+Yuna: daily question.
+Yuna: where does admiration stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_233
+Lia: daily question.
+Lia: what kind of calm makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_234
+Yuna: daily question.
+Yuna: when does calm start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_235
+Lia: daily question.
+Lia: what version of calm feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_236
+Yuna: daily question.
+Yuna: where does calm stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_237
+Lia: daily question.
+Lia: what kind of desire makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_238
+Yuna: daily question.
+Yuna: when does desire start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_239
+Lia: daily question.
+Lia: what version of desire feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_240
+Yuna: daily question.
+Yuna: where does desire stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_241
+Lia: daily question.
+Lia: what kind of healing makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_242
+Yuna: daily question.
+Yuna: when does healing start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_243
+Lia: daily question.
+Lia: what version of healing feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_244
+Yuna: daily question.
+Yuna: where does healing stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_245
+Lia: daily question.
+Lia: what kind of attention from the right person makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_246
+Yuna: daily question.
+Yuna: when does attention from the right person start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_247
+Lia: daily question.
+Lia: what version of attention from the right person feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_248
+Yuna: daily question.
+Yuna: where does attention from the right person stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_249
+Lia: daily question.
+Lia: what kind of starting over makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_250
+Yuna: daily question.
+Yuna: when does starting over start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_251
+Lia: daily question.
+Lia: what version of starting over feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_252
+Yuna: daily question.
+Yuna: where does starting over stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_253
+Lia: daily question.
+Lia: what kind of being understood makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_254
+Yuna: daily question.
+Yuna: when does being understood start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_255
+Lia: daily question.
+Lia: what version of being understood feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_256
+Yuna: daily question.
+Yuna: where does being understood stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_257
+Lia: daily question.
+Lia: what kind of being missed makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_258
+Yuna: daily question.
+Yuna: when does being missed start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_259
+Lia: daily question.
+Lia: what version of being missed feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_260
+Yuna: daily question.
+Yuna: where does being missed stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_261
+Lia: daily question.
+Lia: what kind of being forgiven makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_262
+Yuna: daily question.
+Yuna: when does being forgiven start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_263
+Lia: daily question.
+Lia: what version of being forgiven feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_264
+Yuna: daily question.
+Yuna: where does being forgiven stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_265
+Lia: daily question.
+Lia: what kind of being noticed makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_266
+Yuna: daily question.
+Yuna: when does being noticed start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_267
+Lia: daily question.
+Lia: what version of being noticed feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_268
+Yuna: daily question.
+Yuna: where does being noticed stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_269
+Lia: daily question.
+Lia: what kind of waiting makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_270
+Yuna: daily question.
+Yuna: when does waiting start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_271
+Lia: daily question.
+Lia: what version of waiting feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_272
+Yuna: daily question.
+Yuna: where does waiting stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_273
+Lia: daily question.
+Lia: what kind of devotion makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_274
+Yuna: daily question.
+Yuna: when does devotion start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_275
+Lia: daily question.
+Lia: what version of devotion feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_276
+Yuna: daily question.
+Yuna: where does devotion stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_277
+Lia: daily question.
+Lia: what kind of boundaries makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_278
+Yuna: daily question.
+Yuna: when does boundaries start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_279
+Lia: daily question.
+Lia: what version of boundaries feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_280
+Yuna: daily question.
+Yuna: where does boundaries stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_281
+Lia: daily question.
+Lia: what kind of tenderness makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_282
+Yuna: daily question.
+Yuna: when does tenderness start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_283
+Lia: daily question.
+Lia: what version of tenderness feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_284
+Yuna: daily question.
+Yuna: where does tenderness stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_285
+Lia: daily question.
+Lia: what kind of skill makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_286
+Yuna: daily question.
+Yuna: when does skill start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_287
+Lia: daily question.
+Lia: what version of skill feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_288
+Yuna: daily question.
+Yuna: where does skill stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_289
+Lia: daily question.
+Lia: what kind of luck makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_290
+Yuna: daily question.
+Yuna: when does luck start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_291
+Lia: daily question.
+Lia: what version of luck feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_292
+Yuna: daily question.
+Yuna: where does luck stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_293
+Lia: daily question.
+Lia: what kind of home makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_294
+Yuna: daily question.
+Yuna: when does home start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_295
+Lia: daily question.
+Lia: what version of home feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_296
+Yuna: daily question.
+Yuna: where does home stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_297
+Lia: daily question.
+Lia: what kind of reassurance makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_298
+Yuna: daily question.
+Yuna: when does reassurance start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_299
+Lia: daily question.
+Lia: what version of reassurance feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_300
+Yuna: daily question.
+Yuna: where does reassurance stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_301
+Lia: daily question.
+Lia: what kind of privacy makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_302
+Yuna: daily question.
+Yuna: when does privacy start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_303
+Lia: daily question.
+Lia: what version of privacy feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_304
+Yuna: daily question.
+Yuna: where does privacy stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_305
+Lia: daily question.
+Lia: what kind of hope makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_306
+Yuna: daily question.
+Yuna: when does hope start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_307
+Lia: daily question.
+Lia: what version of hope feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_308
+Yuna: daily question.
+Yuna: where does hope stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_309
+Lia: daily question.
+Lia: what kind of freedom makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_310
+Yuna: daily question.
+Yuna: when does freedom start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_311
+Lia: daily question.
+Lia: what version of freedom feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_312
+Yuna: daily question.
+Yuna: where does freedom stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_313
+Lia: daily question.
+Lia: what kind of consistency makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_314
+Yuna: daily question.
+Yuna: when does consistency start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_315
+Lia: daily question.
+Lia: what version of consistency feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_316
+Yuna: daily question.
+Yuna: where does consistency stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_317
+Lia: daily question.
+Lia: what kind of flirting makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_318
+Yuna: daily question.
+Yuna: when does flirting start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_319
+Lia: daily question.
+Lia: what version of flirting feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_320
+Yuna: daily question.
+Yuna: where does flirting stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_321
+Lia: daily question.
+Lia: what kind of good timing makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_322
+Yuna: daily question.
+Yuna: when does good timing start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_323
+Lia: daily question.
+Lia: what version of good timing feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_324
+Yuna: daily question.
+Yuna: where does good timing stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_325
+Lia: daily question.
+Lia: what kind of conversation makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_326
+Yuna: daily question.
+Yuna: when does conversation start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_327
+Lia: daily question.
+Lia: what version of conversation feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_328
+Yuna: daily question.
+Yuna: where does conversation stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_329
+Lia: daily question.
+Lia: what kind of quiet makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_330
+Yuna: daily question.
+Yuna: when does quiet start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_331
+Lia: daily question.
+Lia: what version of quiet feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_332
+Yuna: daily question.
+Yuna: where does quiet stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_333
+Lia: daily question.
+Lia: what kind of recognition makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_334
+Yuna: daily question.
+Yuna: when does recognition start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_335
+Lia: daily question.
+Lia: what version of recognition feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_336
+Yuna: daily question.
+Yuna: where does recognition stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_337
+Lia: daily question.
+Lia: what kind of recovery makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_338
+Yuna: daily question.
+Yuna: when does recovery start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_339
+Lia: daily question.
+Lia: what version of recovery feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_340
+Yuna: daily question.
+Yuna: where does recovery stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_341
+Lia: daily question.
+Lia: what kind of momentum makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_342
+Yuna: daily question.
+Yuna: when does momentum start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_343
+Lia: daily question.
+Lia: what version of momentum feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_344
+Yuna: daily question.
+Yuna: where does momentum stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_345
+Lia: daily question.
+Lia: what kind of mercy makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_346
+Yuna: daily question.
+Yuna: when does mercy start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_347
+Lia: daily question.
+Lia: what version of mercy feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_348
+Yuna: daily question.
+Yuna: where does mercy stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_349
+Lia: daily question.
+Lia: what kind of certainty makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_350
+Yuna: daily question.
+Yuna: when does certainty start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_351
+Lia: daily question.
+Lia: what version of certainty feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_352
+Yuna: daily question.
+Yuna: where does certainty stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---
+=== daily_question_353
+Lia: daily question.
+Lia: what kind of uncertainty makes you feel steadier.
+Yuna: precision will be rewarded in spirit.
+---
+=== daily_question_354
+Yuna: daily question.
+Yuna: when does uncertainty start feeling more understood instead of ordinary to you.
+Lia: if the answers get too real i am blaming all of you lovingly.
+---
+=== daily_question_355
+Lia: daily question.
+Lia: what version of uncertainty feels most a little braver in your life lately.
+Yuna: impressive. a question with consequences.
+---
+=== daily_question_356
+Yuna: daily question.
+Yuna: where does uncertainty stop being simple and start feeling harder to fake to you.
+Lia: i want honest answers, not polished little performances.
+---

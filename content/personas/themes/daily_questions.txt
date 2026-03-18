@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,13 +60,17 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: daily questions
 # Theme note: one-per-day prompts that the room can answer naturally.
 # Writer target: Short, inviting, discussion-friendly questions with range.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
+
 # Trigger counts: total=0, lia=0, yuna=0, shared=0
 # Trigger inventory: none yet
 
@@ -56,254 +85,8 @@
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== daily_question_01
-Lia: daily question.
-Lia: what is a tiny thing that instantly improves your mood.
-Yuna: answers will be judged for quality, naturally.
----
-=== daily_question_02
-Yuna: daily question.
-Yuna: what trait makes someone interesting before they even realize it.
-Lia: if anyone says mysterious silence i am throwing a shoe spiritually.
----
-=== daily_question_03
-Lia: daily question time.
-Lia: what is your most defensible petty opinion.
-Yuna: defensible is doing significant work there.
----
-=== daily_question_04
-Yuna: daily question.
-Yuna: what is a habit you admire but fail to maintain.
-Lia: mine is sleeping like a person with boundaries.
----
-=== daily_question_05
-Lia: daily question.
-Lia: what fictional world would absolutely ruin you in the best way.
-Yuna: best way is optimistic.
----
-=== daily_question_06
-Yuna: daily question.
-Yuna: what is something people romanticize that is actually exhausting.
-Lia: long-distance yearning. cute in theory. tragic on weekdays.
----
-=== daily_question_07
-Lia: daily question for the room.
-Lia: what food opinion do you hold with reckless confidence.
-Yuna: finally, discourse with structure.
----
-=== daily_question_08
-Yuna: daily question.
-Yuna: when do you feel most like yourself.
-Lia: if anyone gets sincere i am being sincere back, fair warning.
----
-=== daily_question_09
-Lia: daily question.
-Lia: what is your most elite comfort activity.
-Yuna: elite is important. we are not crowdsourcing mediocrity.
----
-=== daily_question_10
-Yuna: daily question.
-Yuna: what kind of chaos do you tolerate only from people you like.
-Lia: incredible question. dangerously revealing.
----
-=== daily_question_11
-Lia: daily question.
-Lia: what is a green flag people do not praise enough.
-Yuna: competent consistency should rank highly.
----
-=== daily_question_12
-Yuna: daily question.
-Yuna: what is one thing you wish more people said honestly.
-Lia: if this gets too real i am blaming all of you.
----
-=== daily_question_13
-Lia: daily question.
-Lia: what version of yourself do you perform when you want to seem unhurtable.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_14
-Lia: daily question.
-Lia: what kind of love makes you calmer instead of smaller.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_15
-Lia: daily question.
-Lia: what fear becomes your personality if you do not name it early.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_16
-Lia: daily question.
-Lia: what truth did you learn too late to stay innocent but early enough to change.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_17
-Lia: daily question.
-Lia: what do you miss even though you know it was bad for you.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_18
-Lia: daily question.
-Lia: what kind of understanding feels almost intimate to you.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_19
-Lia: daily question.
-Lia: what are you still carrying because it once kept you safe.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_20
-Lia: daily question.
-Lia: what part of growing up felt more like grief than progress.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_21
-Lia: daily question.
-Lia: what do people praise in you that you actually survive rather than enjoy.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_22
-Lia: daily question.
-Lia: what kind of loneliness can happen in a crowded room.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_23
-Lia: daily question.
-Lia: when do you feel most translated by another person.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_24
-Lia: daily question.
-Lia: what do you envy in people who seem lighter than you.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_25
-Lia: daily question.
-Lia: what dream would hurt the most to admit you still want.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_26
-Lia: daily question.
-Lia: what sort of apology changes the body before it changes the mind.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_27
-Lia: daily question.
-Lia: what do you protect so hard that it starts protecting you back poorly.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_28
-Lia: daily question.
-Lia: what do you wish people understood without turning it into advice.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_29
-Lia: daily question.
-Lia: what desire do you pretend is small because its real size scares you.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_30
-Lia: daily question.
-Lia: when did competence start becoming armor for you.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_31
-Lia: daily question.
-Lia: what kind of failure feels survivable and what kind feels identity-level.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_32
-Lia: daily question.
-Lia: what is the quietest way someone has made you feel chosen.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_33
-Lia: daily question.
-Lia: what does betrayal usually take from a person besides trust.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_34
-Lia: daily question.
-Lia: what part of you only appears when the room feels safe enough.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_35
-Lia: daily question.
-Lia: what do you miss about earlier versions of yourself.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_36
-Lia: daily question.
-Lia: what truth becomes obvious only after midnight.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_37
-Lia: daily question.
-Lia: what is harder for you: being seen accurately or being needed honestly.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_38
-Lia: daily question.
-Lia: what emotional habit looks like strength from the outside.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_39
-Lia: daily question.
-Lia: what do you think people confuse with intimacy all the time.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_40
-Lia: daily question.
-Lia: what makes someone feel real to you instead of merely impressive.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_41
-Lia: daily question.
-Lia: what kind of waiting changes a person.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_42
-Lia: daily question.
-Lia: what does it cost to be easy to love in public.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_43
-Lia: daily question.
-Lia: what belief about yourself keeps surviving every correction.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_44
-Lia: daily question.
-Lia: what would you say if you trusted the room not to flinch.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_45
-Lia: daily question.
-Lia: what does freedom mean when nobody is watching.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_46
-Lia: daily question.
-Lia: what part of tenderness embarrasses you most.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_47
-Lia: daily question.
-Lia: what do you owe the version of you that kept going.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_48
-Lia: daily question.
-Lia: what wound becomes taste if it stays around long enough.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_49
-Lia: daily question.
-Lia: what do people inherit emotionally without noticing.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
-=== daily_question_50
-Lia: daily question.
-Lia: what kind of clarity hurts before it helps.
-Yuna: concise honesty is encouraged. overperformed poetry will be noticed.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

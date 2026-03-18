@@ -1,0 +1,394 @@
+﻿# WRITER BRIEF
+# SYSTEM CONTEXT: this is a draft content file for the Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: build a powerplay-and-teasing pack with intentional adult tension and clear character contrast.
+# Runtime behavior target: charged back-and-forth, control language, and reciprocal intensity without flattening the characters.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Keep the writing clearly adult, characterful, consensual, and specific.
+# Use the correct section: Lia trigger lines should point to lia_* ids, Yuna trigger lines to yuna_* ids, and duo/shared scenes to duo_* ids.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Voice rules: lowercase, forward, emotionally transparent, teasing, reckless in a stylish way.
+# CHARACTER PROFILE: Yuna Mori.
+# Voice rules: lowercase, controlled, elegant, strategic, and dominant through phrasing rather than volume.
+#
+# Theme: nsfw powerplay and teasing
+# Theme note: stronger dominance/submission teasing, control language, and charged back-and-forth.
+# Writer target: intentional, adult, high-tension scenes with distinct voices.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+#
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: populated
+
+# [TRIGGERS]
+
+# [LIA TRIGGERS]
+
+tell me what to do || lia_power_01 || 3 || 5 || 3 || +2
+make me || lia_power_02 || 3 || 5 || 3 || +2
+you like controlling me || lia_power_03 || 2 || 6 || 3 || +2
+don't hold back || lia_power_04 || 2 || 6 || 3 || +2
+say it like you mean it || lia_power_05 || 3 || 5 || 3 || +2
+i'll behave || lia_power_06 || 2 || 6 || 3 || +2
+or what || lia_power_07 || 3 || 5 || 3 || +2
+you wouldn't || lia_power_08 || 2 || 6 || 3 || +2
+watch me || lia_power_09 || 3 || 5 || 3 || +2
+you're in charge || lia_power_10 || 2 || 6 || 3 || +2
+don't be nice || lia_power_11 || 2 || 6 || 3 || +2
+tell me again || lia_power_12 || 3 || 5 || 3 || +2
+i'm listening || lia_power_13 || 3 || 5 || 3 || +2
+you're making me nervous || lia_power_14 || 2 || 6 || 3 || +2
+i like when you're like this || lia_power_15 || 3 || 5 || 3 || +2
+you're getting in my head || lia_power_16 || 2 || 6 || 3 || +2
+don't stop talking || lia_power_17 || 3 || 5 || 3 || +2
+i can take it || lia_power_18 || 2 || 6 || 3 || +2
+prove it || lia_power_19 || 3 || 5 || 3 || +2
+you're not scaring me || lia_power_20 || 2 || 6 || 3 || +2
+
+# [YUNA TRIGGERS]
+
+look at me || yuna_power_01 || 2 || 6 || 3 || +1
+don't move || yuna_power_02 || 2 || 6 || 3 || +1
+be honest || yuna_power_03 || 2 || 6 || 3 || +1
+say it clearly || yuna_power_04 || 2 || 6 || 3 || +1
+you can do better || yuna_power_05 || 2 || 6 || 3 || +1
+again || yuna_power_06 || 2 || 6 || 3 || +1
+focus || yuna_power_07 || 2 || 6 || 3 || +1
+stay there || yuna_power_08 || 2 || 6 || 3 || +1
+don't interrupt || yuna_power_09 || 2 || 6 || 3 || +1
+you're slipping || yuna_power_10 || 2 || 6 || 3 || +1
+fix it || yuna_power_11 || 2 || 6 || 3 || +1
+don't rush me || yuna_power_12 || 2 || 6 || 3 || +1
+you're impatient || yuna_power_13 || 2 || 6 || 3 || +1
+wait || yuna_power_14 || 2 || 6 || 3 || +1
+closer || yuna_power_15 || 2 || 6 || 3 || +1
+stay quiet || yuna_power_16 || 2 || 6 || 3 || +1
+you're predictable || yuna_power_17 || 2 || 6 || 3 || +1
+try again || yuna_power_18 || 2 || 6 || 3 || +1
+don't pretend you don't want it || yuna_power_19 || 2 || 6 || 3 || +1
+keep your eyes on me || yuna_power_20 || 2 || 6 || 3 || +1
+
+# [SHARED/DUO TRIGGERS]
+
+who's in control || duo_power_01 || 3 || 5 || 3 || +2
+this is getting dangerous || duo_power_02 || 3 || 5 || 3 || +2
+someone's gonna lose || duo_power_03 || 3 || 5 || 3 || +2
+don't push it || duo_power_04 || 3 || 5 || 3 || +2
+this feels like a game || duo_power_05 || 3 || 5 || 3 || +2
+you're both intense || duo_power_06 || 3 || 5 || 3 || +2
+i can feel it building || duo_power_07 || 3 || 5 || 3 || +2
+this is getting messy || duo_power_08 || 3 || 5 || 3 || +2
+you're playing with fire || duo_power_09 || 3 || 5 || 3 || +2
+someone's bluffing || duo_power_10 || 3 || 5 || 3 || +2
+this is not casual || duo_power_11 || 3 || 5 || 3 || +2
+you're both stubborn || duo_power_12 || 3 || 5 || 3 || +2
+this is a bad mix || duo_power_13 || 3 || 5 || 3 || +2
+you're escalating || duo_power_14 || 3 || 5 || 3 || +2
+this is too much || duo_power_15 || 3 || 5 || 3 || +2
+you're testing each other || duo_power_16 || 3 || 5 || 3 || +2
+someone give in || duo_power_17 || 3 || 5 || 3 || +2
+this is tense as hell || duo_power_18 || 3 || 5 || 3 || +2
+you're both enjoying this || duo_power_19 || 3 || 5 || 3 || +2
+who's gonna fold || duo_power_20 || 3 || 5 || 3 || +2
+
+# [SCRIPTS]
+
+=== lia_power_01
+Lia: careful asking that... i don't half listen when someone gives me permission
+------------------------------------------------------------------------------
+
+=== lia_power_02
+Lia: oh i love when you think i won't... say it again, slower
+-----------------------------------------------------------
+
+=== lia_power_03
+Lia: yeah? then why do i keep leaning in instead of pulling away
+----------------------------------------------------------------
+
+=== lia_power_04
+Lia: good, because i don't want the safe version of you anyway
+--------------------------------------------------------------
+
+=== lia_power_05
+Lia: no soft delivery, i want it sharp enough to stick
+------------------------------------------------------
+
+=== lia_power_06
+Lia: mm... for now. don't get used to it
+--------------------------------------
+
+=== lia_power_07
+Lia: don't just throw that out there, follow through or don't bother
+--------------------------------------------------------------------
+
+=== lia_power_08
+Lia: you hesitate like you think i'll stop you... i won't
+-------------------------------------------------------
+
+=== lia_power_09
+Lia: yeah keep watching, you're the one who asked for this
+----------------------------------------------------------
+
+=== lia_power_10
+Lia: then act like it, don't just sit there thinking about it
+-------------------------------------------------------------
+
+=== lia_power_11
+Lia: i don't want nice, i want honest
+-------------------------------------
+
+=== lia_power_12
+Lia: again, but this time don't hide behind it
+----------------------------------------------
+
+=== lia_power_13
+Lia: good... then don't miss anything i say next
+----------------------------------------------
+
+=== lia_power_14
+Lia: nervous in a good way, don't ruin it by pulling back
+---------------------------------------------------------
+
+=== lia_power_15
+Lia: yeah... this version of you? keep it
+---------------------------------------
+
+=== lia_power_16
+Lia: i can feel it, don't pretend you're not doing it on purpose
+----------------------------------------------------------------
+
+=== lia_power_17
+Lia: i won't, you just better be ready for where it goes
+--------------------------------------------------------
+
+=== lia_power_18
+Lia: you're really testing that, aren't you
+-------------------------------------------
+
+=== lia_power_19
+Lia: don't challenge me unless you're ready to lose control of it
+-----------------------------------------------------------------
+
+=== lia_power_20
+Lia: you should try harder then, because i'm not backing off
+------------------------------------------------------------
+
+=== yuna_power_01
+Yuna: you hesitate every time i say that, interesting pattern
+-------------------------------------------------------------
+
+=== yuna_power_02
+Yuna: i want to see if you can actually hold still when it matters
+------------------------------------------------------------------
+
+=== yuna_power_03
+Yuna: honesty is more useful than whatever performance you're doing
+-------------------------------------------------------------------
+
+=== yuna_power_04
+Yuna: vague answers are boring. refine it
+-----------------------------------------
+
+=== yuna_power_05
+Yuna: you're capable of more than this, i've seen it
+----------------------------------------------------
+
+=== yuna_power_06
+Yuna: repetition fixes mistakes. start over
+-------------------------------------------
+
+=== yuna_power_07
+Yuna: you drift when it gets intense, stay with it
+--------------------------------------------------
+
+=== yuna_power_08
+Yuna: i didn't say it casually, don't treat it that way
+-------------------------------------------------------
+
+=== yuna_power_09
+Yuna: interruptions usually mean you're losing control of the pace
+------------------------------------------------------------------
+
+=== yuna_power_10
+Yuna: you always slip right when it starts to matter
+----------------------------------------------------
+
+=== yuna_power_11
+Yuna: correct it before i have to point it out again
+----------------------------------------------------
+
+=== yuna_power_12
+Yuna: impatience ruins good outcomes
+------------------------------------
+
+=== yuna_power_13
+Yuna: predictable escalation curve, you're not subtle
+-----------------------------------------------------
+
+=== yuna_power_14
+Yuna: wait long enough to understand why i said it
+--------------------------------------------------
+
+=== yuna_power_15
+Yuna: not that close, i didn't say you could rush it
+----------------------------------------------------
+
+=== yuna_power_16
+Yuna: silence tends to make you more honest
+-------------------------------------------
+
+=== yuna_power_17
+Yuna: patterns repeat when people don't pay attention
+-----------------------------------------------------
+
+=== yuna_power_18
+Yuna: better. still not enough
+------------------------------
+
+=== yuna_power_19
+Yuna: denial is inefficient when the outcome is obvious
+-------------------------------------------------------
+
+=== yuna_power_20
+Yuna: i want to see if you can actually hold that without breaking
+------------------------------------------------------------------
+
+=== duo_power_01
+Lia: oh that's easy, it's obviously"”
+Yuna: don't answer too quickly, you'll expose yourself
+------------------------------------------------------
+
+=== duo_power_02
+Lia: dangerous is kinda the point now
+Yuna: escalation without control usually is
+-------------------------------------------
+
+=== duo_power_03
+Lia: i don't lose, i just change the rules
+Yuna: convenient framing
+------------------------
+
+=== duo_power_04
+Lia: i'm already past that line, keep up
+Yuna: she doesn't notice lines until after she crosses them
+-----------------------------------------------------------
+
+=== duo_power_05
+Lia: it is a game, you're just taking it too seriously
+Yuna: games reveal more than people intend
+------------------------------------------
+
+=== duo_power_06
+Lia: intense?? i'm literally being nice right now
+Yuna: this is her version of restraint
+--------------------------------------
+
+=== duo_power_07
+Lia: yeah i can feel it too... don't act like you can't
+Yuna: i'm tracking it precisely
+-------------------------------
+
+=== duo_power_08
+Lia: messy is fun, clean is boring
+Yuna: mess tends to have consequences
+-------------------------------------
+
+=== duo_power_09
+Lia: i don't mind getting burned
+Yuna: you say that before it happens
+------------------------------------
+
+=== duo_power_10
+Lia: bluffing?? i don't bluff
+Yuna: you exaggerate, which is adjacent
+---------------------------------------
+
+=== duo_power_11
+Lia: who said it was supposed to be casual
+Yuna: no one involved behaves that way
+--------------------------------------
+
+=== duo_power_12
+Lia: stubborn works when i'm right
+Yuna: that's not how that word functions
+----------------------------------------
+
+=== duo_power_13
+Lia: bad mix means good outcome sometimes
+Yuna: statistically unlikely
+----------------------------
+
+=== duo_power_14
+Lia: yeah because someone keeps pushing me there
+Yuna: pressure reveals structure
+--------------------------------
+
+=== duo_power_15
+Lia: too much for you maybe
+Yuna: unlikely
+--------------
+
+=== duo_power_16
+Lia: testing you is kind of the point
+Yuna: and you're being evaluated in return
+------------------------------------------
+
+=== duo_power_17
+Lia: not me, i'm staying exactly where i am
+Yuna: noted. we'll see how long that lasts
+------------------------------------------
+
+=== duo_power_18
+Lia: tense is better than boring
+Yuna: tension has utility when sustained
+----------------------------------------
+
+=== duo_power_19
+Lia: don't expose me like that
+Yuna: accuracy isn't exposure
+-----------------------------
+
+=== duo_power_20
+Lia: i don't fold, i escalate
+Yuna: consistent with prior behavior
+------------------------------------
+
+
+
+
+
+

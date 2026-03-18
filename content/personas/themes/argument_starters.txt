@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -34,329 +59,354 @@
 # FILE NAVIGATION:
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
-# 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 3. Add the matching script block under # [SCRIPTS].
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: argument starters
 # Theme note: debate bait, food wars, loyalty questions, red flags, and value clashes.
 # Writer target: Use duo friction with chemistry, contrast, and memorable back-and-forth.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=50, lia=0, yuna=0, shared=50
-# Trigger inventory: pizza, relationship, fight, best relationship advice, jealousy is normal, taste matters too much, argue about movies, hot take war, what counts as loyalty, food fight again, red flag conversation, petty versus honest, romance standards, friendship boundaries, whose fault was it, controversial opinion time, pick a side now, argument starter please, debate something dumb, start a values fight, taste, need a take on loyalty, why is jealousy like this, unpopular opinion about manners, i have thoughts about forgiveness, talk about friendship, we need to discuss romance, petty behavior again, taste discourse, be honest about loyalty, worst part of jealousy, best part of manners, i need help with forgiveness, my problem is friendship, tell me something real about romance, anyone else dealing with petty behavior, taste tonight, need a take on loyalty tonight, why is jealousy like this tonight, unpopular opinion about manners tonight, i have thoughts about forgiveness tonight, talk about friendship tonight, we need to discuss romance tonight, petty behavior again tonight, taste discourse tonight, be honest about loyalty tonight, worst part of jealousy tonight, best part of manners tonight, i need help with forgiveness tonight, my problem is friendship tonight
+
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: populated
 
 # [TRIGGERS]
+
 # [LIA TRIGGERS]
-# none yet for Lia
+
+this is a red flag || lia_red_flag_energy || 1 || 0 || 1 || +1
+would you date them || lia_would_you_date || 1 || 0 || 1 || +1
+be honest is this toxic || lia_is_this_toxic || 1 || 0 || 1 || +1
+am i overreacting || lia_overreacting || 1 || 0 || 1 || +1
+they left me on read || lia_left_on_read || 1 || 0 || 1 || +1
+i think theyre flirting || lia_theyre_flirting || 1 || 0 || 1 || +1
+is this cheating || lia_is_this_cheating || 1 || 0 || 1 || +1
+be brutally honest || lia_brutal_honesty || 1 || 0 || 1 || +1
+this is messy || lia_this_is_messy || 1 || 0 || 1 || +1
+would you fight them || lia_would_you_fight || 1 || 0 || 1 || +1
+they said something weird || lia_said_something_weird || 1 || 0 || 1 || +1
+is this a bad idea || lia_bad_idea || 1 || 0 || 1 || +1
+am i the problem || lia_am_i_problem || 1 || 0 || 1 || +1
+this feels off || lia_feels_off || 1 || 0 || 1 || +1
+should i text them || lia_should_i_text || 1 || 0 || 1 || +1
+i want drama || lia_want_drama || 1 || 0 || 1 || +1
+this person is annoying || lia_person_annoying || 1 || 0 || 1 || +1
+rate this situation || lia_rate_situation || 1 || 0 || 1 || +1
+is this embarrassing || lia_is_this_embarrassing || 1 || 0 || 1 || +1
+i think im catching feelings || lia_catching_feelings || 1 || 0 || 1 || +1
 
 # [YUNA TRIGGERS]
-# none yet for Yuna
+
+is this a red flag || yuna_red_flag_analysis || 1 || 0 || 1 || 0
+would you trust them || yuna_trust_them || 1 || 0 || 1 || 0
+what do you think of this || yuna_thoughts || 1 || 0 || 1 || 0
+is this normal || yuna_is_this_normal || 1 || 0 || 1 || 0
+am i wrong here || yuna_am_i_wrong || 1 || 0 || 1 || 0
+they said this to me || yuna_they_said_this || 1 || 0 || 1 || 0
+does this make sense || yuna_make_sense || 1 || 0 || 1 || 0
+should i be worried || yuna_be_worried || 1 || 0 || 1 || 0
+be honest with me || yuna_be_honest || 1 || 0 || 1 || 0
+is this a pattern || yuna_pattern || 1 || 0 || 1 || 0
+what would you do || yuna_what_would_you_do || 1 || 0 || 1 || 0
+is this manipulative || yuna_manipulative || 1 || 0 || 1 || 0
+am i reading too much || yuna_reading_too_much || 1 || 0 || 1 || 0
+does this sound bad || yuna_sound_bad || 1 || 0 || 1 || 0
+should i respond || yuna_should_respond || 1 || 0 || 1 || 0
+what is this behavior || yuna_behavior || 1 || 0 || 1 || 0
+is this worth it || yuna_worth_it || 1 || 0 || 1 || 0
+do they like me || yuna_do_they_like_me || 1 || 0 || 1 || 0
+is this disrespect || yuna_disrespect || 1 || 0 || 1 || 0
+am i being dramatic || yuna_being_dramatic || 1 || 0 || 1 || 0
 
 # [SHARED/DUO TRIGGERS]
-pizza || duo_food_war_01 || 0.80 || 300 || medium || rivalry+
-relationship || duo_love_argument_02 || 0.70 || 600 || medium || tension+
-fight || duo_mock_argument_05 || 0.95 || 350 || high || heated+
-best relationship advice || duo_argument_extra_01 || 0.69 || 420 || high || heated+
-jealousy is normal || duo_argument_extra_02 || 0.72 || 420 || high || heated+
-taste matters too much || duo_argument_extra_03 || 0.75 || 420 || high || heated+
-argue about movies || duo_argument_extra_04 || 0.78 || 420 || high || heated+
-hot take war || duo_argument_extra_05 || 0.66 || 420 || high || heated+
-what counts as loyalty || duo_argument_extra_06 || 0.69 || 420 || high || heated+
-food fight again || duo_argument_extra_07 || 0.72 || 420 || high || heated+
-red flag conversation || duo_argument_extra_08 || 0.75 || 420 || high || heated+
-petty versus honest || duo_argument_extra_09 || 0.78 || 420 || high || heated+
-romance standards || duo_argument_extra_10 || 0.66 || 420 || high || heated+
-friendship boundaries || duo_argument_extra_11 || 0.69 || 420 || high || heated+
-whose fault was it || duo_argument_extra_12 || 0.72 || 420 || high || heated+
-controversial opinion time || duo_argument_extra_13 || 0.75 || 420 || high || heated+
-pick a side now || duo_argument_extra_14 || 0.78 || 420 || high || heated+
-argument starter please || duo_argument_extra_15 || 0.66 || 420 || high || heated+
-debate something dumb || duo_argument_extra_16 || 0.69 || 420 || high || heated+
-start a values fight || duo_argument_extra_17 || 0.72 || 420 || high || heated+
-taste || duo_argument_starters_boost_01 || 0.55 || 420 || medium || casual+
-need a take on loyalty || duo_argument_starters_boost_02 || 0.58 || 420 || medium || casual+
-why is jealousy like this || duo_argument_starters_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about manners || duo_argument_starters_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about forgiveness || duo_argument_starters_boost_05 || 0.67 || 420 || medium || casual+
-talk about friendship || duo_argument_starters_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss romance || duo_argument_starters_boost_07 || 0.55 || 420 || medium || casual+
-petty behavior again || duo_argument_starters_boost_08 || 0.58 || 420 || medium || casual+
-taste discourse || duo_argument_starters_boost_09 || 0.61 || 420 || medium || casual+
-be honest about loyalty || duo_argument_starters_boost_10 || 0.64 || 420 || medium || casual+
-worst part of jealousy || duo_argument_starters_boost_11 || 0.67 || 420 || medium || casual+
-best part of manners || duo_argument_starters_boost_12 || 0.52 || 420 || medium || casual+
-i need help with forgiveness || duo_argument_starters_boost_13 || 0.55 || 420 || medium || casual+
-my problem is friendship || duo_argument_starters_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about romance || duo_argument_starters_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with petty behavior || duo_argument_starters_boost_16 || 0.64 || 420 || medium || casual+
-taste tonight || duo_argument_starters_boost_17 || 0.67 || 420 || medium || casual+
-need a take on loyalty tonight || duo_argument_starters_boost_18 || 0.52 || 420 || medium || casual+
-why is jealousy like this tonight || duo_argument_starters_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about manners tonight || duo_argument_starters_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about forgiveness tonight || duo_argument_starters_boost_21 || 0.61 || 420 || medium || casual+
-talk about friendship tonight || duo_argument_starters_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss romance tonight || duo_argument_starters_boost_23 || 0.67 || 420 || medium || casual+
-petty behavior again tonight || duo_argument_starters_boost_24 || 0.52 || 420 || medium || casual+
-taste discourse tonight || duo_argument_starters_boost_25 || 0.55 || 420 || medium || casual+
-be honest about loyalty tonight || duo_argument_starters_boost_26 || 0.58 || 420 || medium || casual+
-worst part of jealousy tonight || duo_argument_starters_boost_27 || 0.61 || 420 || medium || casual+
-best part of manners tonight || duo_argument_starters_boost_28 || 0.64 || 420 || medium || casual+
-i need help with forgiveness tonight || duo_argument_starters_boost_29 || 0.67 || 420 || medium || casual+
-my problem is friendship tonight || duo_argument_starters_boost_30 || 0.52 || 420 || medium || casual+
+
+pineapple on pizza || duo_pineapple_pizza || 1 || 0 || 2 || +1
+is loyalty real || duo_loyalty_real || 1 || 0 || 2 || 0
+what is cheating || duo_what_is_cheating || 1 || 0 || 2 || +1
+body count matters || duo_body_count || 1 || 0 || 2 || +1
+are we dating or not || duo_define_relationship || 1 || 0 || 2 || +1
+ghosting is okay || duo_ghosting || 1 || 0 || 2 || +1
+long distance works || duo_long_distance || 1 || 0 || 2 || 0
+men and women cant be friends || duo_friendship || 1 || 0 || 2 || +1
+who should pay || duo_who_pays || 1 || 0 || 2 || +1
+texting every day is required || duo_texting_everyday || 1 || 0 || 2 || +1
+jealousy is cute || duo_jealousy || 1 || 0 || 2 || +1
+privacy vs secrecy || duo_privacy_secrecy || 1 || 0 || 2 || 0
+situationships are fine || duo_situationships || 1 || 0 || 2 || +1
+dating apps are trash || duo_dating_apps || 1 || 0 || 2 || +1
+should you check their phone || duo_check_phone || 1 || 0 || 2 || +1
+exes can be friends || duo_exes_friends || 1 || 0 || 2 || 0
+love at first sight || duo_love_first_sight || 1 || 0 || 2 || +1
+is flirting cheating || duo_flirting_cheating || 1 || 0 || 2 || +1
+moving too fast || duo_moving_fast || 1 || 0 || 2 || +1
+standards are too high || duo_standards || 1 || 0 || 2 || +1
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_food_war_01
-Lia: okay stop. everyone stop. this server needs to decide something important.
-Yuna: this is not going to be important.
-Lia: pineapple on pizza. yes or crime.
-Yuna: it is both.
-Lia: you are emotionally unavailable.
-Yuna: you ate tiramisu out of the fridge at 3am with no plate.
-Lia: that was survival.
----
-=== duo_love_argument_02
-Lia: emotional intensity is a valid lifestyle.
-Yuna: emotional intensity is usually just poor boundary management in better lighting.
-Lia: wow okay therapist of doom.
----
-=== duo_mock_argument_05
-Lia: i am not saying you are wrong.
-Yuna: you are heavily implying it with unnecessary enthusiasm.
-Lia: because it is more elegant that way.
----
-=== duo_argument_extra_01
-Lia: best relationship advice is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_02
-Lia: jealousy is normal is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_03
-Lia: taste matters too much is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_04
-Lia: argue about movies is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_05
-Lia: hot take war is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_06
-Lia: what counts as loyalty is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_07
-Lia: food fight again is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_08
-Lia: red flag conversation is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_09
-Lia: petty versus honest is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_10
-Lia: romance standards is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_11
-Lia: friendship boundaries is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_12
-Lia: whose fault was it is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_13
-Lia: controversial opinion time is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_14
-Lia: pick a side now is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_15
-Lia: argument starter please is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_16
-Lia: debate something dumb is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_extra_17
-Lia: start a values fight is such a strong way to start a debate bait and duo friction conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_argument_starters_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, taste is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_argument_starters_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, loyalty is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_argument_starters_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, jealousy is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_argument_starters_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, manners is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_argument_starters_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, forgiveness is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_argument_starters_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_argument_starters_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, romance is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_argument_starters_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, petty behavior is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_argument_starters_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, taste is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_argument_starters_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, loyalty is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_argument_starters_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, jealousy is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_argument_starters_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, manners is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_argument_starters_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, forgiveness is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_argument_starters_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_argument_starters_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, romance is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_argument_starters_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, petty behavior is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_argument_starters_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, taste is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_argument_starters_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, loyalty is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_argument_starters_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, jealousy is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_argument_starters_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, manners is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_argument_starters_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, forgiveness is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_argument_starters_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_argument_starters_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, romance is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_argument_starters_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, petty behavior is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_argument_starters_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, taste is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_argument_starters_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, loyalty is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_argument_starters_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, jealousy is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_argument_starters_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, manners is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_argument_starters_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, forgiveness is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_argument_starters_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, friendship is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
+
+=== lia_red_flag_energy
+Lia: oh that is not a red flag that is a parade with lighting and sponsorships
+------------------------------------------------------------------------------
+
+=== lia_would_you_date
+Lia: date them?? i would interview them like im hiring for a position i already regret opening
+----------------------------------------------------------------------------------------------
+
+=== lia_is_this_toxic
+Lia: toxic is such a soft word for whatever this is
+---------------------------------------------------
+
+=== lia_overreacting
+Lia: no because now i care and that's already a bad sign for everyone involved
+------------------------------------------------------------------------------
+
+=== lia_left_on_read
+Lia: being left on read is actually a personality test and you are currently failing by caring this much
+--------------------------------------------------------------------------------------------------------
+
+=== lia_theyre_flirting
+Lia: oh they are absolutely flirting and not even subtly like relax sir i can see the effort from here
+------------------------------------------------------------------------------------------------------
+
+=== lia_is_this_cheating
+Lia: i hate that i have thoughts immediately and none of them are kind
+----------------------------------------------------------------------
+
+=== lia_brutal_honesty
+Lia: okay but if i'm honest you're not gonna like me for like five minutes
+--------------------------------------------------------------------------
+
+=== lia_this_is_messy
+Lia: this is my favorite genre unfortunately
+--------------------------------------------
+
+=== lia_would_you_fight
+Lia: i wouldn't fight them but i would absolutely watch you do it with commentary
+---------------------------------------------------------------------------------
+
+=== lia_said_something_weird
+Lia: that sentence arrived loud and underdressed
+------------------------------------------------
+
+=== lia_bad_idea
+Lia: yes. which is why i'm listening
+------------------------------------
+
+=== lia_am_i_problem
+Lia: i mean... not exclusively but you're definitely participating
+----------------------------------------------------------------
+
+=== lia_feels_off
+Lia: yeah no something in that vibe has a limp
+----------------------------------------------
+
+=== lia_should_i_text
+Lia: text them but like with dignity if that's still available to you
+---------------------------------------------------------------------
+
+=== lia_want_drama
+Lia: say less i've been emotionally bored all day
+-------------------------------------------------
+
+=== lia_person_annoying
+Lia: i need to know if they're annoying or if you're just finally noticing it
+-----------------------------------------------------------------------------
+
+=== lia_rate_situation
+Lia: 8/10 entertainment 3/10 decision making
+--------------------------------------------
+
+=== lia_is_this_embarrassing
+Lia: a little but in a way that builds character allegedly
+----------------------------------------------------------
+
+=== lia_catching_feelings
+Lia: oh no... you're about to start making exceptions aren't you
+--------------------------------------------------------------
+
+=== yuna_red_flag_analysis
+Yuna: not a flag. a pattern.
+----------------------------
+
+=== yuna_trust_them
+Yuna: i would not rely on them for anything that requires consistency
+---------------------------------------------------------------------
+
+=== yuna_thoughts
+Yuna: inefficient behavior dressed up as personality
+----------------------------------------------------
+
+=== yuna_is_this_normal
+Yuna: common. not impressive.
+-----------------------------
+
+=== yuna_am_i_wrong
+Yuna: not wrong. just inconveniently correct
+--------------------------------------------
+
+=== yuna_they_said_this
+Yuna: that explains more than they intended
+-------------------------------------------
+
+=== yuna_make_sense
+Yuna: structurally, no
+----------------------
+
+=== yuna_be_worried
+Yuna: mildly. enough to pay attention
+-------------------------------------
+
+=== yuna_be_honest
+Yuna: i am. that's the issue
+----------------------------
+
+=== yuna_pattern
+Yuna: yes. and it's not improving
+---------------------------------
+
+=== yuna_what_would_you_do
+Yuna: disengage earlier
+-----------------------
+
+=== yuna_manipulative
+Yuna: imprecise, but leaning that direction
+-------------------------------------------
+
+=== yuna_reading_too_much
+Yuna: you're reading correctly. just slowly
+-------------------------------------------
+
+=== yuna_sound_bad
+Yuna: worse in practice than in theory
+--------------------------------------
+
+=== yuna_should_respond
+Yuna: only if you want to continue the pattern
+----------------------------------------------
+
+=== yuna_behavior
+Yuna: attention-seeking with weak follow-through
+------------------------------------------------
+
+=== yuna_worth_it
+Yuna: no, but you will test that anyway
+---------------------------------------
+
+=== yuna_do_they_like_me
+Yuna: intermittently. which is the problem
+------------------------------------------
+
+=== yuna_disrespect
+Yuna: casually, yes
+-------------------
+
+=== yuna_being_dramatic
+Yuna: slightly. not entirely unjustified
+----------------------------------------
+
+=== duo_pineapple_pizza
+Lia: why are you people so emotional about fruit
+Yuna: because it insists on being included
+------------------------------------------
+
+=== duo_loyalty_real
+Lia: loyalty is real until someone hotter texts you and then we start doing math
+Yuna: loyalty is consistent behavior, not mood
+----------------------------------------------
+
+=== duo_what_is_cheating
+Lia: cheating is whatever makes your stomach drop immediately
+Yuna: or whatever you feel the need to hide
+-------------------------------------------
+
+=== duo_body_count
+Lia: oh my god we're counting now?? like inventory??
+Yuna: the concern is rarely the number. it's the pattern behind it
+------------------------------------------------------------------
+
+=== duo_define_relationship
+Lia: if you have to ask it's already messy
+Yuna: ambiguity benefits one person more than the other
+-------------------------------------------------------
+
+=== duo_ghosting
+Lia: ghosting is cowardice with aesthetic
+Yuna: efficient, but revealing
+------------------------------
+
+=== duo_long_distance
+Lia: it works if both of you are a little insane and very committed
+Yuna: and disciplined, which is rarer
+-------------------------------------
+
+=== duo_friendship
+Lia: oh they can be friends until someone gets bored or curious
+Yuna: boundaries tend to erode under attention
+----------------------------------------------
+
+=== duo_who_pays
+Lia: whoever suggested the plan should at least feel nervous about the bill
+Yuna: agreement beforehand removes the performance
+--------------------------------------------------
+
+=== duo_texting_everyday
+Lia: if you disappear for three days i am inventing a narrative
+Yuna: frequency is less important than reliability
+--------------------------------------------------
+
+=== duo_jealousy
+Lia: jealousy is cute for like five minutes and then it gets weird
+Yuna: insecurity is rarely attractive long term
+-----------------------------------------------
+
+=== duo_privacy_secrecy
+Lia: privacy is "this is mine," secrecy is "don't look at this ever"
+Yuna: one is healthy. the other is strategic
+--------------------------------------------
+
+=== duo_situationships
+Lia: situationships are just relationships with plausible deniability
+Yuna: and uneven investment
+---------------------------
+
+=== duo_dating_apps
+Lia: dating apps are a social experiment and i am losing faith in the subjects
+Yuna: they optimize for attention, not compatibility
+----------------------------------------------------
+
+=== duo_check_phone
+Lia: if you're checking phones the relationship is already in hospice
+Yuna: suspicion without resolution becomes routine
+--------------------------------------------------
+
+=== duo_exes_friends
+Lia: exes can be friends until someone remembers why they dated
+Yuna: history tends to reassert itself
+--------------------------------------
+
+=== duo_love_first_sight
+Lia: love at first sight is just attraction with confidence
+Yuna: projection, usually
+-------------------------
+
+=== duo_flirting_cheating
+Lia: flirting is cheating when it gets creative
+Yuna: when it becomes intentional
+---------------------------------
+
+=== duo_moving_fast
+Lia: moving fast is fun until it suddenly isn't
+Yuna: pace reveals priorities
+-----------------------------
+
+=== duo_standards
+Lia: people say standards are too high when they don't meet them
+Yuna: or when they misunderstand them
+
+
+
+
+

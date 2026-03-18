@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,231 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: teasing
 # Theme note: smug comfort, lightly bullying affection, playful cruelty, and status play.
 # Writer target: Crisp teasing, amused superiority, and affectionate provocation.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=53, lia=23, yuna=30, shared=0
-# Trigger inventory: carry me, why are you like this, bully me, im embarrassed, dont laugh, im cursed, youre toxic, this hurts, be nice, im fragile, youre mean, i hate you, dont expose me, this is bullying, be gentle, thats illegal, youre scary, ok relax, im tiny, dont look at me, have mercy, im ruined, ok chill, cope, skill issue, unlucky, youre bad, i failed, lost again, this game hates me, im dumb, roast me, this is unfair, not my fault, i tried, why are you better, teach me, i cant win, stop judging me, ok i deserve that, i got destroyed, this is humiliating, why am i like this, im coping, im trying my best, i feel attacked, im ashamed, stop flexing, you win, im suffering, this is pain, youre smug, im folding
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-carry me || lia_teasing_01 || 0.62 || 320 || medium || playful+
-why are you like this || lia_teasing_02 || 0.60 || 320 || medium || amused+
-bully me || lia_teasing_03 || 0.58 || 360 || medium || chaotic+
-im embarrassed || lia_teasing_04 || 0.57 || 320 || medium || tender+
-dont laugh || lia_teasing_05 || 0.59 || 320 || medium || playful+
-im cursed || lia_teasing_06 || 0.58 || 320 || medium || dramatic+
-youre toxic || lia_teasing_07 || 0.60 || 340 || medium || heated+
-this hurts || lia_teasing_08 || 0.52 || 300 || low || tender+
-be nice || lia_teasing_09 || 0.56 || 320 || medium || playful+
-im fragile || lia_teasing_10 || 0.54 || 300 || low || tender+
-youre mean || lia_teasing_11 || 0.59 || 320 || medium || heated+
-i hate you || lia_teasing_12 || 0.61 || 340 || medium || chaotic+
-dont expose me || lia_teasing_13 || 0.57 || 320 || medium || playful+
-this is bullying || lia_teasing_14 || 0.58 || 320 || medium || dramatic+
-be gentle || lia_teasing_15 || 0.53 || 300 || low || tender+
-thats illegal || lia_teasing_16 || 0.55 || 320 || medium || amused+
-youre scary || lia_teasing_17 || 0.52 || 300 || low || flirty+
-ok relax || lia_teasing_18 || 0.56 || 320 || medium || playful+
-im tiny || lia_teasing_19 || 0.50 || 300 || low || tender+
-dont look at me || lia_teasing_20 || 0.54 || 300 || low || chaotic+
-have mercy || lia_teasing_21 || 0.57 || 320 || medium || dramatic+
-im ruined || lia_teasing_22 || 0.58 || 320 || medium || chaotic+
-ok chill || lia_teasing_23 || 0.55 || 320 || medium || playful+
+# none yet for Lia
 
 # [YUNA TRIGGERS]
-cope || yuna_teasing_01 || 0.75 || 360 || medium || amused+
-skill issue || yuna_teasing_01 || 0.85 || 360 || medium || amused+
-unlucky || yuna_teasing_01 || 0.58 || 360 || medium || amused+
-youre bad || yuna_teasing_02 || 0.72 || 340 || medium || amused+
-i failed || yuna_teasing_03 || 0.68 || 340 || medium || amused+
-lost again || yuna_teasing_04 || 0.66 || 340 || medium || amused+
-this game hates me || yuna_teasing_05 || 0.64 || 340 || medium || amused+
-im dumb || yuna_teasing_06 || 0.70 || 360 || medium || smug+
-roast me || yuna_teasing_07 || 0.74 || 360 || medium || amused+
-this is unfair || yuna_teasing_08 || 0.63 || 340 || medium || smug+
-not my fault || yuna_teasing_09 || 0.61 || 340 || medium || amused+
-i tried || yuna_teasing_10 || 0.65 || 340 || medium || amused+
-why are you better || yuna_teasing_11 || 0.62 || 340 || medium || smug+
-teach me || yuna_teasing_12 || 0.55 || 360 || medium || amused+
-i cant win || yuna_teasing_13 || 0.66 || 340 || medium || amused+
-stop judging me || yuna_teasing_14 || 0.64 || 360 || medium || sharp+
-ok i deserve that || yuna_teasing_15 || 0.67 || 340 || medium || amused+
-i got destroyed || yuna_teasing_16 || 0.70 || 360 || medium || amused+
-this is humiliating || yuna_teasing_17 || 0.62 || 340 || medium || smug+
-why am i like this || yuna_teasing_18 || 0.63 || 340 || medium || reflective+
-im coping || yuna_teasing_19 || 0.72 || 360 || medium || amused+
-im trying my best || yuna_teasing_20 || 0.65 || 340 || medium || amused+
-i feel attacked || yuna_teasing_21 || 0.69 || 360 || medium || amused+
-im ashamed || yuna_teasing_22 || 0.60 || 340 || medium || smug+
-stop flexing || yuna_teasing_23 || 0.64 || 360 || medium || sharp+
-you win || yuna_teasing_24 || 0.66 || 340 || medium || amused+
-im suffering || yuna_teasing_25 || 0.68 || 360 || medium || amused+
-this is pain || yuna_teasing_26 || 0.63 || 340 || medium || amused+
-youre smug || yuna_teasing_27 || 0.71 || 360 || medium || amused+
-im folding || yuna_teasing_28 || 0.69 || 360 || medium || amused+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [LIA SCRIPTS]
-=== lia_teasing_01
-Lia: carry you?? babe im barely carrying my dignity
----
-=== lia_teasing_02
-Lia: because chaos loves me and you keep feeding it
----
-=== lia_teasing_03
-Lia: careful what you ask for i bully with affection
----
-=== lia_teasing_04
-Lia: embarrassment is hot if you commit to it
----
-=== lia_teasing_05
-Lia: im laughing respectfully
----
-=== lia_teasing_06
-Lia: cursed but make it aesthetic
----
-=== lia_teasing_07
-Lia: toxic?? no im charismatic with side effects
----
-=== lia_teasing_08
-Lia: pain builds lore stay with me
----
-=== lia_teasing_09
-Lia: i am nice. just dramatically honest
----
-=== lia_teasing_10
-Lia: fragile but still cute we move
----
-=== lia_teasing_11
-Lia: mean?? im educational
----
-=== lia_teasing_12
-Lia: hate me louder i thrive on feedback
----
-=== lia_teasing_13
-Lia: exposing you is my love language
----
-=== lia_teasing_14
-Lia: bullying?? no this is character development
----
-=== lia_teasing_15
-Lia: gentle mode activated temporarily
----
-=== lia_teasing_16
-Lia: illegal confidence detected
----
-=== lia_teasing_17
-Lia: scary hot or scary scary clarify
----
-=== lia_teasing_18
-Lia: relax?? im just getting entertaining
----
-=== lia_teasing_19
-Lia: tiny but emotionally loud
----
-=== lia_teasing_20
-Lia: looking anyway respectfully
----
-=== lia_teasing_21
-Lia: mercy costs extra
----
-=== lia_teasing_22
-Lia: ruined but still iconic
----
-=== lia_teasing_23
-Lia: chill?? never heard of her
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
 
-# [YUNA SCRIPTS]
-=== yuna_teasing_01
-Yuna: i would comfort you but the situation is statistically your fault
----
-=== yuna_teasing_02
-Yuna: accuracy matters. so does self-awareness
----
-=== yuna_teasing_03
-Yuna: failure builds character. yours is progressing rapidly
----
-=== yuna_teasing_04
-Yuna: consistency is admirable. even in defeat
----
-=== yuna_teasing_05
-Yuna: blaming systems is a comforting ritual
----
-=== yuna_teasing_06
-Yuna: harsh self-assessment. statistically supported
----
-=== yuna_teasing_07
-Yuna: public humiliation is a powerful learning tool
----
-=== yuna_teasing_08
-Yuna: fairness is rarely relevant to outcomes
----
-=== yuna_teasing_09
-Yuna: responsibility avoidance detected
----
-=== yuna_teasing_10
-Yuna: effort was visible. effectiveness less so
----
-=== yuna_teasing_11
-Yuna: competence is seductive. take notes
----
-=== yuna_teasing_12
-Yuna: instruction requires obedience. consider carefully
----
-=== yuna_teasing_13
-Yuna: inevitability is exhausting. yet entertaining
----
-=== yuna_teasing_14
-Yuna: judgment is simply organized observation
----
-=== yuna_teasing_15
-Yuna: acceptance accelerates recovery
----
-=== yuna_teasing_16
-Yuna: destruction was thorough. impressive really
----
-=== yuna_teasing_17
-Yuna: humiliation refines the ego
----
-=== yuna_teasing_18
-Yuna: introspection is overdue but welcome
----
-=== yuna_teasing_19
-Yuna: coping mechanisms online are fascinating
----
-=== yuna_teasing_20
-Yuna: effort deserves applause. results less so
----
-=== yuna_teasing_21
-Yuna: perceived attacks often indicate accuracy
----
-=== yuna_teasing_22
-Yuna: shame can be productively motivating
----
-=== yuna_teasing_23
-Yuna: skill display is not flexing. it is documentation
----
-=== yuna_teasing_24
-Yuna: victory acknowledged. humility optional
----
-=== yuna_teasing_25
-Yuna: suffering tends to improve focus
----
-=== yuna_teasing_26
-Yuna: pain is informative. listen carefully
----
-=== yuna_teasing_27
-Yuna: smugness correlates strongly with correctness
----
-=== yuna_teasing_28
-Yuna: folding early is strategically efficient
----
+
+

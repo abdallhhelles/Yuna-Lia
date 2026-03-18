@@ -59,6 +59,10 @@ class MemoryStore:
         temp_path.write_text(json.dumps(self._payload, indent=2), encoding="utf-8")
         os.replace(temp_path, self.path)
 
+    def flush(self) -> None:
+        with self._lock:
+            self._save_locked()
+
     def get_user(self, user_id: str, display_name: str) -> UserMemory:
         with self._lock:
             users = self._payload.setdefault("users", {})
@@ -72,10 +76,11 @@ class MemoryStore:
                 self._save_locked()
             return user
 
-    def save_user(self, user_id: str, memory: UserMemory) -> None:
+    def save_user(self, user_id: str, memory: UserMemory, *, flush: bool = True) -> None:
         with self._lock:
             self._payload.setdefault("users", {})[user_id] = asdict(memory)
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def user_count(self) -> int:
         with self._lock:
@@ -89,10 +94,11 @@ class MemoryStore:
                 self._save_locked()
             return PersonaState(**personas[name])
 
-    def save_persona_state(self, state: PersonaState) -> None:
+    def save_persona_state(self, state: PersonaState, *, flush: bool = True) -> None:
         with self._lock:
             self._payload.setdefault("personas", {})[state.name] = asdict(state)
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def get_channel(self, channel_id: int, guild_id: int) -> ChannelPresence:
         with self._lock:
@@ -103,10 +109,11 @@ class MemoryStore:
                 self._save_locked()
             return ChannelPresence(**channels[key])
 
-    def save_channel(self, state: ChannelPresence) -> None:
+    def save_channel(self, state: ChannelPresence, *, flush: bool = True) -> None:
         with self._lock:
             self._payload.setdefault("channels", {})[str(state.channel_id)] = asdict(state)
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def all_channels(self) -> list[ChannelPresence]:
         with self._lock:
@@ -158,6 +165,7 @@ class MemoryStore:
         prompt: str,
         answer: str,
         answered_at: str,
+        flush: bool = True,
     ) -> None:
         with self._lock:
             daily_answers = self._payload.setdefault("daily_answers", {})
@@ -172,7 +180,8 @@ class MemoryStore:
                 "answer": answer,
                 "answered_at": answered_at,
             }
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def daily_answer_count(self, guild_id: int, answer_date: str) -> int:
         with self._lock:
@@ -186,10 +195,11 @@ class MemoryStore:
         with self._lock:
             return dict(self._payload.get("cooldowns", {}))
 
-    def save_cooldown_map(self, cooldowns: dict[str, str]) -> None:
+    def save_cooldown_map(self, cooldowns: dict[str, str], *, flush: bool = True) -> None:
         with self._lock:
             self._payload["cooldowns"] = cooldowns
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def guild_notice_sent(self, guild_id: int, notice_key: str) -> bool:
         with self._lock:
@@ -208,11 +218,12 @@ class MemoryStore:
             runtime = self._payload.setdefault("runtime", {})
             return runtime.get(key, default)
 
-    def set_runtime_value(self, key: str, value: Any) -> None:
+    def set_runtime_value(self, key: str, value: Any, *, flush: bool = True) -> None:
         with self._lock:
             runtime = self._payload.setdefault("runtime", {})
             runtime[key] = value
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def _stats(self, payload: dict[str, Any]) -> dict[str, Any]:
         stats = payload.setdefault("stats", {})
@@ -229,16 +240,17 @@ class MemoryStore:
         stats.setdefault("bot_messages", {})
         return stats
 
-    def increment_stat(self, key: str, amount: int = 1) -> None:
+    def increment_stat(self, key: str, amount: int = 1, *, flush: bool = True) -> None:
         with self._lock:
             stats = self._stats(self._payload)
             stats[key] = int(stats.get(key, 0)) + amount
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
-    def record_trigger_match_count(self, count: int) -> None:
+    def record_trigger_match_count(self, count: int, *, flush: bool = True) -> None:
         if count <= 0:
             return
-        self.increment_stat("trigger_matches", count)
+        self.increment_stat("trigger_matches", count, flush=flush)
 
     def record_script_fire(
         self,
@@ -249,6 +261,7 @@ class MemoryStore:
         actor_names: list[str],
         triggers: list[str],
         ambient: bool = False,
+        flush: bool = True,
     ) -> None:
         with self._lock:
             stats = self._stats(self._payload)
@@ -283,7 +296,8 @@ class MemoryStore:
                         user_discovery.setdefault("triggers", []).append(trigger)
                         existing.add(trigger)
 
-            self._save_locked()
+            if flush:
+                self._save_locked()
 
     def record_bot_message(self, *, actor: str, message_id: int, guild_id: int | None, channel_id: int) -> None:
         with self._lock:

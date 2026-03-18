@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,275 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: judgment
 # Theme note: trust, lies, integrity, motives, and character reading.
 # Writer target: Verdict-style social analysis and moral evaluation.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=52, lia=0, yuna=52, shared=0
-# Trigger inventory: lie, dishonest, trust, that feels dishonest, trust is broken, fake behavior again, moral question, ethical issue, i dont trust them, integrity matters, what is your verdict, sus motives, performative kindness, bad character read, hold them accountable, good faith or bad faith, that was manipulative, shady little move, truth matters here, who is lying, questionable motives, deception problem, lie tonight, need a take on motive, why is reputation like this, unpopular opinion about character read, i have thoughts about trust, talk about bad faith, we need to discuss manipulation, integrity again, lie discourse, be honest about motive, worst part of reputation, best part of character read, i need help with trust, my problem is bad faith, tell me something real about manipulation, anyone else dealing with integrity, judgment 17, need a take on motive tonight, why is reputation like this tonight, unpopular opinion about character read tonight, i have thoughts about trust tonight, talk about bad faith tonight, we need to discuss manipulation tonight, integrity again tonight, lie discourse tonight, be honest about motive tonight, worst part of reputation tonight, best part of character read tonight, i need help with trust tonight, my problem is bad faith tonight
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
 # none yet for Lia
 
 # [YUNA TRIGGERS]
-lie || yuna_judgment_01 || 0.75 || 600 || medium || sharp+
-dishonest || yuna_judgment_01 || 0.80 || 600 || medium || sharp+
-trust || yuna_judgment_01 || 0.66 || 600 || medium || sharp+
-that feels dishonest || yuna_judgment_extra_01 || 0.67 || 600 || medium || sharp+
-trust is broken || yuna_judgment_extra_02 || 0.70 || 600 || medium || sharp+
-fake behavior again || yuna_judgment_extra_03 || 0.73 || 600 || medium || sharp+
-moral question || yuna_judgment_extra_04 || 0.76 || 600 || medium || sharp+
-ethical issue || yuna_judgment_extra_05 || 0.64 || 600 || medium || sharp+
-i dont trust them || yuna_judgment_extra_06 || 0.67 || 600 || medium || sharp+
-integrity matters || yuna_judgment_extra_07 || 0.70 || 600 || medium || sharp+
-what is your verdict || yuna_judgment_extra_08 || 0.73 || 600 || medium || sharp+
-sus motives || yuna_judgment_extra_09 || 0.76 || 600 || medium || sharp+
-performative kindness || yuna_judgment_extra_10 || 0.64 || 600 || medium || sharp+
-bad character read || yuna_judgment_extra_11 || 0.67 || 600 || medium || sharp+
-hold them accountable || yuna_judgment_extra_12 || 0.70 || 600 || medium || sharp+
-good faith or bad faith || yuna_judgment_extra_13 || 0.73 || 600 || medium || sharp+
-that was manipulative || yuna_judgment_extra_14 || 0.76 || 600 || medium || sharp+
-shady little move || yuna_judgment_extra_15 || 0.64 || 600 || medium || sharp+
-truth matters here || yuna_judgment_extra_16 || 0.67 || 600 || medium || sharp+
-who is lying || yuna_judgment_extra_17 || 0.70 || 600 || medium || sharp+
-questionable motives || yuna_judgment_extra_18 || 0.73 || 600 || medium || sharp+
-deception problem || yuna_judgment_extra_19 || 0.76 || 600 || medium || sharp+
-lie tonight || yuna_judgment_boost_01 || 0.55 || 360 || medium || reflective+
-need a take on motive || yuna_judgment_boost_02 || 0.58 || 360 || medium || reflective+
-why is reputation like this || yuna_judgment_boost_03 || 0.61 || 360 || medium || reflective+
-unpopular opinion about character read || yuna_judgment_boost_04 || 0.64 || 360 || medium || reflective+
-i have thoughts about trust || yuna_judgment_boost_05 || 0.67 || 360 || medium || reflective+
-talk about bad faith || yuna_judgment_boost_06 || 0.52 || 360 || medium || reflective+
-we need to discuss manipulation || yuna_judgment_boost_07 || 0.55 || 360 || medium || reflective+
-integrity again || yuna_judgment_boost_08 || 0.58 || 360 || medium || reflective+
-lie discourse || yuna_judgment_boost_09 || 0.61 || 360 || medium || reflective+
-be honest about motive || yuna_judgment_boost_10 || 0.64 || 360 || medium || reflective+
-worst part of reputation || yuna_judgment_boost_11 || 0.67 || 360 || medium || reflective+
-best part of character read || yuna_judgment_boost_12 || 0.52 || 360 || medium || reflective+
-i need help with trust || yuna_judgment_boost_13 || 0.55 || 360 || medium || reflective+
-my problem is bad faith || yuna_judgment_boost_14 || 0.58 || 360 || medium || reflective+
-tell me something real about manipulation || yuna_judgment_boost_15 || 0.61 || 360 || medium || reflective+
-anyone else dealing with integrity || yuna_judgment_boost_16 || 0.64 || 360 || medium || reflective+
-judgment 17 || yuna_judgment_boost_17 || 0.67 || 360 || medium || reflective+
-need a take on motive tonight || yuna_judgment_boost_18 || 0.52 || 360 || medium || reflective+
-why is reputation like this tonight || yuna_judgment_boost_19 || 0.55 || 360 || medium || reflective+
-unpopular opinion about character read tonight || yuna_judgment_boost_20 || 0.58 || 360 || medium || reflective+
-i have thoughts about trust tonight || yuna_judgment_boost_21 || 0.61 || 360 || medium || reflective+
-talk about bad faith tonight || yuna_judgment_boost_22 || 0.64 || 360 || medium || reflective+
-we need to discuss manipulation tonight || yuna_judgment_boost_23 || 0.67 || 360 || medium || reflective+
-integrity again tonight || yuna_judgment_boost_24 || 0.52 || 360 || medium || reflective+
-lie discourse tonight || yuna_judgment_boost_25 || 0.55 || 360 || medium || reflective+
-be honest about motive tonight || yuna_judgment_boost_26 || 0.58 || 360 || medium || reflective+
-worst part of reputation tonight || yuna_judgment_boost_27 || 0.61 || 360 || medium || reflective+
-best part of character read tonight || yuna_judgment_boost_28 || 0.64 || 360 || medium || reflective+
-i need help with trust tonight || yuna_judgment_boost_29 || 0.67 || 360 || medium || reflective+
-my problem is bad faith tonight || yuna_judgment_boost_30 || 0.52 || 360 || medium || reflective+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [YUNA SCRIPTS]
-=== yuna_judgment_01
-Yuna: the problem with dishonesty is that it forces everyone else to become archivists
----
-=== yuna_judgment_extra_01
-Yuna: that feels dishonest is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_02
-Yuna: trust is broken is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_03
-Yuna: fake behavior again is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_04
-Yuna: moral question is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_05
-Yuna: ethical issue is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_06
-Yuna: i dont trust them is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_07
-Yuna: integrity matters is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_08
-Yuna: what is your verdict is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_09
-Yuna: sus motives is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_10
-Yuna: performative kindness is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_11
-Yuna: bad character read is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_12
-Yuna: hold them accountable is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_13
-Yuna: good faith or bad faith is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_14
-Yuna: that was manipulative is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_15
-Yuna: shady little move is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_16
-Yuna: truth matters here is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_17
-Yuna: who is lying is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_18
-Yuna: questionable motives is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_extra_19
-Yuna: deception problem is the sort of ethics, trust, and character reading topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_judgment_boost_01
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lie, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_02
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about motive, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_03
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about reputation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_04
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about character read, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_05
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about trust, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_06
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about bad faith, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_07
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about manipulation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_08
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about integrity, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_09
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about lie, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_10
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about motive, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_11
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about reputation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_12
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about character read, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_13
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about trust, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_14
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about bad faith, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_15
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about manipulation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_16
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about integrity, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_17
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about lie, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_18
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about motive, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_19
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about reputation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_20
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about character read, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_21
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about trust, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_22
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about bad faith, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_23
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about manipulation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_24
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about integrity, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_25
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lie, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_26
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about motive, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_27
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about reputation, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_28
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about character read, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_29
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about trust, the room would become more interesting very quickly.
----
-=== yuna_judgment_boost_30
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about bad faith, the room would become more interesting very quickly.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

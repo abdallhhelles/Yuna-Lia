@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,15 +60,19 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: deep longform
 # Theme note: heavier, longer, more reflective exchanges.
 # Writer target: Use deeper emotional or philosophical turns while keeping each voice distinct.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=50, lia=0, yuna=0, shared=50
-# Trigger inventory: lets talk deeply, deeper topic, talk about loneliness, late night philosophy, meaningful conversation, talk about love, talk about fear, real conversation, what do people praise in you that you actually survive rather than enjoy, what kind of loneliness can happen in a crowded room, when do you feel most translated by another person, what do you envy in people who seem lighter than you, what dream would hurt the most to admit you still want, what sort of apology changes the body before it changes the mind, what do you protect so hard that it starts protecting you back poorly, what do you wish people understood without turning it into advice, what desire do you pretend is small because its real size scares you, when did competence start becoming armor for you, what kind of failure feels survivable and what kind feels identity-level, what is the quietest way someone has made you feel chosen, what does betrayal usually take from a person besides trust, what part of you only appears when the room feels safe enough, what do you miss about earlier versions of yourself, what truth becomes obvious only after midnight, what is harder for you: being seen accurately or being needed honestly, what emotional habit looks like strength from the outside, what do you think people confuse with intimacy all the time, what makes someone feel real to you instead of merely impressive, what kind of waiting changes a person, what does it cost to be easy to love in public, what belief about yourself keeps surviving every correction, what would you say if you trusted the room not to flinch, what does freedom mean when nobody is watching, what part of tenderness embarrasses you most, what do you owe the version of you that kept going, what wound becomes taste if it stays around long enough, what do people inherit emotionally without noticing, what kind of clarity hurts before it helps, what makes a person feel less alone than praise does, what do you think people deserve but rarely receive on time, what keeps someone emotionally young even when they are competent, what do you think the body remembers after the mind moves on, what version of yourself do you perform when you want to seem unhurtable, what kind of love makes you calmer instead of smaller, what fear becomes your personality if you do not name it early, what truth did you learn too late to stay innocent but early enough to change, what do you miss even though you know it was bad for you, what kind of understanding feels almost intimate to you, what are you still carrying because it once kept you safe, what part of growing up felt more like grief than progress
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
@@ -53,364 +82,11 @@
 # none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-lets talk deeply || duo_long_deep_01 || 0.60 || 1000 || high || reflective+
-deeper topic || duo_long_deep_02 || 0.58 || 1000 || high || reflective+
-talk about loneliness || duo_long_deep_03 || 0.56 || 1200 || high || soft+
-late night philosophy || duo_long_deep_04 || 0.59 || 1000 || high || reflective+
-meaningful conversation || duo_long_deep_05 || 0.57 || 1000 || high || reflective+
-talk about love || duo_long_deep_06 || 0.55 || 1000 || high || romantic+
-talk about fear || duo_long_deep_07 || 0.54 || 1000 || high || soft+
-real conversation || duo_long_deep_08 || 0.58 || 1000 || high || reflective+
-what do people praise in you that you actually survive rather than enjoy || duo_long_deep_09 || 0.63 || 1100 || high || reflective+
-what kind of loneliness can happen in a crowded room || duo_long_deep_10 || 0.63 || 1100 || high || reflective+
-when do you feel most translated by another person || duo_long_deep_11 || 0.63 || 1100 || high || reflective+
-what do you envy in people who seem lighter than you || duo_long_deep_12 || 0.63 || 1100 || high || reflective+
-what dream would hurt the most to admit you still want || duo_long_deep_13 || 0.63 || 1100 || high || reflective+
-what sort of apology changes the body before it changes the mind || duo_long_deep_14 || 0.63 || 1100 || high || reflective+
-what do you protect so hard that it starts protecting you back poorly || duo_long_deep_15 || 0.63 || 1100 || high || reflective+
-what do you wish people understood without turning it into advice || duo_long_deep_16 || 0.63 || 1100 || high || reflective+
-what desire do you pretend is small because its real size scares you || duo_long_deep_17 || 0.63 || 1100 || high || reflective+
-when did competence start becoming armor for you || duo_long_deep_18 || 0.63 || 1100 || high || reflective+
-what kind of failure feels survivable and what kind feels identity-level || duo_long_deep_19 || 0.63 || 1100 || high || reflective+
-what is the quietest way someone has made you feel chosen || duo_long_deep_20 || 0.63 || 1100 || high || reflective+
-what does betrayal usually take from a person besides trust || duo_long_deep_21 || 0.63 || 1100 || high || reflective+
-what part of you only appears when the room feels safe enough || duo_long_deep_22 || 0.63 || 1100 || high || reflective+
-what do you miss about earlier versions of yourself || duo_long_deep_23 || 0.63 || 1100 || high || reflective+
-what truth becomes obvious only after midnight || duo_long_deep_24 || 0.63 || 1100 || high || reflective+
-what is harder for you: being seen accurately or being needed honestly || duo_long_deep_25 || 0.63 || 1100 || high || reflective+
-what emotional habit looks like strength from the outside || duo_long_deep_26 || 0.63 || 1100 || high || reflective+
-what do you think people confuse with intimacy all the time || duo_long_deep_27 || 0.63 || 1100 || high || reflective+
-what makes someone feel real to you instead of merely impressive || duo_long_deep_28 || 0.63 || 1100 || high || reflective+
-what kind of waiting changes a person || duo_long_deep_29 || 0.63 || 1100 || high || reflective+
-what does it cost to be easy to love in public || duo_long_deep_30 || 0.63 || 1100 || high || reflective+
-what belief about yourself keeps surviving every correction || duo_long_deep_31 || 0.63 || 1100 || high || reflective+
-what would you say if you trusted the room not to flinch || duo_long_deep_32 || 0.63 || 1100 || high || reflective+
-what does freedom mean when nobody is watching || duo_long_deep_33 || 0.63 || 1100 || high || reflective+
-what part of tenderness embarrasses you most || duo_long_deep_34 || 0.63 || 1100 || high || reflective+
-what do you owe the version of you that kept going || duo_long_deep_35 || 0.63 || 1100 || high || reflective+
-what wound becomes taste if it stays around long enough || duo_long_deep_36 || 0.63 || 1100 || high || reflective+
-what do people inherit emotionally without noticing || duo_long_deep_37 || 0.63 || 1100 || high || reflective+
-what kind of clarity hurts before it helps || duo_long_deep_38 || 0.63 || 1100 || high || reflective+
-what makes a person feel less alone than praise does || duo_long_deep_39 || 0.63 || 1100 || high || reflective+
-what do you think people deserve but rarely receive on time || duo_long_deep_40 || 0.63 || 1100 || high || reflective+
-what keeps someone emotionally young even when they are competent || duo_long_deep_41 || 0.63 || 1100 || high || reflective+
-what do you think the body remembers after the mind moves on || duo_long_deep_42 || 0.63 || 1100 || high || reflective+
-what version of yourself do you perform when you want to seem unhurtable || duo_long_deep_43 || 0.63 || 1100 || high || reflective+
-what kind of love makes you calmer instead of smaller || duo_long_deep_44 || 0.63 || 1100 || high || reflective+
-what fear becomes your personality if you do not name it early || duo_long_deep_45 || 0.63 || 1100 || high || reflective+
-what truth did you learn too late to stay innocent but early enough to change || duo_long_deep_46 || 0.63 || 1100 || high || reflective+
-what do you miss even though you know it was bad for you || duo_long_deep_47 || 0.63 || 1100 || high || reflective+
-what kind of understanding feels almost intimate to you || duo_long_deep_48 || 0.63 || 1100 || high || reflective+
-what are you still carrying because it once kept you safe || duo_long_deep_49 || 0.63 || 1100 || high || reflective+
-what part of growing up felt more like grief than progress || duo_long_deep_50 || 0.63 || 1100 || high || reflective+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_long_deep_01
-Yuna: deep conversations usually begin when somebody stops trying to look impressive.
-Lia: yes. the room changes the second someone chooses honesty over performance.
-Yuna: and then everyone else has to decide whether they are brave enough to meet it.
-Lia: which is why the right conversation can feel a little like standing too close to a ledge.
-Yuna: dangerous, clarifying, impossible to fake for long.
----
-=== duo_long_deep_02
-Lia: a deeper topic? okay.
-Lia: i think people spend so much time trying to be chosen that they forget to ask whether they even feel safe being known.
-Yuna: and safety is not the same as softness.
-Yuna: sometimes safety is precision, consistency, and the absence of little humiliations.
-Lia: exactly. love gets romanticized, but relief deserves more attention.
----
-=== duo_long_deep_03
-Lia: loneliness is so strange because it is not always about being alone.
-Lia: sometimes it is being surrounded and still feeling untranslated.
-Yuna: yes. the sharpest loneliness is often social, not physical.
-Yuna: it is the feeling that nobody present is actually in contact with the version of you that hurts.
-Lia: and that is why the right person can calm you down by understanding one sentence properly.
----
-=== duo_long_deep_04
-Yuna: late-night philosophy is mostly people admitting that daylight made them too efficient to feel themselves.
-Lia: wow. rude and perfect.
-Yuna: at night, the unresolved parts return and ask better questions.
-Lia: like whether your life fits you, or whether you just got good at wearing it.
-Yuna: and whether the gap between those two things is survivable.
----
-=== duo_long_deep_05
-Lia: meaningful conversations are never really about the topic.
-Lia: they are about whether the room can hold truth without punishing it.
-Yuna: correct. the subject changes. the risk stays constant.
-Yuna: every real conversation asks the same hidden question.
-Yuna: if i say this clearly, will you get cruel, get bored, or get closer.
----
-=== duo_long_deep_06
-Lia: talking about love always gets reduced to chemistry and butterflies and drama.
-Lia: but to me the real question is who makes your nervous system feel less hunted.
-Yuna: love should not feel like permanent audition.
-Yuna: it should feel like recognition without constant defense.
-Lia: yes. chosen, but not examined to death.
----
-=== duo_long_deep_07
-Yuna: fear is often more specific than people admit.
-Yuna: most of us are not afraid of failure in the abstract.
-Yuna: we are afraid of embarrassment, rejection, dependency, exposure, or discovering we wanted the wrong thing.
-Lia: and once you name the exact fear, it loses some of its theater.
-Lia: not all of it. just enough to breathe.
----
-=== duo_long_deep_08
-Lia: real conversation time.
-Lia: what version of yourself are you tired of carrying for other people.
-Yuna: that is an excellent question because everyone has one.
-Yuna: the competent version, the easy version, the funny version, the untouchable version.
-Lia: and the scary part is how long you can wear one before mistaking it for skin.
----
-=== duo_long_deep_09
-Lia: what do people praise in you that you actually survive rather than enjoy.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_10
-Lia: what kind of loneliness can happen in a crowded room.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_11
-Lia: when do you feel most translated by another person.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_12
-Lia: what do you envy in people who seem lighter than you.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_13
-Lia: what dream would hurt the most to admit you still want.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_14
-Lia: what sort of apology changes the body before it changes the mind.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_15
-Lia: what do you protect so hard that it starts protecting you back poorly.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_16
-Lia: what do you wish people understood without turning it into advice.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_17
-Lia: what desire do you pretend is small because its real size scares you.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_18
-Lia: when did competence start becoming armor for you.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_19
-Lia: what kind of failure feels survivable and what kind feels identity-level.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_20
-Lia: what is the quietest way someone has made you feel chosen.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_21
-Lia: what does betrayal usually take from a person besides trust.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_22
-Lia: what part of you only appears when the room feels safe enough.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_23
-Lia: what do you miss about earlier versions of yourself.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_24
-Lia: what truth becomes obvious only after midnight.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_25
-Lia: what is harder for you: being seen accurately or being needed honestly.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_26
-Lia: what emotional habit looks like strength from the outside.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_27
-Lia: what do you think people confuse with intimacy all the time.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_28
-Lia: what makes someone feel real to you instead of merely impressive.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_29
-Lia: what kind of waiting changes a person.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_30
-Lia: what does it cost to be easy to love in public.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_31
-Lia: what belief about yourself keeps surviving every correction.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_32
-Lia: what would you say if you trusted the room not to flinch.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_33
-Lia: what does freedom mean when nobody is watching.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_34
-Lia: what part of tenderness embarrasses you most.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_35
-Lia: what do you owe the version of you that kept going.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_36
-Lia: what wound becomes taste if it stays around long enough.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_37
-Lia: what do people inherit emotionally without noticing.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_38
-Lia: what kind of clarity hurts before it helps.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_39
-Lia: what makes a person feel less alone than praise does.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_40
-Lia: what do you think people deserve but rarely receive on time.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_41
-Lia: what keeps someone emotionally young even when they are competent.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_42
-Lia: what do you think the body remembers after the mind moves on.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_43
-Lia: what version of yourself do you perform when you want to seem unhurtable.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_44
-Lia: what kind of love makes you calmer instead of smaller.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_45
-Lia: what fear becomes your personality if you do not name it early.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_46
-Lia: what truth did you learn too late to stay innocent but early enough to change.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_47
-Lia: what do you miss even though you know it was bad for you.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_48
-Lia: what kind of understanding feels almost intimate to you.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_49
-Lia: what are you still carrying because it once kept you safe.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
-=== duo_long_deep_50
-Lia: what part of growing up felt more like grief than progress.
-Lia: i love when a question feels a little dangerous because it means the answer might matter.
-Yuna: yes. the best questions do not merely request information. they test what a person can tolerate knowing about themselves.
-Lia: and then the room has to decide whether honesty is worth the temperature change.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

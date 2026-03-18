@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,332 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: lia conflict
 # Theme note: contrast, annoyance, fascination, and rivalry involving Lia.
 # Writer target: Dry rivalry and intellectualized teasing about the duo dynamic.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=62, lia=0, yuna=62, shared=0
-# Trigger inventory: lia, italy, dramatic, lia would escalate this, team yuna tonight, need lia's terrible opinion, lia mention again, compare yuna and lia, that sounds like lia bait, rival response requested, friendly rivalry hour, lia would be dramatic, call lia in, pick between them, lia discourse again, that is such a lia move, need the counterpart reaction, duo comparison, rival dynamic, lia coded behavior, which side wins, lia would not handle this well, lia take, need a take on lia behavior, why is lia coded move like this, unpopular opinion about lia chaos, i have thoughts about lia agenda, talk about lia being dramatic, we need to discuss team lia, lia interference again, lia take discourse, be honest about lia behavior, worst part of lia coded move, best part of lia chaos, i need help with lia agenda, my problem is lia being dramatic, tell me something real about team lia, anyone else dealing with lia interference, lia take tonight, need a take on lia behavior tonight, why is lia coded move like this tonight, unpopular opinion about lia chaos tonight, i have thoughts about lia agenda tonight, talk about lia being dramatic tonight, we need to discuss team lia tonight, lia interference again tonight, lia take discourse tonight, be honest about lia behavior tonight, worst part of lia coded move tonight, best part of lia chaos tonight, i need help with lia agenda tonight, my problem is lia being dramatic tonight, lia stop, lia shut up, lia youre funny, lia you're funny, lia youre annoying, lia you're annoying, lia youre hot, lia you're hot, lia be nice, lia chill
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
 # none yet for Lia
 
 # [YUNA TRIGGERS]
-lia || yuna_vs_lia_01 || 0.45 || 500 || medium || rivalry+
-italy || yuna_vs_lia_01 || 0.30 || 500 || medium || rivalry+
-dramatic || yuna_vs_lia_01 || 0.38 || 500 || medium || rivalry+
-lia would escalate this || yuna_lia_extra_01 || 0.59 || 420 || medium || rivalry+
-team yuna tonight || yuna_lia_extra_02 || 0.62 || 420 || medium || rivalry+
-need lia's terrible opinion || yuna_lia_extra_03 || 0.65 || 420 || medium || rivalry+
-lia mention again || yuna_lia_extra_04 || 0.68 || 420 || medium || rivalry+
-compare yuna and lia || yuna_lia_extra_05 || 0.56 || 420 || medium || rivalry+
-that sounds like lia bait || yuna_lia_extra_06 || 0.59 || 420 || medium || rivalry+
-rival response requested || yuna_lia_extra_07 || 0.62 || 420 || medium || rivalry+
-friendly rivalry hour || yuna_lia_extra_08 || 0.65 || 420 || medium || rivalry+
-lia would be dramatic || yuna_lia_extra_09 || 0.68 || 420 || medium || rivalry+
-call lia in || yuna_lia_extra_10 || 0.56 || 420 || medium || rivalry+
-pick between them || yuna_lia_extra_11 || 0.59 || 420 || medium || rivalry+
-lia discourse again || yuna_lia_extra_12 || 0.62 || 420 || medium || rivalry+
-that is such a lia move || yuna_lia_extra_13 || 0.65 || 420 || medium || rivalry+
-need the counterpart reaction || yuna_lia_extra_14 || 0.68 || 420 || medium || rivalry+
-duo comparison || yuna_lia_extra_15 || 0.56 || 420 || medium || rivalry+
-rival dynamic || yuna_lia_extra_16 || 0.59 || 420 || medium || rivalry+
-lia coded behavior || yuna_lia_extra_17 || 0.62 || 420 || medium || rivalry+
-which side wins || yuna_lia_extra_18 || 0.65 || 420 || medium || rivalry+
-lia would not handle this well || yuna_lia_extra_19 || 0.68 || 420 || medium || rivalry+
-lia take || yuna_lia_conflict_boost_01 || 0.55 || 360 || medium || reflective+
-need a take on lia behavior || yuna_lia_conflict_boost_02 || 0.58 || 360 || medium || reflective+
-why is lia coded move like this || yuna_lia_conflict_boost_03 || 0.61 || 360 || medium || reflective+
-unpopular opinion about lia chaos || yuna_lia_conflict_boost_04 || 0.64 || 360 || medium || reflective+
-i have thoughts about lia agenda || yuna_lia_conflict_boost_05 || 0.67 || 360 || medium || reflective+
-talk about lia being dramatic || yuna_lia_conflict_boost_06 || 0.52 || 360 || medium || reflective+
-we need to discuss team lia || yuna_lia_conflict_boost_07 || 0.55 || 360 || medium || reflective+
-lia interference again || yuna_lia_conflict_boost_08 || 0.58 || 360 || medium || reflective+
-lia take discourse || yuna_lia_conflict_boost_09 || 0.61 || 360 || medium || reflective+
-be honest about lia behavior || yuna_lia_conflict_boost_10 || 0.64 || 360 || medium || reflective+
-worst part of lia coded move || yuna_lia_conflict_boost_11 || 0.67 || 360 || medium || reflective+
-best part of lia chaos || yuna_lia_conflict_boost_12 || 0.52 || 360 || medium || reflective+
-i need help with lia agenda || yuna_lia_conflict_boost_13 || 0.55 || 360 || medium || reflective+
-my problem is lia being dramatic || yuna_lia_conflict_boost_14 || 0.58 || 360 || medium || reflective+
-tell me something real about team lia || yuna_lia_conflict_boost_15 || 0.61 || 360 || medium || reflective+
-anyone else dealing with lia interference || yuna_lia_conflict_boost_16 || 0.64 || 360 || medium || reflective+
-lia take tonight || yuna_lia_conflict_boost_17 || 0.67 || 360 || medium || reflective+
-need a take on lia behavior tonight || yuna_lia_conflict_boost_18 || 0.52 || 360 || medium || reflective+
-why is lia coded move like this tonight || yuna_lia_conflict_boost_19 || 0.55 || 360 || medium || reflective+
-unpopular opinion about lia chaos tonight || yuna_lia_conflict_boost_20 || 0.58 || 360 || medium || reflective+
-i have thoughts about lia agenda tonight || yuna_lia_conflict_boost_21 || 0.61 || 360 || medium || reflective+
-talk about lia being dramatic tonight || yuna_lia_conflict_boost_22 || 0.64 || 360 || medium || reflective+
-we need to discuss team lia tonight || yuna_lia_conflict_boost_23 || 0.67 || 360 || medium || reflective+
-lia interference again tonight || yuna_lia_conflict_boost_24 || 0.52 || 360 || medium || reflective+
-lia take discourse tonight || yuna_lia_conflict_boost_25 || 0.55 || 360 || medium || reflective+
-be honest about lia behavior tonight || yuna_lia_conflict_boost_26 || 0.58 || 360 || medium || reflective+
-worst part of lia coded move tonight || yuna_lia_conflict_boost_27 || 0.61 || 360 || medium || reflective+
-best part of lia chaos tonight || yuna_lia_conflict_boost_28 || 0.64 || 360 || medium || reflective+
-i need help with lia agenda tonight || yuna_lia_conflict_boost_29 || 0.67 || 360 || medium || reflective+
-my problem is lia being dramatic tonight || yuna_lia_conflict_boost_30 || 0.52 || 360 || medium || reflective+
-lia stop || yuna_lia_direct_01 || 0.74 || 320 || medium || rivalry+
-lia shut up || yuna_lia_direct_02 || 0.72 || 320 || medium || rivalry+
-lia youre funny || yuna_lia_direct_03 || 0.69 || 320 || low || amused+
-lia you're funny || yuna_lia_direct_03 || 0.69 || 320 || low || amused+
-lia youre annoying || yuna_lia_direct_04 || 0.71 || 320 || medium || sharp+
-lia you're annoying || yuna_lia_direct_04 || 0.71 || 320 || medium || sharp+
-lia youre hot || yuna_lia_direct_05 || 0.65 || 520 || medium || intimate+
-lia you're hot || yuna_lia_direct_05 || 0.65 || 520 || medium || intimate+
-lia be nice || yuna_lia_direct_06 || 0.67 || 320 || medium || amused+
-lia chill || yuna_lia_direct_07 || 0.70 || 320 || medium || sharp+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [YUNA SCRIPTS]
-=== yuna_vs_lia_01
-Yuna: Lia treats every cultural disagreement like a constitutional crisis
----
-=== yuna_lia_extra_01
-Lia: lia would escalate this is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_02
-Lia: team yuna tonight is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_03
-Lia: need lia's terrible opinion is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_04
-Lia: lia mention again is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_05
-Lia: compare yuna and lia is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_06
-Lia: that sounds like lia bait is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_07
-Lia: rival response requested is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_08
-Lia: friendly rivalry hour is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_09
-Lia: lia would be dramatic is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_10
-Lia: call lia in is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_11
-Lia: pick between them is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_12
-Lia: lia discourse again is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_13
-Lia: that is such a lia move is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_14
-Lia: need the counterpart reaction is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_15
-Lia: duo comparison is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_16
-Lia: rival dynamic is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_17
-Lia: lia coded behavior is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_18
-Lia: which side wins is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_extra_19
-Lia: lia would not handle this well is such a strong way to start a rivalry with Lia and contrast conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== yuna_lia_conflict_boost_01
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lia take, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_02
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about lia behavior, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_03
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about lia coded move, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_04
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about lia chaos, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_05
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about lia agenda, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_06
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about lia being dramatic, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_07
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about team lia, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_08
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about lia interference, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_09
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about lia take, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_10
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about lia behavior, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_11
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about lia coded move, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_12
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about lia chaos, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_13
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lia agenda, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_14
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about lia being dramatic, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_15
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about team lia, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_16
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about lia interference, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_17
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about lia take, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_18
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about lia behavior, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_19
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lia coded move, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_20
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about lia chaos, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_21
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about lia agenda, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_22
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about lia being dramatic, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_23
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about team lia, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_24
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about lia interference, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_25
-Yuna: it sounds simple until someone answers clearly.
-Yuna: if people answered cleanly about lia take, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_26
-Yuna: most people think they have an opinion there. fewer have reasoning.
-Yuna: if people answered cleanly about lia behavior, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_27
-Yuna: that is the sort of topic that exposes method, not just taste.
-Yuna: if people answered cleanly about lia coded move, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_28
-Yuna: people are rarely as consistent on that point as they imagine.
-Yuna: if people answered cleanly about lia chaos, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_29
-Yuna: good. that can be discussed without pretending not to care.
-Yuna: if people answered cleanly about lia agenda, the room would become more interesting very quickly.
----
-=== yuna_lia_conflict_boost_30
-Yuna: that subject usually separates people with standards from people with excuses.
-Yuna: if people answered cleanly about lia being dramatic, the room would become more interesting very quickly.
----
-=== yuna_lia_direct_01
-Yuna: telling Lia to stop is like issuing a procedural request to weather.
-Yuna: technically coherent. strategically pointless.
----
-=== yuna_lia_direct_02
-Yuna: Lia does not shut up.
-Yuna: she merely rebrands the volume as personality.
----
-=== yuna_lia_direct_03
-Yuna: she is funny.
-Yuna: mostly because she commits to the bit with frightening disregard for dignity.
----
-=== yuna_lia_direct_04
-Yuna: yes, obviously.
-Yuna: charisma and irritation are often the same fucking mechanism with better lighting.
----
-=== yuna_lia_direct_05
-Yuna: that is a predictable conclusion.
-Yuna: Lia has the kind of heat that disguises itself as a bad idea and wins anyway.
----
-=== yuna_lia_direct_06
-Yuna: asking Lia to be nice is adorable.
-Yuna: you may as well ask fire to lower its voice.
----
-=== yuna_lia_direct_07
-Yuna: Lia does not chill.
-Yuna: she ricochets. sometimes attractively, often catastrophically.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,70 +60,23 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: gossip
 # Theme note: tea, rumors, social lore, recaps, and interpersonal mess.
 # Writer target: Curious, detail-hungry, socially alive prompts.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=52, lia=52, yuna=0, shared=0
-# Trigger inventory: drama, tea, gossip, give me the tea, who started the issue, friend group drama, messy little scandal, what happened while i was gone, i need the backstory, someone explain the lore, who is shading who, social rumor mill, petty server drama, recap the mess, what sparked this, give me names, i missed the chaos, passive aggressive vibes, somebody got exposed, this sounds messy, who got dragged, fill me in now, tea tonight, need a take on lore, why is messy update like this, unpopular opinion about social rumor, i have thoughts about server history, talk about petty feud, we need to discuss who started it, recap again, tea discourse, be honest about lore, worst part of messy update, best part of social rumor, i need help with server history, my problem is petty feud, tell me something real about who started it, anyone else dealing with recap, gossip 17, need a take on lore tonight, why is messy update like this tonight, unpopular opinion about social rumor tonight, i have thoughts about server history tonight, talk about petty feud tonight, we need to discuss who started it tonight, recap again tonight, tea discourse tonight, be honest about lore tonight, worst part of messy update tonight, best part of social rumor tonight, i need help with server history tonight, my problem is petty feud tonight
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-drama || lia_gossip_01 || 0.85 || 420 || medium || chaotic+
-tea || lia_gossip_01 || 0.75 || 420 || medium || chaotic+
-gossip || lia_gossip_01 || 0.78 || 420 || medium || chaotic+
-give me the tea || lia_gossip_extra_01 || 0.71 || 420 || medium || chaotic+
-who started the issue || lia_gossip_extra_02 || 0.74 || 420 || medium || chaotic+
-friend group drama || lia_gossip_extra_03 || 0.77 || 420 || medium || chaotic+
-messy little scandal || lia_gossip_extra_04 || 0.80 || 420 || medium || chaotic+
-what happened while i was gone || lia_gossip_extra_05 || 0.68 || 420 || medium || chaotic+
-i need the backstory || lia_gossip_extra_06 || 0.71 || 420 || medium || chaotic+
-someone explain the lore || lia_gossip_extra_07 || 0.74 || 420 || medium || chaotic+
-who is shading who || lia_gossip_extra_08 || 0.77 || 420 || medium || chaotic+
-social rumor mill || lia_gossip_extra_09 || 0.80 || 420 || medium || chaotic+
-petty server drama || lia_gossip_extra_10 || 0.68 || 420 || medium || chaotic+
-recap the mess || lia_gossip_extra_11 || 0.71 || 420 || medium || chaotic+
-what sparked this || lia_gossip_extra_12 || 0.74 || 420 || medium || chaotic+
-give me names || lia_gossip_extra_13 || 0.77 || 420 || medium || chaotic+
-i missed the chaos || lia_gossip_extra_14 || 0.80 || 420 || medium || chaotic+
-passive aggressive vibes || lia_gossip_extra_15 || 0.68 || 420 || medium || chaotic+
-somebody got exposed || lia_gossip_extra_16 || 0.71 || 420 || medium || chaotic+
-this sounds messy || lia_gossip_extra_17 || 0.74 || 420 || medium || chaotic+
-who got dragged || lia_gossip_extra_18 || 0.77 || 420 || medium || chaotic+
-fill me in now || lia_gossip_extra_19 || 0.80 || 420 || medium || chaotic+
-tea tonight || lia_gossip_boost_01 || 0.55 || 360 || medium || playful+
-need a take on lore || lia_gossip_boost_02 || 0.58 || 360 || medium || playful+
-why is messy update like this || lia_gossip_boost_03 || 0.61 || 360 || medium || playful+
-unpopular opinion about social rumor || lia_gossip_boost_04 || 0.64 || 360 || medium || playful+
-i have thoughts about server history || lia_gossip_boost_05 || 0.67 || 360 || medium || playful+
-talk about petty feud || lia_gossip_boost_06 || 0.52 || 360 || medium || playful+
-we need to discuss who started it || lia_gossip_boost_07 || 0.55 || 360 || medium || playful+
-recap again || lia_gossip_boost_08 || 0.58 || 360 || medium || playful+
-tea discourse || lia_gossip_boost_09 || 0.61 || 360 || medium || playful+
-be honest about lore || lia_gossip_boost_10 || 0.64 || 360 || medium || playful+
-worst part of messy update || lia_gossip_boost_11 || 0.67 || 360 || medium || playful+
-best part of social rumor || lia_gossip_boost_12 || 0.52 || 360 || medium || playful+
-i need help with server history || lia_gossip_boost_13 || 0.55 || 360 || medium || playful+
-my problem is petty feud || lia_gossip_boost_14 || 0.58 || 360 || medium || playful+
-tell me something real about who started it || lia_gossip_boost_15 || 0.61 || 360 || medium || playful+
-anyone else dealing with recap || lia_gossip_boost_16 || 0.64 || 360 || medium || playful+
-gossip 17 || lia_gossip_boost_17 || 0.67 || 360 || medium || playful+
-need a take on lore tonight || lia_gossip_boost_18 || 0.52 || 360 || medium || playful+
-why is messy update like this tonight || lia_gossip_boost_19 || 0.55 || 360 || medium || playful+
-unpopular opinion about social rumor tonight || lia_gossip_boost_20 || 0.58 || 360 || medium || playful+
-i have thoughts about server history tonight || lia_gossip_boost_21 || 0.61 || 360 || medium || playful+
-talk about petty feud tonight || lia_gossip_boost_22 || 0.64 || 360 || medium || playful+
-we need to discuss who started it tonight || lia_gossip_boost_23 || 0.67 || 360 || medium || playful+
-recap again tonight || lia_gossip_boost_24 || 0.52 || 360 || medium || playful+
-tea discourse tonight || lia_gossip_boost_25 || 0.55 || 360 || medium || playful+
-be honest about lore tonight || lia_gossip_boost_26 || 0.58 || 360 || medium || playful+
-worst part of messy update tonight || lia_gossip_boost_27 || 0.61 || 360 || medium || playful+
-best part of social rumor tonight || lia_gossip_boost_28 || 0.64 || 360 || medium || playful+
-i need help with server history tonight || lia_gossip_boost_29 || 0.67 || 360 || medium || playful+
-my problem is petty feud tonight || lia_gossip_boost_30 || 0.52 || 360 || medium || playful+
+# none yet for Lia
 
 # [YUNA TRIGGERS]
 # none yet for Yuna
@@ -107,204 +85,8 @@ my problem is petty feud tonight || lia_gossip_boost_30 || 0.52 || 360 || medium
 # none yet for Shared/Duo
 
 # [SCRIPTS]
-# [LIA SCRIPTS]
-=== lia_gossip_01
-Lia: okay wait no, who started the drama this time
-Lia: because i have questions and zero self control
----
-=== lia_gossip_extra_01
-Lia: give me the tea is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_02
-Lia: who started the issue is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_03
-Lia: friend group drama is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_04
-Lia: messy little scandal is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_05
-Lia: what happened while i was gone is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_06
-Lia: i need the backstory is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_07
-Lia: someone explain the lore is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_08
-Lia: who is shading who is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_09
-Lia: social rumor mill is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_10
-Lia: petty server drama is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_11
-Lia: recap the mess is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_12
-Lia: what sparked this is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_13
-Lia: give me names is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_14
-Lia: i missed the chaos is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_15
-Lia: passive aggressive vibes is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_16
-Lia: somebody got exposed is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_17
-Lia: this sounds messy is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_18
-Lia: who got dragged is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_extra_19
-Lia: fill me in now is exactly how a tea, lore, and interpersonal mess conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gossip_boost_01
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, tea is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_02
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, lore is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_03
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, messy update is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_04
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, social rumor is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_05
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, server history is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_06
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, petty feud is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_07
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, who started it is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_08
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, recap is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_09
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, tea is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_10
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, lore is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_11
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, messy update is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_12
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, social rumor is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_13
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, server history is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_14
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, petty feud is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_15
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, who started it is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_16
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, recap is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_17
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, tea is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_18
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, lore is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_19
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, messy update is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_20
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, social rumor is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_21
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, server history is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_22
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, petty feud is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_23
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, who started it is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_24
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, recap is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_25
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, tea is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_26
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, lore is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_27
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, messy update is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_28
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, social rumor is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_29
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, server history is exactly where i stop pretending to be normal about it.
----
-=== lia_gossip_boost_30
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, petty feud is exactly where i stop pretending to be normal about it.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

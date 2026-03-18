@@ -6,8 +6,42 @@ from yuna_lia.personas.engine import PersonaSimulationEngine
 from yuna_lia.personas.memory import MemoryStore
 
 
+def _fixture_content_root(tmp_path: Path) -> Path:
+    root = tmp_path / "content"
+    root.mkdir()
+    (root / "fixture.txt").write_text(
+        "\n".join(
+            [
+                "# fixture content for engine tests",
+                "# [TRIGGERS]",
+                "# [LIA TRIGGERS]",
+                "drama || lia_test_drama_01 || 1.00 || 300 || medium || irritated+",
+                "cute || lia_test_cute_01 || 1.00 || 300 || low || flirty+",
+                "# [YUNA TRIGGERS]",
+                "# none",
+                "# [SHARED/DUO TRIGGERS]",
+                "pizza || duo_test_pizza_01 || 1.00 || 300 || medium || playful+",
+                "# [SCRIPTS]",
+                "=== lia_test_drama_01",
+                "Lia: drama again. of course it is.",
+                "---",
+                "=== lia_test_cute_01",
+                "Lia: cute is never a harmless word in here.",
+                "---",
+                "=== duo_test_pizza_01",
+                "Lia: pineapple belongs on pizza and i will defend that with style.",
+                "Yuna: terrible judgment. useful trigger.",
+                "---",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return root
+
+
 def _engine(tmp_path: Path) -> PersonaSimulationEngine:
-    content = PersonaContentStore(Path("content/personas"))
+    content = PersonaContentStore(_fixture_content_root(tmp_path))
     content.reload()
     memory = MemoryStore(tmp_path / "persona_state.json")
     return PersonaSimulationEngine(content, memory, tmp_path / "script_log.jsonl")
@@ -47,6 +81,27 @@ def test_engine_tracks_user_memory(tmp_path: Path) -> None:
 
     memory = engine.inspect_user("2", "Mina")
     assert "drama" in memory.favorite_topics
+
+
+def test_engine_tracks_human_style_signals(tmp_path: Path) -> None:
+    engine = _engine(tmp_path)
+    with patch("yuna_lia.personas.engine.random.choice", side_effect=lambda seq: seq[0]), patch(
+        "yuna_lia.personas.engine.random.uniform", return_value=0.0
+    ), patch("yuna_lia.personas.engine.random.random", return_value=0.0):
+        engine.handle_message(
+            user_id="20",
+            display_name="Rin",
+            guild_id=100,
+            channel_id=200,
+            content="lia i'm tired ngl, rough day. love you guys tho?",
+        )
+
+    memory = engine.inspect_user("20", "Rin")
+    assert memory.direct_lia_mentions == 1
+    assert memory.question_messages == 1
+    assert memory.slang_messages == 1
+    assert memory.vulnerability_messages == 1
+    assert memory.affection_messages == 1
 
 
 def test_trigger_matching_uses_word_boundaries(tmp_path: Path) -> None:

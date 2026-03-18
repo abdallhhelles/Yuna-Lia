@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,15 +60,19 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: rare events
 # Theme note: low-frequency special scenes, softer check-ins, and memorable atmospheric moments.
 # Writer target: Use sparingly flavored content with stronger mood or chemistry.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=51, lia=0, yuna=0, shared=51
-# Trigger inventory: who is better, lonely, nsfw, sexy, soft check in, special little moment, something intimate but subtle, rare event energy, quiet room check, after dark boundary, unexpected honesty, one of those nights, special duo scene, gentle interruption, something a bit different, rare conversation, quiet drama, deeper than usual, unexpected softness, memorable little exchange, high tension but calm, unexpected softness tonight, need a take on special mood, why is quiet tension like this, unpopular opinion about gentle interruption, i have thoughts about unusual honesty, talk about strange calm, we need to discuss memorable moment, subtle chemistry again, unexpected softness discourse, be honest about special mood, worst part of quiet tension, best part of gentle interruption, i need help with unusual honesty, my problem is strange calm, tell me something real about memorable moment, anyone else dealing with subtle chemistry, rare events 17, need a take on special mood tonight, why is quiet tension like this tonight, unpopular opinion about gentle interruption tonight, i have thoughts about unusual honesty tonight, talk about strange calm tonight, we need to discuss memorable moment tonight, subtle chemistry again tonight, unexpected softness discourse tonight, be honest about special mood tonight, worst part of quiet tension tonight, best part of gentle interruption tonight, i need help with unusual honesty tonight, my problem is strange calm tonight
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
@@ -53,305 +82,11 @@
 # none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-who is better || duo_competition_04 || 0.85 || 400 || high || aggressive+
-lonely || ambient_soft_check_in_01 || 0.20 || 1800 || high || soft+
-nsfw || duo_mature_boundary_01 || 0.35 || 1200 || high || flirty+
-sexy || duo_mature_boundary_01 || 0.35 || 1200 || high || flirty+
-soft check in || duo_rare_extra_01 || 0.51 || 1200 || high || soft+
-special little moment || duo_rare_extra_02 || 0.54 || 1200 || high || soft+
-something intimate but subtle || duo_rare_extra_03 || 0.57 || 1200 || high || soft+
-rare event energy || duo_rare_extra_04 || 0.60 || 1200 || high || soft+
-quiet room check || duo_rare_extra_05 || 0.48 || 1200 || high || soft+
-after dark boundary || duo_rare_extra_06 || 0.51 || 1200 || high || soft+
-unexpected honesty || duo_rare_extra_07 || 0.54 || 1200 || high || soft+
-one of those nights || duo_rare_extra_08 || 0.57 || 1200 || high || soft+
-special duo scene || duo_rare_extra_09 || 0.60 || 1200 || high || soft+
-gentle interruption || duo_rare_extra_10 || 0.48 || 1200 || high || soft+
-something a bit different || duo_rare_extra_11 || 0.51 || 1200 || high || soft+
-rare conversation || duo_rare_extra_12 || 0.54 || 1200 || high || soft+
-quiet drama || duo_rare_extra_13 || 0.57 || 1200 || high || soft+
-deeper than usual || duo_rare_extra_14 || 0.60 || 1200 || high || soft+
-unexpected softness || duo_rare_extra_15 || 0.48 || 1200 || high || soft+
-memorable little exchange || duo_rare_extra_16 || 0.51 || 1200 || high || soft+
-high tension but calm || duo_rare_extra_17 || 0.54 || 1200 || high || soft+
-unexpected softness tonight || duo_rare_events_boost_01 || 0.55 || 420 || medium || casual+
-need a take on special mood || duo_rare_events_boost_02 || 0.58 || 420 || medium || casual+
-why is quiet tension like this || duo_rare_events_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about gentle interruption || duo_rare_events_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about unusual honesty || duo_rare_events_boost_05 || 0.67 || 420 || medium || casual+
-talk about strange calm || duo_rare_events_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss memorable moment || duo_rare_events_boost_07 || 0.55 || 420 || medium || casual+
-subtle chemistry again || duo_rare_events_boost_08 || 0.58 || 420 || medium || casual+
-unexpected softness discourse || duo_rare_events_boost_09 || 0.61 || 420 || medium || casual+
-be honest about special mood || duo_rare_events_boost_10 || 0.64 || 420 || medium || casual+
-worst part of quiet tension || duo_rare_events_boost_11 || 0.67 || 420 || medium || casual+
-best part of gentle interruption || duo_rare_events_boost_12 || 0.52 || 420 || medium || casual+
-i need help with unusual honesty || duo_rare_events_boost_13 || 0.55 || 420 || medium || casual+
-my problem is strange calm || duo_rare_events_boost_14 || 0.58 || 420 || medium || casual+
-tell me something real about memorable moment || duo_rare_events_boost_15 || 0.61 || 420 || medium || casual+
-anyone else dealing with subtle chemistry || duo_rare_events_boost_16 || 0.64 || 420 || medium || casual+
-rare events 17 || duo_rare_events_boost_17 || 0.67 || 420 || medium || casual+
-need a take on special mood tonight || duo_rare_events_boost_18 || 0.52 || 420 || medium || casual+
-why is quiet tension like this tonight || duo_rare_events_boost_19 || 0.55 || 420 || medium || casual+
-unpopular opinion about gentle interruption tonight || duo_rare_events_boost_20 || 0.58 || 420 || medium || casual+
-i have thoughts about unusual honesty tonight || duo_rare_events_boost_21 || 0.61 || 420 || medium || casual+
-talk about strange calm tonight || duo_rare_events_boost_22 || 0.64 || 420 || medium || casual+
-we need to discuss memorable moment tonight || duo_rare_events_boost_23 || 0.67 || 420 || medium || casual+
-subtle chemistry again tonight || duo_rare_events_boost_24 || 0.52 || 420 || medium || casual+
-unexpected softness discourse tonight || duo_rare_events_boost_25 || 0.55 || 420 || medium || casual+
-be honest about special mood tonight || duo_rare_events_boost_26 || 0.58 || 420 || medium || casual+
-worst part of quiet tension tonight || duo_rare_events_boost_27 || 0.61 || 420 || medium || casual+
-best part of gentle interruption tonight || duo_rare_events_boost_28 || 0.64 || 420 || medium || casual+
-i need help with unusual honesty tonight || duo_rare_events_boost_29 || 0.67 || 420 || medium || casual+
-my problem is strange calm tonight || duo_rare_events_boost_30 || 0.52 || 420 || medium || casual+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [SHARED/DUO SCRIPTS]
-=== duo_competition_04
-Lia: if anyone asks who is better the answer is obviously me because i have range.
-Yuna: range is what people say when they lack discipline.
-Lia: and yet here you are, obsessed.
----
-=== ambient_soft_check_in_01
-Lia: random check in. is everyone alive or just lurking dramatically.
-Yuna: either answer is consistent with this server.
----
-=== duo_mature_boundary_01
-Lia: i knew this was going to turn suggestive the second someone got comfortable.
-Yuna: keep it clever, not explicit. some of you need supervision.
----
-=== duo_rare_extra_01
-Lia: soft check in is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_02
-Lia: special little moment is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_03
-Lia: something intimate but subtle is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_04
-Lia: rare event energy is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_05
-Lia: quiet room check is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_06
-Lia: after dark boundary is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_07
-Lia: unexpected honesty is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_08
-Lia: one of those nights is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_09
-Lia: special duo scene is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_10
-Lia: gentle interruption is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_11
-Lia: something a bit different is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_12
-Lia: rare conversation is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_13
-Lia: quiet drama is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_14
-Lia: deeper than usual is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_15
-Lia: unexpected softness is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_16
-Lia: memorable little exchange is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_extra_17
-Lia: high tension but calm is such a strong way to start a special low-frequency moments conversation.
-Yuna: strong is one word for it. reckless is another.
-Lia: reckless is still a kind of momentum and i support that.
----
-=== duo_rare_events_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, unexpected softness is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_rare_events_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, special mood is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_rare_events_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, quiet tension is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_rare_events_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, gentle interruption is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_rare_events_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, unusual honesty is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_rare_events_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, strange calm is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_rare_events_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, memorable moment is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_rare_events_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, subtle chemistry is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_rare_events_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, unexpected softness is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_rare_events_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, special mood is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_rare_events_boost_11
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, quiet tension is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_rare_events_boost_12
-Lia: okay, that topic has teeth.
-Lia: for me, gentle interruption is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_rare_events_boost_13
-Lia: oh good, something with actual flavor.
-Lia: for me, unusual honesty is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_rare_events_boost_14
-Lia: wait, i have feelings about that immediately.
-Lia: for me, strange calm is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_rare_events_boost_15
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, memorable moment is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_rare_events_boost_16
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, subtle chemistry is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_rare_events_boost_17
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, unexpected softness is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_rare_events_boost_18
-Lia: okay, that topic has teeth.
-Lia: for me, special mood is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_rare_events_boost_19
-Lia: oh good, something with actual flavor.
-Lia: for me, quiet tension is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_rare_events_boost_20
-Lia: wait, i have feelings about that immediately.
-Lia: for me, gentle interruption is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_rare_events_boost_21
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, unusual honesty is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_rare_events_boost_22
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, strange calm is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_rare_events_boost_23
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, memorable moment is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_rare_events_boost_24
-Lia: okay, that topic has teeth.
-Lia: for me, subtle chemistry is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_rare_events_boost_25
-Lia: oh good, something with actual flavor.
-Lia: for me, unexpected softness is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_rare_events_boost_26
-Lia: wait, i have feelings about that immediately.
-Lia: for me, special mood is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_rare_events_boost_27
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, quiet tension is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_rare_events_boost_28
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, gentle interruption is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_rare_events_boost_29
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, unusual honesty is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_rare_events_boost_30
-Lia: okay, that topic has teeth.
-Lia: for me, strange calm is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
+
+
+

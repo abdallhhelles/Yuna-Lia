@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 from yuna_lia.config import load_config
 
@@ -43,3 +44,25 @@ def test_load_config_resolves_custom_paths(monkeypatch, tmp_path: Path):
     assert config.content_dir == content_dir.resolve()
     assert config.data_dir == data_dir.resolve()
     assert data_dir.exists()
+
+
+def test_repo_templates_have_no_merge_conflict_markers():
+    roots = [
+        Path(".env.example"),
+        Path("README.md"),
+        Path("docs"),
+        Path("src"),
+        Path("tests"),
+        Path("content/personas/themes"),
+    ]
+    patterns = [
+        re.compile(r"^<{7}(?: .+)?$", re.MULTILINE),
+        re.compile(r"^={7}$", re.MULTILINE),
+        re.compile(r"^>{7}(?: .+)?$", re.MULTILINE),
+    ]
+
+    for root in roots:
+        paths = [root] if root.is_file() else [path for path in root.rglob("*") if path.is_file()]
+        for path in paths:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            assert not any(pattern.search(text) for pattern in patterns), f"merge conflict marker found in {path}"

@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,277 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: drama
 # Theme note: ghosting, mixed signals, social confusion, and relational mess.
 # Writer target: Emotionally vivid reactions, messy social autopsies, and server-story energy.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=51, lia=50, yuna=0, shared=1
-# Trigger inventory: ignored, left on read, mixed signals again, left me hanging, they went distant, weird texting energy, they read it and vanished, social panic mode, romantic confusion, awkward silence again, dry reply energy, why are they acting weird, the vibe shifted, communication issue, they got cold fast, relationship mess, messy talking stage, i hate being ignored, this feels personal, dramatic little heartbreak, mixed signals, need a take on ghosting, why is weird reply like this, unpopular opinion about messy crush, i have thoughts about friendship fracture, talk about jealous behavior, we need to discuss cold shift, awkward silence again tonight, mixed signals discourse, be honest about ghosting, worst part of weird reply, best part of messy crush, i need help with friendship fracture, my problem is jealous behavior, tell me something real about cold shift, anyone else dealing with awkward silence, mixed signals tonight, need a take on ghosting tonight, why is weird reply like this tonight, unpopular opinion about messy crush tonight, i have thoughts about friendship fracture tonight, talk about jealous behavior tonight, we need to discuss cold shift tonight, drama 24, mixed signals discourse tonight, be honest about ghosting tonight, worst part of weird reply tonight, best part of messy crush tonight, i need help with friendship fracture tonight, my problem is jealous behavior tonight, ghosted
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-ignored || lia_drama_ignored || 0.80 || 800 || high || heated+
-left on read || lia_drama_ignored || 0.74 || 800 || high || heated+
-mixed signals again || lia_drama_extra_01 || 0.61 || 800 || medium || heated+
-left me hanging || lia_drama_extra_02 || 0.64 || 800 || medium || heated+
-they went distant || lia_drama_extra_03 || 0.67 || 800 || medium || heated+
-weird texting energy || lia_drama_extra_04 || 0.70 || 800 || medium || heated+
-they read it and vanished || lia_drama_extra_05 || 0.58 || 800 || medium || heated+
-social panic mode || lia_drama_extra_06 || 0.61 || 800 || medium || heated+
-romantic confusion || lia_drama_extra_07 || 0.64 || 800 || medium || heated+
-awkward silence again || lia_drama_extra_08 || 0.67 || 800 || medium || heated+
-dry reply energy || lia_drama_extra_09 || 0.70 || 800 || medium || heated+
-why are they acting weird || lia_drama_extra_10 || 0.58 || 800 || medium || heated+
-the vibe shifted || lia_drama_extra_11 || 0.61 || 800 || medium || heated+
-communication issue || lia_drama_extra_12 || 0.64 || 800 || medium || heated+
-they got cold fast || lia_drama_extra_13 || 0.67 || 800 || medium || heated+
-relationship mess || lia_drama_extra_14 || 0.70 || 800 || medium || heated+
-messy talking stage || lia_drama_extra_15 || 0.58 || 800 || medium || heated+
-i hate being ignored || lia_drama_extra_16 || 0.61 || 800 || medium || heated+
-this feels personal || lia_drama_extra_17 || 0.64 || 800 || medium || heated+
-dramatic little heartbreak || lia_drama_extra_18 || 0.67 || 800 || medium || heated+
-mixed signals || lia_drama_boost_01 || 0.55 || 360 || medium || playful+
-need a take on ghosting || lia_drama_boost_02 || 0.58 || 360 || medium || playful+
-why is weird reply like this || lia_drama_boost_03 || 0.61 || 360 || medium || playful+
-unpopular opinion about messy crush || lia_drama_boost_04 || 0.64 || 360 || medium || playful+
-i have thoughts about friendship fracture || lia_drama_boost_05 || 0.67 || 360 || medium || playful+
-talk about jealous behavior || lia_drama_boost_06 || 0.52 || 360 || medium || playful+
-we need to discuss cold shift || lia_drama_boost_07 || 0.55 || 360 || medium || playful+
-awkward silence again tonight || lia_drama_boost_08 || 0.58 || 360 || medium || playful+
-mixed signals discourse || lia_drama_boost_09 || 0.61 || 360 || medium || playful+
-be honest about ghosting || lia_drama_boost_10 || 0.64 || 360 || medium || playful+
-worst part of weird reply || lia_drama_boost_11 || 0.67 || 360 || medium || playful+
-best part of messy crush || lia_drama_boost_12 || 0.52 || 360 || medium || playful+
-i need help with friendship fracture || lia_drama_boost_13 || 0.55 || 360 || medium || playful+
-my problem is jealous behavior || lia_drama_boost_14 || 0.58 || 360 || medium || playful+
-tell me something real about cold shift || lia_drama_boost_15 || 0.61 || 360 || medium || playful+
-anyone else dealing with awkward silence || lia_drama_boost_16 || 0.64 || 360 || medium || playful+
-mixed signals tonight || lia_drama_boost_17 || 0.67 || 360 || medium || playful+
-need a take on ghosting tonight || lia_drama_boost_18 || 0.52 || 360 || medium || playful+
-why is weird reply like this tonight || lia_drama_boost_19 || 0.55 || 360 || medium || playful+
-unpopular opinion about messy crush tonight || lia_drama_boost_20 || 0.58 || 360 || medium || playful+
-i have thoughts about friendship fracture tonight || lia_drama_boost_21 || 0.61 || 360 || medium || playful+
-talk about jealous behavior tonight || lia_drama_boost_22 || 0.64 || 360 || medium || playful+
-we need to discuss cold shift tonight || lia_drama_boost_23 || 0.67 || 360 || medium || playful+
-drama 24 || lia_drama_boost_24 || 0.52 || 360 || medium || playful+
-mixed signals discourse tonight || lia_drama_boost_25 || 0.55 || 360 || medium || playful+
-be honest about ghosting tonight || lia_drama_boost_26 || 0.58 || 360 || medium || playful+
-worst part of weird reply tonight || lia_drama_boost_27 || 0.61 || 360 || medium || playful+
-best part of messy crush tonight || lia_drama_boost_28 || 0.64 || 360 || medium || playful+
-i need help with friendship fracture tonight || lia_drama_boost_29 || 0.67 || 360 || medium || playful+
-my problem is jealous behavior tonight || lia_drama_boost_30 || 0.52 || 360 || medium || playful+
+# none yet for Lia
 
 # [YUNA TRIGGERS]
 # none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-ghosted || duo_trauma_story_02 || 0.50 || 900 || medium || emotional+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [LIA SCRIPTS]
-=== lia_drama_ignored
-Lia: if someone ignores me on purpose i become a historian
-Lia: i will remember everything forever actually
----
-=== lia_drama_extra_01
-Lia: mixed signals again is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_02
-Lia: left me hanging is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_03
-Lia: they went distant is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_04
-Lia: weird texting energy is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_05
-Lia: they read it and vanished is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_06
-Lia: social panic mode is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_07
-Lia: romantic confusion is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_08
-Lia: awkward silence again is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_09
-Lia: dry reply energy is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_10
-Lia: why are they acting weird is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_11
-Lia: the vibe shifted is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_12
-Lia: communication issue is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_13
-Lia: they got cold fast is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_14
-Lia: relationship mess is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_15
-Lia: messy talking stage is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_16
-Lia: i hate being ignored is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_17
-Lia: this feels personal is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_extra_18
-Lia: dramatic little heartbreak is exactly how a relationship mess, ghosting, and emotional confusion conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_drama_boost_01
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, mixed signals is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_02
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, ghosting is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_03
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, weird reply is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_04
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, messy crush is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_05
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, friendship fracture is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_06
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, jealous behavior is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_07
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, cold shift is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_08
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, awkward silence is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_09
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, mixed signals is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_10
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, ghosting is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_11
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, weird reply is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_12
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, messy crush is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_13
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, friendship fracture is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_14
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, jealous behavior is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_15
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, cold shift is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_16
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, awkward silence is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_17
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, mixed signals is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_18
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, ghosting is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_19
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, weird reply is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_20
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, messy crush is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_21
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, friendship fracture is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_22
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, jealous behavior is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_23
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, cold shift is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_24
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, awkward silence is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_25
-Lia: that kind of thing always turns into a personality test if you wait long enough.
-Lia: honestly, mixed signals is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_26
-Lia: i have the emotionally loud version of that opinion ready, naturally.
-Lia: honestly, ghosting is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_27
-Lia: that topic makes people reveal the exact kind of damage they accessorize.
-Lia: honestly, weird reply is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_28
-Lia: i love when something normal turns weirdly personal this fast.
-Lia: honestly, messy crush is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_29
-Lia: if the room gets honest about that, i will respect it forever.
-Lia: honestly, friendship fracture is exactly where i stop pretending to be normal about it.
----
-=== lia_drama_boost_30
-Lia: i am not neutral enough for that topic and i think that is a strength.
-Lia: honestly, jealous behavior is exactly where i stop pretending to be normal about it.
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
 
-# [SHARED/DUO SCRIPTS]
-=== duo_trauma_story_02
-Lia: being ghosted should count as emotional littering.
-Yuna: most people were not ghosted. they were ignored with administrative precision.
-Lia: somehow that was worse.
----
+
+

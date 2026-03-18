@@ -1,4 +1,4 @@
-# WRITER BRIEF
+﻿# WRITER BRIEF
 # SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
 # The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
 # What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
@@ -10,7 +10,32 @@
 # Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_*, ambient_*, birthday_*, social_*, or other shared ids.
 # Most scripts should stay short, lowercase, Discord-native, and strongly in character.
 # Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
-# If you add triggers, rerun `./.venv/Scripts/python.exe scripts/reorganize_content_library.py` to refresh the metadata counts and trigger inventory headers.
+# If you add triggers, keep the metadata comments accurate if you maintain them manually.
+#
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+# Output expectations:
+# - Return paste-ready content only unless explanation is explicitly requested.
+# - Do not remove existing entries unless explicitly asked.
+# - Add natural phrasing variation people would really type in Discord.
+# Quality checklist before finalizing:
+# - Does every new trigger have its own unique script?
+# - Are all new triggers unique in this file?
+# - Are all new script bodies unique in this file?
+# - Do the lines sound like real Discord users and real server personalities?
+# - Did filler, placeholder copy, or templated repetition get removed?
 #
 # DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
 # Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
@@ -35,288 +60,33 @@
 # 1. Read the theme note and profiles above.
 # 2. Add or edit trigger lines in the actor section you want below.
 # 3. Add the matching script block under [SCRIPTS].
-# 4. Run /reload_personas in Discord after edits.
+# 4. Restart the bot or let watch mode reload the process after edits.
 #
 # Theme: gaming
 # Theme note: games, genres, co-op, ranked culture, strategy, and backlog talk.
 # Writer target: Sound like online people with taste, not generic gamer copy.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
 # Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
 #
-# Trigger counts: total=54, lia=22, yuna=22, shared=10
-# Trigger inventory: indie, game, steam, favorite cozy game, what are you playing lately, best indie soundtrack, new game backlog, multiplayer disaster, co op tonight, gaming slump, controller drama, story game recommendations, best boss fight, steam sale got me, i need a game rec, comfort game hours, pixel art game, rpg mood, puzzle game talk, late night gaming, fun mechanic discussion, game night soon, strategy, ranked, meta, meta discussion, best strategy game, ranked anxiety, what is the win condition, game sense matters, patch notes ruined everything, resource management, carry potential, mind game talk, drafting phase, solo queue misery, team comp issues, optimize the build, what is the best comp, late game plan, competitive mindset, how to rank up, decision making in games, strategy mood, ranked tonight, need a take on co-op, why is build like this, unpopular opinion about backlog, i have thoughts about controller rage, talk about indie game, we need to discuss story game, skill issue again, ranked discourse, be honest about co-op
+
+# Trigger counts: total=0, lia=0, yuna=0, shared=0
+# Trigger inventory: none yet
 
 # [TRIGGERS]
 # [LIA TRIGGERS]
-indie || lia_gaming_01 || 0.55 || 360 || low || playful+
-game || lia_gaming_01 || 0.40 || 360 || low || playful+
-steam || lia_gaming_01 || 0.48 || 360 || low || playful+
-favorite cozy game || lia_gaming_extra_01 || 0.55 || 360 || low || playful+
-what are you playing lately || lia_gaming_extra_02 || 0.58 || 360 || low || playful+
-best indie soundtrack || lia_gaming_extra_03 || 0.61 || 360 || low || playful+
-new game backlog || lia_gaming_extra_04 || 0.64 || 360 || low || playful+
-multiplayer disaster || lia_gaming_extra_05 || 0.52 || 360 || low || playful+
-co op tonight || lia_gaming_extra_06 || 0.55 || 360 || low || playful+
-gaming slump || lia_gaming_extra_07 || 0.58 || 360 || low || playful+
-controller drama || lia_gaming_extra_08 || 0.61 || 360 || low || playful+
-story game recommendations || lia_gaming_extra_09 || 0.64 || 360 || low || playful+
-best boss fight || lia_gaming_extra_10 || 0.52 || 360 || low || playful+
-steam sale got me || lia_gaming_extra_11 || 0.55 || 360 || low || playful+
-i need a game rec || lia_gaming_extra_12 || 0.58 || 360 || low || playful+
-comfort game hours || lia_gaming_extra_13 || 0.61 || 360 || low || playful+
-pixel art game || lia_gaming_extra_14 || 0.64 || 360 || low || playful+
-rpg mood || lia_gaming_extra_15 || 0.52 || 360 || low || playful+
-puzzle game talk || lia_gaming_extra_16 || 0.55 || 360 || low || playful+
-late night gaming || lia_gaming_extra_17 || 0.58 || 360 || low || playful+
-fun mechanic discussion || lia_gaming_extra_18 || 0.61 || 360 || low || playful+
-game night soon || lia_gaming_extra_19 || 0.64 || 360 || low || playful+
+# none yet for Lia
 
 # [YUNA TRIGGERS]
-strategy || yuna_gaming_01 || 0.70 || 420 || medium || focused+
-ranked || yuna_gaming_01 || 0.55 || 420 || medium || focused+
-meta || yuna_gaming_01 || 0.60 || 420 || medium || focused+
-meta discussion || yuna_gaming_extra_01 || 0.61 || 420 || medium || focused+
-best strategy game || yuna_gaming_extra_02 || 0.64 || 420 || medium || focused+
-ranked anxiety || yuna_gaming_extra_03 || 0.67 || 420 || medium || focused+
-what is the win condition || yuna_gaming_extra_04 || 0.70 || 420 || medium || focused+
-game sense matters || yuna_gaming_extra_05 || 0.58 || 420 || medium || focused+
-patch notes ruined everything || yuna_gaming_extra_06 || 0.61 || 420 || medium || focused+
-resource management || yuna_gaming_extra_07 || 0.64 || 420 || medium || focused+
-carry potential || yuna_gaming_extra_08 || 0.67 || 420 || medium || focused+
-mind game talk || yuna_gaming_extra_09 || 0.70 || 420 || medium || focused+
-drafting phase || yuna_gaming_extra_10 || 0.58 || 420 || medium || focused+
-solo queue misery || yuna_gaming_extra_11 || 0.61 || 420 || medium || focused+
-team comp issues || yuna_gaming_extra_12 || 0.64 || 420 || medium || focused+
-optimize the build || yuna_gaming_extra_13 || 0.67 || 420 || medium || focused+
-what is the best comp || yuna_gaming_extra_14 || 0.70 || 420 || medium || focused+
-late game plan || yuna_gaming_extra_15 || 0.58 || 420 || medium || focused+
-competitive mindset || yuna_gaming_extra_16 || 0.61 || 420 || medium || focused+
-how to rank up || yuna_gaming_extra_17 || 0.64 || 420 || medium || focused+
-decision making in games || yuna_gaming_extra_18 || 0.67 || 420 || medium || focused+
-strategy mood || yuna_gaming_extra_19 || 0.70 || 420 || medium || focused+
+# none yet for Yuna
 
 # [SHARED/DUO TRIGGERS]
-ranked tonight || duo_gaming_boost_01 || 0.55 || 420 || medium || casual+
-need a take on co-op || duo_gaming_boost_02 || 0.58 || 420 || medium || casual+
-why is build like this || duo_gaming_boost_03 || 0.61 || 420 || medium || casual+
-unpopular opinion about backlog || duo_gaming_boost_04 || 0.64 || 420 || medium || casual+
-i have thoughts about controller rage || duo_gaming_boost_05 || 0.67 || 420 || medium || casual+
-talk about indie game || duo_gaming_boost_06 || 0.52 || 420 || medium || casual+
-we need to discuss story game || duo_gaming_boost_07 || 0.55 || 420 || medium || casual+
-skill issue again || duo_gaming_boost_08 || 0.58 || 420 || medium || casual+
-ranked discourse || duo_gaming_boost_09 || 0.61 || 420 || medium || casual+
-be honest about co-op || duo_gaming_boost_10 || 0.64 || 420 || medium || casual+
+# none yet for Shared/Duo
 
 # [SCRIPTS]
-# [LIA SCRIPTS]
-=== lia_gaming_01
-Lia: indie games always ruin my sleep schedule and then i act surprised
----
-=== lia_gaming_extra_01
-Lia: favorite cozy game is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_02
-Lia: what are you playing lately is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_03
-Lia: best indie soundtrack is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_04
-Lia: new game backlog is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_05
-Lia: multiplayer disaster is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_06
-Lia: co op tonight is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_07
-Lia: gaming slump is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_08
-Lia: controller drama is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_09
-Lia: story game recommendations is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_10
-Lia: best boss fight is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_11
-Lia: steam sale got me is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_12
-Lia: i need a game rec is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_13
-Lia: comfort game hours is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_14
-Lia: pixel art game is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_15
-Lia: rpg mood is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_16
-Lia: puzzle game talk is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_17
-Lia: late night gaming is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_18
-Lia: fun mechanic discussion is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
-=== lia_gaming_extra_19
-Lia: game night soon is exactly how a gaming taste, backlog, and game-night talk conversation turns into my business somehow
-Lia: i have opinions and unfortunately they are ready immediately
----
+# Script format reminder: === script_id / Actor: line / ---
+# none yet
 
-# [YUNA SCRIPTS]
-=== yuna_gaming_01
-Yuna: strategy games are just socially acceptable paranoia simulators
----
-=== yuna_gaming_extra_01
-Yuna: meta discussion is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_02
-Yuna: best strategy game is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_03
-Yuna: ranked anxiety is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_04
-Yuna: what is the win condition is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_05
-Yuna: game sense matters is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_06
-Yuna: patch notes ruined everything is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_07
-Yuna: resource management is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_08
-Yuna: carry potential is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_09
-Yuna: mind game talk is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_10
-Yuna: drafting phase is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_11
-Yuna: solo queue misery is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_12
-Yuna: team comp issues is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_13
-Yuna: optimize the build is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_14
-Yuna: what is the best comp is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_15
-Yuna: late game plan is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_16
-Yuna: competitive mindset is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_17
-Yuna: how to rank up is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_18
-Yuna: decision making in games is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
-=== yuna_gaming_extra_19
-Yuna: strategy mood is the sort of strategy and ranked gaming topic that quietly exposes everyone in the room
-Yuna: useful, revealing, and rarely handled with enough discipline
----
 
-# [SHARED/DUO SCRIPTS]
-=== duo_gaming_boost_01
-Lia: oh good, something with actual flavor.
-Lia: for me, ranked is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_gaming_boost_02
-Lia: wait, i have feelings about that immediately.
-Lia: for me, co-op is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_gaming_boost_03
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, build is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_gaming_boost_04
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, backlog is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
-=== duo_gaming_boost_05
-Lia: you just dropped bait and i am unfortunately interested.
-Lia: for me, controller rage is where people start accidentally telling the truth.
-Yuna: excellent. subtle things become obvious under pressure.
----
-=== duo_gaming_boost_06
-Lia: okay, that topic has teeth.
-Lia: for me, indie game is where people start accidentally telling the truth.
-Yuna: useful. we can work with that.
----
-=== duo_gaming_boost_07
-Lia: oh good, something with actual flavor.
-Lia: for me, story game is where people start accidentally telling the truth.
-Yuna: predictably revealing, which is why it matters.
----
-=== duo_gaming_boost_08
-Lia: wait, i have feelings about that immediately.
-Lia: for me, skill issue is where people start accidentally telling the truth.
-Yuna: good. the room should answer honestly for once.
----
-=== duo_gaming_boost_09
-Lia: finally, a topic that deserves a pulse.
-Lia: for me, ranked is where people start accidentally telling the truth.
-Yuna: that usually exposes more than people intend.
----
-=== duo_gaming_boost_10
-Lia: that is exactly the kind of thing that wakes me up.
-Lia: for me, co-op is where people start accidentally telling the truth.
-Yuna: it is never only about the topic, and that is the point.
----
+

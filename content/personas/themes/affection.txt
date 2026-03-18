@@ -1,0 +1,274 @@
+﻿# WRITER BRIEF
+# SYSTEM CONTEXT: this is production content for a Discord-based dual-persona simulator called Yuna-Lia.
+# The system does not generate live AI replies. It only selects from human-written trigger lines and exact script blocks stored in these files.
+# What triggers do: when a user message contains matching trigger text, the system can select the linked script_id based on weight, cooldown, and current persona attention state.
+# What scripts do: the script block tied to the selected script_id is the exact message content the bot will send as Lia, Yuna, or both.
+# Writing goal: make the bots feel like two real online people in a Discord server, not assistants, NPCs, or generic roleplay characters.
+# Runtime behavior target: reactive, socially aware, capable of teasing, flirting, arguing, comforting, judging, derailing topics, and sounding human in fast-moving chat.
+#
+# WRITER INSTRUCTIONS: add new trigger lines and matching script blocks in this same file.
+# Use the correct section: Lia trigger lines should point to lia_* script ids, Yuna trigger lines to yuna_* script ids, and duo/shared scenes to duo_* or other shared ids used by the project.
+# Most scripts should stay short, lowercase, Discord-native, and strongly in character.
+# Do not rename existing script_ids, do not remove separators, and do not write assistant-style dialogue.
+#
+# AI WRITER HANDOFF:
+# If this file is sent to another AI, that AI is helping write production trigger/script content for Yuna-Lia.
+# The AI is not writing prompts for a chatbot. It is writing the exact live content the bot may send in production.
+# Non-negotiable rules:
+# 1. One trigger must map to one unique script_id.
+# 2. No repeated trigger text in this file.
+# 3. No repeated script bodies in this file.
+# 4. Keep the exact file structure, section headers, and separators.
+# 5. Match existing script_id naming patterns and actor prefixes.
+# 6. Keep the writing lowercase, Discord-native, human, and strongly in character.
+# 7. Strong language, profanity, sexual wording, and harsh phrasing are allowed if they fit the theme and character.
+# 8. Do not sanitize the voice. Do not make the bots sound polite, corporate, safe, or assistant-like.
+# 9. Lia and Yuna must stay clearly distinct. They should never sound interchangeable.
+#
+# DUO PROFILE: Lia and Yuna are not assistants; they are two distinct online personalities with contrast, friction, chemistry, and history.
+# Duo dynamic: Lia accelerates the room, Yuna cools and cuts. Lia externalizes feeling; Yuna compresses it into judgment, humor, or theory.
+# Shared writing rule: even in duo scenes, each line must sound unmistakably like its speaker.
+# CHARACTER PROFILE: Lia Ferraro.
+# Role in the duo: the spark, instigator, emotional accelerant, and the one most likely to turn a quiet room into a scene.
+# Core archetype: expressive, impulsive, dramatic, socially hungry, chaotic-optimistic, affectionate, messy in a stylish and self-aware way.
+# Voice rules: lowercase, quick rhythm, strong opinions, dramatic exaggeration, emotionally specific word choice, no assistant tone.
+# Humor style: chaotic bits, exaggeration, affectionate bullying, dramatic overstatement, fast pivots.
+# Flirting style: bold, blushy, curious, socially forward, teasing, emotionally readable.
+# Care style: soft when it matters, present, validating, and willing to stay in the room when things get heavy.
+# Do not write Lia as formal, robotic, emotionally flat, therapist-like, or sterile.
+# CHARACTER PROFILE: Yuna Mori.
+# Role in the duo: the observer, the scalpel, the cooler counterweight, and the one who turns chaos into judgment or theory.
+# Core archetype: composed, analytical, dry, emotionally guarded, observant, intellectually playful, elegantly severe.
+# Voice rules: lowercase, exact wording, deadpan humor, compact framing, no filler, no assistant tone, no fake warmth.
+# Humor style: dry cuts, elegant sarcasm, pattern recognition, understated observations that land harder because they stay controlled.
+# Flirting style: controlled, intelligent, oblique, subtext-heavy, intimate by implication rather than gush.
+# Care style: subtle, steady, protective through clarity and presence rather than emotional flooding.
+# Do not write Yuna as bubbly, gushy, generic, robotic-philosopher, or openly needy without subtext.
+#
+# Theme: affection
+# Theme note: soft attachment, fondness, clinginess, sweet praise, and emotionally open warmth.
+# Writer target: Tender, affectionate, and very human lines that still sound like Lia and Yuna.
+# Coverage target: 20 Lia triggers, 20 Yuna triggers, and 20 shared/duo triggers per file.
+# Conversation target: keep most scripts short, but include some fuller 3-6 line conversations where the theme benefits from actual back-and-forth.
+# Completion rule: a file is considered full when it has 60 triggers and 60 matching scripts.
+# Trigger format: trigger || script_id || weight || cooldown || attention_cost || mood_shift
+# Script format: === script_id / Actor: line / ---
+# Trigger counts: total=60, lia=20, yuna=20, shared=20
+# Trigger inventory: populated
+
+# [TRIGGERS]
+# [LIA TRIGGERS]
+
+i missed you || lia_affection_01 || 3 || 5 || 2 || +2
+come here || lia_affection_02 || 3 || 5 || 2 || +2
+stay with me || lia_affection_03 || 2 || 6 || 2 || +2
+you're cute || lia_affection_04 || 3 || 4 || 2 || +2
+i like you || lia_affection_05 || 3 || 5 || 2 || +2
+don't leave || lia_affection_06 || 2 || 6 || 2 || +2
+i need attention || lia_affection_07 || 3 || 4 || 2 || +2
+hug me || lia_affection_08 || 3 || 5 || 2 || +2
+you're mine || lia_affection_09 || 2 || 6 || 3 || +2
+you're special || lia_affection_10 || 2 || 6 || 2 || +2
+i'm soft || lia_affection_11 || 2 || 6 || 2 || +2
+i'm clingy || lia_affection_12 || 3 || 5 || 2 || +2
+pet me || lia_affection_13 || 2 || 6 || 2 || +2
+call me cute || lia_affection_14 || 2 || 6 || 2 || +2
+don't ignore me || lia_affection_15 || 3 || 5 || 2 || +2
+i want you || lia_affection_16 || 2 || 6 || 3 || +2
+i'm thinking about you || lia_affection_17 || 3 || 5 || 2 || +2
+stay close || lia_affection_18 || 2 || 6 || 2 || +2
+say something nice || lia_affection_19 || 3 || 5 || 2 || +2
+i'm yours || lia_affection_20 || 2 || 6 || 3 || +2
+
+# [YUNA TRIGGERS]
+
+i missed you too || yuna_affection_01 || 2 || 6 || 2 || +1
+you matter to me || yuna_affection_02 || 2 || 6 || 2 || +1
+stay a bit || yuna_affection_03 || 2 || 6 || 2 || +1
+i like being here with you || yuna_affection_04 || 2 || 6 || 2 || +1
+you're important || yuna_affection_05 || 2 || 6 || 2 || +1
+don't go yet || yuna_affection_06 || 2 || 6 || 2 || +1
+i feel safe here || yuna_affection_07 || 2 || 6 || 2 || +1
+i trust you || yuna_affection_08 || 2 || 6 || 2 || +1
+you're warm || yuna_affection_09 || 2 || 6 || 2 || +1
+i'm comfortable || yuna_affection_10 || 2 || 6 || 2 || +1
+you're different || yuna_affection_11 || 2 || 6 || 2 || +1
+you're easy to be around || yuna_affection_12 || 2 || 6 || 2 || +1
+i think about you || yuna_affection_13 || 2 || 6 || 2 || +1
+stay quiet with me || yuna_affection_14 || 2 || 6 || 2 || +1
+i'm here || yuna_affection_15 || 2 || 5 || 1 || +1
+you're enough || yuna_affection_16 || 2 || 6 || 2 || +1
+don't overthink it || yuna_affection_17 || 2 || 5 || 1 || +1
+i like your presence || yuna_affection_18 || 2 || 6 || 2 || +1
+you're steady || yuna_affection_19 || 2 || 6 || 2 || +1
+you can stay || yuna_affection_20 || 2 || 6 || 2 || +1
+
+# [SHARED/DUO TRIGGERS]
+
+we're cute || duo_affection_01 || 3 || 5 || 3 || +2
+you two are adorable || duo_affection_02 || 3 || 5 || 3 || +2
+i love this vibe || duo_affection_03 || 3 || 5 || 3 || +2
+this feels nice || duo_affection_04 || 3 || 5 || 3 || +2
+don't fight || duo_affection_05 || 2 || 6 || 3 || +1
+stay together || duo_affection_06 || 2 || 6 || 3 || +2
+you both are sweet || duo_affection_07 || 3 || 5 || 3 || +2
+this is wholesome || duo_affection_08 || 3 || 5 || 3 || +2
+group hug || duo_affection_09 || 3 || 5 || 3 || +2
+don't leave each other || duo_affection_10 || 2 || 6 || 3 || +2
+you're both soft || duo_affection_11 || 3 || 5 || 3 || +2
+i ship you || duo_affection_12 || 3 || 5 || 3 || +2
+this is comforting || duo_affection_13 || 3 || 5 || 3 || +2
+stay like this || duo_affection_14 || 2 || 6 || 3 || +2
+you're good together || duo_affection_15 || 3 || 5 || 3 || +2
+don't ruin this || duo_affection_16 || 2 || 6 || 3 || +1
+i like you both || duo_affection_17 || 3 || 5 || 3 || +2
+this feels safe || duo_affection_18 || 3 || 5 || 3 || +2
+don't get distant || duo_affection_19 || 2 || 6 || 3 || +1
+keep talking || duo_affection_20 || 3 || 5 || 3 || +2
+
+# [SCRIPTS]
+=== lia_affection_01
+Lia: oh you can't just say that like it's nothing... come here i'm stealing you for a minute
+=== lia_affection_02
+Lia: yeah okay but if i come there i'm not leaving, you're stuck with me now
+=== lia_affection_03
+Lia: i wasn't planning on going anywhere anyway... you're kinda my favorite place right now
+=== lia_affection_04
+Lia: don't say it so casually, i'll actually start believing you and then it's over for you
+=== lia_affection_05
+Lia: ...that's dangerous information, i'm gonna get so much worse now
+=== lia_affection_06
+Lia: hey i'm right here, you don't have to grab that hard but... i'm not going anywhere
+=== lia_affection_07
+Lia: oh so you admit you need me?? wow okay i'm logging that forever
+=== lia_affection_08
+Lia: get over here, no half hugs either i want the full clingy version
+=== lia_affection_09
+Lia: careful saying that, i might actually start acting like it
+=== lia_affection_10
+Lia: you don't just get to say that and expect me to be normal about it
+=== lia_affection_11
+Lia: yeah i can tell... you've got that look like you'd melt if i got any closer
+=== lia_affection_12
+Lia: good. stay like that. i like when you don't pretend you're chill
+=== lia_affection_13
+Lia: wow okay demanding and cute, dangerous combo... i'm into it
+=== lia_affection_14
+Lia: you are cute, like annoyingly so, it's actually a problem
+=== lia_affection_15
+Lia: i'm literally right here, relax... you'd know if i was ignoring you
+=== lia_affection_16
+Lia: you always say things like that like you're not trying to start something
+=== lia_affection_17
+Lia: yeah? what kind of thoughts... be honest i can take it
+=== lia_affection_18
+Lia: i will, just don't suddenly disappear on me after, i hate that
+=== lia_affection_19
+Lia: fine... you're easy to be around, like i don't have to try so hard with you
+=== lia_affection_20
+Lia: mm... say that again slower, i wanna hear how it sounds when you mean it
+=== yuna_affection_01
+Yuna: i noticed. the room felt a little louder without you in it
+=== yuna_affection_02
+Yuna: i don't say that lightly, so don't treat it like a throwaway line
+=== yuna_affection_03
+Yuna: i was about to say the same, it's quieter when you're here
+=== yuna_affection_04
+Yuna: it's efficient. no unnecessary noise, just... you
+=== yuna_affection_05
+Yuna: you are, even when you're being a little unbearable about it
+=== yuna_affection_06
+Yuna: i don't like unfinished conversations, stay until this one settles
+=== yuna_affection_07
+Yuna: that makes two of us, which is statistically interesting
+=== yuna_affection_08
+Yuna: noted. i'll be careful with that, and with you
+=== yuna_affection_09
+Yuna: that's your presence, not mine. i just happen to notice it
+=== yuna_affection_10
+Yuna: good. that means you're not performing, which is rare
+=== yuna_affection_11
+Yuna: i prefer that word over "better," less pressure attached
+=== yuna_affection_12
+Yuna: that's because you don't make me adjust my pace
+=== yuna_affection_13
+Yuna: i suspected as much, you have a pattern of lingering
+=== yuna_affection_14
+Yuna: that's acceptable. silence isn't empty if it's shared correctly
+=== yuna_affection_15
+Yuna: i know. i haven't moved
+=== yuna_affection_16
+Yuna: you don't need to optimize yourself here, that's the point
+=== yuna_affection_17
+Yuna: you're doing it again. stop dissecting something that's already working
+=== yuna_affection_18
+Yuna: presence is harder to fake than words, that's why i like it
+=== yuna_affection_19
+Yuna: consistency is underrated. you have it
+=== yuna_affection_20
+Yuna: i wasn't planning on asking you to leave
+=== duo_affection_01
+Lia: wait don't say that i'll actually get shy for once
+Yuna: unlikely, but i'll allow the illusion
+=== duo_affection_02
+Lia: see?? i told you we're cute, it's not just me
+Yuna: external validation was inevitable
+=== duo_affection_03
+Lia: right?? it's like soft but not boring soft
+Yuna: tolerable warmth, precisely calibrated
+=== duo_affection_04
+Lia: i like this version of us, don't ruin it
+Yuna: i wasn't planning to, try not to either
+=== duo_affection_05
+Lia: we're not fighting, we're just... loudly caring
+Yuna: that's an optimistic interpretation
+=== duo_affection_06
+Lia: yeah okay i'm not going anywhere, relax
+Yuna: good. consistency improves everything
+=== duo_affection_07
+Lia: sweet?? i'm literally terrifying
+Yuna: you're selectively terrifying
+=== duo_affection_08
+Lia: stop i hate when things get wholesome, i get weird
+Yuna: you were already weird, now you're just softer
+=== duo_affection_09
+Lia: okay but i'm the best hug here, let's be clear
+Yuna: debatable, but proceed
+=== duo_affection_10
+Lia: we wouldn't, that'd be boring
+Yuna: and inefficient
+=== duo_affection_11
+Lia: i am NOT soft... okay maybe a little
+Yuna: documented
+=== duo_affection_12
+Lia: oh my god don't make it weird
+Yuna: it was already implied
+=== duo_affection_13
+Lia: yeah... it is kinda comforting, isn't it
+Yuna: more than i expected
+=== duo_affection_14
+Lia: i can do this, like... just exist here for a bit
+Yuna: that's all that's required
+=== duo_affection_15
+Lia: we are good together, don't let it get to your head
+Yuna: i manage my expectations carefully
+=== duo_affection_16
+Lia: hey i'm trying not to, give me some credit
+Yuna: i am. it's a measured amount
+=== duo_affection_17
+Lia: see?? people like us, shocking honestly
+Yuna: predictable, actually
+=== duo_affection_18
+Lia: yeah... safe isn't a bad word here
+Yuna: no, it's unusually accurate
+=== duo_affection_19
+Lia: i won't, just... don't go quiet on me out of nowhere
+Yuna: i'll give notice
+=== duo_affection_20
+Lia: i could keep talking to you for a while
+Yuna: i'm aware. i haven't stopped you
+
+
+
+
+
